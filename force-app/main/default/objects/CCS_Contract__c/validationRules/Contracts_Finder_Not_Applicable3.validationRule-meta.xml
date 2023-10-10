@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_Finder_Not_Applicable3</fullName>
+    <active>true</active>
+    <description>&apos;Contracts Finder Not Applicable Reason&apos; cannot be not blank unless &apos;Contracts Finder Not Applicable?&apos; checkbox is false.</description>
+    <errorConditionFormula>AND(
+ NOT(ISBLANK(TEXT(Contracts_Finder_Not_Applicable_Reason__c))),
+ Contracts_Finder_Not_Applicable__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>The &apos;Contracts Finder Not Applicable Reason&apos; field can only be populated if the &apos;Contracts Finder Not Applicable?&apos; field has been ticked.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,104 @@
+<apex:page standardController="Contact" extensions="MassEditExtension" recordSetVar="unused" sidebar="false">
+
+    <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d' || contains($CurrentPage.URL, 'lightning.force.com')}">
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS221, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+        <apex:stylesheet value="{!$Resource.MassEditCSS}" />
+    </apex:outputPanel>
+    <apex:includeScript value="{!$Resource.UtilJS}" />
+    <apex:includeScript value="{!$Resource.LightningMassEditJS}" />
+    
+    <div class="mass-update-mass-edit" id="mass-update-mass-edit">
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open" id="cancel-modal">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="closeCancelModal();">
+                        <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS221, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="header43" class="slds-text-heading--medium">Return</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p>Are you sure you wish to return?</p>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button--neutral" onclick="closeCancelModal();">No</button>
+                    <button class="slds-button slds-button--brand" onclick="goBack();">Yes</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open" id="cancel-modal-backdrop"></div>
+        <apex:form >
+            <apex:pageBlock >
+                <apex:pageMessages />
+                <apex:pageBlock >
+                    Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+                </apex:pageBlock>
+                <apex:pageBlockButtons >
+                    <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d' || contains($CurrentPage.URL, 'lightning.force.com')}">
+                        <apex:commandButton value="Save" action="{!save}" status="lightningSavingStatus" reRender="table" styleClass="slds-button slds-button--neutral slds-button--brand" />
+                        <apex:commandButton value="Return" onclick="openCancelModal();" styleClass="slds-button slds-button--neutral" reRender="table" />
+                        <apex:actionStatus id="lightningSavingStatus" >
+                            <apex:facet name="start" >
+                                <div id="spinning" class="slds-spinner_container">
+                                    <div class="slds-spinner--brand slds-spinner slds-spinner--medium" role="alert">
+                                        <span class="slds-assistive-text">Loading</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>               
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!$User.UIThemeDisplayed != 'Theme4d' && !contains($CurrentPage.URL, 'lightning.force.com')}">
+                        <apex:commandButton value="Save" action="{!save}" status="savingStatus" reRender="table" />
+                        <apex:commandButton value="Return" action="{!cancel}" onclick="return confirmCancel()" />
+                        <apex:actionStatus id="savingStatus" >
+                            <apex:facet name="start" >
+                                <img src="/img/loading.gif" />                    
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </apex:outputPanel>
+                </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!selected}" var="a" id="table">
+                <apex:column headerValue="Name">
+                    <apex:inputField value="{!a.Name}"/>
+                </apex:column>
+                <apex:column headerValue="Phone">
+                    <apex:inputField value="{!a.Phone}"/>
+                </apex:column>
+                <apex:column headerValue="Mobile Phone">
+                    <apex:inputField value="{!a.MobilePhone}"/>
+                </apex:column>
+                <apex:column headerValue="Email">
+                    <apex:inputField value="{!a.Email}"/>
+                </apex:column>
+                <apex:column headerValue="Title">
+                    <apex:inputField value="{!a.Title}"/>
+                </apex:column>
+                <apex:column headerValue="Account">
+                    <apex:inputField value="{!a.AccountId}"/>
+                </apex:column>
+                <apex:column headerValue="Description">
+                    <apex:inputField value="{!a.Description}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    </div>
+    <script type="text/javascript">
+    piAId = '296192';
+    piCId = '45834';
+    
+    (function() {
+        function async_load(){
+            var s = document.createElement('script'); s.type = 'text/javascript';
+            s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+            var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+        }
+        if(window.attachEvent) { window.attachEvent('onload', async_load); }
+        else { window.addEventListener('load', async_load, false); }
+    })();
+    </script>
+</apex:page>

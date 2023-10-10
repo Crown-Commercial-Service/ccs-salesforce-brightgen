@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sectors_Where_Levy_Share_Applies__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( INCLUDES ( Involved_Sectors__c , &quot;Members&quot; ), &quot;Members; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Associated Members&quot; ), &quot;Associated Members; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;WPS&quot; ), &quot;WPS; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Local Government&quot; ), &quot;Local Government; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Local Authority&quot; ), &quot;Local Authority; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Central Government&quot; ), &quot;Central Government; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Devolved&quot; ), &quot;Devolved; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Schools England&quot; ), &quot;Schools England; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Schools (Devolved)&quot; ), &quot;Schools (Devolved); &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Higher Education&quot; ), &quot;Higher Education; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Housing&quot; ), &quot;Housing; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Health&quot; ), &quot;Health; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;NHS (England)&quot; ), &quot;NHS (England); &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Bluelight&quot; ), &quot;Bluelight; &quot;,null ) &amp;
+IF ( INCLUDES ( Involved_Sectors__c , &quot;Police&quot; ), &quot;Police; &quot;,null )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>AUTO-POPULATE from Sectors Involved</inlineHelpText>
+    <label>Sectors Where Levy Share Applies</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Year_0_Actual__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Year 0 (Actual)</label>
+    <summarizedField>Framework_Forecast_Year__c.Yearly_Total__c</summarizedField>
+    <summaryFilterItems>
+        <field>Framework_Forecast_Year__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Actual</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Framework_Forecast_Year__c.Relative_Forecast_Year__c</field>
+        <operation>equals</operation>
+        <value>Year 0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Framework_Forecast_Year__c.Forecast__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

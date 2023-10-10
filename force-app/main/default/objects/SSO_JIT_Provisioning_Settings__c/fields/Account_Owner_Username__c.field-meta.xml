@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner_Username__c</fullName>
+    <description>26/10/2016 - Garth James (Salesforce) - Created. 
+This field stores the Username for the account owner for newly created accounts during JIT provisioning for suppliers. Said another way, when the SupplierJITProvisioner class runs to create a new account, it will use this value to find the account owner.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When the SupplierJITProvisioner class runs to create a new account, it will use this value to find the account owner.</inlineHelpText>
+    <label>Account Owner Username</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

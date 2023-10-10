@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReOpen_check_Target_Resolution_Date</fullName>
+    <active>true</active>
+    <description>When a RAID is Re-opened - check Target Resolution Date is greater than todays date</description>
+    <errorConditionFormula>ISPICKVAL( RAID_Status__c , &apos;RE-Opened&apos;)
+ &amp;&amp;  ISPICKVAL(PRIORVALUE(RAID_Status__c) , &apos;Closed&apos;) 
+ &amp;&amp;  Target_Resolution_Date__c  &lt;=  TODAY()</errorConditionFormula>
+    <errorDisplayField>Target_Resolution_Date__c</errorDisplayField>
+    <errorMessage>Please adjust Target Resolution Date as RISK Re-Opened</errorMessage>
+</ValidationRule>

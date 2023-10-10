@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAQ_Approval_Date_Time__c</fullName>
+    <description>Holds time and date that article was approved</description>
+    <externalId>false</externalId>
+    <label>Approval Date/Time</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <type>DateTime</type>
+</CustomField>

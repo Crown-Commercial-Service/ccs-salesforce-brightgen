@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>
+        <p>This is the standard Government Digital Service Navigation Bar</p>
+        <p>This component will appear in the standard header</p>    
+    </aura:description>
+</aura:documentation>

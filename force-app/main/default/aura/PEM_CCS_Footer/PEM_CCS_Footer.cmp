@@ -1,0 +1,42 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="CCS Standard Footer">
+  <aura:attribute name="corporateInfoLabel" type="string" default="Corporate Info" description="Corporate Info Label"/>
+  <aura:attribute name="corporateInfoLink" type="string" default="https://www.gov.uk/government/organisations/crown-commercial-service" description="Corporate Info Link"/>
+  <aura:attribute name="careersLabel" type="string" default="Careers" description="Careers Label"/>
+  <aura:attribute name="careersLink" type="string" default="https://www.gov.uk/government/organisations/crown-commercial-service/about/recruitment" description="Careers Link"/>
+  <aura:attribute name="termsandconditionsLabel" type="String" default="Terms and conditions" description="Terms and conditions label"/>
+  <aura:attribute name="termsandconditionsLink" type="String" default="/s/terms-and-conditions" description="Terms and Conditions link"/>
+  <aura:attribute name="privacyPolicyLabel" type="String" default="Privacy Policy" description="Privacy Policy label"/>
+  <aura:attribute name="privacyPolicyLink" type="String" default="/s/privacy-policy" description="Privacy Policy link"/>
+  <aura:attribute name="cookiesLabel" type="String" default="Cookies" description="Cookies label"/>
+  <aura:attribute name="cookiesLink" type="String" default="/s/cookie-policy" description="Cookies link"/>
+  <aura:attribute name="twitterLink" type="String" default="https://twitter.com/gov_procurement?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" description="Twitter Link"/>
+  <aura:attribute name="linkedInLink" type="String" default="https://www.linkedin.com/company/government-procurement-service" description="LinkedIn link"/>
+
+  <footer class="group js-footer" id="footer" role="contentinfo">
+      <div class="footerWrapper">
+        <div class="footerContent">
+          <div class='footerText'>
+            <div class='footerSocialLinks'>
+              <a href="{#v.linkedInLink}" target="_blank"><img class="footerSocialIcon" src="{!$Resource.ccs_assets + '/assets/images/linkedin-icon.png'}" /></a>
+              <a href="{#v.twitterLink}" target="_blank"><img class="footerSocialIcon" src="{!$Resource.ccs_assets + '/assets/images/twitter-icon.png'}" /></a>
+            </div>
+            <div class='footerLinks'>
+              <ul>
+                <li class="footerLink"><span class='copyright'></span></li>
+                <li class="footerLink"><a href="{#v.cookiesLink}">{#v.cookiesLabel}</a></li>
+                <li class="footerLink"><a href="{#v.privacyPolicyLink}">{#v.privacyPolicyLabel}</a></li>
+                <li class="footerLink"><a href="{#v.termsandconditionsLink}">{#v.termsandconditionsLabel}</a></li>
+                <li class="footerLink"><a href="{#v.careersLink}" target='blank'>{#v.careersLabel}</a></li>
+                <li class="footerLink"><a href="{#v.corporateInfoLink}" target='blank'>{#v.corporateInfoLabel}</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class='footerCCSLogoContainer'>
+            <div class='footerCCSLogo'></div>
+          </div>
+          <div class='clearBoth'></div>
+        </div>
+      </div>
+      <div class='footerBlackBottom'></div>
+  </footer>
+</aura:component>

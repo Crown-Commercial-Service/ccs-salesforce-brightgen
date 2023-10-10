@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Owner_Change</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+$User.Id &lt;&gt;  PRIORVALUE(OwnerId),
+$Profile.Name &lt;&gt; &quot;CCS System Administrator&quot;,
+$Profile.Name &lt;&gt; &quot;CCS Business Intelligence&quot;,
+ISCHANGED(OwnerId)
+)</errorConditionFormula>
+    <errorMessage>Only the current owner or System Administrator can change a Framework owner</errorMessage>
+</ValidationRule>

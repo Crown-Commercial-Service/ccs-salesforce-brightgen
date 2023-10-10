@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_Finder_Not_Applicable1</fullName>
+    <active>true</active>
+    <description>If the Contracts Finder Not Applicable checkbox is true, then a value must be selected in the &apos;Contracts Finder Not Applicable Reason&apos; picklist.</description>
+    <errorConditionFormula>AND(
+Contracts_Finder_Not_Applicable__c = TRUE,
+TEXT(Contracts_Finder_Not_Applicable_Reason__c) = &quot;&quot;
+)</errorConditionFormula>
+    <errorMessage>If &apos;Contracts Finder Not Applicable&apos; is ticked, then a reason must also be selected.</errorMessage>
+</ValidationRule>

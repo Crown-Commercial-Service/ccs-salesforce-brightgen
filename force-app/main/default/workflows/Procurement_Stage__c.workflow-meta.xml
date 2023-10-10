@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Stage_End_Alert_Email</fullName>
+        <description>Stage-End Alert Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Stage_End_Alert_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Calculate_Alert_Date</fullName>
+        <field>Alert_Date_2__c</field>
+        <formula>Planned_End_Date__c
+
+-  (FLOOR(Alert_Days__c /5) * 7)
+
+- 
+
+CASE( 
+MOD(Planned_End_Date__c  - DATE( 1900, 1, 8 ), 7 ), /* What day does the stage end on? */ 
+
+0, /* Monday*/ 
+IF(
+MOD( Alert_Days__c ,5) = 0,
+MOD( Alert_Days__c ,5),
+MOD( Alert_Days__c ,5) + 2
+) 
+, 
+
+1, /*Tuesday*/ 
+IF(
+ OR(MOD( Alert_Days__c ,5) = 0, 
+ MOD(Alert_Days__c ,5) = 1), 
+MOD( Alert_Days__c ,5),
+MOD( Alert_Days__c ,5) + 2
+) 
+, 
+
+2, /*Wednesday*/ 
+IF (
+ OR(MOD( Alert_Days__c ,5) = 3,
+ MOD( Alert_Days__c ,5) = 4), 
+MOD( Alert_Days__c ,5) + 2, 
+MOD( Alert_Days__c ,5)
+) 
+, 
+
+3, /*Thursday */ 
+IF (MOD( Alert_Days__c ,5) = 4,
+MOD( Alert_Days__c ,5) + 2, 
+MOD( Alert_Days__c ,5)
+) 
+, 
+
+4, /*Friday*/ 
+MOD( Alert_Days__c ,5), 
+
+5, /*Saturday*/ 
+MOD( Alert_Days__c ,5) + 1 , 
+
+6, /*Sunday*/ 
+MOD( Alert_Days__c ,5) + 2, 
+
+NULL 
+
+)</formula>
+        <name>Calculate Alert Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Procurement_Status</fullName>
+        <field>Procurement_Status__c</field>
+        <formula>TEXT(Procurement__r.Status)</formula>
+        <name>Populate Procurement Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Calculates Stage%27s End Date Workflow</fullName>
+        <actions>
+            <name>Calculate_Alert_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(  OR( ISCHANGED(Planned_End_Date__c ), ISCHANGED(Alert_Days__c ) ),  AND( ISNEW(), NOT(ISBLANK(Planned_End_Date__c )), NOT(ISBLANK(Alert_Days__c )) )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Stage Created - Populate Procurement Status Workflow</fullName>
+        <actions>
+            <name>Populate_Procurement_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISNEW()</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

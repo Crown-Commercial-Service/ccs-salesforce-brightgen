@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>Assign_to_Customer_Delay</name>
+        <label>Assign to Customer Delay</label>
+        <locationX>631</locationX>
+        <locationY>570</locationY>
+        <assignmentItems>
+            <assignToReference>theCustomerDelaySObject.Customer_Delay_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>What_was_the_reason_for_the_Customer_s_Delay</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>theCustomerDelaySObject.Customer_Delay_Comments__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Comments</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>theCustomerDelaySObject.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>theCustomerDelaySObject.Stop_DateTime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Fast_Update_the_Customer_Delay</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_to_Procurement_Case</name>
+        <label>Assign to Procurement Case</label>
+        <locationX>631</locationX>
+        <locationY>473</locationY>
+        <assignmentItems>
+            <assignToReference>theProcurementCaseSObject.Active_Customer_Delay__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>theProcurementCaseSObject.On_Hold__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_to_Customer_Delay</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>ExistingPicklistChoice</name>
+        <choiceText>&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;{!ReasonPicklistFormula}&lt;/FONT&gt;&lt;/DIV&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>ReasonPicklistFormula</elementReference>
+        </value>
+    </choices>
+    <decisions>
+        <name>Has_Delay_Reason_been_Provided</name>
+        <label>Has Delay Reason been Provided?</label>
+        <locationX>977</locationX>
+        <locationY>475</locationY>
+        <defaultConnector>
+            <targetReference>Assign_to_Procurement_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Delay_Reason_SELECT_A_REASON</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>What_was_the_reason_for_the_Customer_s_Delay</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SELECT A REASON</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>You_Must_Select_a_Delay_Reason</targetReference>
+            </connector>
+            <label>Delay Reason = &apos;SELECT A REASON&apos;</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_there_an_Active_Customer_Delay</name>
+        <label>Is there an Active Customer Delay?</label>
+        <locationX>632</locationX>
+        <locationY>250</locationY>
+        <defaultConnector>
+            <targetReference>There_is_no_Active_Customer_Delay_on_this_Procurement</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Active Delay = FALSE</defaultConnectorLabel>
+        <rules>
+            <name>Active_Delay_TRUE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>theProcurementCaseSObject.Active_Customer_Delay__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Reason_for_Delay</targetReference>
+            </connector>
+            <label>Active Delay = TRUE</label>
+        </rules>
+    </decisions>
+    <description>US547 - Screen Flow to stop a Customer Delay. Launched by button.</description>
+    <dynamicChoiceSets>
+        <name>CustomerDelayReasons</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Customer_Delay_Reason__c</picklistField>
+        <picklistObject>Customer_Delay__c</picklistObject>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>ReasonPicklistFormula</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK(TEXT({!theCustomerDelaySObject.Customer_Delay_Reason__c})),
+&apos;SELECT A REASON&apos;,
+TEXT({!theCustomerDelaySObject.Customer_Delay_Reason__c})
+)</expression>
+    </formulas>
+    <interviewLabel>Stop Customer Delay {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Stop Customer Delay</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Lookup_the_Customer_Delay</name>
+        <label>Lookup the Customer Delay</label>
+        <locationX>629</locationX>
+        <locationY>12</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Fast_Update_to_check_user_permssion_on_Customer_Delay</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>theCustomerDelayIDvariable</elementReference>
+            </value>
+        </filters>
+        <object>Customer_Delay__c</object>
+        <outputReference>theCustomerDelaySObject</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Customer_Delay_Reason__c</queriedFields>
+        <queriedFields>Customer_Delay_Comments__c</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>Stop_DateTime__c</queriedFields>
+        <queriedFields>Procurement__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Lookup_the_Procurement</name>
+        <label>Lookup the Procurement</label>
+        <locationX>630</locationX>
+        <locationY>121</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Fast_Update_to_check_user_permission</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>theProcurementCaseIDvariable</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>theProcurementCaseSObject</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Procurement_Reference__c</queriedFields>
+        <queriedFields>Active_Customer_Delay__c</queriedFields>
+        <queriedFields>On_Hold__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Fast_Update_the_Customer_Delay</name>
+        <label>Fast Update the Customer Delay</label>
+        <locationX>632</locationX>
+        <locationY>660</locationY>
+        <connector>
+            <targetReference>Fast_Update_the_Procurement</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorScreen</targetReference>
+        </faultConnector>
+        <inputReference>theCustomerDelaySObject</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Fast_Update_the_Procurement</name>
+        <label>Fast Update the Procurement</label>
+        <locationX>632</locationX>
+        <locationY>758</locationY>
+        <inputReference>theProcurementCaseSObject</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Fast_Update_to_check_user_permission</name>
+        <label>Fast Update to check user permission</label>
+        <locationX>371</locationX>
+        <locationY>182</locationY>
+        <connector>
+            <targetReference>Is_there_an_Active_Customer_Delay</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorScreen</targetReference>
+        </faultConnector>
+        <inputReference>theProcurementCaseSObject</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Fast_Update_to_check_user_permssion_on_Customer_Delay</name>
+        <label>Fast Update to check user permssion on Customer Delay</label>
+        <locationX>157</locationX>
+        <locationY>12</locationY>
+        <connector>
+            <targetReference>Lookup_the_Procurement</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorScreen</targetReference>
+        </faultConnector>
+        <inputReference>theCustomerDelaySObject</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>ErrorScreen</name>
+        <label>ErrorScreen</label>
+        <locationX>309</locationX>
+        <locationY>658</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ErrorScreenStop</name>
+            <fieldText>ERROR
+
+It has not been possible for you to stop the Customer Delay on this Procurement ({!theCustomerDelaySObject.Procurement_Reference__c})
+
+This is probably because you do not have edit/write permissions on this specific procurement.
+
+If this is not the case, please contact the CCS Salesforce Administrators at SFAdmin@crowncommercial.gov.uk</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Reason_for_Delay</name>
+        <label>Reason for Delay</label>
+        <locationX>632</locationX>
+        <locationY>370</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Has_Delay_Reason_been_Provided</targetReference>
+        </connector>
+        <fields>
+            <name>StopDelayMessage1</name>
+            <fieldText>You are about to stop the current Customer Delay on Procurement {!theProcurementCaseSObject.Procurement_Reference__c}.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>BlankLine1</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>What_was_the_reason_for_the_Customer_s_Delay</name>
+            <choiceReferences>CustomerDelayReasons</choiceReferences>
+            <choiceReferences>ExistingPicklistChoice</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>ExistingPicklistChoice</defaultSelectedChoiceReference>
+            <fieldText>What was the reason for the Customer&apos;s Delay?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>BlankLine2</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Comments</name>
+            <defaultValue>
+                <elementReference>theCustomerDelaySObject.Customer_Delay_Comments__c</elementReference>
+            </defaultValue>
+            <fieldText>Comments</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Blankline3</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>OnHoldMessage</name>
+            <fieldText>If the Procurement is currently &apos;On Hold&apos; then stoppping the Customer Delay will also de-activate this.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>There_is_no_Active_Customer_Delay_on_this_Procurement</name>
+        <label>There is no Active Customer Delay on this Procurement</label>
+        <locationX>873</locationX>
+        <locationY>247</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ThereisnoActiveCustomerDelayMessage</name>
+            <fieldText>This procurement ({!theProcurementCaseSObject.Procurement_Reference__c}) has no active Customer Delay to be stopped.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>You_Must_Select_a_Delay_Reason</name>
+        <label>You Must Select a Delay Reason</label>
+        <locationX>972</locationX>
+        <locationY>360</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Reason_for_Delay</targetReference>
+        </connector>
+        <fields>
+            <name>YouMustSelectaDelayReasonError</name>
+            <fieldText>ERROR: You must select a Reason for the Customer Delay before you can close the Customer Delay.
+
+Click &apos;Next&apos; to continue.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Lookup_the_Customer_Delay</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>theCustomerDelayIDvariable</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>theCustomerDelaySObject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Customer_Delay__c</objectType>
+    </variables>
+    <variables>
+        <name>theProcurementCaseIDvariable</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>theProcurementCaseSObject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

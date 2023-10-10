@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Edit_to_Start_Date_post_Live</fullName>
+    <active>true</active>
+    <description>You cannot update the Start Date of this Framework as the date has passed and the Framework is now Live.</description>
+    <errorConditionFormula>AND(
+PRIORVALUE(Start_Date__c) &lt; TODAY() ,
+(ISCHANGED(Start_Date__c)) &amp;&amp; 
+NOT($Profile.Name = &quot;System Administrator&quot; || $Profile.Name = &quot;CCS System Administrator&quot; || $Profile.Name = &quot;CCS Business Intelligence&quot; ))</errorConditionFormula>
+    <errorMessage>You cannot update the Start Date of this Framework as the date has passed and the Framework is now Live.</errorMessage>
+</ValidationRule>

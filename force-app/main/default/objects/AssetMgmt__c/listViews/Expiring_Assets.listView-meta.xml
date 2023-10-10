@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiring_Assets</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>IA_Gov_Service__c</columns>
+    <columns>IA_Gov_Business_Area__c</columns>
+    <columns>IA_Sup_Days_to_Expiry__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IA_Sup_Days_to_Expiry__c</field>
+        <operation>lessThan</operation>
+        <value>30</value>
+    </filters>
+    <label>Expiring Assets</label>
+</ListView>

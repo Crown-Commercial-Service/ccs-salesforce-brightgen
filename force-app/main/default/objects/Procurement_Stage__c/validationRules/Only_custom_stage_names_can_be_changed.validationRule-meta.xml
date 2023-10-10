@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_custom_stage_names_can_be_changed</fullName>
+    <active>true</active>
+    <description>Only custom stage names can be changed</description>
+    <errorConditionFormula>AND( ISCHANGED(Name),  NOT(ISBLANK(Stage_Id__c) ))</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Only custom stage names can be changed</errorMessage>
+</ValidationRule>

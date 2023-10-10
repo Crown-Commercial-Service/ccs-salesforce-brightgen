@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Delay_Reason__c</fullName>
+    <description>US547</description>
+    <externalId>false</externalId>
+    <label>Customer Delay Reason</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer_Requires_Additional_Approvals</fullName>
+                <default>false</default>
+                <label>Customer Requires Additional Approvals</label>
+            </value>
+            <value>
+                <fullName>Customer_Unavailable</fullName>
+                <default>false</default>
+                <label>Customer Unavailable</label>
+            </value>
+            <value>
+                <fullName>Customer_Missed_Deadline</fullName>
+                <default>false</default>
+                <label>Customer Missed Deadline</label>
+            </value>
+            <value>
+                <fullName>Customer_Requested_Delay</fullName>
+                <default>false</default>
+                <label>Customer Requested Delay</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

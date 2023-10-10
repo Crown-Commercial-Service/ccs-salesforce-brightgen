@@ -1,0 +1,25 @@
+<aura:component implements="forceCommunity:layout" description="PEM Homepage 2:1 | 2:1:1 ratio" access="global">
+    <aura:attribute name="column1" type="Aura.Component[]" required="false" description="Column 1 row 1, width 2/3 "></aura:attribute>
+    <aura:attribute name="column2" type="Aura.Component[]" required="false" description="Column 2 row 1, width 1/3"></aura:attribute>
+    <aura:attribute name="column3" type="Aura.Component[]" required="false" description="Column 1 row 2, width 1/2"></aura:attribute>
+    <aura:attribute name="column4" type="Aura.Component[]" required="false" description="Column 2 row 2, width 1/4"></aura:attribute>
+    <aura:attribute name="column5" type="Aura.Component[]" required="false" description="Column 3 row 2, width 1/4"></aura:attribute>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size--1-of-1 slds-medium-size--2-of-3 slds-large-size--2-of-3 ccs-leftCol">
+            {!v.column1}
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-3 slds-large-size--1-of-3 ccs-rightCol">
+            {!v.column2}
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-3 slds-large-size--1-of-3 slds-first-col">
+            {!v.column3}
+        </div>       
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-3 slds-large-size--1-of-3 slds-middle-col">
+            {!v.column4}
+        </div>
+        <div class="slds-size--1-of-1 slds-medium-size--1-of-3 slds-large-size--1-of-3 slds-last-col">
+            {!v.column5}
+        </div>
+    </div>    
+</aura:component>

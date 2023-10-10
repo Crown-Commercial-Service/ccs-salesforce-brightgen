@@ -1,0 +1,25 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="GOV UK Theme Layout" controller="PEM_Profile_CC" extends="c:PEM_DataComponent">
+    <aura:attribute name="search" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="beta" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="header" type="Aura.Component[]" required="false" description="Placeholder for header component"/>
+    <aura:attribute name="footer" type="Aura.Component[]" required="false" description="Placeholder for footer component"/>    
+    <aura:attribute name="contact_support" type="string" default="Contact support: 0345 410 2222"  description="Portal header title contact support text"/>
+    <aura:attribute name="contact_support_link" type="string" default="tel:+443454102222"  description="Portal header title contact support number link"/>
+    
+    <aura:attribute name="proposition_name" type="string" default="Crown Commercial Service"  description="Portal header title"/>
+    <aura:attribute name="proposition_link" type="string" default="https://www.gov.uk/government/organisations/crown-commercial-service"  description="Portal title link"/>   
+    
+    <div class="slds-grid slds-wrap slds-grid--pull-padded">
+        <div class="slds-p-horizontal--small slds-size--1-of-1"><c:PEM_CookieMessage /></div>
+        <div class="slds-p-horizontal--small slds-size--1-of-1">{!v.header}</div>
+        <div class="slds-p-horizontal--small slds-size--1-of-1 nav">{!v.navBar}</div>   
+        <div class="slds-p-horizontal--small slds-size--1-of-1"><c:PEM_BetaMessage /></div>
+        <div class="slds-p-horizontal--small slds-size--1-of-3"></div>
+        <div class="slds-p-horizontal--small slds-size--1-of-3"></div>
+        <div class="slds-p-horizontal--small slds-size--1-of-3">{!v.profileMenu}</div>
+        <div class="slds-p-horizontal--small slds-size--1-of-1">{!v.body}</div>
+        <div class="slds-p-horizontal--small slds-size--1-of-1">{!v.footer}</div>       
+    </div>
+</aura:component>

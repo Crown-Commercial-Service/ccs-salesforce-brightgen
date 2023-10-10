@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Live</fullName>
+    <active>true</active>
+    <label>Live</label>
+    <picklistValues>
+        <picklist>Relative_Forecast_Year__c</picklist>
+        <values>
+            <fullName>Year 0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Year 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Year 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Year 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Year 4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sector__c</picklist>
+        <values>
+            <fullName>CG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WPS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,7 @@
+<aura:documentation>
+	<aura:description>
+        This is the portal custom search component
+    </aura:description>
+	<aura:example name="PEM_Search" ref="c:PEM_Search" label="Label">        
+    </aura:example>
+</aura:documentation>

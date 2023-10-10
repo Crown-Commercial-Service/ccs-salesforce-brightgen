@@ -1,0 +1,6 @@
+<aura:component >
+	<aura:attribute name="link" type="String" default="/" description="Link"/>
+    <aura:attribute name="label" type="String" default="Link" description="Label"/>
+
+    <a onclick="{!c.navigate}">{!v.label}</a>
+</aura:component>

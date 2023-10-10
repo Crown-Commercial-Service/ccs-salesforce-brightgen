@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_allow_create_if_procurement_owner</fullName>
+    <active>true</active>
+    <description>Only allow procurement owner to create contract if created from procurement</description>
+    <errorConditionFormula>AND(
+ISNEW(),  RecordType.DeveloperName = &quot;Procurement Contract&quot;,
+Created_from_Procurement__c = TRUE,
+ $User.Id &lt;&gt; Procurement__r.OwnerId 
+)</errorConditionFormula>
+    <errorMessage>Only the procurement owner can create a contract</errorMessage>
+</ValidationRule>

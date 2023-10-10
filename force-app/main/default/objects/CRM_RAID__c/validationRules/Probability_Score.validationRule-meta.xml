@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Probability_Score</fullName>
+    <active>true</active>
+    <description>Probability score must be values 1 to 5</description>
+    <errorConditionFormula>Probability__c  &lt; 1 || 
+ Probability__c  &gt; 5</errorConditionFormula>
+    <errorDisplayField>Probability__c</errorDisplayField>
+    <errorMessage>Probability score needs to be a value between 1 and 5 inclusive</errorMessage>
+</ValidationRule>

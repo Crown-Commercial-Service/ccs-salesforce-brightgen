@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCS_Sub_Category__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This is a lookup to the Category object.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Identifies which CCS Sub Category the framework sits in (will affect all reporting in Data Warehouse)</inlineHelpText>
+    <label>CCS Sub Category</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Category__c.CategoryType__c</field>
+            <operation>equals</operation>
+            <value>CCS Sub Category</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Category__c</referenceTo>
+    <relationshipLabel>Frameworks</relationshipLabel>
+    <relationshipName>Master_Framework</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

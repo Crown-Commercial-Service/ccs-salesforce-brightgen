@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tier_and_Managed__c</fullName>
+    <externalId>false</externalId>
+    <label>Tier and Managed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tier 1 Managed</fullName>
+                <default>false</default>
+                <label>Tier 1 Managed</label>
+            </value>
+            <value>
+                <fullName>Tier 1 Non-Managed</fullName>
+                <default>false</default>
+                <label>Tier 1 Non-Managed</label>
+            </value>
+            <value>
+                <fullName>Tier 2 Managed</fullName>
+                <default>false</default>
+                <label>Tier 2 Managed</label>
+            </value>
+            <value>
+                <fullName>Tier 2 Non-Managed</fullName>
+                <default>false</default>
+                <label>Tier 2 Non-Managed</label>
+            </value>
+            <value>
+                <fullName>Tier 3 Managed</fullName>
+                <default>false</default>
+                <label>Tier 3 Managed</label>
+            </value>
+            <value>
+                <fullName>Tier 3 Non-Managed</fullName>
+                <default>false</default>
+                <label>Tier 3 Non-Managed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

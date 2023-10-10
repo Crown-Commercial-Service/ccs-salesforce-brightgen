@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Spend_To_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides the current contract spend to date. N.B CCS may not always have access to this information and therefore this should be updated by the contract manager where available</inlineHelpText>
+    <label>Contract Spend To Date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_SSL_Certificates</fullName>
+    <columns>NAME</columns>
+    <columns>Supplier__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>Remaining_Months__c</columns>
+    <columns>Effective_End_Date__c</columns>
+    <columns>RAG_Status__c</columns>
+    <columns>Business_Area__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>CCS_Contract__c.CCS_Contract</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Pending,Terminated,Expired</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>SSL</value>
+    </filters>
+    <label>All SSL Certificates</label>
+    <sharedTo>
+        <group>RFC_Apps_Infrastructure</group>
+    </sharedTo>
+</ListView>

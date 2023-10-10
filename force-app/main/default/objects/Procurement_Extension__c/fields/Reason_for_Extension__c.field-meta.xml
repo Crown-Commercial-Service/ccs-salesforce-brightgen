@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Extension__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason for Extension</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Potential_Bidders_Required_More_Time</fullName>
+                <default>false</default>
+                <label>Potential Bidders Required More Time</label>
+            </value>
+            <value>
+                <fullName>Evaluation_Period_Extended_Due_to_Number_of_Bids</fullName>
+                <default>false</default>
+                <label>Evaluation Period Extended Due to Number of Bids</label>
+            </value>
+            <value>
+                <fullName>Challenge_Received</fullName>
+                <default>false</default>
+                <label>Challenge Received</label>
+            </value>
+            <value>
+                <fullName>Clarification_Period_Extended_Due _to_Volume_of_Clarifications</fullName>
+                <default>false</default>
+                <label>Clarification Period Extended Due to Volume of Clarifications</label>
+            </value>
+            <value>
+                <fullName>Customer_Changes_Scope_Requires_Extension</fullName>
+                <default>false</default>
+                <label>Customer Changes Scope &amp; Requires Extension</label>
+            </value>
+            <value>
+                <fullName>IT_Issues</fullName>
+                <default>false</default>
+                <label>IT Issues</label>
+            </value>
+            <value>
+                <fullName>Procurement_Re_prioritised_Procurement_Extended</fullName>
+                <default>false</default>
+                <label>Procurement Re-prioritised &amp; Procurement Extended</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regions__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides details as to where the contract is for. The field already has the pre-defined list based on contracts finder</inlineHelpText>
+    <label>Regions</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>North East</fullName>
+                <default>false</default>
+                <label>North East</label>
+            </value>
+            <value>
+                <fullName>North West</fullName>
+                <default>false</default>
+                <label>North West</label>
+            </value>
+            <value>
+                <fullName>Yorkshire and The Humber</fullName>
+                <default>false</default>
+                <label>Yorkshire and The Humber</label>
+            </value>
+            <value>
+                <fullName>East Midlands</fullName>
+                <default>false</default>
+                <label>East Midlands</label>
+            </value>
+            <value>
+                <fullName>West Midlands</fullName>
+                <default>false</default>
+                <label>West Midlands</label>
+            </value>
+            <value>
+                <fullName>East of England</fullName>
+                <default>false</default>
+                <label>East of England</label>
+            </value>
+            <value>
+                <fullName>London</fullName>
+                <default>false</default>
+                <label>London</label>
+            </value>
+            <value>
+                <fullName>South East</fullName>
+                <default>false</default>
+                <label>South East</label>
+            </value>
+            <value>
+                <fullName>South West</fullName>
+                <default>false</default>
+                <label>South West</label>
+            </value>
+            <value>
+                <fullName>Scotland</fullName>
+                <default>false</default>
+                <label>Scotland</label>
+            </value>
+            <value>
+                <fullName>Wales</fullName>
+                <default>false</default>
+                <label>Wales</label>
+            </value>
+            <value>
+                <fullName>Northern Ireland</fullName>
+                <default>false</default>
+                <label>Northern Ireland</label>
+            </value>
+            <value>
+                <fullName>Isle of Man</fullName>
+                <default>false</default>
+                <label>Isle of Man</label>
+            </value>
+            <value>
+                <fullName>Channel Islands</fullName>
+                <default>false</default>
+                <label>Channel Islands</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

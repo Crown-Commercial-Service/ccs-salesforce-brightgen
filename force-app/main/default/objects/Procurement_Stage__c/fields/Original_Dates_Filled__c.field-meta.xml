@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_Dates_Filled__c</fullName>
+    <description>If either original start date or end date has not been entered then set to 0 else 1. Used in roll up summary on case to  determine whether any dates are missing.</description>
+    <externalId>false</externalId>
+    <formula>IF(OR( ISBLANK(Original_Date__c),ISBLANK(Original_End_Date__c)), 0, 1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Original Dates Filled</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

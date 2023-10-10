@@ -1,0 +1,18 @@
+<aura:component implements="forceCommunity:layout" description="Full Width Content" access="global">
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <aura:attribute name="contentArea" type="Aura.Component[]" required="false"></aura:attribute>
+	<div class="grid-row" id="main-content" role="main">
+    	{!v.contentArea}
+    </div>
+</aura:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flesch_Kincaid_Score</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+Flesch_Kincaid_Score__c &gt; 100.00,
+Flesch_Kincaid_Score__c &lt; 0
+)</errorConditionFormula>
+    <errorMessage>Flesch Kincaid score must be between 0.0 and 100.0, up to one decimal place.</errorMessage>
+</ValidationRule>

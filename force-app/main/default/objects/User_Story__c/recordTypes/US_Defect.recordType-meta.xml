@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Defect</fullName>
+    <active>true</active>
+    <description>User Story Defect</description>
+    <label>Defect</label>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Sizing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Story</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Possible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PreProd Quality Assurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quality Assurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for PreProd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refinement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Testing Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Requirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Acceptance Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>US_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approval Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Review Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Review Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production UAT Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production UAT Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA-UAT Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA-UAT Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>US_Category__c</picklist>
+        <values>
+            <fullName>Bug Fix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot Fix %28D2P%29</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Investigation Spike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Maintenance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>US_MOSCOW__c</picklist>
+        <values>
+            <fullName>Could</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Must</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Should</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wont</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>US_Status__c</picklist>
+        <values>
+            <fullName>Deployed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

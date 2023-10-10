@@ -1,0 +1,50 @@
+<apex:page standardController="Master_Framework__c" extensions="bg_Framework_Lot_Related_List_Controller" showHeader="{!fullscreen}" applyHtmlTag="{!fullscreen}" lightningStylesheets="true">
+    <style>
+        .fewerMore { display: none;}
+    </style>
+    <apex:form >
+        <apex:pageMessages />
+        
+        <apex:pageblock >
+            <apex:pageBlockButtons location="top">
+                <apex:commandLink style="text-decoration: none;" styleClass="btn" action="{!newFrameworkLot}" value="New Framework Lot" target="_top"/>
+                <apex:commandLink style="text-decoration: none;" styleClass="btn" action="{!redirectFullscreen}" value="View All" target="_top" rendered="{!!fullscreen}" rerender="redirectPanel"/>
+            </apex:pageBlockButtons>
+            <apex:outputPanel id="redirectPanel" >
+                <apex:outputText rendered="{!shouldRedirect}">
+                    <script type="text/javascript">
+                        window.top.location.href = '{!redirectUrl}';
+                    </script>
+                </apex:outputText>
+            </apex:outputPanel>
+            <apex:outputPanel id="table">
+            <apex:pageblocktable value="{!FrameworkLots}" var="fl" rendered="{!NOT(ISNULL(FrameworkLots))}">
+
+           <apex:column >
+                    <apex:facet name="header">Action</apex:facet>
+                    
+                    <apex:commandLink action="{!editFrameworkLot}" value="Edit" target="_top">
+                        <apex:param name="flid" value="{!fl.id}"/>
+                    </apex:commandLink> &nbsp; | &nbsp;   <apex:commandLink action="{!deleteFrameworkLot}" value="Delete" rendered="{!canDelete}" rerender="table">
+                    <apex:param name="flid" value="{!fl.id}"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column >
+                 <apex:facet name="header" >Name</apex:facet>
+                 <apex:outputLink value="/{!fl.id}"  target="_top">{!fl.Name}</apex:outputLink>
+                </apex:column>   
+                
+                <apex:column value="{!fl.Master_Framework_Lot_Number__c}"/>
+                <apex:column value="{!fl.Nominal_Code__c}"/>
+                <apex:column value="{!fl.Award_Date__c}"/> 
+                <apex:column value="{!fl.Final_Call_off_Date__c}"/>
+                <apex:column value="{!fl.Expiry_Date__c}"/>
+                <apex:column value="{!fl.CB_vs_pre_defined_period__c}"/>
+                <apex:column value="{!fl.CB_vs_previous_year__c}"/>
+                <apex:column value="{!fl.CB_vs_current_comparator__c}"/> 
+            </apex:pageblocktable>
+        </apex:outputPanel>
+        </apex:pageblock>
+    </apex:form>
+
+</apex:page>

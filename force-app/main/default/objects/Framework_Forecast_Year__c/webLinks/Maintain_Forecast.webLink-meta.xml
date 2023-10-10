@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maintain_Forecast</fullName>
+    <availability>online</availability>
+    <description>Redirect to Maintain Forecast Visual force Page</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Maintain Forecast</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>open(&apos;/apex/frameworkForecastEditor?frameworkForecastId={!Framework_Forecast_Year__c.ForecastId__c}&apos;, &apos;_blank&apos;);</url>
+</WebLink>

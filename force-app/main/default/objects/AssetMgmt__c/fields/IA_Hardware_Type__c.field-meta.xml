@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_Hardware_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Hardware Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>IA_Hard_Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Physical Server</fullName>
+                <default>false</default>
+                <label>Physical Server</label>
+            </value>
+            <value>
+                <fullName>Virtual Server</fullName>
+                <default>false</default>
+                <label>Virtual Server</label>
+            </value>
+            <value>
+                <fullName>Desktop Computer</fullName>
+                <default>false</default>
+                <label>Desktop Computer</label>
+            </value>
+            <value>
+                <fullName>Laptop Computer</fullName>
+                <default>false</default>
+                <label>Laptop Computer</label>
+            </value>
+            <value>
+                <fullName>Mobile Telephone</fullName>
+                <default>false</default>
+                <label>Mobile Telephone</label>
+            </value>
+            <value>
+                <fullName>Network Switch</fullName>
+                <default>false</default>
+                <label>Network Switch</label>
+            </value>
+            <value>
+                <fullName>Router</fullName>
+                <default>false</default>
+                <label>Router</label>
+            </value>
+            <value>
+                <fullName>Firewall</fullName>
+                <default>false</default>
+                <label>Firewall</label>
+            </value>
+            <value>
+                <fullName>Printer</fullName>
+                <default>false</default>
+                <label>Printer</label>
+            </value>
+            <value>
+                <fullName>Keyboard/Mouse</fullName>
+                <default>false</default>
+                <label>Keyboard/Mouse</label>
+            </value>
+            <value>
+                <fullName>Monitor</fullName>
+                <default>false</default>
+                <label>Monitor</label>
+            </value>
+            <value>
+                <fullName>Projector</fullName>
+                <default>false</default>
+                <label>Projector</label>
+            </value>
+            <value>
+                <fullName>External Hard Drive</fullName>
+                <default>false</default>
+                <label>External Hard Drive</label>
+            </value>
+            <value>
+                <fullName>VoIP Phone</fullName>
+                <default>false</default>
+                <label>VoIP Phone</label>
+            </value>
+            <value>
+                <fullName>Analogue Phone</fullName>
+                <default>false</default>
+                <label>Analogue Phone</label>
+            </value>
+            <value>
+                <fullName>Spider Phone</fullName>
+                <default>false</default>
+                <label>Spider Phone</label>
+            </value>
+            <value>
+                <fullName>Cloud Server</fullName>
+                <default>false</default>
+                <label>Cloud Server</label>
+            </value>
+            <value>
+                <fullName>Mobile WiFi</fullName>
+                <default>false</default>
+                <label>Mobile WiFi</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Server</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Physical Server</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Server</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Virtual Server</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Server</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Cloud Server</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Client Device</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Desktop Computer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Client Device</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Laptop Computer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Client Device</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Mobile Telephone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Printer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Keyboard/Mouse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Monitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Projector</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>External Hard Drive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>VoIP Phone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Analogue Phone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Spider Phone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral</controllingFieldValue>
+            <valueName>Mobile WiFi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Network Devices</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Network Switch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Network Devices</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Router</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Network Devices</controllingFieldValue>
+            <controllingFieldValue>Managed Service</controllingFieldValue>
+            <valueName>Firewall</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

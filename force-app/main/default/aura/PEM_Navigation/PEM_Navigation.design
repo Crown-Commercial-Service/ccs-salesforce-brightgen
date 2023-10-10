@@ -1,0 +1,14 @@
+<design:component label="GDS Standard Navigation Bar">
+	<design:attribute name="item1Name" label="Item 1 Name"/>
+    <design:attribute name="item1URL" label="Item 1 URL"/>
+ 	<design:attribute name="item2Name" label="Item 2 Name"/>
+    <design:attribute name="item2URL" label="Item 2 URL"/>
+	<design:attribute name="item3Name" label="Item 3 Name"/>
+    <design:attribute name="item3URL" label="Item 3 URL"/>
+	<design:attribute name="item4Name" label="Item 4 Name"/>
+    <design:attribute name="item4URL" label="Item 4 URL"/>
+	<design:attribute name="item5Name" label="Item 5 Name"/>
+    <design:attribute name="item5URL" label="Item 5 URL"/>
+	<design:attribute name="item6Name" label="Item 6 Name"/>
+    <design:attribute name="item6URL" label="Item 6 URL"/>    
+</design:component>

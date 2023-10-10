@@ -1,0 +1,30 @@
+<apex:page >
+
+    <apex:includeScript value="/support/console/22.0/integration.js"/>
+
+    <script type="text/javascript">
+        function openMassEmailTab() {
+            //Open a new primary tab with the Mass Email toolkit
+            sforce.console.openPrimaryTab(null, '/ui/massmail/MassMailStageManager?setupid=MassMailFilter&mm_type=Contact&wizardRetUrl=%2F003%2Fo', true, 
+                'Mass Email', openSuccess, 'massEmailTab');
+            
+        }
+        
+        var openSuccess = function openSuccess(result) {
+            //Report whether opening the new tab was successful
+            if (result.success == true) {
+                console.log('Tab opened successfuly');
+            } else {
+                console.log('Tab could not be opened.');
+            }
+        };
+        
+    </script>
+
+    <div style="padding-top: 10px;">
+        <h1>Please click on the following link for Mass Email functionality.</h1>
+        <br/>
+        <br/>
+        <apex:outputLink value="#" id="theLink" onclick="openMassEmailTab();return false">Mass Email</apex:outputLink>
+    </div>
+</apex:page>

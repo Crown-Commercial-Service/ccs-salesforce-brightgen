@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;
+      &lt;strong&gt;Welcome to CCS &amp;nbsp;&lt;/strong&gt;better buying solutions for the public sector.&lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.gov.uk/government/collections/ccs-brochures&quot; title=&quot;Read the CCS brochures article&quot;&gt;&lt;img alt=&quot;A fan display of front cover of a range of CCS brochures&quot; src=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/48550/s630_Brochures.jpg&quot;&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:189;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column1</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;
+      &lt;strong&gt;Quick Links&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;p&gt;CMP&lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;http://ccs-agreements.cabinetoffice.gov.uk/procurement-pipeline&quot; target=&quot;_blank&quot;&gt;Procurement Pipeline&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://crowncommercialservice.bravosolution.co.uk/web/login.shtml&quot; target=&quot;_blank&quot;&gt;eSourcing&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://itportal.decc.gov.uk/eng/fox/live/PORTAL_LOGIN/login&quot; target=&quot;_blank&quot;&gt;Energy Portal&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://gpsfleetportal.cabinetoffice.gov.uk/&quot; target=&quot;_blank&quot;&gt;Fleet Portal&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.gov.uk/guidance/emarketplace-a-guide-for-public-sector-buyers&quot; target=&quot;_blank&quot;&gt;E-Catalogue&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.digitalmarketplace.service.gov.uk/&quot; target=&quot;_blank&quot;&gt;Digital Marketplace&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;Procurement Request&lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:195;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column2</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Brochures from the Crown Commercial Service (CCS) providing information about the organisation and the range of goods and services available through CCS.&lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.gov.uk/guidance/nhs-improvement-approved-health-temporary-staff-frameworks&quot; title=&quot;Read the CCS health temporary staff frameworks article&quot;&gt;&lt;img alt=&quot;group of smiling medical staff&quot; src=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/44271/s300_group_of_smiling_medical_staff.jpg&quot;&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;17 October 2016&amp;nbsp;&amp;mdash; Guidance&lt;/p&gt;
+    &lt;h2&gt;
+      &lt;a href=&quot;https://www.gov.uk/guidance/nhs-improvement-approved-health-temporary-staff-frameworks&quot;&gt;CCS health temporary staff frameworks&lt;/a&gt;
+    &lt;/h2&gt;
+    &lt;p&gt;Information for NHS trusts on the Crown Commercial Service (CCS) health temporary staff frameworks approved by NHS Improvement.&lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:192;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText8</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column3</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Intellegi quidem, ut propter aliam quampiam rem, verbi Non modo carum sibi quemque, verum etiam vehementer carum esse?&lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:198;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column4</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Intellegi quidem, ut propter aliam quampiam rem, verbi Non modo carum sibi quemque, verum etiam vehementer carum esse?&lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:201;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column5</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>header</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;span style=&quot;font-size:26px&quot;&gt;&lt;strong&gt;COOKIES&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;The Crown Commercial Service (CCS) puts small files (known as ‘cookies’) onto your computer to collect information about how you browse the site.&lt;/p&gt; 
+&lt;p&gt;Cookies are used to:&lt;/p&gt; 
+&lt;p&gt;&amp;middot; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;measure how you use the website so it can be updated and improved based on your needs&lt;/p&gt; 
+&lt;p&gt;&amp;middot; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;remember the notifications you’ve seen so that we don’t show them to you again&lt;/p&gt; 
+&lt;p&gt;You’ll normally see a message on the site before we store a cookie on your computer.&lt;/p&gt; 
+&lt;p&gt;Find out more about &lt;a href=&quot;http://www.aboutcookies.org/&quot;&gt;how to manage cookies.&lt;/a&gt;&lt;/p&gt; 
+&lt;h2&gt;How cookies are used on the CCS portal&lt;/h2&gt; 
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt; 
+&lt;h3&gt;Managing your access and experience&lt;/h3&gt; 
+&lt;p&gt;We use cookies to provide you with a better website experience, manage access/use of the system and provide you with features and functionality. &amp;nbsp;For instance, we use cookies to ensure you’re accessing the system from a trusted computer, and that you see features and information relevant to you.&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;colgroup&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+ &lt;/colgroup&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;sid&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;We use this to remember if you’re logged in as you browse the site.&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;1 day&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;oid&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;We use this to track the service so we can make sure the site maintains good performance.&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;2 years&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;pctrk&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This helps us count how many people have looked at a page.&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;1 year&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;JSESSIONID&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;We use this cookie to keep track of what we’ve shown you. &amp;nbsp;It remembers your interactions, so you don’t have to repeat them.&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;When you close your browser&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;context&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Used to store the current page context, so it doesn’t refresh the page each time you do something. &amp;nbsp;It remembers the history of the page.&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;When you close your browser&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;browserId&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This is the browser identifier, used for checking that your requests are coming from you and not being intercepted.&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;1 year&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;h3&gt;&lt;strong&gt;Measuring website usage (Google Analytics)&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;We use Google Analytics software to collect information about how you use CCS. We do this to help make sure the site is meeting the needs of its users and to help us make improvements, eg &lt;a href=&quot;https://insidegovuk.blog.gov.uk/2015/03/26/new-tool-to-see-trending-searches/&quot;&gt;improving site search.&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;Google Analytics stores information about:&lt;/p&gt; 
+&lt;p&gt;&amp;middot; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;the pages you visit on CCS&lt;/p&gt; 
+&lt;p&gt;&amp;middot; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;how long you spend on each CCS page&lt;/p&gt; 
+&lt;p&gt;&amp;middot; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;how you got to the site&lt;/p&gt; 
+&lt;p&gt;&amp;middot; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;what you click on while you’re visiting the site&lt;/p&gt; 
+&lt;p&gt;We don’t collect or store your personal information (eg your name or address) so this information can’t be used to identify who you are.&lt;/p&gt; 
+&lt;p&gt;We don’t allow Google to use or share our analytics data.&lt;/p&gt; 
+&lt;p&gt;Google Analytics sets the following cookies:&lt;/p&gt; 
+&lt;h4&gt;&lt;strong&gt;Universal Analytics&lt;/strong&gt;&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;colgroup&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+ &lt;/colgroup&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;_ga&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This helps us count how many people visit CCS by tracking if you’ve visited before&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;2 years&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;_gat&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Used to manage the rate at which page view requests are made&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;10 minutes&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h4&gt;&amp;nbsp;&lt;/h4&gt; 
+&lt;h4&gt;&lt;strong&gt;Google Analytics&lt;/strong&gt;&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;colgroup&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+ &lt;/colgroup&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;_utma&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Like _ga, this lets us know if you’ve visited before, so we can count how many of our visitors are new to CCS or to a certain page&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;2 years&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;_utmb&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This works with _utmc to calculate the average length of time you spend on CCS&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;30 minutes&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;_utmc&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This works with _utmb to calculate when you close your browser&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;when you close your browser&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;_utmz&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This tells us how you reached CCS (eg from another website or a search engine)&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;6 months&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h4&gt;&amp;nbsp;&lt;/h4&gt; 
+&lt;h4&gt;&amp;nbsp;&lt;/h4&gt; 
+&lt;p&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;h4&gt;&lt;strong&gt;CCS events&lt;/strong&gt;&lt;/h4&gt; 
+&lt;table&gt; 
+ &lt;colgroup&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+ &lt;/colgroup&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;analytics_next_page_call&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This lets us know the next page you visit on CCS, so we can make journeys better&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;when you close your browser&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;govuk_contact_referrer&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This lets us know the last page you visited before using the contact CCS form&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;1 day&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;You can &lt;a href=&quot;https://tools.google.com/dlpage/gaoptout&quot;&gt;opt out of Google Analytics cookies.&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;h4&gt;&lt;strong&gt;Our introductory message&lt;/strong&gt;&lt;/h4&gt; 
+&lt;p&gt;You may see a pop-up welcome message when you first visit CCS. We’ll store a cookie so that your computer knows you’ve seen it and knows not to show it again.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;colgroup&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+ &lt;/colgroup&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;seen_cookie_message&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Saves a message to let us know that you’ve seen our cookie message&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;3 months&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;h4&gt;YouTube videos&lt;/h4&gt; 
+&lt;p&gt;We use YouTube to provide videos on some pages of the site. YouTube sets cookies when you visit one of these pages.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;colgroup&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+ &lt;/colgroup&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;Name&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Purpose&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Expires&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;_use_hitbox&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;This is a randomly generated number that identifies your browser&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;When you close your browser&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;VISITOR_INFO1_LIVE&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Lets Youtube count the views of embedded Youtube videos&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;9 months&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;h4&gt;Other services&lt;/h4&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;This policy is for CCS only. &amp;nbsp;When you go to a service run by a different organisation, they may have their own cookies policy.&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;h4&gt;Browser upgrade prompt&lt;/h4&gt; 
+&lt;p&gt;We log a cookie the first time you visit CCS to let us know you’ve visited once.&lt;/p&gt; 
+&lt;p&gt;If you’re using an out-of-date browser the next time you visit, we’ll show you a message suggesting you upgrade.&lt;/p&gt; 
+&lt;p&gt;We’ll also save a cookie that lets us know you don’t want to see the prompt if you dismiss it.&lt;/p&gt; 
+&lt;table&gt; 
+ &lt;colgroup&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+  &lt;col /&gt; 
+ &lt;/colgroup&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;govuk_not_first_visit&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Stops us prompting you to upgrade an out-of-date browser until after your first visit&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;28 days&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt; &lt;p&gt;govuk_browser_upgrade_dismissed&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Saves a message to let us know you’ve seen and dismissed the browser upgrade prompt&lt;/p&gt; &lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;28 days&lt;/p&gt; &lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; 
+&lt;p&gt;Last updated: 16 November 2016&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>content</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>footer</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Cookie Policy</masterLabel>
+    <template>
+        <name>siteforce:sldsOneColLayout</name>
+    </template>
+    <type>CommAppPage</type>
+</FlexiPage>

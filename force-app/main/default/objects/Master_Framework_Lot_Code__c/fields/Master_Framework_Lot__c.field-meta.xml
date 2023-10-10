@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Framework_Lot__c</fullName>
+    <description>Associate relevant Framework Lot with this record</description>
+    <externalId>false</externalId>
+    <label>Framework Lot</label>
+    <referenceTo>Master_Framework_Lot__c</referenceTo>
+    <relationshipLabel>Framework Lot Codes</relationshipLabel>
+    <relationshipName>Codes_For_Master_Framework_Lot</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

@@ -1,0 +1,15 @@
+.THIS {
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (min-width: 641px) {
+    
+    .THIS {
+        padding: 40px;
+    }
+    
+    .THIS p {
+        font-size: 22px;
+    }
+}

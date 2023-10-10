@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>US_Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assessment</fullName>
+                <default>false</default>
+                <label>Assessment</label>
+            </value>
+            <value>
+                <fullName>Awaiting Sizing</fullName>
+                <default>false</default>
+                <label>Awaiting Sizing</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>New Story</fullName>
+                <default>false</default>
+                <label>New Story</label>
+            </value>
+            <value>
+                <fullName>Not Possible</fullName>
+                <default>false</default>
+                <label>Not Possible</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Ready</fullName>
+                <default>false</default>
+                <label>Ready</label>
+            </value>
+            <value>
+                <fullName>Refinement</fullName>
+                <default>false</default>
+                <label>Refinement</label>
+            </value>
+            <value>
+                <fullName>Quality Assurance</fullName>
+                <default>false</default>
+                <label>Quality Assurance</label>
+            </value>
+            <value>
+                <fullName>User Acceptance Testing</fullName>
+                <default>false</default>
+                <label>User Acceptance Testing</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Working</fullName>
+                <default>false</default>
+                <label>Working</label>
+            </value>
+            <value>
+                <fullName>Ready for PreProd</fullName>
+                <default>false</default>
+                <label>Ready for PreProd</label>
+            </value>
+            <value>
+                <fullName>PreProd Quality Assurance</fullName>
+                <default>false</default>
+                <label>PreProd Quality Assurance</label>
+            </value>
+            <value>
+                <fullName>Ready for Production</fullName>
+                <default>false</default>
+                <label>Ready for Production</label>
+            </value>
+            <value>
+                <fullName>Ready for QA</fullName>
+                <default>false</default>
+                <label>Ready for QA</label>
+            </value>
+            <value>
+                <fullName>Training Requirement</fullName>
+                <default>false</default>
+                <label>Training Requirement</label>
+            </value>
+            <value>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+                <label>Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Testing Failed</fullName>
+                <default>false</default>
+                <label>Testing Failed</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>In Testing</controllingFieldValue>
+            <valueName>Quality Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Testing</controllingFieldValue>
+            <controllingFieldValue>Deployed</controllingFieldValue>
+            <valueName>User Acceptance Testing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Testing</controllingFieldValue>
+            <controllingFieldValue>Deployed</controllingFieldValue>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>Rejected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Testing</controllingFieldValue>
+            <valueName>Ready for PreProd</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Testing</controllingFieldValue>
+            <valueName>PreProd Quality Assurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Testing</controllingFieldValue>
+            <valueName>Ready for Production</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In Testing</controllingFieldValue>
+            <controllingFieldValue>Deployed</controllingFieldValue>
+            <valueName>Testing Failed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Deployed</controllingFieldValue>
+            <valueName>Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In-Development</controllingFieldValue>
+            <valueName>Assessment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In-Development</controllingFieldValue>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>On Hold</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In-Development</controllingFieldValue>
+            <valueName>Working</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>In-Development</controllingFieldValue>
+            <valueName>Ready for QA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>Awaiting Sizing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>Duplicate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>New Story</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>Not Possible</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>Ready</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>Refinement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>Training Requirement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Started</controllingFieldValue>
+            <valueName>Withdrawn</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

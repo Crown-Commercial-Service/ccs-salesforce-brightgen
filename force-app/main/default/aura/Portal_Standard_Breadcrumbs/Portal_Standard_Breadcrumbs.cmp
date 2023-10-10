@@ -1,0 +1,48 @@
+<aura:component implements="force:hasRecordId" access="global">
+    
+    <aura:attribute name="recordId" type="String" />
+   
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <nav class="grid-row breadcrumbs" aria-label="breadcrumbs">
+        <h2 class="visuallyhidden">You are here:</h2>
+        
+        <!-- If it’s a news article -->
+        <aura:if isTrue="{!v.newsArticle.Title}">
+                
+            <ol>
+                <li><c:Portal_Standard_LinkComponent linkURL="/news" linkText="News"/></li>
+                <li>{!v.newsArticle.Title}</li>
+            </ol>
+            
+            <!-- ELSE (i.e. if help article) -->
+            <aura:set attribute="else">       
+                
+            <ol>
+                <li><c:Portal_Standard_LinkComponent linkURL="/help-support" linkText="Help and support"/></li>
+                
+                <!-- If helpt article is part of a framework -->
+                <aura:if isTrue="{!v.helpArticle.Way_to_Buy_Type__c == 'Framework'}">
+                    <li><c:Portal_Standard_LinkComponent linkURL="/article/frameworks" linkText="Frameworks"/></li>
+                </aura:if>
+                <li>{!v.helpArticle.Title}</li>
+            </ol>
+                
+            </aura:set>
+        </aura:if>
+    </nav>
+    
+
+
+</aura:component>

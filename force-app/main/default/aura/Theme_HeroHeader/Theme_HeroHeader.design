@@ -1,0 +1,3 @@
+<design:component label="Hero Header Theme">
+	<design:attribute name="headerURL" description="Header Image URL"/>
+</design:component>

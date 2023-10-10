@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAAAB_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>CAAAB Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gate 0 - Mandate</fullName>
+                <default>false</default>
+                <label>Gate 0 - Mandate</label>
+            </value>
+            <value>
+                <fullName>Gate 1 - OBC</fullName>
+                <default>false</default>
+                <label>Gate 1 - OBC</label>
+            </value>
+            <value>
+                <fullName>Gate 2 - FBC</fullName>
+                <default>false</default>
+                <label>Gate 2 - FBC</label>
+            </value>
+            <value>
+                <fullName>Gate 3 - ITT Dispatch</fullName>
+                <default>false</default>
+                <label>Gate 3 - ITT Dispatch</label>
+            </value>
+            <value>
+                <fullName>Gate 4 - Award</fullName>
+                <default>false</default>
+                <label>Gate 4 - Award</label>
+            </value>
+            <value>
+                <fullName>Agreement Live</fullName>
+                <default>false</default>
+                <label>Agreement Live</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

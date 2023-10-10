@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flesch_Kincaid_Score__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide Flesch Kincaid Score, between 0.0 - 100.0, to indicate readability of article</inlineHelpText>
+    <label>Flesch Kincaid Score</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

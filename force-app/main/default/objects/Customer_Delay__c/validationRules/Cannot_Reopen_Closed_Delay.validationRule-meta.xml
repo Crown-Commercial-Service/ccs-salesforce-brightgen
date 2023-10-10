@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Reopen_Closed_Delay</fullName>
+    <active>true</active>
+    <description>US547.  You cannot re-open (re-start) a previously closed Customer Delay.  Start a new Customer Delay instead.</description>
+    <errorConditionFormula>AND(
+  TEXT(Status__c) = &apos;Open&apos;,
+  TEXT( PRIORVALUE(Status__c)) = &apos;Closed&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot re-open (re-start) a previously closed Customer Delay.  Start a new Customer Delay instead.</errorMessage>
+</ValidationRule>

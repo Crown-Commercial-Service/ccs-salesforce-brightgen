@@ -1,0 +1,5 @@
+<design:component label="Community Link">
+	<design:attribute name="linkURL" required="true" description="Link URL"/>
+    <design:attribute name="linkText" required="true" description="Link Text"/>
+    <design:attribute name="linkClass" required="false" description="Link Class"/>
+</design:component>

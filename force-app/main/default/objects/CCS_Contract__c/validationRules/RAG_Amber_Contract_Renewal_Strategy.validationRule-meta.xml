@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RAG_Amber_Contract_Renewal_Strategy</fullName>
+    <active>true</active>
+    <description>RAG Status is Amber and Contract Renewal Strategy is blank</description>
+    <errorConditionFormula>AND(RecordType.Id = &quot;012b00000001Bgv&quot;,  RAG_Amber_Trigger__c = TRUE &amp;&amp;   ISBLANK( Renewal_or_Replacement_Strategy__c ) )</errorConditionFormula>
+    <errorDisplayField>Renewal_or_Replacement_Strategy__c</errorDisplayField>
+    <errorMessage>RAG Status is Amber and Contract Renewal Strategy is blank</errorMessage>
+</ValidationRule>

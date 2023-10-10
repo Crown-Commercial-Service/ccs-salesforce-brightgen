@@ -1,0 +1,13 @@
+<aura:component >
+	<aura:attribute name="link" type="String" default="" access="public"/>
+	<aura:attribute name="label" type="String" default="" access="public"/>
+	<aura:attribute name="checkboxLabel" type="String" default="" access="public"/>
+
+	<aura:registerEvent name="PEM_AcceptTermsAndConditions" type="c:PEM_AcceptTermsAndConditions"/>
+
+	<div>
+		<ui:inputCheckbox aura:id="checkbox" change="{!c.onChecked}" class="checkbox"/>
+		<label>{#v.checkboxLabel}</label>
+		<a href="{#v.link}" target="_BLANK" class="link">{#v.label}</a>
+	</div>
+</aura:component>

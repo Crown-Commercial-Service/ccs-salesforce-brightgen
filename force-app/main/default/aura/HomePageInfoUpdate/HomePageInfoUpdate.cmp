@@ -1,0 +1,28 @@
+<aura:component implements="flexipage:availableForAllPageTypes"
+                controller="HomePageInfoCtrl">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="customText" type="string"/>
+    
+    <lightning:card iconName="standard:custom" variant="base" title="Update Messages from the System Administrator" >
+        <aura:set attribute="actions">
+            <lightning:button class="slds-theme_brand" variant="brand" label="Save" onclick="{!c.saveChanges}" ></lightning:button>
+        </aura:set>
+        <div class="slds-card__body_inner">
+            <lightning:layout>
+                <lightning:layoutItem flexibility="grow">
+                    <div  class="slds-p-bottom_small">
+                        <p>You can use the Rich Text area below to update all Home Pages that have the HomePage Information component:</p>
+                    </div>
+                    <lightning:inputRichText value="{!v.customText}" aura:id="richTextInput"  
+                        formats="['font', 'size', 'bold', 'italic', 'underline',
+                            'strike', 'list', 'indent', 'align',
+                            'clean', 'table', 'header', 'color']"> >
+                    </lightning:inputRichText>
+                </lightning:layoutItem>
+            </lightning:layout></div>
+    </lightning:card>
+    
+    
+    
+</aura:component>

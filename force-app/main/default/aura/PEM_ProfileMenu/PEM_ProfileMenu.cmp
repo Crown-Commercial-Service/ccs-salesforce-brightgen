@@ -1,0 +1,65 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,forceCommunity:profileMenuInterface" controller="PEM_Profile_CC" access="global" description="PEM Profile Menu Component" extends="c:PEM_DataComponent">
+    
+    <aura:attribute name="currentUser" type="User" default="{sobjectType:'User'}"/>
+    <aura:attribute name="SSOOnly" type="boolean" default="true"/>
+    
+    <aura:attribute name="item1Name" type="string" default="My profile" description="Item 1 label"/>
+    <aura:attribute name="item1URL" type="string" default="/profile/:userId" description="Item 1 URL"/>
+    <aura:attribute name="item2Name" type="string" default="My settings" description="Item 2 label"/>
+    <aura:attribute name="item2URL" type="string" default="/settings/:userId" description="Item 2 URL"/>
+    <aura:attribute name="item3Name" type="string" default="" description="Item 3 label"/>
+    <aura:attribute name="item3URL" type="string" default="" description="Item 3 URL"/>
+    <aura:attribute name="item4Name" type="string" default="" description="Item 4 label"/>
+    <aura:attribute name="item4URL" type="string" default="" description="Item 4 URL"/>
+    
+    <aura:attribute name="logoutName" type="string" default="Log out" description="Logout label"/>
+    <aura:attribute name="logoutURL" type="string" default="/secur/logout.jsp" description="Logout URL"/>
+    
+    <aura:attribute name="loginName" type="string" default="Sign in" description="login name"/>
+    <aura:attribute name="loginURL" type="string" default="/s/login" description="login URL"/>
+    <aura:attribute name="registerName" type="string" default="Register" description="register name"/>
+    <aura:attribute name="registerURL" type="string" default="/s/login/SelfRegister" description="register URL"/> 
+    
+    <aura:attribute name="errorMessage" type="String" required="false" description="" access="private" default=""/>
+    <aura:attribute name="errorMessages" type="List" required="false" description="" access="private" default="[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div id="error">
+        <aura:iteration var="message" items="{!v.errorMessages}">
+            <ui:outputRichText value="{!message}"/>
+        </aura:iteration>
+    </div>
+    
+    <aura:if isTrue="{!v.currentUser.UserType!='Guest'}">
+        <ui:menu >
+            <ui:menuTriggerLink aura:id="trigger" label="Profile Menu">   
+                
+                <div class="selfServiceProfileMenuTrigger">
+                    <img class="profileIcon" alt="" src="{!v.currentUser.SmallPhotoUrl}" title="Profile Menu"/>
+                    <force:outputField class="profileName" aura:id="userName" value="{!v.currentUser.Name}"/>          
+                    <lightning:icon class="triggerDownArrow down-arrow" iconName="utility:down" size="x-small" alternativeText="select"/>
+                </div>        
+            </ui:menuTriggerLink>
+            
+            <ui:menuList class="actionMenu" aura:id="actionMenu">
+                <aura:if isTrue="{!v.SSOOnly}">
+                    <aura:if isTrue="{!v.logoutName!=''}"><ui:actionMenuItem aura:id="logout" label="{!v.logoutName}" click="{!c.navigateTo}"/></aura:if>
+                    <aura:set attribute="else">
+                        <aura:if isTrue="{!v.item1Name!=''}"><ui:actionMenuItem aura:id="item1" label="{!v.item1Name}" click="{!c.navigateTo}"/></aura:if>
+                        <aura:if isTrue="{!v.item2Name!=''}"><ui:actionMenuItem aura:id="item2" label="{!v.item2Name}" click="{!c.navigateTo}"/></aura:if>
+                        <aura:if isTrue="{!v.item3Name!=''}"><ui:actionMenuItem aura:id="item3" label="{!v.item3Name}" click="{!c.navigateTo}"/></aura:if>
+                        <aura:if isTrue="{!v.item4Name!=''}"><ui:actionMenuItem aura:id="item4" label="{!v.item4Name}" click="{!c.navigateTo}"/></aura:if>
+                        <aura:if isTrue="{!v.logoutName!=''}"><ui:actionMenuItem aura:id="logout" label="{!v.logoutName}" click="{!c.navigateTo}"/></aura:if>
+                    </aura:set>
+                </aura:if>
+            </ui:menuList>
+            
+        </ui:menu>
+        <aura:set attribute="else">
+            <ul>
+                <li><ui:outputURL class="heading-small" value="{!v.loginURL}" label="{!v.loginName}"/></li>
+                <li><ui:outputURL class="heading-small" value="{!v.registerURL}" label="{!v.registerName}"/></li>
+            </ul>    
+        </aura:set>
+    </aura:if>
+</aura:component>

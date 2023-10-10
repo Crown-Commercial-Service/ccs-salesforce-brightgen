@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role__c</fullName>
+    <externalId>false</externalId>
+    <label>Role</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SLT</fullName>
+                <default>false</default>
+                <label>SLT</label>
+            </value>
+            <value>
+                <fullName>Category Lead</fullName>
+                <default>false</default>
+                <label>Category Lead</label>
+            </value>
+            <value>
+                <fullName>CG Lead</fullName>
+                <default>false</default>
+                <label>CG Lead</label>
+            </value>
+            <value>
+                <fullName>WPS Lead</fullName>
+                <default>false</default>
+                <label>WPS Lead</label>
+            </value>
+            <value>
+                <fullName>Customer Team</fullName>
+                <default>false</default>
+                <label>Customer Team</label>
+            </value>
+            <value>
+                <fullName>Marcoms</fullName>
+                <default>false</default>
+                <label>Marcoms</label>
+            </value>
+            <value>
+                <fullName>CXD Hub</fullName>
+                <default>false</default>
+                <label>CXD Hub</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

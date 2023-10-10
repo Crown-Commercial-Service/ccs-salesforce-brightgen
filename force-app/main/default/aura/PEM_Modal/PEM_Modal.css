@@ -1,0 +1,7 @@
+.THIS .slds-modal__content {
+    padding: 10px !important;
+}
+.THIS .slds-modal__container {
+    margin: 0 auto;   
+    max-width: 80rem;
+}

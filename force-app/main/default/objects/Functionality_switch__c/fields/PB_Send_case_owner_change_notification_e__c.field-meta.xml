@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PB_Send_case_owner_change_notification_e__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>PB_Send_case_owner_change_notification_e</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

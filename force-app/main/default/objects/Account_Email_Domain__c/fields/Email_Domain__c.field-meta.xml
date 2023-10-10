@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Domain__c</fullName>
+    <description>Lookup to the Email Domain record</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If you want to search by a Domain (or anything other than the Email Domain #) you need to click on the Magnifying Glass icon, then tick the &apos;All Fields&apos; button underneath the search box. You can then search for domains or any other Email Domain field.</inlineHelpText>
+    <label>Email Domain Name</label>
+    <referenceTo>PEM_Email_Domain__c</referenceTo>
+    <relationshipLabel>Account Email Domains</relationshipLabel>
+    <relationshipName>Account_Email_Domains</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

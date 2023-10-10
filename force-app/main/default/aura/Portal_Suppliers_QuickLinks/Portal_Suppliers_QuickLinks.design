@@ -1,0 +1,27 @@
+<design:component label="Suppliers - Quick Links">
+    
+    <design:attribute name="link1Text" required="true" label="Link 1 Text" description="Link 1 Text"/>
+    <design:attribute name="link1URL" required="true" label="Link 1 URL" description="Link 1 URL"/>
+    <design:attribute name="link1Description" required="true" label="Link 1 Description" description="Link 1 Description"/>
+    
+    <design:attribute name="link2Text" required="false" label="Link 2 Text" description="Link 2 Text"/>
+    <design:attribute name="link2URL" required="false" label="Link 2 URL" description="Link 2 URL"/>
+    <design:attribute name="link2Description" required="false" label="Link 2 Description" description="Link 2 Description"/>
+    
+    <design:attribute name="link3Text" required="false" label="Link 3 Text" description="Link 3 Text"/>
+    <design:attribute name="link3URL" required="false" label="Link 3 URL" description="Link 3 URL"/>
+    <design:attribute name="link3Description" required="false" label="Link 3 Description" description="Link 3 Description"/>
+    
+    <design:attribute name="link4Text" required="false" label="Link 4 Text" description="Link 4 Text"/>
+    <design:attribute name="link4URL" required="false" label="Link 4 URL" description="Link 4 URL"/>
+    <design:attribute name="link4Description" required="false" label="Link 4 Description" description="Link 4 Description"/>
+    
+    <design:attribute name="link5Text" required="false" label="Link 5 Text" description="Link 5 Text"/>
+    <design:attribute name="link5URL" required="false" label="Link 5 URL" description="Link 5 URL"/>
+    <design:attribute name="link5Description" required="false" label="Link 5 Description" description="Link 5 Description"/>
+    
+    <design:attribute name="link6Text" required="false" label="Link 6 Text" description="Link 6 Text"/>
+    <design:attribute name="link6URL" required="false" label="Link 6 URL" description="Link 6 URL"/>
+    <design:attribute name="link6Description" required="false" label="Link 6 Description" description="Link 6 Description"/>
+    
+</design:component>

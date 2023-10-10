@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Close_Without_Delay_Reason</fullName>
+    <active>true</active>
+    <description>US547.  A Customer Delay cannot be closed unless a Customer Delay Reason has been provided.</description>
+    <errorConditionFormula>AND(
+ ISBLANK( TEXT(Customer_Delay_Reason__c) ),
+ TEXT ( Status__c ) = &apos;Closed&apos;
+)</errorConditionFormula>
+    <errorMessage>A Customer Delay cannot be closed unless a Customer Delay Reason has been provided.</errorMessage>
+</ValidationRule>

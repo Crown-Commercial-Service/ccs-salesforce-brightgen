@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Stage__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Next Stage</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Procurement_Stage__c.Procurement__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Procurement__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Procurement_Stage__c</referenceTo>
+    <relationshipLabel>Procurement Stages</relationshipLabel>
+    <relationshipName>Previous_Stages</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

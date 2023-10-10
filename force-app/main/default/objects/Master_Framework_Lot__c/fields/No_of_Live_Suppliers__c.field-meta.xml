@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Live_Suppliers__c</fullName>
+    <description>Number of associated suppliers where Status = Live</description>
+    <externalId>false</externalId>
+    <label>No of Live Suppliers</label>
+    <summaryFilterItems>
+        <field>Supplier_Framework_Lot__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Live</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Supplier_Framework_Lot__c.Master_Framework_Lot__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

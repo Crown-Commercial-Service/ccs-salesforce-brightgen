@@ -1,0 +1,26 @@
+.THIS .column-middle {
+    text-align: left;
+	width: 360px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-family: helvetica;
+}
+
+.THIS {
+    color: #000000 !important;
+}
+
+.THIS .headerbox {
+    color: #000000 !important;
+    background-color: #FFFFFF;
+    padding: 20px !important;
+    margin-bottom: 30px;
+}
+
+.THIS .content {
+    padding: 20px;
+}

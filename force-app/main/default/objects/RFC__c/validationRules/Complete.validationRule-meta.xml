@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complete</fullName>
+    <active>true</active>
+    <description>Authorised users to complete RFC only.</description>
+    <errorConditionFormula>AND( ISPICKVAL( RFC_Status__c, &apos;Completed&apos;) &amp;&amp; NOT($User.Department = &quot;Apps &amp; Infrastructure&quot; || $Profile.Name = &quot;CCS System Administrator&quot; ))</errorConditionFormula>
+    <errorMessage>You do not have permission to complete this Change Request.</errorMessage>
+</ValidationRule>

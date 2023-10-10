@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAS_P_Sub_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>CAS-P Sub Category</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Category__c.CategoryType__c</field>
+            <operation>equals</operation>
+            <value>CAS Sub Category</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Category__c</referenceTo>
+    <relationshipLabel>Procurement Sub Categories</relationshipLabel>
+    <relationshipName>Procurement_Sub_Categories</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

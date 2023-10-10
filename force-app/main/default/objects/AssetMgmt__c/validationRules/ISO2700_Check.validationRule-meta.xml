@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISO2700_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>IA_Gov_ISO27001__c = True &amp;&amp; ISBLANK( IA_Gov_ISO27001_Certificate__c)</errorConditionFormula>
+    <errorDisplayField>IA_Gov_ISO27001_Certificate__c</errorDisplayField>
+    <errorMessage>Please specify an ISO2700 certificate number for this asset.</errorMessage>
+</ValidationRule>

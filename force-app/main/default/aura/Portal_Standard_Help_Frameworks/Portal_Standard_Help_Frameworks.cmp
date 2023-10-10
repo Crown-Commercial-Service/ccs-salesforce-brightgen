@@ -1,0 +1,4 @@
+<aura:component implements="force:hasRecordId" access="global">
+
+
+</aura:component>

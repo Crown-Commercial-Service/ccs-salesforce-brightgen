@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows creation and amendment of Knowledge articles (but not publish) 
+
+Permissions included:
+Manage Articles
+Manage Salesforce Knowledge 
+Create, Edit to Help Topics/Training Objects
+- Note this will need to be updated for each Article Type</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Manage Articles and Knowledge</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewArchivedArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewDraftArticles</name>
+    </userPermissions>
+</PermissionSet>

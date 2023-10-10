@@ -1,0 +1,21 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <div class="beta-banner">
+        <div class="center-blk">
+            <div class="beta-text">BETA</div><div class="beta-message">Please give us your <c:Portal_Standard_LinkComponent linkURL="https://www.surveymonkey.co.uk/r/ZHV7B2S" linkId="beta-banner-link" linkText="feedback"/> so we can improve this site</div>
+        </div>
+	</div>
+    
+</aura:component>

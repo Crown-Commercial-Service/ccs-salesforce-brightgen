@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAQ_Question__c</fullName>
+    <description>The question to which the FAQ article provides the answer.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The question to which the FAQ article provides the answer.</inlineHelpText>
+    <label>Question</label>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

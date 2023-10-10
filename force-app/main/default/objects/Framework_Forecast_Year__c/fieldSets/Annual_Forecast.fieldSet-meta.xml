@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Forecast</fullName>
+    <description>Used in Framework Forecast Year creation and editing in visualforce pages for relative years which require the 12 month fields.</description>
+    <displayedFields>
+        <field>Annual__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Annual Forecast</label>
+</FieldSet>

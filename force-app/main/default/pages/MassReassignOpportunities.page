@@ -1,0 +1,474 @@
+<apex:page controller="MassReassignOpportunitiesController" tabStyle="Opportunity" standardStylesheets="true" sidebar="false" showHeader="false" applyBodyTag="false" docType="html-5.0">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>  
+        <apex:stylesheet value="{!URLFOR($Resource.MassReassignOpportunitiesAssets, 'SLDS212/assets/styles/salesforce-lightning-design-system.min.css')}" />
+        
+        <style>
+            html, body, h2, label, input, select, a, body .btn{
+                font-family: "Salesforce Sans",Arial,sans-serif;
+            }
+            .slds-form-element__control{
+            
+            }
+            body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock{
+                background-color: transparent;
+                border: none; 
+            } 
+            .pbBody{
+                margin: 0px !important;
+            }
+            body .bRelatedList .pbBody table.list, body .apexp .pbBody table.list {
+                border-top: 0px;
+            }
+            .pbTitle{
+                display: none;
+            }
+            .slds-card__footer a{
+                color: #0070d2;
+                text-decoration: none;
+                transition: color .1s linear;
+            }
+            .dateFormat a {
+                color: #0070d2;
+                text-decoration: none;
+                transition: color .1s linear;
+            }
+            .slds-button--neutral{
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                border: 1px solid #d8dde6 !important;
+                background-color: #fff !important;
+                font-weight: normal !important;
+            }
+            .slds-button {    
+                background: #fff !important;
+                background-clip: border-box !important;    
+                border-radius: .25rem !important;
+                font-size: .75rem !important;    
+                color: #0070d2 !important;
+                -webkit-appearance: none !important; 
+                height: 32px;
+                line-height: 24px;
+            }
+            .slds-button:hover {   
+                background: #f4f6f9 !important;  
+            }
+            a.slds-input{
+                position: absolute;
+                margin-left: -30px;
+                width: 20px;
+                border: 0px;
+                background: transparent;            
+                background-image: url('{!URLFOR($Resource.MassReassignOpportunitiesAssets, 'SLDS212/assets/icons/utility/search_60.png')}') !important;
+                background-size: 48% 48%;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            a.slds-input:active, .slds-input:focus{
+                background-color: transparent;
+                box-shadow: none;   
+            }
+            .mWidth{
+                max-width: 300px;
+            }
+            .dateOnlyInput input {
+                width: 6em;
+                width: 100%;
+                width: calc(100% - 76px);
+            }
+           .inputStyle select {
+                min-width: 190px;
+                padding-left: .5rem;
+                padding-right: 1.5rem;
+                background-color: #fff;
+                color: #16325c;
+                border: 1px solid #d8dde6;
+                border-radius: .25rem;
+                width: 200px;
+                transition: border .1s linear,background-color .1s linear;
+                height: calc(1.875rem + (1px * 2));
+            }
+            .inputStyle input {
+                min-width: 200px;
+                background-color: #fff;
+                color: #16325c;
+                border: 1px solid #d8dde6;
+                border-radius: .25rem;
+                width: 290px;
+                transition: border .1s linear,background-color .1s linear;
+                display: inline-block;
+                padding: 0 1rem 0 .75rem;
+                line-height: 1.875rem;
+                min-height: calc(1.875rem + (1px * 2));
+            }
+            .inputStyle .lookupInput a {
+                position: absolute;
+                margin-left: -30px;
+                width: 20px;
+                border: 0px;
+                background: transparent;            
+                background-image: url('{!URLFOR($Resource.MassReassignOpportunitiesAssets, 'SLDS212/assets/icons/utility/search_60.png')}') !important;
+                background-size: 70% 70%;
+                background-repeat: no-repeat;
+                background-position: center center;         
+                margin-top: 6px;
+            }
+            .lookupIcon{
+                background-image: none;
+            }
+            .lookupIconOn{
+                background-image: none;
+            }
+            .headerRow{
+                font-size: .75rem !important;
+                line-height: 1.25;
+                color: #54698d !important;
+                text-transform: uppercase;
+                letter-spacing: .0625rem;
+                font-weight: 400 !important;
+                padding: .5rem !important;
+                white-space: nowrap !important;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                border-left: none !important;
+                background: #fff !important;
+            }
+            .slds-table--cell-buffer tr>th:first-child {
+                padding-left: 1.5rem !important;
+            }
+            .totalRow{
+                background-color: #fff !important;
+                font-weight: 600 !important;
+                font-family: "Salesforce Sans",Arial,sans-serif;
+                border-left: none !important;
+                border-right: none !important;
+            }
+            .resultsTable .dataCell{
+                font-family: "Salesforce Sans",Arial,sans-serif;
+            }
+            .mainTitle{
+                font-family: "Salesforce Sans",Arial,sans-serif;
+            }
+            .slds-select_container .slds-select {
+                -moz-appearance: menulist  !important;
+                -webkit-appearance: menulist  !important;
+                height: 32px;
+            }
+            .slds-select_container:before {
+                border-bottom: 0px solid #061c3f;
+            }
+            .slds-select_container:after {
+                border-top: 0px solid #061c3f;
+            }            
+            .message{
+                background-color: transparent;  
+            }
+            .message.infoM3 {               
+                border-color: #d8dde6;              
+            }
+            .warningM3{
+                border-color: #d8dde6;
+            }
+            .message .messageText {    
+                font-family: "Salesforce Sans",Arial,sans-serif;
+            }
+            .warningM3 .msgIcon{
+                background-image: url('{!URLFOR($Resource.MassReassignOpportunitiesAssets, 'SLDS212/assets/icons/utility/warning_60.png')}');
+                background-size: 100% 100%;
+            }
+            .infoM3 .msgIcon{
+                background-image: url('{!URLFOR($Resource.MassReassignOpportunitiesAssets, 'SLDS212/assets/icons/utility/info_60.png')}');
+                background-size: 100% 100%;
+            }
+            .fLeft{
+                float: left;
+            }
+            .resultsTable {
+                border: none !important;
+            }
+        </style>
+    </head>
+        
+    <body>       
+        <div class="slds slds-p-around--medium"> 
+            <apex:form id="idForm">
+                <div class="slds-text-heading--medium">{!$Label.HeaderText}</div>                
+                <apex:pageBlock >
+                    <apex:pageMessages />
+                    <div class="slds-p-top--small slds-text-title">{!$Label.SearchBlockTitle}</div>
+                    <div class="slds-card slds-m-around--medium">
+                        <div class="slds-card__header slds-grid">
+                            <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                                <div class="slds-media__figure">
+                                    <div class="slds-icon slds-icon-standard-groups">
+                                        <img src="{!URLFOR($Resource.MassReassignOpportunitiesAssets, 'SLDS212/assets/icons/standard/orders_60.png')}" />
+                                    </div>
+                                </div>
+                                <div class="slds-media__body slds-truncate">
+                                    <h2>
+                                        <a href="javascript:void(0);" class="slds-text-link--reset">
+                                            <span class="slds-text-heading--small">{!$Label.ViewSearchSection}</span>
+                                        </a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-card__body">
+                            <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--cell-buffer">
+                                <tbody>
+                                    <tr>                                        
+                                        <td>
+                                            <div class="slds-form-element__control">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="{!$Label.DisplayViewLabel}"/>
+                                                <div class="slds-select_container">
+                                                    <apex:selectList styleClass="slds-select" value="{!filterId}" size="1">
+                                                        <apex:actionSupport event="onchange" action="{!refreshOptyList}" rerender="idForm"/>
+                                                        <apex:selectOptions value="{!listviewoptions}"/> 
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                        </td>   
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                        <div class="slds-card__footer">
+                            <apex:outputLink value="/ui/list/FilterEditPage?ftype=o&retURL=/apex/MassReassignOpportunities&cancelURL=/apex/MassReassignOpportunities">
+                                {!$Label.NewViewLinkLabel}
+                            </apex:outputLink>
+                        </div>
+                    </div>              
+                                    
+                    <div class="slds-card slds-m-around--medium">  
+                        <div class="slds-card__header slds-grid">
+                            <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                                <div class="slds-media__figure">
+                                    <div class="slds-icon slds-icon-standard-groups">
+                                        <img src="{!URLFOR($Resource.MassReassignOpportunitiesAssets, 'SLDS212/assets/icons/standard/topic_60.png')}" />
+                                    </div>
+                                </div>
+                                <div class="slds-media__body slds-truncate">
+                                    <h2>
+                                        <a href="javascript:void(0);" class="slds-text-link--reset">
+                                            <span class="slds-text-heading--small">{!$Label.CriteriaSearchSection}</span>
+                                        </a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-card__body">                            
+                            <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--cell-buffer">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="{!$ObjectType.Opportunity.fields.Name.Label}" />
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputfield styleClass="slds-input" value="{!searchRecord.Name}" required="false"/>                                                    
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td colspan="2">
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="{!$ObjectType.Opportunity.fields.StageName.Label}" />
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <apex:inputfield styleClass="slds-select" value="{!searchRecord.StageName}" required="false"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>                                        
+                                    </tr>                                    
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="{!$ObjectType.Opportunity.fields.type.Label}" />
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <apex:inputfield styleClass="slds-select" value="{!searchRecord.type}" required="false"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>  
+                                        <td colspan="2">
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="{!$ObjectType.Opportunity.fields.AccountId.Label}" />
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputfield styleClass="slds-input" value="{!searchRecord.AccountId}" required="false"/>                                                    
+                                                </div>
+                                            </div>
+                                        </td>                                        
+                                    </tr>                                    
+                                    <tr>
+                                        <td>
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="{!$ObjectType.Opportunity.fields.CreatedDate.Label}" />
+                                            </div>
+                                        </td>  
+                                        <td>
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="From" />
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputfield styleClass="slds-input mWidth" value="{!helperRecord.From__c}" required="false"/>                                                    
+                                                </div>
+                                            </div>
+                                        </td> 
+                                        <td>
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="{!$Label.CloseDateCriteriaLabel}" />
+                                            </div>
+                                        </td>  
+                                        <td>
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="From" />
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputfield styleClass="slds-input mWidth" value="{!helperRecord.ClosedDate_From__c}" required="false"/>                                                    
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>  
+                                        <td>
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="To" />
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputfield styleClass="slds-input mWidth" value="{!helperRecord.To__c}" required="false"/>                                                    
+                                                </div>
+                                            </div>
+                                        </td> 
+                                        <td></td>  
+                                        <td>
+                                            <div class="slds-form-element">
+                                                <apex:outputLabel styleClass="slds-form-element__label" value="To" />
+                                                <div class="slds-form-element__control">
+                                                    <apex:inputfield styleClass="slds-input mWidth" value="{!helperRecord.ClosedDate_To__c}" required="false" />                                                    
+                                                </div>
+                                            </div>
+                                        </td>   
+                                    </tr>
+                                </tbody>
+                            </table> 
+                        </div>                        
+                        <div class="slds-card__footer">
+                            <div class="slds-no-flex">
+                                <apex:outputpanel >
+                                    <apex:actionstatus id="search">
+                                        <apex:facet name="start">
+                                            <apex:commandbutton value="{!$Label.SearchingBtn}" styleClass="slds-button slds-button--neutral" disabled="true"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                            <apex:commandbutton value="{!$Label.SearchBtn}" styleClass="slds-button slds-button--neutral" action="{!refreshOptyListBySearch}" status="search" rerender="idForm"/>
+                                        </apex:facet>                    
+                                    </apex:actionstatus>
+                                </apex:outputpanel>  
+                            </div>
+                        </div>
+                    </div>                    
+                </apex:pageBlock>
+                
+                <apex:pagemessage severity="warning" strength="2" title="{!$Label.TooManyRowsTitle}" summary="{!$Label.TooManyRowsSummary}" rendered="{!tooManyResults}"/>
+                <apex:pagemessage severity="info" strength="2" title="{!$Label.AssignSuccessTitle}" summary="{!$Label.AssignSuccessSummary}" rendered="{!isSuccess}"/>  
+                <apex:pagemessage severity="info" strength="2" title="{!$Label.NoResultTitle}" summary="{!$Label.NoResultSummary}" rendered="{!AND(optyListSize=0,NOT(isSuccess),searchPerformed)}"/>   
+                  
+                
+                    <div class="slds-card slds-m-around--medium">
+                        <div class="slds-card__header slds-grid">
+                            <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                                <div class="slds-media__figure">
+                                    <div class="slds-icon slds-icon-standard-groups">
+                                        <img src="{!URLFOR($Resource.MassReassignOpportunitiesAssets, 'SLDS212/assets/icons/standard/opportunity_60.png')}" />
+                                    </div>
+                                </div>
+                                <div class="slds-media__body slds-truncate">
+                                    <h2>
+                                        <a href="javascript:void(0);" class="slds-text-link--reset">
+                                            <span class="slds-text-heading--small">{!$Label.ResultBlockTitle}</span>
+                                        </a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-card__body"> 
+                            <apex:pageblock title="" id="idResultatBlock" rendered="{!optyListSize>0}">
+                                <apex:pagemessages />
+                            <apex:pageblockbuttons location="top">
+                                <div class="slds-form-element">
+                                    <apex:outputlabel styleClass="slds-form-element__label" value="{!$Label.AssignToBtn}"/>
+                                    <div>
+                                        <apex:inputfield styleClass="inputStyle fLeft" value="{!helperRecord.Assign_to__c}"/>
+                                        <div class="fLeft">                                     
+                                            
+                                            <apex:actionstatus id="assignStatus">
+                                                <apex:facet name="start">
+                                                    <apex:commandbutton value="{!$Label.AssigningBtn}" styleClass="slds-button slds-button--neutral" action="{!Assign}" disabled="true" status="assignStatus" rerender="idForm"/>
+                                                </apex:facet>
+                                                <apex:facet name="stop">
+                                                    <apex:commandbutton value="{!$Label.AssignBtn}" styleClass="slds-button slds-button--neutral" action="{!Assign}" status="assignStatus" rerender="idForm"/>
+                                                </apex:facet>
+                                            </apex:actionstatus>
+                                        </div> 
+                                    </div>
+                                </div>                                                
+                            </apex:pageblockbuttons>
+                    
+                            <apex:pageblocktable value="{!optyList}" var="line" id="idResultatBlockTable" styleClass="resultsTable slds-table slds-table--bordered slds-table--cell-buffer">
+                                <apex:column >                        
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-checkbox">
+                                                <apex:inputCheckbox value="{!line.selected}" id="theCheck" />
+                                                <apex:outputlabel styleClass="slds-checkbox__label" value="" for="theCheck">
+                                                    <span class="slds-checkbox--faux"></span>
+                                                    <span class="slds-form-element__label"></span>
+                                                </apex:outputlabel>
+                                            </span>
+                                        </div>
+                                    </div>                     
+                                    
+                                    <apex:facet name="header">
+                                        <div class="slds-form-element">
+                                            <div class="slds-form-element__control">
+                                                <span class="slds-checkbox">
+                                                    <input type="checkbox" id="checkAll" onclick="selectAll(this,'{!$Component.idResultatBlockTable}');"/>
+                                                    <label class="slds-checkbox__label" for="checkAll">
+                                                        <span class="slds-checkbox--faux"></span>
+                                                        <span class="slds-form-element__label"></span>
+                                                    </label>
+                                                </span>
+                                            </div>                                    
+                                        </div>
+                                        <script>
+                                        function selectAll(el,parentElementId){
+                                            var inputCB = document.getElementById(parentElementId).getElementsByTagName("input");
+                                            for(var i=0; i<inputCB.length; i++){
+                                                inputCB[i].checked = el.checked;                                    
+                                            }                               
+                                        }
+                                        </script>
+                                    </apex:facet>
+                                </apex:column>
+                                <apex:column value="{!line.oOpty.Name}"/>
+                                <apex:column value="{!line.oOpty.StageName}"/>
+                                <apex:column value="{!line.oOpty.OwnerId}">
+                                    <apex:facet name="footer">
+                                        <apex:outputlabel styleClass="slds-text-title--caps" value="{!$Label.TotalFooterLabel}"/>
+                                    </apex:facet>
+                                </apex:column>
+                                <apex:column value="{!line.oOpty.CloseDate}">
+                                    <apex:facet name="footer">
+                                        <apex:outputtext styleClass="slds-text-title--caps" value="{!optyListSize}"/>
+                                    </apex:facet>
+                                </apex:column>
+                            </apex:pageblocktable>  
+                                </apex:pageblock> 
+                        </div>
+                        <div class="slds-card__footer">
+                            <div class="slds-no-flex" />
+                        </div>                            
+                    </div>
+            </apex:form>
+        </div>
+    </body>
+</html>
+</apex:page>

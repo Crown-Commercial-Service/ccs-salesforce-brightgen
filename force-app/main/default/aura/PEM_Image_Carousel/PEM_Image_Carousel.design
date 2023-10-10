@@ -1,0 +1,17 @@
+<design:component label="PEM Image Carousel">
+  <!-- Image One -->
+  <design:attribute name="image1Title" label="Image 1 Title" default="Image 1 Title" description="Title to overlay on the image."/>
+  <design:attribute name="image1ImageURL" label="Image 1 Image URL" default="https://unsplash.it/900/400?random" description="Images should be larger than 900 x 400 pixels."/>
+  <design:attribute name="image1ClickURL" label="Image 1 URL" default="#" description="URL to open when clicked."/>
+  <design:attribute name="image1NewTab" label="Image 1 Open in new Tab?" default="false" description="Check to open this page in a new tab?"/>
+  <!-- Image Two -->
+  <design:attribute name="image2Title" label="Image 2 Title" default="Image 2 Title" description="Title to overlay on the image."/>
+  <design:attribute name="image2ImageURL" label="Image 2 Image URL" default="https://unsplash.it/900/400?random" description="Images should be larger than 900 x 400 pixels."/>
+  <design:attribute name="image2ClickURL" label="Image 2 URL" default="#" description="URL to open when clicked."/>
+  <design:attribute name="image2NewTab" label="Image 2 Open in new Tab?" default="false" description="Check to open this page in a new tab?"/>
+  <!-- Image Three -->
+  <design:attribute name="image3Title" label="Image 3 Title" default="Image 3 Title" description="Title to overlay on the image."/>
+  <design:attribute name="image3ImageURL" label="Image 3 Image URL" default="https://unsplash.it/900/400?random" description="Images should be larger than 900 x 400 pixels."/>
+  <design:attribute name="image3ClickURL" label="Image 3 URL" default="#" description="URL to open when clicked."/>
+  <design:attribute name="image3NewTab" label="Image 3 Open in new Tab?" default="false" description="Check to open this page in a new tab?"/>
+</design:component>

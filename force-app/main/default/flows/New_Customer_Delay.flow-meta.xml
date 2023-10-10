@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Is_there_already_an_Active_Customer_Delay_on_the_Procurement_Case</name>
+        <label>Is there already an Active Customer Delay on the Procurement Case?</label>
+        <locationX>492</locationX>
+        <locationY>93</locationY>
+        <defaultConnector>
+            <targetReference>Already_an_Active_Customer_Delay</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Active Customer Delay = True</defaultConnectorLabel>
+        <rules>
+            <name>Active_Customer_Delay_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>theProcurementCaseSObject.Active_Customer_Delay__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>What_is_Status_of_Procurement_Case</targetReference>
+            </connector>
+            <label>Active Customer Delay = False</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Start_DateTime_is_in_the_Future</name>
+        <label>Start DateTime is in the Future?</label>
+        <locationX>815</locationX>
+        <locationY>502</locationY>
+        <defaultConnector>
+            <targetReference>Create_New_Customer_Delay</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Start_DateTime_is_Future</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Customer_Delay_Start_DateTime</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Start_DateTime_cannot_be_in_Future</targetReference>
+            </connector>
+            <label>Start DateTime is Future</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_Status_of_Procurement_Case</name>
+        <label>What is Status of Procurement Case?</label>
+        <locationX>495</locationX>
+        <locationY>260</locationY>
+        <defaultConnector>
+            <targetReference>Procurement_is_not_In_Progress</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other (not In Progress)</defaultConnectorLabel>
+        <rules>
+            <name>In_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>theProcurementCaseSObject.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Customer_Delay</targetReference>
+            </connector>
+            <label>In Progress</label>
+        </rules>
+    </decisions>
+    <description>US547 - Screen Flow to create a new Customer Delay record.  Launched by button.</description>
+    <dynamicChoiceSets>
+        <name>ReasonPicklistChoices</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Customer_Delay_Reason__c</picklistField>
+        <picklistObject>Customer_Delay__c</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>New Customer Delay {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>New Customer Delay</label>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_New_Customer_Delay</name>
+        <label>Create New Customer Delay</label>
+        <locationX>493</locationX>
+        <locationY>506</locationY>
+        <assignRecordIdToReference>theNewCustomerDelayObjectIDvariable</assignRecordIdToReference>
+        <faultConnector>
+            <targetReference>ErrorScreen1</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Customer_Delay_Comments__c</field>
+            <value>
+                <elementReference>Comments</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Delay_Put_Procurement_on_Hold__c</field>
+            <value>
+                <elementReference>PutProcurementOnHold</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Procurement_Stage__c</field>
+            <value>
+                <elementReference>theProcurementCaseSObject.Stage_with_seq__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Procurement__c</field>
+            <value>
+                <elementReference>theProcurementCaseIDvariable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Start_DateTime__c</field>
+            <value>
+                <elementReference>Customer_Delay_Start_DateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Customer_Delay__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Lookup_the_Procurement_Case</name>
+        <label>Lookup the Procurement Case</label>
+        <locationX>242</locationX>
+        <locationY>95</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Fast_Update_to_Check_User_Permission</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>theProcurementCaseIDvariable</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>theProcurementCaseSObject</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Status</queriedFields>
+        <queriedFields>Active_Customer_Delay__c</queriedFields>
+        <queriedFields>On_Hold__c</queriedFields>
+        <queriedFields>Procurement_Reference__c</queriedFields>
+        <queriedFields>Stage_with_seq__c</queriedFields>
+        <queriedFields>Latest_Customer_Delay__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Fast_Update_to_Check_User_Permission</name>
+        <label>Fast Update to Check User Permission</label>
+        <locationX>244</locationX>
+        <locationY>193</locationY>
+        <connector>
+            <targetReference>Is_there_already_an_Active_Customer_Delay_on_the_Procurement_Case</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ErrorScreen1</targetReference>
+        </faultConnector>
+        <inputReference>theProcurementCaseSObject</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Already_an_Active_Customer_Delay</name>
+        <label>Already an Active Customer Delay</label>
+        <locationX>819</locationX>
+        <locationY>90</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>AlreadyanActiveCustomerDelayMessage1</name>
+            <fieldText>There is already an active Customer Delay on this Procurement ({!theProcurementCaseSObject.Procurement_Reference__c}), so you cannot start another one.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>ErrorScreen1</name>
+        <label>ErrorScreen1</label>
+        <locationX>246</locationX>
+        <locationY>502</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Fault</name>
+            <fieldText>ERROR
+
+It has not been possible for you to create a new Customer Delay on this Procurement ({!theProcurementCaseSObject.Procurement_Reference__c}).
+
+This is probably because you do not have edit/write permissions on this specific procurement.
+
+If this is not the case, please contact the CCS Salesforce Administrators on SFAdmin@crowncommercial.gov.uk</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>New_Customer_Delay</name>
+        <label>New Customer Delay</label>
+        <locationX>494</locationX>
+        <locationY>391</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Start_DateTime_is_in_the_Future</targetReference>
+        </connector>
+        <fields>
+            <name>NewCustomerDelayMessage1</name>
+            <fieldText>You are about to create a new Customer Delay record on Procurement {!theProcurementCaseSObject.Procurement_Reference__c}.
+
+You can amend the Start DateTime (if you are recording a Delay that began in the past), or leave it as &apos;now&apos;.
+
+You can also enter any initial comments at this point.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Customer_Delay_Start_DateTime</name>
+            <dataType>DateTime</dataType>
+            <defaultValue>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </defaultValue>
+            <fieldText>Customer Delay Start DateTime</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Blanklinex</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Comments</name>
+            <fieldText>Comments</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>BlankLine1</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>PutOnHoldMessage</name>
+            <fieldText>Tick the box below if you also want to put this Procurement &apos;On Hold&apos;.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>PutProcurementOnHold</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <booleanValue>false</booleanValue>
+            </defaultValue>
+            <fieldText>Put Procurement &apos;On Hold&apos;?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Procurement_is_not_In_Progress</name>
+        <label>Procurement is not In Progress</label>
+        <locationX>820</locationX>
+        <locationY>257</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ProcurementnotInProgressMessage0</name>
+            <fieldText>This procurement ({!theProcurementCaseSObject.Procurement_Reference__c}) has the status {!theProcurementCaseSObject.Status}.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>ProcurementnotInProgressMessage2</name>
+            <fieldText>You cannot start a new Customer Delay unless the status of the Procurement is &apos;In Progress&apos;.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Start_DateTime_cannot_be_in_Future</name>
+        <label>Start DateTime cannot be in Future</label>
+        <locationX>817</locationX>
+        <locationY>389</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>New_Customer_Delay</targetReference>
+        </connector>
+        <fields>
+            <name>StartDateTimeFutureMessage</name>
+            <fieldText>ERROR: You cannot set the Start of a Customer Delay for a DateTime that is in the future.
+
+You have set the Start DateTime to {!Customer_Delay_Start_DateTime}
+
+Click &apos;Next&apos; to continue.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Lookup_the_Procurement_Case</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>theNewCustomerDelayObjectIDvariable</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>theProcurementCaseIDvariable</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>theProcurementCaseSObject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,170 @@
+<apex:page controller="UserStoryKanbanController" standardStylesheets="false" showHeader="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" lightningStylesheets="True">
+        <html>
+            <head>
+                <meta charset="utf-8" />
+                <meta http-equiv="x-ua-compatible" content="ie=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                
+                <title>User Stories</title>
+                
+                <link type="text/css" href="https://www.lightningdesignsystem.com/assets/styles/salesforce-lightning-design-system.css" rel="stylesheet" />
+                <!-- <link type="text/css" href="https://www.lightningdesignsystem.com/assets/styles/slds.css" rel="stylesheet" /> -->
+                <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+                <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+                
+                <style type="text/css">
+                    body {
+                        padding: 1em;
+                    }
+                    .slds-item {
+                        box-shadow: 0 0 10px gray;
+                        border: none !important;
+                        background-color: #fff;
+                        border-radius: 0 !important;
+                        border-left: 5px solid #56aadf !important;
+                    }
+                    .slds-title {
+                        border-radius: 3px;
+                        background-color: #e0e5ee;
+                        border: 1px solid #d8dde6;
+                        cursor: move;
+                    }
+                     .slds-title-red {
+                        border-radius: 3px;
+                        background-color: #f9b3b3;
+                        border: 1px solid #f9b3b3;
+                        cursor: move;
+                    }
+                    .slds-col {
+                        height: auto;
+                        overflow-y: auto;
+                        border-left: 1px solid whitesmoke;
+                    }
+                    .slds-item-placeholder {
+                        border: 2px dotted gray !important;
+                        height: 5rem;
+                    }
+                    .moving-card {
+                        opacity: 0.5;
+                        transform: rotate( -5deg );
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="slds">
+                    <!--Page Header-->
+                    <div class="slds-page-header slds-m-bottom--small" role="banner">
+                        <div class="slds-media slds-media--center">
+                            <div class="slds-media__body">
+                                <p class="slds-page-header__title slds-truncate slds-align-middle slds-text-heading--large">
+                                    <strong><i class="fa fa-code" aria-hidden="true"></i>&nbsp;Kanban <a href="/{!sprint.Sprint_Workstream__r.Id}">{!sprint.Sprint_Workstream__r.Name}</a> > <a href="/{!sprint.Id}">{!sprint.Name}</a> </strong>
+                                </p>
+                                <p class="slds-text-body--small page-header__info">Days Left In Sprint: <strong>{!sprint.Sprint_Days_to_Completion__c}</strong></p>
+                                <p class="slds-text-body--small page-header__info">Number of Stories: <strong>{!sprint.Sprint_Stories__c}</strong></p>
+                                <p class="slds-text-body--small page-header__info">Status: <strong>{!sprint.Sprint_Status__c}</strong> / Plan Estimate: <strong>{!sprint.Sprint_Plan_Estimate__c}</strong></p>                            
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--Kanban Column Headers-->
+                    <div class="slds-grid">
+                        <div class="slds-tabs--path" role="application">
+                            <ul class="slds-tabs--path__nav" role="tablist">
+                                <apex:repeat value="{!storyStatuses}" var="status">
+                                    <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                        <a class="slds-tabs--path__link" tabindex="-1" role="tab" href="javascript:void(0);">
+                                            <span class="slds-tabs--path__title slds-text-heading--medium">{!status.label}</span>
+                                        </a>
+                                    </li>
+                                </apex:repeat>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!--Kanban Columns-->
+                    <div class="slds-grid">
+                        <apex:repeat value="{!storyStatuses}" var="status">
+                            <div class="slds-col slds-size--1-of-4 slds-has-dividers--around-space slds-scrollable--y" name="{!status.value}">
+                                <apex:repeat value="{!allStories[status.value]}" var="story">
+                                    <div class="slds-item slds-m-around--small" id="{!story.Id}">
+                                        <div class="slds-tile slds-tile--board">
+                                            <apex:outputPanel layout="block" rendered="{!story.US_Blocked__c}"> 
+                                            <h3 class="slds-section-title--divider slds-m-bottom--small slds-title-red">
+                                                <a href="/{!story.Id}">
+                                                    <i class="fa fa-window-close fa-fw" aria-hidden="true"></i>&nbsp;{!story.Name}
+                                                </a>
+                                            </h3>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel layout="block" rendered="{!(!story.US_Blocked__c)}"> 
+                                            <h3 class="slds-section-title--divider slds-m-bottom--small slds-title">
+                                                <a href="/{!story.Id}">
+                                                    <i class="fa fa-quote-right fa-fw" aria-hidden="true"></i>&nbsp;{!story.Name}
+                                                </a>
+                                            </h3>
+                                            </apex:outputPanel>
+                                            
+         
+                                            <div class="slds-tile__detail slds-text-body--small">
+                                                <p class="slds-truncate">
+                                                    <i class="fa fa-commenting-o fa-fw" aria-hidden="true"></i>&nbsp;<strong>{!story.US_Subject__c}</strong>
+                                                </p>
+                                                <p class="slds-truncate">
+                                                    <i class="fa fa-code-fork fa-fw" aria-hidden="true"></i>&nbsp;{!story.US_Category__c}
+                                                </p>                                            
+                                                <p class="slds-truncate">
+                                                    <i class="fa fa-refresh fa-fw" aria-hidden="true"></i>&nbsp;{!story.Stage__c}
+                                                </p>
+                                                <p class="slds-truncate">
+                                                    <i class="fa fa-calendar-check-o fa-fw" aria-hidden="true"></i>&nbsp;{!story.US_Plan_Estimate__c}
+                                                </p>
+                                                <p class="slds-truncate">
+                                                    <i class="fa fa-tasks fa-fw" aria-hidden="true"></i>&nbsp;{!story.US_MOSCOW__c}
+                                                </p>
+                                                <p class="slds-truncate">
+                                                    <i class="fa fa-user fa-fw" aria-hidden="true"></i>&nbsp;Developer: {!story.US_Developer__r.Name}
+                                                </p>  
+                                                <p class="slds-truncate">
+                                                    <i class="fa fa-user-o fa-fw" aria-hidden="true"></i>&nbsp;Tester: {!story.US_Tester__c}
+                                                </p>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </apex:repeat>
+                            </div>
+                        </apex:repeat>
+                    </div>
+                </div>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+                <script type="text/javascript">
+                    $( ".slds-col" ).sortable(
+                        {
+                            connectWith: ".slds-col",
+                            placeholder: "slds-item slds-m-around--small slds-item-placeholder",
+                            start: function( event, ui ) {
+                                $( ui.item ).addClass( "moving-card" );
+                            },
+                            stop: function( event, ui ) {
+                                $( ui.item ).removeClass( "moving-card" );
+                                
+                                var storyId       = $( ui.item ).attr( "id" );
+                                var storyStatus   = $( ui.item ).parent().attr( "name" );
+                                
+                                UserStoryKanbanController.updateStoryStatus(
+                                    storyId,
+                                    storyStatus,
+                                    function( result, event ) {
+                                        if( result.isSuccess ) {
+                                            toastr.info( result.message );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                </script>
+            </body>
+        </html>
+    </apex:page>

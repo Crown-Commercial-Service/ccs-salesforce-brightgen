@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_Partnership_Agreement_Expiry__c</fullName>
+    <description>Date the Commercial Partnership Agreement Ends</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date the Commercial Partnership Agreement Ends</inlineHelpText>
+    <label>CPA Expiry Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

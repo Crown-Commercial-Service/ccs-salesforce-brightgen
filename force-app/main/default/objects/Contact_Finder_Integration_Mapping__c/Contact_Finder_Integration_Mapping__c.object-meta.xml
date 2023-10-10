@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Storing key, value pair for getting default values for fields mapping</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Contact Finder Integration Mapping</label>
+    <visibility>Protected</visibility>
+</CustomObject>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>Contract_Reference__c</columns>
+    <columns>Effective_Contract_Value__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>Effective_End_Date__c</columns>
+    <columns>RAG_Status__c</columns>
+    <columns>Business_Area__c</columns>
+    <columns>Inter_Contract_Spend_To_Date__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,Expired,Pending</value>
+    </filters>
+    <label>My CCS Contracts</label>
+</ListView>

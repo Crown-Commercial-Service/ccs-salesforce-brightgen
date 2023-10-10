@@ -1,0 +1,9 @@
+.THIS.white-link:link {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+.THIS.white-link:visited {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permissions include:
+Delete to Help Topics, Training Objects
+- This is necessary but not sufficient to allow Delete/Publishing. As well as this perm set, user needs to be added to the Public Groups assigned to the Delete/Publish actions</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Delete Articles</label>
+</PermissionSet>

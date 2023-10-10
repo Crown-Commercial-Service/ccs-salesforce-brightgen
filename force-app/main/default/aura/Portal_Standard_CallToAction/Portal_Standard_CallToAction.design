@@ -1,0 +1,7 @@
+<design:component label="Call to Action">
+    <design:attribute name="actionTitle" label="Call to Action Title"/>
+    <design:attribute name="actionText" label="Call to Action Text"/>
+    <design:attribute name="actionIcon" label="Call to Action Icon" datasource="icon-aggregation, icon-help"/>
+	<design:attribute name="actionLinkText" label="Call to Action Link Text"/>
+    <design:attribute name="actionURL" label="Call to Action Link URL"/>
+</design:component>

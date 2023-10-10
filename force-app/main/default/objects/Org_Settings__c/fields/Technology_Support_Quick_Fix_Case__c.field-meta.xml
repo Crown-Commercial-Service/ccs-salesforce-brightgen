@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technology_Support_Quick_Fix_Case__c</fullName>
+    <description>This is the queue that will be used for the new portal user reg cases.</description>
+    <externalId>false</externalId>
+    <label>Technology Support - Quick Fix Case</label>
+    <length>15</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

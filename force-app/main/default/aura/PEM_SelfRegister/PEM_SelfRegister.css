@@ -1,0 +1,25 @@
+.THIS .input-container {
+    margin-bottom:10px;
+    padding: 12px;
+    background-color:white;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.THIS .select {
+    border: none;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 0;
+    padding-left: 10px;
+    color: #888;
+}
+
+.THIS .no-padding {
+    padding: 0;
+}

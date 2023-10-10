@@ -1,0 +1,35 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+    
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="whiteCardBackground" type="string" default="" required="true" description="Determines whether or not a white card background is applied"/>
+    <aura:attribute name="currentRecordId" type="String" default="" required="false" description=""/>
+    
+    <aura:attribute name="title" type="String" default="Suppliers" access="global" />
+    <aura:attribute name="peek" type="String" access="global" />
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <div class="container">
+        <div class="{!'inset-blk ' + v.peek + ' ' + v.whiteCardBackground}">
+            <h2 class="heading-medium">{!v.title}</h2>
+            <aura:if isTrue="{!v.showSpinner}">
+                <div class="loading-spinner">
+                    <lightning:spinner variant="base"  size="large" title="Loading..." alternativeText="Loading..." /> 
+                </div>
+            </aura:if>
+            
+        </div>
+    </div>
+	
+</aura:component>

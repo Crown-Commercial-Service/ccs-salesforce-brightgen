@@ -1,0 +1,7 @@
+<aura:documentation>
+	<aura:description>
+        PEM custom modal component container
+    	Used to :
+        Show a password change modal component
+    </aura:description>
+</aura:documentation>

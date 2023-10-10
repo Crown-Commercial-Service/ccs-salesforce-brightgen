@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Type_Selection</fullName>
+    <active>true</active>
+    <description>A contract type of One Off Contract, Managed Contract and Transitioned Contract must be selected.</description>
+    <errorConditionFormula>AND( One_Off_Contract__c = FALSE,  Managed_Contract__c  = FALSE,  Transitioned_Contract__c = FALSE)</errorConditionFormula>
+    <errorMessage>A contract type of One Off Contract, Managed Contract and Transitioned Contract must be selected.</errorMessage>
+</ValidationRule>

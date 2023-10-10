@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Compact</fullName>
+    <fields>Name</fields>
+    <fields>US_Sprint__c</fields>
+    <fields>US_MOSCOW__c</fields>
+    <fields>US_Plan_Estimate__c</fields>
+    <fields>US_Status__c</fields>
+    <fields>US_Developer__c</fields>
+    <label>US Compact</label>
+</CompactLayout>

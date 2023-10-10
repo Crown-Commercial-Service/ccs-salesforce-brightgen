@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Long_Name__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The Framework Name field holds 80 characters and the Framework Name (long) 255 characters. Both the Framework Name and Framework Name (long) fields must be populated.</inlineHelpText>
+    <label>Name (long)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

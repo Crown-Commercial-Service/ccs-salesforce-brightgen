@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Toggling profile section in the PEM theme">
+	<aura:attribute name="isRendered" type="Boolean"/>
+</aura:event>

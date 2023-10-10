@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Procurement_Route__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the sourcing route undertaken for the contract as recommended in the procurement strategy</inlineHelpText>
+    <label>Procurement Route</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Low Value</fullName>
+                <default>false</default>
+                <label>Low Value</label>
+            </value>
+            <value>
+                <fullName>Call Off (Competition)</fullName>
+                <default>false</default>
+                <label>Call Off (Competition)</label>
+            </value>
+            <value>
+                <fullName>Call Off (Direct Award)</fullName>
+                <default>false</default>
+                <label>Call Off (Direct Award)</label>
+            </value>
+            <value>
+                <fullName>Open Market</fullName>
+                <default>false</default>
+                <label>Open Market</label>
+            </value>
+            <value>
+                <fullName>Single Tender Action</fullName>
+                <default>false</default>
+                <label>Single Tender Action</label>
+            </value>
+            <value>
+                <fullName>OJEU - Open Procedure</fullName>
+                <default>false</default>
+                <label>OJEU - Open Procedure</label>
+            </value>
+            <value>
+                <fullName>OJEU - Restricted Procedure</fullName>
+                <default>false</default>
+                <label>OJEU - Restricted Procedure</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

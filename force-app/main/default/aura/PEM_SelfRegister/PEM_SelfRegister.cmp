@@ -1,0 +1,131 @@
+<aura:component controller="PEM_SelfRegisterController" implements="forceCommunity:availableForAllPageTypes" description="Custom PEM registration">
+  <aura:attribute name="accountId" type="String" required="false"/>
+  <aura:attribute name="regConfirmUrl" type="String" required="true"/>
+  <aura:attribute name="errorMessage" type="String" required="false" description="" access="private" default=""/>
+  <aura:attribute name="firstnameLabel" type="String" required="false" default="First Name"/>
+  <aura:attribute name="lastnameLabel" type="String" required="false" default="Last Name"/>
+  <aura:attribute name="emailLabel" type="String" required="false" default="Email"/>
+  <aura:attribute name="submitButtonLabel" type="String" required="false" default="Sign Up"/>
+  <aura:attribute name="isFirstNameValid" type="Boolean" required="false" default="true" access="private"/>
+  <aura:attribute name="isLastNameValid" type="Boolean" required="false" default="true" access="private"/>
+  <aura:attribute name="isEmailValid" type="Boolean" required="false" default="true" access="private"/>
+  <aura:attribute name="formData" type="Object" required="false" default="{}" access="private"/>
+  <aura:attribute name="isContinuation" type="Boolean" required="false" default="false" access="private"/>
+  <aura:attribute name="selectOptions" type="Object[]" required="false" default="false" access="private"/>
+    
+  <aura:attribute name="contactNumberLabel" type="String" required="false" default="Contact Number"/>
+  <aura:attribute name="organizationNameLabel" type="String" required="false" default="Organization name"/>
+  <aura:attribute name="organizationSelectLabel" type="String" required="false" default="Select organication"/>
+    
+  <aura:attribute name="registrationDescription2" type="String" required="false" default="Registration description 2"/>
+  <aura:attribute name="registrationDescription3" type="String" required="false" default="Registration description 23"/>
+  <aura:attribute name="registrationTitle2" type="String" required="false" default="Registration title 2"/>
+    
+  <aura:attribute name="forgottenPasswordLink" type="String" required="false" default="/ForgottenPassword"/>
+  <aura:attribute name="forgottenPasswordLabel" type="String" required="false" default="Forgotten password label"/>
+  <aura:attribute name="loginLink" type="String" required="false" default="/login"/>
+  <aura:attribute name="loginLabel" type="String" required="false" default="Login label"/>
+    
+  <aura:attribute name="isContactNumberValid" type="Boolean" required="false" default="true"/>
+  <aura:attribute name="errorMessages" type="List" required="false" description="" access="private" default="[]"/>
+  
+  <aura:attribute name="selectedOrganization" type="String" required="false" default="" access="private"/>  
+  <aura:attribute name="selectOtherLabel" type="String" required="false" description="" default="Other"/>
+
+  <aura:attribute name="isTermsAndConditionsAccepted" type="Boolean" default="false" access="private"/>
+  <aura:attribute name="termsAndConditionsLink" type="String" default="" access="public"/>
+  <aura:attribute name="termsAndConditionsLabel" type="String" default="" access="public"/>
+  <aura:attribute name="termsAndConditionsCheckboxLabel" type="String" default="" access="public"/>
+
+  <aura:dependency resource="markup://c:PEM_PublicRegistrationContinuation" type="EVENT"/>
+
+  <aura:registerEvent name="PublicRegistrationContinuation" type="c:PEM_PublicRegistrationContinuation"/> 
+
+  <aura:handler name="PEM_AcceptTermsAndConditions" event="c:PEM_AcceptTermsAndConditions" action="{!c.onTermsAndConditionsAccept}"/>
+    
+  <div class="grid-row">
+    <aura:if isTrue="{!v.isContinuation}">
+      <div class="grid-row">
+        <div class="column-full">
+          <h2 class="heading-large text-center">{!v.registrationTitle2}</h2>
+        </div>
+      </div>
+      <div class="grid-row">
+        <div class="column-full text-center">{!v.registrationDescription2}</div>
+      </div>
+      <div class="grid-row">
+        <div class="column-full text-center">{!v.registrationDescription3}</div>
+      </div>
+    </aura:if>
+  </div>
+  <div class="grid-row">
+    <div id="error">
+      <aura:iteration var="message" items="{!v.errorMessages}">
+        <ui:outputRichText value="{!message}"/>
+      </aura:iteration>
+    </div>
+    <aura:if isTrue="{!v.isContinuation}">
+      <form>
+        <div id="sfdc_username_container" class="sfdc">
+          <span id="sfdc_user" class="login-icon" data-icon="a"></span>
+          <ui:inputText value="" aura:id="contactNumber" placeholder="{!v.contactNumberLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc"/>
+        </div>
+        <aura:if isTrue="{!!empty(v.selectOptions)}">
+          <div id="sfdc_username_container" class="sfdc">
+            <span id="sfdc_user" class="login-icon" data-icon="a"></span>
+            <ui:inputSelect aura:id="companySelect" class="input-container input sfdc_usernameinput sfdc select" change="{!c.onSelectChange}">
+              <ui:inputSelectOption text="" label="{!v.organizationSelectLabel}" value="true"/>
+              <aura:iteration items="{!v.selectOptions}" var="selectOption">
+                <ui:inputSelectOption text="{!selectOption.Id}" label="{!selectOption.Name}" value="false"/>
+              </aura:iteration>
+              <aura:if isTrue="{!!empty(v.selectOtherLabel)}">
+                <ui:inputSelectOption text="{!v.selectOtherLabel}" label="{!v.selectOtherLabel}" value="false"/>
+              </aura:if>
+            </ui:inputSelect>
+          </div>
+        </aura:if>
+        <aura:if isTrue="{!empty(v.selectOptions) || v.selectOtherLabel == v.selectedOrganization}">
+          <div id="sfdc_username_container" class="sfdc">
+            <span id="sfdc_user" class="login-icon" data-icon="a"></span>
+            <ui:inputText value="" aura:id="organizationName" placeholder="{!v.organizationNameLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc"/>
+          </div>
+        </aura:if>
+        
+        <div class="sfdc">
+          <ui:button aura:id="submitButtonFinish" label="{!v.submitButtonLabel}" press="{!c.handleFinishRegistration}" class="sfdc_button" /> 
+        </div>
+      </form>
+      <aura:set attribute="else">
+        <form forceSSL="true">
+          <div id="sfdc_username_container" class="sfdc">
+            <span id="sfdc_user" class="login-icon" data-icon="a"></span>
+            <ui:inputText value="" aura:id="firstName" placeholder="{!v.firstnameLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc"/>
+          </div>
+          <div id="sfdc_nickname_container" class="sfdc">
+            <span id="sfdc_user" class="login-icon" data-icon="a"></span>
+            <ui:inputText value="" aura:id="lastName" placeholder="{!v.lastnameLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc"/>
+          </div>
+          <div id="sfdc_email_container" class="sfdc">
+            <span id="sfdc_user" class="login-icon" data-icon="k"></span>
+            <ui:inputText value="" aura:id="email" placeholder="{!v.emailLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc"/>
+          </div>
+          <div class="sfdc">
+            <c:PEM_TermsAndConditions label="{#v.termsAndConditionsLabel}" link="{#v.termsAndConditionsLink}" checkboxLabel="{#v.termsAndConditionsCheckboxLabel}" />
+            <ui:button aura:id="submitButton" label="{!v.submitButtonLabel}" press="{!c.handleSelfRegister}" class="sfdc_button" disabled="{!!v.isTermsAndConditionsAccepted}"/> 
+          </div>
+        </form>
+      </aura:set>
+    </aura:if>	
+  </div>
+  <ui:spinner aura:id="spinner" class="hideEl" />   
+  <div class="grid-row">
+    <aura:if isTrue="{!!v.isContinuation}">
+      <div class="column-two-thirds no-padding">
+        <a href="{!v.forgottenPasswordLink}">{!v.forgottenPasswordLabel}</a>
+      </div>
+      <div class="column-one-third no-padding">
+        <a href="{!v.loginLink}" class="float-right">{!v.loginLabel}</a>
+      </div>
+    </aura:if>
+  </div>
+</aura:component>

@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Case_Re_Open</fullName>
+        <description>Case Re-Open</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Case_Re_Open</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_Email_to_notify_contact_that_their_case_has_been_resolved</fullName>
+        <description>Case: Send Email to notify contact that their case has been resolved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Enquiry/Case_Auto_response_to_contact_on_case_closure</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_Email_to_notify_contact_when_their_case_has_been_created</fullName>
+        <description>Case: Send Email to notify contact when their case has been created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>info@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Enquiry/Case_Contact_Auto_Response_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_Out_of_Office</fullName>
+        <description>Case: Send Out of Office</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Last_Received_Email_Address__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Case_Out_of_Office</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_Survey_after_a_Procurement_is_Completed</fullName>
+        <description>Case: Send Survey after a Procurement is Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>customerinsight@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Completed_Procurement_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_alert_email_to_Requester_ARR</fullName>
+        <description>Case: Send alert email to Requester (ARR)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Requester_Alert_ARR</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_alert_email_to_Requester_ARR_2</fullName>
+        <description>Case: Send alert email to Requester (ARR 2)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Requester_Alert_ARR_21</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_alert_email_to_Requester_ITT</fullName>
+        <description>Case: Send alert email to Requester (ITT)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Requester_Alert_ITT</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_alert_email_to_Requester_OLC</fullName>
+        <description>Case: Send alert email to Requester (OLC)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Requester_Alert_OLC</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_alert_email_to_Requester_Peer</fullName>
+        <description>Case: Send alert email to Requester (Peer)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Requester_Alert_Peer</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_alert_email_to_Requester_Proc_Strategy</fullName>
+        <description>Case: Send alert email to Requester (Proc Strategy)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Requester_Alert_Proc_Strategy</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_email_notifying_customer_that_their_procurement_has_been_assigned_to_a</fullName>
+        <description>Case: Send email notifying customer that their procurement has been assigned to an owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Acknowledgement</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_reminder_ARR</fullName>
+        <description>Case: Send reminder email to Approver (ARR)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ARR_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Reminder_ARR</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_reminder_ARR_2</fullName>
+        <description>Case: Send reminder email to Approver (ARR 2)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ARR_2_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Reminder_ARR_2</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_reminder_ITT</fullName>
+        <description>Case: Send reminder email to Approver (ITT)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ITT_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Reminder_ITT</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_reminder_OLC</fullName>
+        <description>Case: Send reminder email to Approver (OLC)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contract_Award_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Reminder_OLC</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_reminder_Peer</fullName>
+        <description>Case: Send reminder email to Approver (Peer)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Peer_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Reminder_Peer</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_reminder_Proc_Strat</fullName>
+        <description>Case: Send reminder email to Approver (Proc Strat)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Procurement_Strategy_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Approval_Reminder_Proc_Strategy</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Us_form_Thank_You_Email</fullName>
+        <description>Contact Us form Thank You Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Enquiry/Contact_Us_Thank_You_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Enquiry_level_2_warning_for_approaching_SLA_breach</fullName>
+        <description>Enquiry level 2 warning for approaching SLA breach</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Enquiry_SLA_Warning</template>
+    </alerts>
+    <alerts>
+        <fullName>Enquiry_warning_for_approaching_SLA_breach</fullName>
+        <description>Enquiry warning for approaching SLA breach</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Enquiry_SLA_Warning</template>
+    </alerts>
+    <alerts>
+        <fullName>Policy_and_Legal_Customer_Email_Alert</fullName>
+        <description>Policy and Legal Customer Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Policy_case_customer_email</template>
+    </alerts>
+    <alerts>
+        <fullName>Procurement_Approval_Approval_Notification</fullName>
+        <description>Procurement Approval - Approval Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>customer-insight@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Procurement_Approval_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Procurement_Approval_Rejected_Notification</fullName>
+        <description>Procurement Approval - Rejected Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Procurement_Email_Templates/Procurement_Approval_Rejection_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>SLA_Warning_For_Queue</fullName>
+        <description>SLA Warning For Queue</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CSCPolicyTemplates/Policy_Queue_SLA_Expiry_Warning_1694159060028</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Feedback_Request2</fullName>
+        <description>Send Feedback Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>customerinsight@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Closed_Case_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>X2_Day_SLA_warning_Alert</fullName>
+        <description>2 Day SLA warning Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CSCPolicyTemplates/Policy_case_SLA_Expiry_Warning_1694159185079</template>
+    </alerts>
+    <alerts>
+        <fullName>X5_day_SLA_warning_email</fullName>
+        <description>5 day SLA warning email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CSCPolicyTemplates/Policy_case_SLA_Expiry_Warning_1694159185079</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Confirmed_by_Update</fullName>
+        <field>ERG_Approval_Confirmed_by__c</field>
+        <formula>$User.Full_Name__c</formula>
+        <name>Approval Confirmed by Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_to_First_Time_Fix</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Technology_Support_Quick_Fix_Case</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign to First Time Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Blank_out_ARR_2_Approval_Date</fullName>
+        <field>ARR_2_Approval_Date__c</field>
+        <name>Blank out ARR 2 Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Blank_out_ARR_Approval_Date</fullName>
+        <description>Set date to null</description>
+        <field>ARR_Approval_Date__c</field>
+        <name>Blank out ARR Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Blank_out_Award_approval_date</fullName>
+        <field>Award_gate_approval_date__c</field>
+        <name>Blank out Award approval date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Blank_out_PS_Approval_Date</fullName>
+        <description>Blank out the date</description>
+        <field>Procurement_Strategy_Approval_Date__c</field>
+        <name>Blank out PS Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Blank_out_approval_date</fullName>
+        <field>ITT_Gate_Approval_Date__c</field>
+        <name>Blank out approval date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Set_IsRes1Filled_to_True</fullName>
+        <description>Case: Set Case_Closed__c to True</description>
+        <field>IsRes1Filled__c</field>
+        <literalValue>1</literalValue>
+        <name>Case: Set IsRes1Filled to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Case_Owner</fullName>
+        <description>Change Case Owner from Portal User to Service Desk Queue</description>
+        <field>OwnerId</field>
+        <lookupValue>Service_Desk</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Change Case Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Status</fullName>
+        <description>Used to ensure the Status on Cases submitted via the Portal are always set to Open</description>
+        <field>Status</field>
+        <literalValue>Open</literalValue>
+        <name>Change Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_to_Tech_Support</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Tech_Support</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Change to Tech Support</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Customer_Variation_Signoff</fullName>
+        <description>Clear the Date/Time field.</description>
+        <field>Customer_Variation_Signoff_Date_Time__c</field>
+        <name>Clear Customer Variation Signoff</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Supplier_Variation_Date</fullName>
+        <description>Wipe the date field.</description>
+        <field>Supplier_Variation_Signoff_Date_Time__c</field>
+        <name>Clear Supplier Variation Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_Total_Delivery_Days</fullName>
+        <description>clear total delivery days field</description>
+        <field>Total_Delivery_Days__c</field>
+        <name>Clear Total Delivery Days</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Close_Case_as_SPAM</fullName>
+        <description>Closes Case as a SPAM ticket</description>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Close Case as SPAM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Close_Resolution_as_SPAM</fullName>
+        <description>Closes Resolution 1 as SPAM</description>
+        <field>Resolution_1__c</field>
+        <literalValue>Spam</literalValue>
+        <name>Close Resolution as SPAM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Customer_Signoff_Timestamp</fullName>
+        <field>Customer_Variation_Signoff_Date_Time__c</field>
+        <formula>IF(ISBLANK( Customer_Variation_Signoff_Date_Time__c ), NOW(), Customer_Variation_Signoff_Date_Time__c)</formula>
+        <name>Customer Signoff Timestamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DWP_Clear_Timestop</fullName>
+        <field>DWP_CCLAB_Timestamp__c</field>
+        <name>DWP Clear Timestop</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DWP_MCAT_Timestamp</fullName>
+        <description>Timestamp when DWP MCAT is ticked.</description>
+        <field>DWP_MCAT_Timestamp__c</field>
+        <formula>NOW()</formula>
+        <name>DWP MCAT Timestamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>DWP_Timestamp</fullName>
+        <field>DWP_CCLAB_Timestamp__c</field>
+        <formula>NOW()</formula>
+        <name>DWP Timestamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Enquiry_alert_for_breached_SLA</fullName>
+        <description>Updates SLA Missed field to True</description>
+        <field>SLA_1_Violated__c</field>
+        <literalValue>1</literalValue>
+        <name>Enquiry alert for breached SLA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Enquiry_update_SLA1</fullName>
+        <description>Updates the SLA 1 Start checkbox to True so that the Formula in SLAs On Track will run correctly</description>
+        <field>SLA_1_Start__c</field>
+        <literalValue>1</literalValue>
+        <name>Enquiry update SLA1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>No_Close_Email</fullName>
+        <field>No_Close_Email__c</field>
+        <literalValue>1</literalValue>
+        <name>No Close Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Award_approval_submit_flag</fullName>
+        <field>Submit_Award_for_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Award approval submit flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Peer_Submit_Flag</fullName>
+        <field>Peer_Approval_Required__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Peer Submit Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Submit_Flag</fullName>
+        <field>ITT_Gate_Approval_Submit__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Submit Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SLA1_Warning_update</fullName>
+        <description>Updates SLA Warning field to True</description>
+        <field>SLA_1_Warning__c</field>
+        <literalValue>1</literalValue>
+        <name>SLA1 Warning update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SLA1_Warning_update_9</fullName>
+        <description>updates SLA1 warning to True when 3 days before the 9 day SLA option</description>
+        <field>SLA_1_Warning__c</field>
+        <literalValue>1</literalValue>
+        <name>SLA1 Warning update 9 days</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SLA1_Warning_update_9_days</fullName>
+        <description>Updates SLA 1 Warning to true when 3 days before a 9 day SLA 1</description>
+        <field>SLA_1_Warning__c</field>
+        <literalValue>1</literalValue>
+        <name>SLA1 Warning update 9 days</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SLA_2_Missed</fullName>
+        <field>SLA_2_Violated__c</field>
+        <literalValue>1</literalValue>
+        <name>SLA 2 Missed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SLA_2_Warning_Update</fullName>
+        <description>Updates SLA 2 Warning field to True</description>
+        <field>SLA_2_Warning__c</field>
+        <literalValue>1</literalValue>
+        <name>SLA 2 Warning Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SLA_Enquiry_Warning_update</fullName>
+        <description>Updates SLA Warning field to True</description>
+        <field>SLA_1_Warning__c</field>
+        <literalValue>1</literalValue>
+        <name>SLA Enquiry Warning update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SLA_Status_Violation_Update</fullName>
+        <description>Updates the SLA Status enquiry picklist to Missed</description>
+        <field>SLA_Status__c</field>
+        <literalValue>Missed</literalValue>
+        <name>SLA Status Violation Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SLA_Status_Warning_Update</fullName>
+        <description>Updates the SLA Status picklist on enquiry cases to Warning</description>
+        <field>SLA_Status__c</field>
+        <literalValue>Warning</literalValue>
+        <name>SLA Status Warning Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_AAR_Status_to_Approved</fullName>
+        <description>Set AAR Status Approval to Approved</description>
+        <field>ARR_Approval__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set AAR Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_AAR_Status_to_Rejected</fullName>
+        <description>Set Status to Rejected</description>
+        <field>ARR_Approval__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set AAR Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_ARR_2_Approval_Date</fullName>
+        <field>ARR_2_Approval_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set ARR 2 Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_ARR_2_Status_to_Approved</fullName>
+        <field>ARR_2_Approval__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set ARR 2 Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_ARR_2_Status_to_Rejected</fullName>
+        <field>ARR_2_Approval__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set ARR 2 Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_ARR_Approval_Date</fullName>
+        <description>Set approval date to today</description>
+        <field>ARR_Approval_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set ARR Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Abandoned_Date</fullName>
+        <field>Abandoned_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Set Abandoned Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approval_Date</fullName>
+        <field>ITT_Gate_Approval_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Award_Approval_Status_Pending</fullName>
+        <field>Award_approval_status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Set Award Approval Status Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Award_approval_date</fullName>
+        <field>Award_gate_approval_date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set Award approval date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Award_approval_status_approved</fullName>
+        <field>Award_approval_status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set Award approval status approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Award_approval_status_to_Rejected</fullName>
+        <field>Award_approval_status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set Award approval status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Case_Origin_to_Spring_Brochure</fullName>
+        <field>Origin</field>
+        <literalValue>Spring Brochure</literalValue>
+        <name>Set Case Origin to Spring Brochure</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_InApproval_FALSE</fullName>
+        <field>IsInApproval__c</field>
+        <literalValue>0</literalValue>
+        <name>Set InApproval=FALSE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_InApproval_TRUE</fullName>
+        <field>IsInApproval__c</field>
+        <literalValue>1</literalValue>
+        <name>Set InApproval=TRUE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_PS_Approval_Date</fullName>
+        <description>Set date to today</description>
+        <field>Procurement_Strategy_Approval_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set PS Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_PS_Status_to_Approved</fullName>
+        <description>Sets the PS Status to Approved</description>
+        <field>Procurement_Strategy_Approval__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set PS Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_PS_Status_to_Rejected</fullName>
+        <description>Set PS Status to Rejected</description>
+        <field>Procurement_Strategy_Approval__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set PS Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Peer_Status_to_Approved</fullName>
+        <field>Peer_Approval__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set Peer Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Peer_Status_to_Rejected</fullName>
+        <field>Peer_Approval__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set Peer Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_SLA2_Missed</fullName>
+        <field>SLA_2_Violated__c</field>
+        <literalValue>1</literalValue>
+        <name>Set SLA2 Missed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status</fullName>
+        <description>Set Status to In Progress</description>
+        <field>Status</field>
+        <literalValue>In Progress</literalValue>
+        <name>Set Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Approved</fullName>
+        <field>ITT_Gate_Approval__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Pending</fullName>
+        <field>ITT_Gate_Approval__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Set Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Rejected</fullName>
+        <field>ITT_Gate_Approval__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Set Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Survey_Issued</fullName>
+        <field>Survey_Issued__c</field>
+        <literalValue>1</literalValue>
+        <name>Survey Issued</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Tech_Team_Update</fullName>
+        <field>HD_Team__c</field>
+        <literalValue>Applications &amp; Infrastructure</literalValue>
+        <name>Tech Team Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Tick_Survey_Issued_field</fullName>
+        <field>Survey_Issued__c</field>
+        <literalValue>1</literalValue>
+        <name>Tick Survey Issued field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Timestamp_Approval_Date_Time</fullName>
+        <field>Date_of_ERG_Approval__c</field>
+        <formula>NOW()</formula>
+        <name>Timestamp Approval Date/Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Timestamp_Supplier_Signoff</fullName>
+        <field>Supplier_Variation_Signoff_Date_Time__c</field>
+        <formula>IF(ISBLANK( Supplier_Variation_Signoff_Date_Time__c ), NOW(), Supplier_Variation_Signoff_Date_Time__c)</formula>
+        <name>Timestamp Supplier Signoff</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Category</fullName>
+        <field>HD_Category__c</field>
+        <literalValue>Question</literalValue>
+        <name>Update Category</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Close_checkbox</fullName>
+        <field>Case_Closed__c</field>
+        <literalValue>1</literalValue>
+        <name>Case: Set  Case_Closed__c to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Owner</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Duty_Officer_Apps_and_Infrastructure</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Update Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_SLA1_Violated</fullName>
+        <field>SLA_1_Violated__c</field>
+        <literalValue>1</literalValue>
+        <name>Update SLA 1 Violated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_SLA_1_Missed</fullName>
+        <field>SLA_1_Violated__c</field>
+        <literalValue>1</literalValue>
+        <name>Update SLA 1 Missed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_SLA_1_Violated</fullName>
+        <field>SLA_1_Violated__c</field>
+        <literalValue>1</literalValue>
+        <name>Update SLA 1 Violated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Wipe_Approval_Date</fullName>
+        <field>Date_of_ERG_Approval__c</field>
+        <name>Wipe Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Wipe_Approver_Name</fullName>
+        <field>ERG_Approval_Confirmed_by__c</field>
+        <name>Wipe Approver Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Wipe_DWP_MCAT</fullName>
+        <field>DWP_MCAT_Timestamp__c</field>
+        <name>Wipe DWP MCAT</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Allocate Cases</fullName>
+        <actions>
+            <name>Change_Case_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 or 2 or 3) and 4 and 5 and 6</booleanFilter>
+        <criteriaItems>
+            <field>User.UserType</field>
+            <operation>equals</operation>
+            <value>Customer Portal Manager,Customer Portal User,Guest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Web</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>portal Site Guest User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>notEqual</operation>
+            <value>Technology Support - Purchasing Platform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>notEqual</operation>
+            <value>SPAM Queue</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Campaign_Reference_ID__c</field>
+            <operation>notEqual</operation>
+            <value>EMARBUYER</value>
+        </criteriaItems>
+        <description>Used to allocate Cases to the Service Desk queue when submitted via the Portal as the Napili template does not currently support Case Assignment rules</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Actions On Reopen</fullName>
+        <actions>
+            <name>Clear_Total_Delivery_Days</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>if case is opened again, clear Total Delivery Days field</description>
+        <formula>!IsClosed &amp;&amp; !ISBLANK( Total_Delivery_Days__c )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Amendment Case Status</fullName>
+        <actions>
+            <name>Set_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Contract Amendment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>When the Case is of Type Amendment and Open, then the Status should be In Progress.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Clear Customer Variation Date</fullName>
+        <actions>
+            <name>Clear_Customer_Variation_Signoff</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Customer_Variation_Signoff__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>If the Customer Variation Signoff Checkbox is unchecked, then the Date / Time field should be wiped clean too.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Clear Supplier Variation Date</fullName>
+        <actions>
+            <name>Clear_Supplier_Variation_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Supplier_Variation_Signoff__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>If the Clear Supplier Variation Checkbox is unchecked then the accompanying Date/Time field needs to be wiped.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Customer Variation Signoff Timestamp</fullName>
+        <actions>
+            <name>Customer_Signoff_Timestamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Customer_Variation_Signoff__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When Customer Variation Signoff checkbox is ticked, the accompanying date field should be stamped with the current date/time.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A DWP - Wipe Timestamp</fullName>
+        <actions>
+            <name>DWP_Clear_Timestop</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.DWP_CCLAB_Approval_Received__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A DWP Approval Checked</fullName>
+        <actions>
+            <name>DWP_Timestamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.DWP_CCLAB_Approval_Received__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A DWP MCAT</fullName>
+        <actions>
+            <name>DWP_MCAT_Timestamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.DWP_MCAT_Approval_Received__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Timestamp when the checkbox is ticked.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A ERG Approval Actions</fullName>
+        <actions>
+            <name>Approval_Confirmed_by_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Timestamp_Approval_Date_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Approval_Rec__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Email notification to contact on Enquiry closure</fullName>
+        <actions>
+            <name>Case_Send_Email_to_notify_contact_that_their_case_has_been_resolved</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Case: Email notification to contact on Enquiry closure</description>
+        <formula>AND(RecordType.DeveloperName =&apos;Enquiry&apos;, ISPICKVAL(Status, &apos;Closed&apos;), LEFT(CreatedById, 15) &lt;&gt; $Setup.Org_Settings__c.Portal_Guest_User_Id__c ) &amp;&amp; Case_Closed__c = false &amp;&amp; 
+NOT(OR(No_Close_Email__c = TRUE, ISPICKVAL(Resolution_1__c, &quot;SPAM&quot;), ISPICKVAL(Resolution_1__c, &quot;Duplicate&quot;)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Email notification to contact on Enquiry creation</fullName>
+        <actions>
+            <name>Case_Send_Email_to_notify_contact_when_their_case_has_been_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Case: Email notification to contact when their Enquiry has been created</description>
+        <formula>AND( NOT(CONTAINS(Subject, &apos;Portal Registration : Unassigned Customer Contact for allocation&apos;)) &amp;&amp; NOT(RecordType.DeveloperName = &quot;HR_Enquiry&quot;) &amp;&amp; ISBLANK(SuppliedEmail)  )</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A New Spring Brochure Request</fullName>
+        <actions>
+            <name>Set_Case_Origin_to_Spring_Brochure</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Queue_Name__c</field>
+            <operation>equals</operation>
+            <value>Duty Officer - Lead Development Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>equals</operation>
+            <value>DBSPRING21</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Web</value>
+        </criteriaItems>
+        <description>Sets case origin to spring brochure for any forms submitted requesting the brochure</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Supplier Variation Signoff Timestamp</fullName>
+        <actions>
+            <name>Timestamp_Supplier_Signoff</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Supplier_Variation_Signoff__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Update Case Closed Checkbox</fullName>
+        <actions>
+            <name>Update_Close_checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <description>This rules track if the case was closed in the history</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Update IsRes1Filled Checkbox when Res 1 filled</fullName>
+        <actions>
+            <name>Case_Set_IsRes1Filled_to_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update the checkbox when Res1 is filled in</description>
+        <formula>NOT(ISPICKVAL(Resolution_1__c,&apos;&apos;))&amp;&amp; ISCHANGED(OwnerId)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Wipe DWP MCAT</fullName>
+        <actions>
+            <name>Wipe_DWP_MCAT</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.DWP_MCAT_Approval_Received__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Clear the timestamp of the DWP MCAT if the Received checkbox is unticked.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>ERG Approval Unchecked</fullName>
+        <actions>
+            <name>Wipe_Approval_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Wipe_Approver_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Approval_Rec__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Question2Chatter</fullName>
+        <actions>
+            <name>Change_to_Tech_Support</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Tech_Team_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Category</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Chatter</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

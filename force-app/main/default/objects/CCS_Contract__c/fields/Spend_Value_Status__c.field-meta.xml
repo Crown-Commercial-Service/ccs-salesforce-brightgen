@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spend_Value_Status__c</fullName>
+    <description>Provides a RAG rating as a visual indicator for the spend against the contract value:
+ &lt;80% the field colour will be GREEN
+80-90% the field colour will be AMBER
+&gt;90% the field colour will be RED
+&gt;90% then the field colour will be RED</description>
+    <externalId>false</externalId>
+    <formula>IF( Contract_Spend_To_Date__c &lt; (0.8 * Effective_Contract_Value__c ), IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;green&quot;),
+IF( Contract_Spend_To_Date__c &gt; (0.9 * Effective_Contract_Value__c ), IMAGE(&quot;/img//msg_icons/error16.png&quot;, &quot;red&quot;),
+IMAGE(&quot;/img/msg_icons/warning16.png&quot;, &quot;yellow&quot;)
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Provides a RAG rating as a visual indicator for the spend against the contract value:
+ &lt;80% the field colour will be GREEN
+80-90% the field colour will be AMBER
+&gt;90% the field colour will be RED
+&gt;90% then the field colour will be RED</inlineHelpText>
+    <label>Spend Value Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

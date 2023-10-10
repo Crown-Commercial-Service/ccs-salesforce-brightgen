@@ -1,0 +1,5 @@
+<design:component label="Page Title">
+    <design:attribute name="title" label="Title" />
+    <design:attribute name="subtitle" label="Subtitle" />
+    <design:attribute name="alignment" label="Text Alignment" datasource="Center,Left" />
+</design:component>

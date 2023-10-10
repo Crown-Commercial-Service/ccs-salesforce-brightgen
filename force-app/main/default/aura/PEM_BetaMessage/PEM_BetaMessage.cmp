@@ -1,0 +1,16 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="CCS BETA Message">
+  <aura:attribute name="BETATag" type="String" default="BETA" />
+	<aura:attribute name="BETAMessagePreLink" type="String" default="This is a new service – your " />
+	<aura:attribute name="BETAMessageLinkLabel" type="String" default="feedback" />
+	<aura:attribute name="BETAMessageLinkURL" type="String" default="https://docs.google.com/forms/d/e/1FAIpQLSemTQZk4JV4_UXBey6qlWKYKYjgvwzqjjvAZD5y9qCZdMDJPQ/viewform?c=0" />
+	<aura:attribute name="BETAMessagePostLink" type="String" default=" will help us to improve it." />
+
+    <div class='cCenterPanel'>
+      <div class="phase-banner-beta">
+        <p>
+          <strong class="phase-tag">{!v.BETATag}</strong>
+          <span>{!v.BETAMessagePreLink} <a href="{!v.BETAMessageLinkURL}" target='_blank'>{!v.BETAMessageLinkLabel}</a> {!v.BETAMessagePostLink}</span>
+        </p>
+      </div>
+    </div>
+</aura:component>

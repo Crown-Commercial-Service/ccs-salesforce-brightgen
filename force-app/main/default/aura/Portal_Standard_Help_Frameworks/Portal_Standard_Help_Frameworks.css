@@ -1,0 +1,9 @@
+.THIS {
+    padding-bottom: 20px;
+}
+
+.THIS .frameworks-list {
+    border-bottom: solid 1px #C9C9C9;
+    max-width: 1024px;
+    overflow: auto;
+}

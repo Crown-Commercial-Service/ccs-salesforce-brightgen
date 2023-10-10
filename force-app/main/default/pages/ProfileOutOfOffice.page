@@ -1,0 +1,28 @@
+<apex:page standardController="User" extensions="ProfileOutOfOffice_CC" showHeader="true" sidebar="true" showChat="false" lightningStylesheets="true">
+    <apex:form >
+    <apex:pageMessages />
+        <apex:pageBlock mode="maindetail" id="pbEdit">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!edit}" id="editButton" value="Edit" rendered="{!!editMode}" reRender="pbEdit"/>
+                <apex:commandButton action="{!save}" id="saveButton" value="Save" rendered="{!editMode}" reRender="pbEdit"/>
+                <apex:commandButton action="{!cancel}" id="cancelButton" value="Cancel" rendered="{!editMode}" reRender="pbEdit"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection rendered="{!editMode}">
+                <apex:inputField value="{!currentUser.Out_Of_Office_Start_Date__c}"/>
+                <apex:inputField value="{!currentUser.Out_Of_Office_End_Date__c}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="outOfOfficeMsgIn" value="{!$ObjectType.User.fields.Out_Of_Office_Message__c.Label}"/>
+                    <apex:inputTextarea value="{!outOfOfficeMsg}" id="outOfOfficeMsgIn" rows="6" cols="60"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection rendered="{!!editMode}">
+                <apex:outputField value="{!currentUser.Out_Of_Office_Start_Date__c}"/>
+                <apex:outputField value="{!currentUser.Out_Of_Office_End_Date__c}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="outOfOfficeMsgOut" value="{!$ObjectType.User.fields.Out_Of_Office_Message__c.Label}"/>
+                    <apex:inputTextarea disabled="true" readonly="true" value="{!outOfOfficeMsg}" id="outOfOfficeMsgOut" rows="6" cols="60"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

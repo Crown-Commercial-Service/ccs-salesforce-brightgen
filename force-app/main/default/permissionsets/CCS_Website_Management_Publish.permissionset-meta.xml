@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>*WEBSITE*
+Permissions added to Framework Object to allow Edit on fields:
+Don&apos;t publish Framework on website 
+Don&apos;t publish Upcoming deal on website</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Master_Framework__c.Create_draft_web_page__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Master_Framework__c.Don_t_publish_as_Framework_on_website__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Website Management - Publish</label>
+</PermissionSet>

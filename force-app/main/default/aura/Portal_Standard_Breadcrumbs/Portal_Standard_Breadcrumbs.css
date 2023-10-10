@@ -1,0 +1,64 @@
+.THIS {
+    margin-top: 20px;
+    
+}
+
+.THIS.breadcrumbs ol {
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: .75em;
+    padding-bottom: .75em
+}
+
+.THIS.breadcrumbs ol a {
+    color: #087B9E;
+}
+
+@media (min-width: 641px) {
+    .THIS.breadcrumbs ol {
+        float: left;
+        width: 100%
+    }
+}
+
+.THIS.breadcrumbs ol li {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    float: left;
+    background-image: url('/resource/portalAssets/assets/images/separator.png');
+    background-position: 100% 80%;
+    background-repeat: no-repeat;
+    list-style: none;
+    margin-right: .5em;
+    margin-bottom: .4em;
+    margin-left: 0;
+    padding-right: 1em
+}
+
+@media (max-width: 640px) {
+    .THIS.breadcrumbs ol li {
+        font-size: 14px;
+        line-height: 1.14286
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 20 / 10),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .THIS.breadcrumbs ol li {
+        background-image: url('/resource/portalAssets/assets/images/separator-2x.png');
+        background-size: 6px 11px
+    }
+}
+
+.THIS.breadcrumbs ol li:last-child {
+    background-image: none;
+    margin-right: 0
+}

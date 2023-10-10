@@ -1,0 +1,49 @@
+.THIS {
+    display: block;
+    vertical-align: baseline;
+}
+.THIS .selfServiceProfileMenuTrigger .profileIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    float: left;
+}
+.THIS .profileName {
+    padding: 0 2px 0 7px;
+    float: left;
+}
+.THIS html,.THIS body,.THIS div,.THIS span,.THIS applet,.THIS object,.THIS iframe,
+.THIS h1, .THIS h2,.THIS h3,.THIS h4,.THIS h5,.THIS h6,.THIS p,.THIS blockquote,.THIS pre,
+.THIS a,.THIS abbr,.THIS acronym,.THIS address,.THIS big,.THIS cite,.THIS code,
+.THIS del,.THIS dfn,.THIS em,.THIS img,.THIS ins,.THIS kbd,.THIS q,.THIS s,.THIS samp,
+.THIS small,.THIS strike,.THIS strong,.THIS sub,.THIS sup,.THIS tt,.THIS var,
+.THIS b,.THIS u,.THIS i,.THIS center,
+.THIS dl,.THIS dt,.THIS dd,.THIS ol,.THIS ul,.THIS li,
+.THIS fieldset,.THIS form,.THIS label,.THIS legend,
+.THIS table,.THIS caption,.THIS tbody,.THIS tfoot,.THIS thead,.THIS tr,.THIS th,.THIS td,
+.THIS article,.THIS aside,.THIS canvas,.THIS details,.THIS embed, 
+.THIS figure,.THIS figcaption,.THIS footer,.THIS header,.THIS hgroup, 
+.THIS menu,.THIS nav,.THIS output, .THIS ruby,.THIS section,.THIS summary,
+.THIS time,.THIS mark,.THIS audio,.THIS video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+.THIS li {
+    padding-right: 0.8em !important;
+    margin: 0 5px 0 5px;
+    float: left;
+    vertical-align: baseline;
+}
+.THIS  #error {
+    text-align: center;
+    color:#FF0000;
+}
+
+.THIS #error * {
+    color: #FF0000;
+}

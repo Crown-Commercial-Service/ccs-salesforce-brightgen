@@ -1,0 +1,76 @@
+.THIS.phase-banner-beta {
+  padding: 10px 0 8px;
+  border-bottom: 0px solid t(grey_2);
+  max-width:960px;
+  margin: 0px auto;
+  background-color:#ddd;
+  padding-bottom:115px;
+}
+
+.THIS.phase-banner-beta a, .THIS.phase-banner-beta a:hover {
+    color:#2e8aca;
+}
+
+.THIS.phase-banner-beta.cPEM_Layout {
+  padding-top:15px;
+  padding-bottom:15px;
+  border:0px;  
+}
+
+@media (min-width: 641px) {
+  .THIS.phase-banner-beta {
+    padding-bottom: 10px;
+  }
+}
+
+.THIS.phase-banner-beta p {
+  display: table;
+  margin: 0;
+  color: t(banner_text_colour);
+  font-family: t(NTA_Light);
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.1428571429;
+}
+
+@media (min-width: 641px) {
+  .THIS.phase-banner-beta p {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.THIS.phase-banner-beta .phase-tag {
+  display: -moz-inline-stack;
+  display: inline-block;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  font-family: t(NTA_Light);
+  font-weight: 700;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: t(white);
+  background-color: t(orange);
+}
+
+@media (min-width: 641px) {
+  .THIS.phase-banner-beta .phase-tag {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.THIS.phase-banner-beta span {
+  display: table-cell;
+  vertical-align: baseline;
+}
+
+.THIS.phase-banner-beta {
+    position:relative;
+    z-index:100;
+}

@@ -1,0 +1,4 @@
+<design:component label="Help - Comparison Card">
+	<design:attribute name="articleId" label="Article Number" description="Insert the Article Number of a Portal Help Article"/>
+    <design:attribute name="cardSize" label="Card Size" description="Use 'Small' for homepage" datasource="Small,Large"/>
+</design:component>

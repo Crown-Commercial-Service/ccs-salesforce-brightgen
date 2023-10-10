@@ -1,0 +1,78 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="Carousel">
+    <!-- Add configuration Items -->
+    <!-- Image One -->
+    <aura:attribute name="image1Title" type="String" default="Image 1 Title" />
+    <aura:attribute name="image1ImageURL" type="String" default="https://unsplash.it/900/400?random" description="Images should be larger than 900 x 400 pixels." />
+    <aura:attribute name="image1ClickURL" type="String" default="#" />
+    <aura:attribute name="image1NewTab" type="Boolean" default="false"/>
+    <!-- Image Two -->
+    <aura:attribute name="image2Title" type="String" default="Image 2 Title" />
+    <aura:attribute name="image2ImageURL" type="String" default="https://unsplash.it/900/400?random" description="Images should be larger than 900 x 400 pixels." />
+    <aura:attribute name="image2ClickURL" type="String" default="#" />
+    <aura:attribute name="image2NewTab" type="Boolean" default="false"/>
+    <!-- Image Three -->
+    <aura:attribute name="image3Title" type="String" default="Image 3 Title" />
+    <aura:attribute name="image3ImageURL" type="String" default="https://unsplash.it/900/300?random" description="Images should be larger than 900 x 300 pixels." />
+    <aura:attribute name="image3ClickURL" type="String" default="#" />
+    <aura:attribute name="image3NewTab" type="Boolean" default="false"/>
+
+  	<div class='csslider1'>
+  		<input name="cs_anchor1" id='cs_slide1_0' type="radio" class='cs_anchor slide' />
+  		<input name="cs_anchor1" id='cs_slide1_1' type="radio" class='cs_anchor slide' />
+  		<input name="cs_anchor1" id='cs_slide1_2' type="radio" class='cs_anchor slide' />
+  		<input name="cs_anchor1" id='cs_play1' type="radio" class='cs_anchor'  />
+  		<input name="cs_anchor1" id='cs_pause1' type="radio" class='cs_anchor' checked='checked'  />
+  		<ul>
+  			<div style="width: 100%; visibility: hidden; font-size: 0px; line-height: 0;">
+  				<img src="{!$Resource.ccs_assets + '/assets/images/opengraph-image.png'}" style="width: 100%;" />
+  			</div>
+  			<li class='num0 img'>
+  				 <a href="{!v.image1ClickURL}" target="{!v.image1NewTab != 'true' ? '_blank' : ''}"><img src='{!v.image1ImageURL}' alt='{!v.image1Title}' /> </a>
+  			</li>
+  			<li class='num1 img'>
+  				 <a href="{!v.image2ClickURL}" target="{!v.image2NewTab != 'true' ? '_blank' : ''}"><img src='{!v.image2ImageURL}' alt='{!v.image2Title}' /> </a>
+  			</li>
+  			<li class='num2 img'>
+           <a href="{!v.image3ClickURL}" target="{!v.image3NewTab != 'true' ? '_blank' : ''}"><img src='{!v.image3ImageURL}' alt='{!v.image3Title}' /> </a>
+  			</li>
+  		</ul>
+  		<div class='cs_description'>
+        <label class='num0'>
+          <aura:if isTrue="{!v.image1Title != ''}">
+            <span class="cs_title"><span class="cs_wrapper">{!v.image1Title}</span></span>
+          </aura:if>
+  			</label>
+  			<label class='num1'>
+          <aura:if isTrue="{!v.image2Title != ''}">
+  				  <span class="cs_title"><span class="cs_wrapper">{!v.image2Title}</span></span>
+          </aura:if>
+  			</label>
+  			<label class='num2'>
+          <aura:if isTrue="{!v.image3Title != ''}">
+  				  <span class="cs_title"><span class="cs_wrapper">{!v.image3Title}</span></span>
+          </aura:if>
+  			</label>
+  		</div>
+  		<div class='cs_arrowprev'>
+  			<label class='num0' for='cs_slide1_0'>&lt;</label>
+  			<label class='num1' for='cs_slide1_1'>&lt;</label>
+  			<label class='num2' for='cs_slide1_2'>&lt;</label>
+  		</div>
+  		<div class='cs_arrownext'>
+  			<label class='num0' for='cs_slide1_0'>&gt;</label>
+  			<label class='num1' for='cs_slide1_1'>&gt;</label>
+  			<label class='num2' for='cs_slide1_2'>&gt;</label>
+  		</div>
+  		<div class='cs_bullets'>
+  			<label class='num0' for='cs_slide1_0'>
+  				<span class='cs_point'></span>
+  			</label>
+  			<label class='num1' for='cs_slide1_1'>
+  				<span class='cs_point'></span>
+  			</label>
+  			<label class='num2' for='cs_slide1_2'>
+  				<span class='cs_point'></span>
+  			</label>
+  		</div>
+  	</div>
+</aura:component>

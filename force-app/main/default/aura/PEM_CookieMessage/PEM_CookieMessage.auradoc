@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>
+        <p>This is the standard Government Digital Service cookie message</p>
+        <p>The message will appear for a few seconds to notify the user of the cookie policy.</p>
+    </aura:description>
+</aura:documentation>

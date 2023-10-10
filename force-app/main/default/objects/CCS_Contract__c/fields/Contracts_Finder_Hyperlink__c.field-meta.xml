@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_Finder_Hyperlink__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Contract_Finder_Notice_Id__c &lt;&gt;&quot;&quot;, HYPERLINK(&quot;https://www.contractsfinder.service.gov.uk/Notice/&quot;&amp; Contract_Finder_Notice_Id__c , &quot;https://www.contractsfinder.service.gov.uk/Notice/&quot;&amp; Contract_Finder_Notice_Id__c), &quot;Contracts Finder Notice not yet created&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Hyperlink to Contracts Finder Notice.  Note that this link only works for published notices.  If a Notice is still unpublished (in draft) the link will show a &apos;Page Not Found&apos; error.</inlineHelpText>
+    <label>Contracts Finder Hyperlink</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

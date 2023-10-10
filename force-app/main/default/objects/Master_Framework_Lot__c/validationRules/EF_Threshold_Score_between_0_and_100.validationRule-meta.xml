@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EF_Threshold_Score_between_0_and_100</fullName>
+    <active>true</active>
+    <description>The field &apos;E&amp;F Threshold Score must hold a value between 0 and 100.  US453</description>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK( E_F_Threshold_Score__c )), 
+OR(
+ E_F_Threshold_Score__c  &gt; 100,
+ E_F_Threshold_Score__c  &lt; 0 
+  )
+)</errorConditionFormula>
+    <errorDisplayField>E_F_Threshold_Score__c</errorDisplayField>
+    <errorMessage>The E&amp;F Threshold Score must contain a value between 0 and 100</errorMessage>
+</ValidationRule>

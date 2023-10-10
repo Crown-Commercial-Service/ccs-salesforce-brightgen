@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Act_Dates_cannot_be_amended_if_Completed</fullName>
+    <active>true</active>
+    <description>Actual start and end dates cannot be manually changed once a stage is complete. Note &apos;Progress Stage&apos; functionality is unaffected (it sets actual end date and status to completed).</description>
+    <errorConditionFormula>AND(Procurement__r.Set_Planned_Dates__c = FALSE,
+ Completed__c = TRUE,
+ NOT(ISCHANGED(Completed__c)),
+ OR(ISCHANGED(Actual_End_Date__c),ISCHANGED(Actual_Start_Date__c))
+)</errorConditionFormula>
+    <errorMessage>Actual Start and End dates cannot be amended for a completed stage</errorMessage>
+</ValidationRule>

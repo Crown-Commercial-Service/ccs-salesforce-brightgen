@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budget_Record_Count__c</fullName>
+    <description>Count of related Forecast Year records that are of the type &apos;Budget&apos;</description>
+    <externalId>false</externalId>
+    <label>Budget Record Count</label>
+    <summaryFilterItems>
+        <field>Framework_Forecast_Year__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Budget</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Framework_Forecast_Year__c.Forecast__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

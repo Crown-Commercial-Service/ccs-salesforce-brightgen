@@ -1,0 +1,4 @@
+<design:component label="GDS Standard Header">
+	<design:attribute name="proposition_name" label="Proposition Name"/>
+    <design:attribute name="proposition_link" label="Proposition Link"/>
+</design:component>

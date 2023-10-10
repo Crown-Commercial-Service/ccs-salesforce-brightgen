@@ -1,0 +1,30 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="title" type="String" access="global" required="true"/>
+    <aura:attribute name="text" type="String" access="global" required="true"/>
+    <aura:attribute name="linkText" type="String" access="global" required="true"/>
+    <aura:attribute name="linkURL" type="String" access="global" required="true"/>
+    <aura:attribute name="linkSubText" type="String" access="global" required="true"/>
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <div class="home-help-cta inset-blk bg-white box-shadow">
+        <h3 class="heading-medium">{!v.title}</h3>
+        <p>{!v.text}</p>
+        <article class="card-help-support buyers has-hot-spot">
+            <h3><a href="{!v.linkURL}" tabindex="-1">{!v.linkText}</a></h3>
+            <p class="descriptor">{!v.linkSubText}</p>
+            <a href="{!v.linkURL}" class="hot-spot" aria-hidden="true"></a>
+        </article>
+    </div>
+	
+</aura:component>

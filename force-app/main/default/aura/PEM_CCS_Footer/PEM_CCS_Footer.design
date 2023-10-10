@@ -1,0 +1,14 @@
+<design:component label="CCS Standard Footer">
+  <design:attribute name="corporateInfoLabel" label="Corporate Info Label"/>
+  <design:attribute name="corporateInfoLink" label="Corporate Info Link"/>
+  <design:attribute name="careersLabel" label="Careers Label"/>
+  <design:attribute name="careersLink" label="Careers Link"/>
+  <design:attribute name="termsandconditionsLabel" label="Terms and Conditions label"/>
+  <design:attribute name="termsandconditionsLink" label="Terms and Conditions link"/>
+  <design:attribute name="privacyPolicyLabel" label="Privacy Policy label"/>
+  <design:attribute name="privacyPolicyLink" label="Privacy Policy link"/>
+  <design:attribute name="cookiesLabel" label="Cookies label"/>
+  <design:attribute name="cookiesLink" label="Cookies link"/>
+  <design:attribute name="twitterLink" label="Twitter Link"/>
+  <design:attribute name="linkedInLink" label="LinkedIn link"/>  
+</design:component>

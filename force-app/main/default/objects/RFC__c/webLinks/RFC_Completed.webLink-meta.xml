@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFC_Completed</fullName>
+    <availability>online</availability>
+    <description>RFC Completed button</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>RFC Completed</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)} 
+
+try {
+var url = parent.location.href; 
+var updateRecords = []; 
+var update_RFC__c = new sforce.SObject(&quot;RFC__c&quot;); 
+
+update_RFC__c.Id =&quot;{!RFC__c.Id}&quot;; 
+update_RFC__c.RFC_Status__c=&quot;Completed&quot;;
+updateRecords.push(update_RFC__c); 
+
+result = sforce.connection.update(updateRecords); 
+parent.location.href = url; 
+} catch (e) {
+alert (e);
+}</url>
+</WebLink>

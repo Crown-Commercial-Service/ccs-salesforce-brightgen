@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCS_Category__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>CCS Category</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Category__c.CategoryType__c</field>
+            <operation>equals</operation>
+            <value>CCS Category</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Category__c</referenceTo>
+    <relationshipName>CCS_Category_for_User</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

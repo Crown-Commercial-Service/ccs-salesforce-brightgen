@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_Gov_Service__c</fullName>
+    <description>Service Name</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the &apos;Title&apos; of the asset such as: MacBook or eSourcing</inlineHelpText>
+    <label>Service</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

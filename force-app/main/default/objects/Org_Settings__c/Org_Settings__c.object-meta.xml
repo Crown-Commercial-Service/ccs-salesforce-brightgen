@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Global settings used to control the active state of custom logic defined within the org.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Org Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

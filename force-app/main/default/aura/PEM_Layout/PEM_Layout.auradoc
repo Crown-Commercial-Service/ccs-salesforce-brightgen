@@ -1,0 +1,10 @@
+<aura:documentation>
+	<aura:description>
+        <p>This is the Community custom template layout</p>
+        <p>It defines the common structure, such as header component, location of search, navigation and footer</p>
+    </aura:description>
+	<aura:example name="PEM_Layout" ref="c:PEM_Layout" label="Using the
+c:PEM_Layout Component">
+        <p>This example shows a simple setup of <code>PEM_Layout</code>.</p>
+    </aura:example>    
+</aura:documentation>

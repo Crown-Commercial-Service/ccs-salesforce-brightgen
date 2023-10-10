@@ -1,0 +1,32 @@
+<aura:component description="PEM Modal Component Container">   
+    
+    <aura:attribute name="contentComponent" type="String" required="true"/>
+    <aura:attribute name="modalClass" type="String" default="" required="false" />
+    <aura:attribute name="params" type="Map" required="false"/>
+    <aura:attribute name="modalLoaded" type="Boolean" access="private" default="false" />
+    <aura:attribute name="showSpinner" type="Boolean" access="private" default="true" />
+
+    <aura:handler event="c:PEM_ModalClose" action="{!c.onModalCancel}"/>
+    <aura:handler event="aura:doneRendering" action="{!c.doneRendering}" />
+    <aura:registerEvent name="closeModal" type="c:PEM_ModalClose"/>
+    
+    <div role="dialog" tabindex="-1" class="slds-modal slds-modal--medium slds-fade-in-open modal-animate" aura:id="modal">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header slds-modal__header--empty">
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.onModalCancel}">
+                    <span class="glyphicon glyphicon-remove"></span><span class="">X</span>
+                </button>
+            </div>
+            {!v.body}
+        </div>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open">
+        <div class="{!'slds-spinner_container ' + (v.showSpinner ? 'visible' : 'hidden')}">
+            <div class="slds-spinner slds-spinner--brand slds-spinner--medium" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </div>
+
+</aura:component>

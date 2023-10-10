@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Framework_Terms__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>- DPS details always remain on up and coming deals page until expiry
+- Standard this will be displayed on up and coming deals page when the start date is reached
+- NEC this will be displayed on up and coming deals page when the start date is reached</inlineHelpText>
+    <label>Framework Terms</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>NEC</fullName>
+                <default>false</default>
+                <label>NEC</label>
+            </value>
+            <value>
+                <fullName>DPS</fullName>
+                <default>false</default>
+                <label>DPS</label>
+            </value>
+            <value>
+                <fullName>MoU</fullName>
+                <default>false</default>
+                <label>MoU</label>
+            </value>
+            <value>
+                <fullName>G-Cloud</fullName>
+                <default>false</default>
+                <label>G-Cloud</label>
+            </value>
+            <value>
+                <fullName>DOS</fullName>
+                <default>false</default>
+                <label>DOS</label>
+            </value>
+            <value>
+                <fullName>NEC &amp; DPS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NEC &amp; DPS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

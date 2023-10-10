@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mitigation__c</fullName>
+    <description>Used to capture how the Key Risk will be mitigated</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Mitigation to be taken to stop Risk/Issue occurring</inlineHelpText>
+    <label>Mitigation</label>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

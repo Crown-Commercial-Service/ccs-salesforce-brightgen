@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Complete</fullName>
+    <availability>online</availability>
+    <description>Button to Compete Status Stage</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Complete</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)} 
+
+try {
+var url = parent.location.href; 
+var updateRecords = []; 
+var update_User_Story__c = new sforce.SObject(&quot;User_Story__c&quot;); 
+
+update_User_Story__c.Id =&quot;{!User_Story__c.Id}&quot;; 
+update_User_Story__c.Stage__c=&quot;Complete&quot;;
+updateRecords.push(update_User_Story__c); 
+
+result = sforce.connection.update(updateRecords); 
+parent.location.href = url; 
+} catch (e) {
+alert (&quot;User&quot;);
+}</url>
+</WebLink>

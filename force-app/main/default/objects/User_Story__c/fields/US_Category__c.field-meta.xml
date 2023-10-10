@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Category__c</fullName>
+    <description>US560 - Sprint v2</description>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EPIC</fullName>
+                <default>false</default>
+                <label>EPIC</label>
+            </value>
+            <value>
+                <fullName>Hot Fix (D2P)</fullName>
+                <default>false</default>
+                <label>Hot Fix (D2P)</label>
+            </value>
+            <value>
+                <fullName>Bug Fix</fullName>
+                <default>false</default>
+                <label>Bug Fix</label>
+            </value>
+            <value>
+                <fullName>Low Risk (D2P)</fullName>
+                <default>false</default>
+                <label>Low Risk (D2P)</label>
+            </value>
+            <value>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+                <label>Feature Request</label>
+            </value>
+            <value>
+                <fullName>Tweak</fullName>
+                <default>false</default>
+                <label>Tweak</label>
+            </value>
+            <value>
+                <fullName>Investigation Spike</fullName>
+                <default>false</default>
+                <label>Investigation Spike</label>
+            </value>
+            <value>
+                <fullName>System Maintenance</fullName>
+                <default>false</default>
+                <label>System Maintenance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

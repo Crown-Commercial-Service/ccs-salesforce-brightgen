@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enter_Restricted_Access_Comments</fullName>
+    <active>true</active>
+    <errorConditionFormula>Restricted_Access__c  &amp;&amp; ISBLANK( Restricted_Access_Comments__c )</errorConditionFormula>
+    <errorMessage>If the Restricted Access is checked, Restricted Access Comments must be populated.</errorMessage>
+</ValidationRule>

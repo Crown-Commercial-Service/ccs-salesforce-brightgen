@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>
+		<p>This is the confirmation custom page layout</p>
+        <p>The page has a 1:2:1 ratio</p>
+	</aura:description>
+</aura:documentation>

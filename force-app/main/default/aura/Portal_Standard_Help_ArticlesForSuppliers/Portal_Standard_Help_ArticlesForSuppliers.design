@@ -1,0 +1,5 @@
+<design:component label="Help - Articles for suppliers">
+    <design:attribute name="title" label="Title"/>
+	<design:attribute name="peek" label="Peek up?" datasource="peek-up, no-peek-up"/>
+    <design:attribute name="whiteCardBackground" label="White Card Background?" datasource="bg-white box-shadow, no-background" description="Determines whether or not a white card background is applied" placeholder="" required="true"/>
+</design:component>

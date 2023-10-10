@@ -1,0 +1,7 @@
+<aura:documentation>
+	<aura:description>
+        This is the PEM custom My Settings component. It is used to allow buyers to change their password 
+        but prevent suppliers from doing so, and instead direct them to an external auth provider. 
+        The component also removes chatter preference and allows marketing preferences to be added
+    </aura:description>
+</aura:documentation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Res_Date_Not_Before_Created_Date</fullName>
+    <active>true</active>
+    <description>Target_Resolution_Date can not be before the created date</description>
+    <errorConditionFormula>IF( ISNEW() , Target_Resolution_Date__c &lt; TODAY() , Target_Resolution_Date__c &lt; DATEVALUE(CreatedDate))</errorConditionFormula>
+    <errorDisplayField>Target_Resolution_Date__c</errorDisplayField>
+    <errorMessage>Target Resolution Date cannot be before the created date</errorMessage>
+</ValidationRule>

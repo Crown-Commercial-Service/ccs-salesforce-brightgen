@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Framework_on_a_Page__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>A link to the framework on a page that contains specific information regarding the framework including the benefits of the agreement, advice to CXD for promoting the framework, and any frequently asked questions.</inlineHelpText>
+    <label>Framework Overview</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Achievement_Rating__c</columns>
+    <columns>Respond__c</columns>
+    <columns>Resolve__c</columns>
+    <columns>Professionalism__c</columns>
+    <columns>Knowledge__c</columns>
+    <columns>CCS_Helpdesk_Satisfaction__c</columns>
+    <columns>Case__c</columns>
+    <columns>Organisation__c</columns>
+    <columns>Survey_Name__c</columns>
+    <columns>Date_Response_Submitted__c</columns>
+    <columns>Response_URL__c</columns>
+    <columns>Agree_to_Contact__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

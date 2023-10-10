@@ -1,0 +1,64 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+	<!-- Component design attributes -->
+	<aura:attribute name="title" type="String" default="Register"/>
+	<aura:attribute name="publicLabel" type="String" default="Public sector"/>
+	<aura:attribute name="privateLabel" type="String" default="Private sector"/>
+	<aura:attribute name="description" type="String" default="What type of organisation do you work for?"/>
+	<!-- Component attributes -->
+
+	<!-- Public registration attributes -->
+	<aura:attribute name="public_accountId" type="String" required="false"/>
+	<aura:attribute name="public_regConfirmUrl" type="String" required="true"/>
+	<aura:attribute name="public_firstnameLabel" type="String" required="false" default="First Name"/>
+	<aura:attribute name="public_lastnameLabel" type="String" required="false" default="Last Name"/>
+	<aura:attribute name="public_emailLabel" type="String" required="false" default="Email"/>
+	<aura:attribute name="public_submitButtonLabel" type="String" required="false" default="Sign Up"/>
+	<aura:attribute name="public_contactNumberLabel" type="String" required="false" default="Contact Number"/>
+	<aura:attribute name="public_organizationNameLabel" type="String" required="false" default="Organization name"/>
+	<aura:attribute name="public_organizationSelectLabel" type="String" required="false" default="Select organication"/>
+	<aura:attribute name="public_registrationDescription2" type="String" required="false" default="Registration description 2"/>
+	<aura:attribute name="public_registrationDescription3" type="String" required="false" default="Registration description 23"/>
+	<aura:attribute name="public_registrationTitle2" type="String" required="false" default="Registration title 2"/>
+	<aura:attribute name="public_forgottenPasswordLink" type="String" required="false" default="/ForgottenPassword"/>
+	<aura:attribute name="public_forgottenPasswordLabel" type="String" required="false" default="Forgotten password label"/>
+	<aura:attribute name="public_loginLink" type="String" required="false" default="/login"/>
+	<aura:attribute name="public_loginLabel" type="String" required="false" default="Login label"/>
+	<aura:attribute name="public_selectOtherLabel" type="String" required="false" description="" default="Other"/>
+	<aura:attribute name="public_termsAndConditionsLink" type="String" default="" access="public"/>
+	<aura:attribute name="public_termsAndConditionsLabel" type="String" default="" access="public"/>
+	<aura:attribute name="public_termsAndConditionsCheckboxLabel" type="String" default="" access="public"/>
+	<!-- Public registration attributes -->
+	
+	<!-- Private registration attributes -->
+	<aura:attribute name="private_description" type="String" required="true"/>  
+	<aura:attribute name="private_buttonLabel" type="String" required="true"/>
+    <aura:attribute name="private_link" type="String" required="true"/>
+	<!-- Private registration attributes -->
+
+	<!-- Component logic attributes -->
+	<aura:attribute name="isPublic" type="Boolean" default="false" access="private"/>
+	<aura:attribute name="isPrivate" type="Boolean" default="false" access="private"/>
+	<aura:attribute name="showSelects" type="Boolean" default="true" access="private"/>
+	<!-- Component logic attributes -->
+
+	<aura:dependency resource="markup://c:PEM_Checkbox" type="COMPONENT"/>
+	<aura:dependency resource="markup://c:PEM_SelfRegister" type="COMPONENT"/>
+	<aura:dependency resource="markup://c:PEM_PrivateRegistration" type="COMPONENT"/>
+	<aura:dependency resource="markup://c:PEM_PublicRegistrationContinuation" type="EVENT"/>
+
+	<aura:handler name="change" value="{!v.isPublic}" action="{!c.onSelectPublic}"/>
+	<aura:handler name="change" value="{!v.isPrivate}" action="{!c.onSelectPrivate}"/>
+	<aura:handler name="PublicRegistrationContinuation" event="c:PEM_PublicRegistrationContinuation" action="{!c.onRegistrationContinuation}"/>
+    
+	<div>
+		<aura:if isTrue="{!v.showSelects}">
+			<div class="heading-medium text-center">{!v.title}</div>
+			<div class="heading-small text-center">{!v.description}</div>
+			<div class="grid-row text-center">
+				<c:PEM_Checkbox isSelected="{!v.isPublic}" label="{!v.publicLabel}"/>
+				<c:PEM_Checkbox isSelected="{!v.isPrivate}" label="{!v.privateLabel}"/>
+			</div>
+		</aura:if>
+		<div class="body-container">{!v.body}</div>
+	</div>
+</aura:component>

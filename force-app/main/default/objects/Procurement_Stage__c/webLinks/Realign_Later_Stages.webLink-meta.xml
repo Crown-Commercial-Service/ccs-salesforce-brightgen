@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Realign_Later_Stages</fullName>
+    <availability>online</availability>
+    <description>realign dates on stages after teh current one</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Realign Later Stages</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/COW_RealignLaterStages?recordId={!Procurement_Stage__c.Id}</url>
+</WebLink>

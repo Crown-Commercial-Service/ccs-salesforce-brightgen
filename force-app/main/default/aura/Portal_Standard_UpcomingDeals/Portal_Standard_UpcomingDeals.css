@@ -1,0 +1,344 @@
+.THIS {
+    padding-top: 20px;
+    min-height: 500px;
+}
+
+.THIS .loading-spinner {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.THIS .slds-spinner_container {
+    position: relative !important;
+}
+
+
+/* Skuid Table reset */
+
+.THIS table.nx-skootable-data>tbody>tr>td:first-child, .THIS table.nx-skootable-data thead tr td:first-child {
+    border: none;
+}
+
+.THIS table.nx-skootable-data>tbody>tr>td, .THIS table.nx-skootable-data thead tr td {
+    border: none;
+}
+
+.THIS table.nx-skootable-data>tbody>tr>td, .THIS table.nx-skootable-data thead td {
+    background-color: transparent;
+}
+
+.THIS table.nx-skootable-data th, .THIS table.nx-skootable-data tr th:first-child {
+    border: none;
+    background-color: transparent;
+}
+
+.THIS table.nx-skootable-data>tbody>tr:nth-child(odd) td {
+    background-color: transparent;
+}
+
+/* Skuid styles */
+
+.THIS .nx-page .nx-page-content {
+  padding: 0 0 0 0;
+}
+.THIS .nx-list-footer-center span {
+  display: none;
+}
+@media screen and (max-width: 641px) {
+  .THIS .hide-on-mobile {
+    display: none !important;
+    width: 0;
+    height: 0;
+  }
+}
+@media screen and (min-width: 641px) {
+  .THIS .show-on-mobile {
+    display: none !important;
+    width: 0;
+    height: 0;
+  }
+}
+.THIS .mobile-upcoming-deal-box {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #bfc1c3;
+  font-size: 14px;
+}
+.THIS .mobile-upcoming-deal-box .descriptor {
+  color: #666666;
+}
+.THIS #collapsible-1 > form, .THIS #collapsible-2 > form {
+  padding-bottom: 10px;
+}
+.THIS a.remove-filter:link {
+  color: #087B9E !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+}
+.THIS a.remove-filter:title {
+  font-size: 17px;
+}
+.THIS a.remove-filter:visited {
+  /* color: #4c2c92; LOUIS EDIT */
+  color: #087B9E !important;
+}
+.THIS a.remove-filter:hover {
+  color: #2D9ABA !important;
+}
+.THIS a.remove-filter:active {
+  color: #2b8cc4 !important;
+}
+.THIS a.remove-filter:focus {
+  background-color: #ffc9dc !important;
+  outline: 3px solid #ffc9dc !important;
+}
+.THIS .mobile-upcoming-deal-box h4 a:link {
+  color: #087B9E !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+}
+.THIS .mobile-upcoming-deal-box h4 a.title {
+  font-size: 19px;
+}
+.THIS .mobile-upcoming-deal-box h4 a:visited {
+  /* color: #4c2c92; LOUIS EDIT */
+  color: #087B9E !important;
+}
+.THIS .mobile-upcoming-deal-box h4 a:hover {
+  color: #2D9ABA !important;
+}
+.THIS .mobile-upcoming-deal-box h4 a:active {
+  color: #2b8cc4 !important;
+}
+.THIS .mobile-upcoming-deal-box h4 a:focus {
+  background-color: #ffc9dc !important;
+  outline: 3px solid #ffc9dc !important;
+}
+.THIS table > tbody > tr > td > div.nx-field > div > div > a:link {
+  color: #087B9E !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+}
+.THIS table > tbody > tr > td > div.nx-field > div > div > a.title {
+  font-size: 17px;
+}
+.THIS table > tbody > tr > td > div.nx-field > div > div > a:visited {
+  /* color: #4c2c92; LOUIS EDIT */
+  color: #087B9E !important;
+}
+.THIS table > tbody > tr > td > div.nx-field > div > div > a:hover {
+  color: #2D9ABA !important;
+}
+.THIS table > tbody > tr > td > div.nx-field > div > div > a:active {
+  color: #2b8cc4 !important;
+}
+.THIS table > tbody > tr > td > div.nx-field > div > div > a:focus {
+  background-color: #ffc9dc !important;
+  outline: 3px solid #ffc9dc !important;
+}
+.THIS .collapsible-item {
+  display: block;
+  padding: 0;
+  margin: 0 0 30px;
+}
+.THIS .collapsible-item.filter-form {
+  background: #F6F6F6;
+  max-width: 300px;
+}
+.THIS .collapsible-item .collapsible-heading h3 {
+  margin-bottom: 0;
+}
+.THIS .collapsible-content {
+  padding: 0px 15px 15px;
+}
+.THIS .collapsible-item button {
+  background-color: transparent;
+  border: 0 none;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  line-height: 25px;
+  margin: 0;
+  padding: 10px 15px;
+  text-align: left;
+  width: 100%;
+  font-weight: 600;
+  position: relative;
+}
+.THIS .collapsible-item button:after {
+  content: "";
+  background: transparent url(/resource/portalAssets/assets/images/chevron.svg) no-repeat left center;
+  background-size: 16px;
+  position: absolute;
+  display: inline-block;
+  right: 15px;
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+}
+.THIS .collapsible-item button[aria-expanded="true"]:after {
+  -ms-transform: rotate(180deg);
+  /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  /* Safari 3-8 */
+  transform: rotate(180deg);
+}
+.THIS .collapsible-item.filter-form label {
+  display: block;
+  padding: 5px 0;
+  cursor: pointer;
+  margin: 0 -2px;
+  font-weight: 600;
+}
+
+.THIS .collapsible-item.filter-form #collapsible-1 label {
+  font-size: 17px;
+}
+
+.THIS .collapsible-item.filter-form #collapsible-2 label {
+  font-size: 15px;
+}
+
+.THIS .collapsible-item.filter-form label span.descriptor {
+  font-size: 16px;
+  padding-left: 27px;
+  font-weight: 400;
+  display: block;
+  margin-top: -5px;
+}
+.THIS .visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+.THIS .visuallyhidden {
+  position: absolute;
+  left: -9999em;
+}
+.THIS table.nx-skootable-data > tbody > tr > td, .THIS table.nx-skootable-data > tbody > tr > td:first-child, .THIS table.nx-skootable-data thead tr td, .THIS table.nx-skootable-data thead tr td:first-child {
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  padding: 5px 20px 5px 0;
+  text-align: left;
+  color: #424242;
+  border-bottom: 1px solid #bfc1c3;
+}
+.THIS table.nx-skootable-data > tbody > tr > td, .THIS table.nx-skootable-data > tbody > tr > td:first-child {
+  font-weight: 400;
+  vertical-align: top;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.THIS table > thead > tr > th, .THIS table.nx-skootable-data th {
+  font-size: 19px;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: #424242;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+.THIS table td span.descriptor {
+  font-size: 14px;
+  display: block;
+  clear: both;
+}
+.THIS thead {
+  border-bottom: 3px solid #000;
+}
+.THIS table th {
+  font-weight: 400;
+  font-size: 19px;
+  min-width: 150px;
+  padding-bottom: 13px;
+}
+.THIS th.narrow {
+  min-width: 100px;
+}
+.THIS table > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+.THIS table.nx-skootable-data > tbody > tr > td:last-of-type {
+  text-align: right;
+  padding-right: 0;
+}
+.THIS table .last,
+.THIS .table .last {
+  padding-right: 0;
+  text-align: right;
+}
+.THIS .js-table-sortable th.sortable {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: #424242;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+.THIS .js-table-sortable th.sortable .sort-arrows {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 1em;
+  margin-bottom: -3px;
+}
+.THIS .js-table-sortable th.sortable .sort-arrows:after,
+.THIS .js-table-sortable th.sortable .sort-arrows:before {
+  position: absolute;
+  right: 0px;
+  font-size: 0.53em;
+}
+.THIS .js-table-sortable th.sortable .sort-arrows:after {
+  content: '▲';
+  top: -1px;
+}
+.THIS .js-table-sortable th.sortable .sort-arrows:before {
+  content: '▼';
+  bottom: -1px;
+}
+.THIS .js-table-sortable th.sortable.sorting-desc .sort-arrows:before,
+.THIS .js-table-sortable th.sortable.sorting-asc .sort-arrows:after {
+  display: none;
+}
+.THIS .js-table-sortable th.sortable.sorting-desc .sort-arrows:after {
+  top: 1px;
+  font-size: 0.7em;
+}
+.THIS .js-table-sortable th.sortable.sorting-asc .sort-arrows:before {
+  bottom: 1px;
+  font-size: 0.7em;
+}
+.THIS .row-wrap {
+  width: 100%;
+  display: block;
+  clear: both;
+}
+.THIS table.nx-skootable-data th .nx-skootable-order-icon {
+  font-size: 22px;
+  color: #087B9E;
+}
+.THIS table.nx-skootable-data th .ui-icon-carat-2-n-s:before, .THIS table.nx-skootable-data th .nx-skootable-order-icon.ui-icon-triangle-1-s:before, .THIS table.nx-skootable-data th .nx-skootable-order-icon.ui-icon-triangle-1-n:before {
+  border-bottom-color: #087B9E;
+}
+.THIS table.nx-skootable-data th .nx-skootable-order-icon:before, .THIS table.nx-skootable-data th .nx-skootable-order-icon.ui-icon-triangle-1-s:before, .THIS table.nx-skootable-data th .nx-skootable-order-icon.ui-icon-triangle-1-n:before {
+  border-bottom-color: #087B9E;
+}
+.THIS table.nx-skootable-data th .ui-icon-carat-2-n-s:after, .THIS table.nx-skootable-data th .nx-skootable-order-icon.ui-icon-triangle-1-s:after, .THIS table.nx-skootable-data th .nx-skootable-order-icon.ui-icon-triangle-1-n:after {
+  border-top-color: #087B9E;
+}
+.THIS table.nx-skootable-data th .nx-skootable-order-icon:after, .THIS table.nx-skootable-data th .nx-skootable-order-icon.ui-icon-triangle-1-s:after, .THIS table.nx-skootable-data th .nx-skootable-order-icon.ui-icon-triangle-1-n:after {
+  border-top-color: #087B9E;
+}

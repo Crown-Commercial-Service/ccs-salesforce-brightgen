@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This permission set group assigns CSC elevation rights and BDM elevation rights to allow CSC users who also do procurements to be able to handle service desk cases as well as leads and opportunities</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CSC User in Procurement Profile</label>
+    <permissionSets>CCS_BDM_Lightning</permissionSets>
+    <permissionSets>CCS_CSC_Procurement_Elevation_Rights</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

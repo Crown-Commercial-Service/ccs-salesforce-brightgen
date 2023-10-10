@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owning_Organisation__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>By default frameworks are managed by CCS.  Please select another organisation only where applicable</inlineHelpText>
+    <label>Owning Organisation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CCS</fullName>
+                <default>true</default>
+                <label>CCS</label>
+            </value>
+            <value>
+                <fullName>MOD</fullName>
+                <default>false</default>
+                <label>MOD</label>
+            </value>
+            <value>
+                <fullName>DWP</fullName>
+                <default>false</default>
+                <label>DWP</label>
+            </value>
+            <value>
+                <fullName>ESPO</fullName>
+                <default>false</default>
+                <label>ESPO</label>
+            </value>
+            <value>
+                <fullName>UKSBS</fullName>
+                <default>false</default>
+                <label>UKSBS</label>
+            </value>
+            <value>
+                <fullName>Workforce Alliance</fullName>
+                <default>false</default>
+                <label>Workforce Alliance</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

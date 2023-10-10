@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployed_List</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Deployed</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/26.0/connection.js&quot;)}
+var url = parent.location.href;
+var records = {!GETRECORDIDS($ObjectType.User_Story__c)};
+var updateRecords = [];
+
+if (records[0] == null) { //if the button was clicked but there was no record selected
+alert(&quot;Please select at least one record to update.&quot;); //alert the user that they didn&apos;t make a selection
+} else { //otherwise, there was a record selection
+for (var a=0; a&lt;records.length; a++) { //for all records
+var update_User_Story = new sforce.SObject(&quot;User_Story__c&quot;);
+update_User_Story.Id = records[a]; //set the Id of the selected User Story record
+update_User_Story.US_Status__c = &quot;Deployed&quot;;
+update_User_Story.Stage__c = &quot;User Acceptance Testing&quot;;
+updateRecords.push(update_User_Story);
+}
+result = sforce.connection.update(updateRecords);
+parent.location.href = url; //refresh the page
+}</url>
+</WebLink>

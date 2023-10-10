@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Task_Estimate__c</fullName>
+    <externalId>false</externalId>
+    <label>Task Estimate</label>
+    <summarizedField>Sprint_Task__c.Sprint_Task_Estimate__c</summarizedField>
+    <summaryForeignKey>Sprint_Task__c.Sprint_Task_User_Story__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

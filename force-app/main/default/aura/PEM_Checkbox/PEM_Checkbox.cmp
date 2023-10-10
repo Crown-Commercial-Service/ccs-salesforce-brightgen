@@ -1,0 +1,11 @@
+<aura:component >
+	<aura:attribute name="isSelected" type="Boolean" default="false"/>
+	<aura:attribute name="label" type="String" default=""/>
+
+	<div class="checkbox-container">
+		<div class="{!'column-one-half checkbox-item' + (v.isSelected ? ' selected' : '')}">
+			<div class="check" onclick="{!c.toggle}"></div>
+			<ui:inputRadio aura:id="input" label="{#v.label}" click="{!c.toggle}"/>
+		</div>
+	</div>
+</aura:component>

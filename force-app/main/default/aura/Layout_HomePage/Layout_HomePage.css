@@ -1,0 +1,41 @@
+.THIS .home-routes .card-comparison .heading-medium {
+    background: #01989F;
+}
+
+/* Video and news section */
+.THIS.grid-row > .center-blk > .column-two-thirds.no-right-gutter {
+    padding-top: 40px;
+}
+
+.THIS.grid-row > .center-blk > .column-third.no-left-gutter {
+    padding-top: 40px;
+}
+
+/* This removes the paragraph inserted after the video-embed by Salesforce */
+.THIS .sfdcCbVideoContainer + p {
+    display: none;
+}
+
+@media screen and (min-width: 641px) and (max-width: 900px) {
+	.THIS.grid-row > .center-blk > .column-two-thirds.no-right-gutter {
+        padding-left: 0;
+        width: 100%;
+    }
+    
+    .THIS.grid-row > .center-blk > .column-third.no-left-gutter {
+    	width: 100%;
+        padding-right: 0;
+	}
+}
+
+@media screen and (min-width: 641px) {
+    
+    .THIS.grid-row > .center-blk > .column-two-thirds.no-right-gutter {
+        padding-right: 0;
+    }
+    
+    .THIS.grid-row > .center-blk > .column-third.no-left-gutter {
+    	padding-left: 0;
+	}
+    
+}

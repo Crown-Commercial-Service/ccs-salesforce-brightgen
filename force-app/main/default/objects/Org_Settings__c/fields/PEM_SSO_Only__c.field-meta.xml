@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PEM_SSO_Only__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>SSO only, limited access to SSO only</description>
+    <externalId>false</externalId>
+    <inlineHelpText>SSO only, limited access to SSO only</inlineHelpText>
+    <label>PEM SSO Only</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

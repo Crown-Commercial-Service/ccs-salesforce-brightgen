@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>Invalid GDPR Response {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Invalid GDPR Response</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Case</name>
+        <label>Delete Case</label>
+        <locationX>120</locationX>
+        <locationY>33</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GDPR_Delete__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+    </recordDeletes>
+    <startElementReference>Delete_Case</startElementReference>
+    <status>Active</status>
+</Flow>

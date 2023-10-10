@@ -1,0 +1,391 @@
+<apex:page standardcontroller="Framework_Forecast__c" recordSetvar="fr" extensions="bg_FrameworkForecastViewController" showHeader="true" sidebar="false" tabStyle="Master_Framework__c" lightningStylesheets="true">
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS221, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+
+    <style>
+        .MouseOver{
+            /* Mouse */
+            cursor:pointer;
+        }
+        .popupBackground {
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            /* Dimensions */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 998;
+            position: absolute;
+            /* Mouse */
+            cursor:wait;
+        }
+        .PopupPanel {
+            /* Background color */
+            border: solid 2px #aa930a;
+            background-color: white;
+            /* Dimensions */
+            left: 50%;
+            width: 200px;
+            margin-left: -100px;
+            top: 20%;
+            height: 75px;
+            margin-top: -25px;
+            z-index: 999;
+            position: fixed;
+            /* Mouse */
+            cursor:pointer;
+        }
+        .headerRow th, .dataRow td{
+            width: 80px;
+        }
+        .lower {
+            background-color: rgba(255,0,0,0.5);
+        }
+        .higher {
+            background-color: rgba(0,255,0,0.5);
+        }
+        .total {
+            font-size: 10pt;
+
+        }
+    </style>
+
+    <!-- LOADING BLOCK -->
+    <apex:actionStatus id="loading" stopText="">
+        <apex:facet name="start">
+            <div>
+                <div class="popupBackground"></div>
+                <div class="PopupPanel">
+                    <table border="0" bordercolor="red"  width="100%" height="100%">
+                        <tr>
+                            <td align="center"><span style="text-align:left;font-size:15px;line-height:17px">Loading, please wait...</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+    <!-- LOADING BLOCK -->
+
+    <apex:form id="theForm">
+        <apex:sectionHeader title="Framework forecast" subtitle="Acknowledge forecasts" description="Select Framework Forecast view"/>
+
+        <!-- JAVA SCRIPT PARAMETERS 
+        <apex:inputHidden value="{!listViewId}" id="viewFilterId"/>
+        <!-- JAVA SCRIPT PARAMETERS -->
+
+        <!-- LIST VIEW Component -->
+        <apex:panelGrid columns="2">
+            <apex:outputLabel value="View:"/>
+            <apex:selectList id="viewId" value="{!listViewId}" size="1">
+                <apex:actionSupport status="loading" event="onchange" reRender="list" />
+                <apex:selectOptions value="{!listViewOptions}"/>
+            </apex:selectList>
+        </apex:panelGrid>
+        <br/>
+        <!-- LIST VIEW Component -->
+
+        <!-- APEX Error messages -->
+        <apex:pageMessages id="errors"/>
+        <!-- APEX Error messages -->
+
+        <!-- Results Component -->
+        <apex:outputpanel id="list">
+            <apex:pageBlock title="Overall Total: £{!overallTotal}" />
+            <!-- FRAMEWORK FORECAST RECORDS -->
+            <apex:repeat value="{!businessYears}" var="by">
+
+                <apex:pageBlock title="{!by} | £{!yearTotals[by]}" >
+
+                    <!-- FRAMEWORK FORECAST YEAR RECORDS -->
+                    <apex:pageBlock title="{!$Label.FF_Central_Government} | £{!cgTotals[by]}">
+                        <!-- <apex:outputText value="Sector Total: {!cgTotals[by]}" styleClass="total"/> -->
+                        <apex:repeat value="{!cgForecastYearByBY[by]}" var="cgForecastForBY" >
+                            <apex:pageBlock title="{!cgForecastForBY.ffy.Forecast__r.Framework__r.Name} | £{!cgForecastForBY.currTotal}" rendered="{!cgForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_0 || 
+                                    cgForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_1 || cgForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_2}">
+                                    <!-- <apex:outputText value="Framework Total: {!cgForecastForBY.currTotal}" styleClass="total" /> -->
+                                <table class="list" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr class="headerRow">
+                                        <th></th>
+                                        <th>{!$Label.FF_M01_Apr}</th>
+                                        <th>{!$Label.FF_M02_May}</th>
+                                        <th>{!$Label.FF_M03_Jun}</th>
+                                        <th>{!$Label.FF_M04_Jul}</th>
+                                        <th>{!$Label.FF_M05_Aug}</th>
+                                        <th>{!$Label.FF_M06_Sep}</th>
+                                        <th>{!$Label.FF_M07_Oct}</th>
+                                        <th>{!$Label.FF_M08_Nov}</th>
+                                        <th>{!$Label.FF_M09_Dec}</th>
+                                        <th>{!$Label.FF_M10_Jan}</th>
+                                        <th>{!$Label.FF_M11_Feb}</th>
+                                        <th>{!$Label.FF_M12_Mar}</th>
+                                        <th style="width:140px">Last Acknowledged</th>
+                                        <th rowspan="3">
+                                                <apex:commandButton status="loading" value="Acknowledge" reRender="errors, list" action="{!acknowledgeYear}" rendered="{!$Permission.Can_Acknowledge_Forecasts}">
+                                                <apex:param name="setYearId" value="{!cgForecastForBY.ffy.Id}" assignTo="{!acknowledgedForecastYearId}"/>
+                                            </apex:commandButton>
+                                        </th>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td>
+                                            <apex:outputText value="Previous" />
+                                        </td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Previous_Acknowledged_Monthly_Forecast}" var="field" >   
+                                            <td class="{!cgForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!cgForecastForBY.ffy[field]}" />
+
+                                            </td> 
+                                        </apex:repeat> 
+                                        <td><apex:outputField value="{!cgForecastForBY.ffy.Last_Acknowledged_Date__c}"/></td>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Current" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Monthly_Forecast}" var="field" > 
+                                            <td class="{!cgForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!cgForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat>
+                                        <td><apex:outputField value="{!cgForecastForBY.ffy.Last_Acknowledged_By__c}"/></td>
+                                    </tr>
+                                </table>
+                            </apex:pageBlock>
+                            <!--Quarterly framework year view-->
+                            <apex:pageBlock title="{!cgForecastForBY.ffy.Forecast__r.Framework__r.Name} | £{!cgForecastForBY.currTotal}" rendered="{!cgForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_3}">
+                                <table class="list" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr class="headerRow">
+                                        <th></th>
+                                        <th>{!$Label.FF_QTR_01}</th>
+                                        <th>{!$Label.FF_QTR_02}</th>
+                                        <th>{!$Label.FF_QTR_03}</th>
+                                        <th>{!$Label.FF_QTR_04}</th>
+                                        <th style="width:140px">Last Acknowledged</th>
+                                        <th rowspan="3">
+                                            <apex:commandButton status="loading" value="Acknowledge" reRender="errors, list" action="{!acknowledgeYear}" rendered="{!$Permission.Can_Acknowledge_Forecasts}">
+                                                <apex:param name="setYearId" value="{!cgForecastForBY.ffy.Id}" assignTo="{!acknowledgedForecastYearId}"/>
+                                            </apex:commandButton>
+                                        </th>
+                                    </tr>
+
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Previous" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Previous_Acknowledged_Quarterly_Forecast}" var="field" > 
+                                            <td class="{!cgForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!cgForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat>
+                                        <td><apex:outputField value="{!cgForecastForBY.ffy.Last_Acknowledged_Date__c}"/></td>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Current" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Quarterly_Forecast}" var="field" >   
+                                            <td class="{!cgForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!cgForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat> 
+                                        <td><apex:outputField value="{!cgForecastForBY.ffy.Last_Acknowledged_By__c}"/></td>
+                                    </tr>
+                                </table>
+                            </apex:pageBlock>
+                            <!--Annual framework year view-->
+                            <apex:pageBlock title="{!cgForecastForBY.ffy.Forecast__r.Framework__r.Name} | £{!cgForecastForBY.currTotal}" rendered="{!cgForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_4}">
+                                <table class="list" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr class="headerRow">
+                                        <th></th>
+                                        <th>{!$Label.FF_Annual}</th>
+                                        <th style="width:140px">Last Acknowledged</th>
+                                        <th rowspan="3">
+                                            <apex:commandButton status="loading" value="Acknowledge" reRender="errors, list" action="{!acknowledgeYear}" rendered="{!$Permission.Can_Acknowledge_Forecasts}">
+                                                <apex:param name="setYearId" value="{!cgForecastForBY.ffy.Id}" assignTo="{!acknowledgedForecastYearId}"/>
+                                            </apex:commandButton>
+                                        </th>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Previous" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Previous_Acknowledged_Annual_Forecast}" var="field" >    
+                                            <td class="{!cgForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!cgForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat>
+                                        <td><apex:outputField value="{!cgForecastForBY.ffy.Last_Acknowledged_Date__c}"/></td>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Current" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Annual_Forecast}" var="field" >  
+                                            <td class="{!cgForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!cgForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat> 
+                                        <td><apex:outputField value="{!cgForecastForBY.ffy.Last_Acknowledged_By__c}"/></td>
+                                    </tr>
+                                </table>
+                            </apex:pageBlock>
+                        </apex:repeat>
+                    </apex:pageBlock>
+                    
+                    <apex:pageBlock title="{!$Label.FF_Wider_Public_Sector} | £{!wpsTotals[by]}">
+                    <!-- <apex:outputText value="{!wpsTotals[by]}"/> -->
+                        <apex:repeat value="{!wpsForecastYearByBY[by]}" var="wpsForecastForBY">
+                            <!--Monthly framework year view -->
+                            <apex:pageBlock title="{!wpsForecastForBY.ffy.Forecast__r.Framework__r.Name} | £{!wpsForecastForBY.currTotal}" rendered="{!wpsForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_0 || 
+                                wpsForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_1 || wpsForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_2}">
+                                <table class="list" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr class="headerRow">
+                                        <th></th>
+                                        <th>{!$Label.FF_M01_Apr}</th>
+                                        <th>{!$Label.FF_M02_May}</th>
+                                        <th>{!$Label.FF_M03_Jun}</th>
+                                        <th>{!$Label.FF_M04_Jul}</th>
+                                        <th>{!$Label.FF_M05_Aug}</th>
+                                        <th>{!$Label.FF_M06_Sep}</th>
+                                        <th>{!$Label.FF_M07_Oct}</th>
+                                        <th>{!$Label.FF_M08_Nov}</th>
+                                        <th>{!$Label.FF_M09_Dec}</th>
+                                        <th>{!$Label.FF_M10_Jan}</th>
+                                        <th>{!$Label.FF_M11_Feb}</th>
+                                        <th>{!$Label.FF_M12_Mar}</th>
+                                        <th style="width:140px">Last Acknowledged</th>
+                                        <th rowspan="3">
+                                            <apex:commandButton status="loading" value="Acknowledge" reRender="errors, list" action="{!acknowledgeYear}" rendered="{!$Permission.Can_Acknowledge_Forecasts}">
+                                                <apex:param name="setYearId" value="{!wpsForecastForBY.ffy.Id}" assignTo="{!acknowledgedForecastYearId}"/>
+                                            </apex:commandButton>
+                                        </th>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Previous" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Previous_Acknowledged_Monthly_Forecast}" var="field" >   
+                                            <td class="{!wpsForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!wpsForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat>
+                                        <td><apex:outputField value="{!wpsForecastForBY.ffy.Last_Acknowledged_Date__c}"/></td>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Current" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Monthly_Forecast}" var="field" > 
+                                            <td class="{!wpsForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!wpsForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat> 
+                                        <td><apex:outputField value="{!wpsForecastForBY.ffy.Last_Acknowledged_By__c}"/></td>
+                                    </tr>
+                                </table>
+                            </apex:pageBlock>
+                            <!--Quarterly framework year view-->
+                            <apex:pageBlock title="{!wpsForecastForBY.ffy.Forecast__r.Framework__r.Name} | £{!wpsForecastForBY.currTotal}" rendered="{!wpsForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_3}">
+                                <table class="list" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr class="headerRow">
+                                        <th></th>
+                                        <th>{!$Label.FF_QTR_01}</th>
+                                        <th>{!$Label.FF_QTR_02}</th>
+                                        <th>{!$Label.FF_QTR_03}</th>
+                                        <th>{!$Label.FF_QTR_04}</th>
+                                        <th style="width:140px">Last Acknowledged</th>
+                                        <th rowspan="3">
+                                            <apex:commandButton status="loading" value="Acknowledge" reRender="errors, list" action="{!acknowledgeYear}" rendered="{!$Permission.Can_Acknowledge_Forecasts}">
+                                                <apex:param name="setYearId" value="{!wpsForecastForBY.ffy.Id}" assignTo="{!acknowledgedForecastYearId}"/>
+                                            </apex:commandButton>
+                                        </th>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Previous" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Previous_Acknowledged_Quarterly_Forecast}" var="field" > 
+                                            <td class="{!wpsForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!wpsForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat>
+                                        <td><apex:outputField value="{!wpsForecastForBY.ffy.Last_Acknowledged_Date__c}"/></td>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Current" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Quarterly_Forecast}" var="field" >   
+                                            <td class="{!wpsForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!wpsForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat> 
+                                        <td><apex:outputField value="{!wpsForecastForBY.ffy.Last_Acknowledged_By__c}"/></td>
+                                    </tr>
+                                </table>
+                            </apex:pageBlock>
+                            <!--Annual framework year view-->
+                            <apex:pageBlock title="{!wpsForecastForBY.ffy.Forecast__r.Framework__r.Name} | £{!wpsForecastForBY.currTotal}" rendered="{!wpsForecastForBY.ffy.Relative_Forecast_Year__c == $Label.FF_Year_4}">
+                                <table class="list" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr class="headerRow">
+                                        <th></th>
+                                        <th>{!$Label.FF_Annual}</th>
+                                        <th style="width:140px">Last Acknowledged</th>
+                                        <th rowspan="3">
+                                            <apex:commandButton status="loading" value="Acknowledge" reRender="errors, list" action="{!acknowledgeYear}" rendered="{!$Permission.Can_Acknowledge_Forecasts}">
+                                                <apex:param name="setYearId" value="{!wpsForecastForBY.ffy.Id}" assignTo="{!acknowledgedForecastYearId}"/>
+                                            </apex:commandButton>
+                                        </th>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Previous" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Previous_Acknowledged_Annual_Forecast}" var="field" >    
+                                            <td class="{!wpsForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!wpsForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat>
+                                        <td><apex:outputField value="{!wpsForecastForBY.ffy.Last_Acknowledged_Date__c}"/></td>
+                                    </tr>
+                                    
+                                    <tr class="dataRow">
+                                        <td><apex:outputText value="Current" /></td>
+                                        <apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Annual_Forecast}" var="field" >  
+                                            <td class="{!wpsForecastForBY.classByField[field]}">
+                                                <apex:outputField value="{!wpsForecastForBY.ffy[field]}" />
+                                            </td> 
+                                        </apex:repeat> 
+                                        <td><apex:outputField value="{!wpsForecastForBY.ffy.Last_Acknowledged_By__c}"/></td>
+                                    </tr>
+                                </table>
+                            </apex:pageBlock>
+                        </apex:repeat>
+                    </apex:pageBlock>
+                    <!-- FRAMEWORK FORECAST YEAR RECORDS -->
+                </apex:pageBlock>
+            </apex:repeat>
+            <!-- FRAMEWORK FORECAST RECORDS -->
+            <apex:pageBlock title="Overall Total: £{!overallTotal}" />
+        </apex:outputpanel>
+    </apex:form> 
+
+    <script>
+        j$ = jQuery.noConflict();
+        j$(document).ready(function() {
+            setListFilterId();
+        });
+
+        function setListFilterId()
+        {
+            var parametro = j$('[id$=viewId]').val();
+            j$('[id$=viewFilterId]').val(parametro);
+            resetRecords();
+        }
+
+        // function clearClassesForRow(element){
+        //  console.log(element);
+        //  element = j$(element).parents('TBODY');
+        //  console.log(j$(element).find('td.higher'));
+        //  console.log(j$(element).find('td.lower'));
+        //  j$(element).find('td.higher').each(function(){
+        //      j$(this).removeClass('higher');
+        //  });
+        //  j$(element).find('td.lower').each(function(){
+        //      $(this).removeClass('lower');
+        //  });
+        // }
+    </script>
+</apex:page>

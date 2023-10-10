@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;
+      &lt;span style=&quot;font-size:28px&quot;&gt;&lt;strong&gt;Contact us&lt;/strong&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;font-size:26px&quot;&gt;&lt;span style=&quot;color:rgb(105, 105, 105)&quot;&gt;We&apos;d love to hear from you.&lt;/span&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;The easiest way to contact us is to complete the form below (it&amp;rsquo;d be really helpful if you could give us as much detail as possible - thanks!). Or you can email or call us and we&amp;rsquo;ll get back to you as soon as we can.&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;!--render facet: 43:97;a--&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>attachFiles</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>authenticatedActionName</name>
+                    <value>NewCase</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>confirmationMessageDescription</name>
+                    <value>You can track your enquiry on our website - just register or login.</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>confirmationMessageTitle</name>
+                    <value>Thanks for getting in touch.</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>deflectionCategoryGroupName</name>
+                    <value>{!DataCategoryGroupName}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>deflectionNotHelpful</name>
+                    <value>Didn&apos;t find what you&apos;re looking for?</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>deflectionNumberOfArticles</name>
+                    <value>6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>deflectionParentCategory</name>
+                    <value>{!TopLevelCategory}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>deflectionSubHeader</name>
+                    <value>Check out these articles...</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>deflectionTitle</name>
+                    <value>Need Answers Fast?</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hasDeflection</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>headerTitle</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>isReCaptchaEnabled</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reCaptchaPrivateKey</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reCaptchaPublicKey</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>unauthenticatedActionName</name>
+                    <value>NewCase</value>
+                </componentInstanceProperties>
+                <componentName>selfService:caseCreate</componentName>
+                <identifier>selfService_caseCreate</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>header</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;--------------------------------------------------------------------------------------------------------&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;&lt;strong&gt;Email us&lt;/strong&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Drop us an email and we&apos;ll get back to you as soon as we can.&lt;/span&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;info@crowncommercial.gov.uk&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;--------------------------------------------------------------------------------------------------------&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;&lt;strong&gt;Call us&lt;/strong&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Our customer service team are here Mon to Fri between 9am to 5pm&lt;/span&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;span style=&quot;color:#696969&quot;&gt;0345 410 2222&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;br&gt;
+      &lt;!--render facet: 13:764;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>content</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>footer</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>ContactUs</masterLabel>
+    <template>
+        <name>siteforce:sldsOneColLayout</name>
+    </template>
+    <type>CommAppPage</type>
+</FlexiPage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Login_Domain_Suffix__c</fullName>
+    <description>31.10.2016 - Garth James (Salesforce) - Created. This field will be used to create the &apos;suffix&apos; for the username when it us auto-provisioned for SSO. The suffix, in this case, is everything following on from the &apos;@&apos; sign. So, if the user&apos;s email address was &apos;dead.pool@marvel.com&apos;, the provisioner would take &apos;dead.pool@&apos; and and attach the contents of this field to the rest of the string to create a user login.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to create the &apos;suffix&apos; for SSO username. The suffix is everything following on from the &apos;@&apos; sign. If the user&apos;s email address was &apos;dead.pool@marvel.com&apos;, the provisioner would take &apos;dead.pool@&apos; and attach this field to create the login.</inlineHelpText>
+    <label>Login Domain Suffix</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

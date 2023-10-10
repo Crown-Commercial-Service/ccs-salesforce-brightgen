@@ -1,0 +1,12 @@
+<apex:page title="Generate Reference" controller="COW_GenerateReferencePageController" action="{!actionGenerateRef}" lightningStylesheets="true" >
+
+    <apex:pageMessages />
+    <apex:form >
+    
+        <apex:commandButton value="Back" action="{!backAction}" immediate="true" />
+        <apex:commandButton value="Try Again" action="{!retryAction}" rendered="{!allowRetry}" />
+        
+    </apex:form>
+    
+
+</apex:page>

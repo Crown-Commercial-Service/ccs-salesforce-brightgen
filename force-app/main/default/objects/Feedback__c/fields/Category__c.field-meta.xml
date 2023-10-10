@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <description>Pillar category options</description>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Pillar__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Construction</fullName>
+                <default>false</default>
+                <label>Construction</label>
+            </value>
+            <value>
+                <fullName>Workplace</fullName>
+                <default>false</default>
+                <label>Workplace</label>
+            </value>
+            <value>
+                <fullName>Energy</fullName>
+                <default>false</default>
+                <label>Energy</label>
+            </value>
+            <value>
+                <fullName>Estates Decarbonisation</fullName>
+                <default>false</default>
+                <label>Estates Decarbonisation</label>
+            </value>
+            <value>
+                <fullName>Document Management &amp; Logistics</fullName>
+                <default>false</default>
+                <label>Document Management &amp; Logistics</label>
+            </value>
+            <value>
+                <fullName>Financial Services</fullName>
+                <default>false</default>
+                <label>Financial Services</label>
+            </value>
+            <value>
+                <fullName>Fleet</fullName>
+                <default>false</default>
+                <label>Fleet</label>
+            </value>
+            <value>
+                <fullName>Marcomms &amp; Research</fullName>
+                <default>false</default>
+                <label>Marcomms &amp; Research</label>
+            </value>
+            <value>
+                <fullName>Travel</fullName>
+                <default>false</default>
+                <label>Travel</label>
+            </value>
+            <value>
+                <fullName>Contact Centres</fullName>
+                <default>false</default>
+                <label>Contact Centres</label>
+            </value>
+            <value>
+                <fullName>People Services</fullName>
+                <default>false</default>
+                <label>People Services</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <label>Professional Services</label>
+            </value>
+            <value>
+                <fullName>PSR &amp; Permanent Recruitment</fullName>
+                <default>false</default>
+                <label>PSR &amp; Permanent Recruitment</label>
+            </value>
+            <value>
+                <fullName>Workforce Health &amp; Education</fullName>
+                <default>false</default>
+                <label>Workforce Health &amp; Education</label>
+            </value>
+            <value>
+                <fullName>Digital Future</fullName>
+                <default>false</default>
+                <label>Digital Future</label>
+            </value>
+            <value>
+                <fullName>Network Services</fullName>
+                <default>false</default>
+                <label>Network Services</label>
+            </value>
+            <value>
+                <fullName>Technology Solutions &amp; Outcomes</fullName>
+                <default>false</default>
+                <label>Technology Solutions &amp; Outcomes</label>
+            </value>
+            <value>
+                <fullName>Technology Products and Services</fullName>
+                <default>false</default>
+                <label>Technology Products and Services</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Buildings</controllingFieldValue>
+            <valueName>Construction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buildings</controllingFieldValue>
+            <valueName>Workplace</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buildings</controllingFieldValue>
+            <valueName>Energy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Buildings</controllingFieldValue>
+            <valueName>Estates Decarbonisation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporate Solutions</controllingFieldValue>
+            <valueName>Document Management &amp; Logistics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporate Solutions</controllingFieldValue>
+            <valueName>Financial Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporate Solutions</controllingFieldValue>
+            <valueName>Fleet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporate Solutions</controllingFieldValue>
+            <valueName>Marcomms &amp; Research</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Corporate Solutions</controllingFieldValue>
+            <valueName>Travel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>People</controllingFieldValue>
+            <valueName>Contact Centres</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>People</controllingFieldValue>
+            <valueName>People Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>People</controllingFieldValue>
+            <valueName>Professional Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>People</controllingFieldValue>
+            <valueName>PSR &amp; Permanent Recruitment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>People</controllingFieldValue>
+            <valueName>Workforce Health &amp; Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Digital Future</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Network Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Technology Solutions &amp; Outcomes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Technology</controllingFieldValue>
+            <valueName>Technology Products and Services</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

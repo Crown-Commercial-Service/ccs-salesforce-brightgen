@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_allow_one_winning_supplier</fullName>
+    <active>true</active>
+    <description>Only one supplier can have bid status &quot;Winning Supplier&quot;</description>
+    <errorConditionFormula>AND(
+Procurement__r.Multi_Lot_Procurement__c = FALSE,
+OR(
+AND(ISNEW(),ISPICKVAL(Bid_Status__c, &apos;Winning Supplier&apos;),Procurement__r.No_of_winning_suppliers__c &gt;=1)
+,
+AND(ISCHANGED( Bid_Status__c ),ISPICKVAL(Bid_Status__c, &apos;Winning Supplier&apos;),Procurement__r.No_of_winning_suppliers__c &gt;=1)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Bid_Status__c</errorDisplayField>
+    <errorMessage>Only one supplier can have bid status &quot;Winning Supplier&quot;</errorMessage>
+</ValidationRule>

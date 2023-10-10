@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Go_Live_Passed_Boolean__c</fullName>
+    <description>Boolean to see if go live date has been reached (used for scheduled flow)</description>
+    <externalId>false</externalId>
+    <formula>TODAY() &gt;= Framework_Live_Date_Target__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Go Live Passed Boolean</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

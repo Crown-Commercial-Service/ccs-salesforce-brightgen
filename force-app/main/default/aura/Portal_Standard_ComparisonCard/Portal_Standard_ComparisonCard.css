@@ -1,0 +1,71 @@
+.THIS {
+    margin-bottom: 25px;
+}
+
+.THIS.card-comparison {
+  background: #FAFAFA;
+  border: 1px solid #DBDBDB;
+}
+
+/* Previously #039CA3 */
+.THIS.card-comparison .heading-medium {
+  background: #01989F;
+  width: 100%;
+  float: left;
+  display: block;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  padding: 11px 15px 12px;
+  margin: 0;
+}
+
+.THIS.card-comparison .heading-medium span.descriptor {
+  font-size: 13px;
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+.THIS.card-comparison .card-inner {
+  overflow: hidden;
+  padding: 12px 15px;
+}
+
+.THIS.card-comparison .card-inner p:not(:first-of-type) {
+  border-top: 1px solid #CCC;
+  margin: 15px 0 0;
+  padding-top: 15px;
+}
+
+.THIS.card-comparison .card-inner p:last-of-type {
+  margin: 15px 0 10px;
+  padding-top: 22px;
+}
+
+.THIS.card-comparison .card-inner p,
+.THIS.card-comparison .card-inner .uiOutputRichText,
+.THIS.card-comparison .card-inner li {
+  color: #303030;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.THIS.card-comparison .card-inner p strong {
+  font-weight: 600;
+  color: #000000;
+}
+
+.THIS.card-comparison .card-inner p+ul.list-bullet {
+  margin-top: -10px;
+}
+
+.THIS.card-comparison .card-inner ul.list-bullet li {
+  padding-left: 15px;
+}
+
+.THIS.card-comparison .card-inner ul {
+  padding-left: 20px;
+  padding-top: 10px;
+}

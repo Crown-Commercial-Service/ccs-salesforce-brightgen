@@ -1,0 +1,73 @@
+.THIS.has-hot-spot a.hot-spot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.THIS a.hot-spot:focus {
+  background-color: transparent;
+  outline: 5px solid #ffc9dc;
+}
+
+.THIS.card-news {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #E7E7E7;
+}
+
+.THIS.card-news .bg-img {
+  float: left;
+  width: 100%;
+  padding-bottom: 60%;
+  background-size: cover;
+  position: relative;
+}
+
+.THIS.card-news .bg-img:before {
+  background: #000;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  transition: opacity .15s ease-in-out;
+  -moz-transition: opacity .15s ease-in-out;
+  -webkit-transition: opacity .15s ease-in-out;
+}
+
+.THIS.card-news:hover .bg-img:before {
+  opacity: 0.5;
+}
+
+.THIS.card-news .card-inner {
+  padding: 25px 22px;
+  overflow: hidden;
+}
+
+.THIS.card-news .meta-data {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+.THIS.card-news .heading-small {
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.THIS.card-news p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.THIS.card-news:hover .heading-small {
+  color: #087B9E;
+  text-decoration: underline;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phase_3_Portals</fullName>
+    <columns>NAME</columns>
+    <columns>Sprint_Workstream__c</columns>
+    <columns>Sprint_Status__c</columns>
+    <columns>Sprint_Start_Date__c</columns>
+    <columns>Sprint_Stories__c</columns>
+    <columns>Sprint_Plan_Estimate__c</columns>
+    <columns>Sprint_Days_to_Completion__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sprint_Workstream__c</field>
+        <operation>equals</operation>
+        <value>DTP Phase 3 - Portals</value>
+    </filters>
+    <label>Phase 3 - Portals</label>
+    <sharedTo>
+        <group>CCS_Development_P3_Portals</group>
+    </sharedTo>
+</ListView>

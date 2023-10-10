@@ -1,0 +1,3 @@
+<apex:page standardController="Case" extensions="CasesMarkAsSpam_CX" showHeader="true" sidebar="true" action="{!markAsSpam}" recordSetVar="cases">
+	<apex:pageMessages />
+</apex:page>

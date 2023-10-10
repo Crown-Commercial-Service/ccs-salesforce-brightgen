@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckUserOrgSector__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>For each user, check the Org to see what Sector they belong too.  If they belong to &quot;Central Government Dept&quot; then upgrade them to the Customer Portal Plug liscence.  Else give them the Customer Portal Logib liscence.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For each user, check the Org to see what Sector they belong too.  If they belong to &quot;Central Government Dept&quot; then upgrade them to the Customer Portal Plug liscence.  Else give them the Customer Portal Logib liscence.</inlineHelpText>
+    <label>CheckUserOrgSector</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

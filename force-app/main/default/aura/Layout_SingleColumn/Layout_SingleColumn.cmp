@@ -1,0 +1,28 @@
+<aura:component implements="forceCommunity:layout" description="Centred Content" access="global">
+    <aura:attribute name="content" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="contentFooter" type="Aura.Component[]" required="false"></aura:attribute>
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+	<div class="center-blk" id="main-content" role="main">
+        <article>
+    		{!v.content}
+        </article>
+    </div>
+    <div class="grid-row bg-light-grey">
+        <div class="center-blk">
+            {!v.contentFooter}
+        </div>
+    </div>
+
+</aura:component>

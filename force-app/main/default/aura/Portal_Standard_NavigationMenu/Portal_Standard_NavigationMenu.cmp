@@ -1,0 +1,121 @@
+<aura:component extends="forceCommunity:navigationMenuBase" implements="forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="showMobileNav" type="Boolean" default="false" required="false" description="Toggle for mobile nav" />
+
+     <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+
+    <header role="banner" id="global-header">
+        
+        <!-- This is the standard nav -->
+        <a href="#main-content" class="visuallyhidden">Skip to main content</a>
+        
+        <!-- This is the standard nav -->
+        <div class="center-blk full-nav">
+            <div class="header-logo">
+                <a href="javascript:void(0)" title="Go to the CCS homepage" aria-label="CCS homepage" id="logo" class="content" onclick="{!c.goHome}">
+                    <img src="{!$Resource.portalAssets + '/assets/images/CCS_WHITE_SML_AW.png'}" width="160" height="131" alt="Crown Commercial Service"></img>
+                </a>
+            </div>
+
+            <!-- This is the toggle for the mobile nav -->
+            <button aria-pressed="false" aura:id="mobileNavToggleButton" id="mobile-nav-toggle" href="" onclick="{!c.toggleMobileNav}">Menu
+                
+                <!-- This changes the chevron direction when the mobile menu nav is toggled -->
+                <aura:if isTrue="{!v.showMobileNav}">
+                    
+                    <i class="fas fa-fw fa-chevron-up"></i>
+                    
+                    <aura:set attribute="else">
+                        <i class="fas fa-fw fa-chevron-down"></i>
+                    </aura:set>
+                </aura:if>
+                
+            </button>
+
+            <!-- First set of standard nav items -->
+            <nav role="navigation " id="global-menu" class="no-global-name menu" aria-label="global-navigation">
+                <ul id="global-links" onclick="{!c.onClick}">
+
+                    <aura:iteration items="{!v.menuItems}" var="item" indexVar="itemIndex">
+                        <!-- Get the second and third menu items (skip 0 as it’s Home) -->
+                        <aura:if isTrue="{!and(lessthanorequal(itemIndex,2),greaterthan(itemIndex,0))}">
+
+                            <li>
+                                <a data-menu-item-id="{!item.id}" href="">{!item.label}</a>
+                            </li>
+
+                        </aura:if>
+                    </aura:iteration>
+
+                    <!-- Phone number is static and not in menu -->
+                    <li class="phone-link" aria-label="Telephone number">
+                        <i class="fas fa-phone fa-xs"> &nbsp; </i><span class="visuallyhidden">Telephone number: </span> 0345 410 2222
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Second set of standard nav items -->
+            <nav role="navigation" id="proposition-menu" class="no-proposition-name menu" aria-label="main-navigation">
+                <ul id="proposition-links" onclick="{!c.onClick}">
+                    <aura:iteration items="{!v.menuItems}" var="item" indexVar="itemIndex">
+                        <!-- Get 3rd menu item onwards -->
+                        <aura:if isTrue="{!greaterthan(itemIndex,2)}">
+                            <li>
+                                <a data-menu-item-id="{!item.id}" href="">{!item.label}</a>
+                            </li>
+                        </aura:if>
+                    </aura:iteration>
+                </ul>
+            </nav>
+
+        </div>
+        
+        <!-- This is the mobile menu which is display:none unless toggled -->
+        <nav aura:id="mobileNavMenu" role="navigation" class="bg-dark-pink mobile-nav hide-mobile-nav" id="mobile-menu">
+            <ul id="mobile-menu-links" onclick="{!c.onClickMobile}">
+
+                <aura:iteration items="{!v.menuItems}" var="item" indexVar="itemIndex">
+                    <!-- Get 3rd menu item onwards -->
+                    <aura:if isTrue="{!greaterthan(itemIndex,2)}">
+
+                        <li>
+                            <a data-menu-item-id="{!item.id}" href="">{!item.label}</a>
+                        </li>
+
+                    </aura:if>
+                </aura:iteration>
+
+                <hr />
+
+                <aura:iteration items="{!v.menuItems}" var="item" indexVar="itemIndex">
+                    <!-- Get the second and third menu items (skip 0 as it’s Home) -->
+                    <aura:if isTrue="{!and(lessthanorequal(itemIndex,2),greaterthan(itemIndex,0))}">
+
+                        <li>
+                            <a data-menu-item-id="{!item.id}" href="">{!item.label}</a>
+                        </li>
+
+                    </aura:if>
+                </aura:iteration>
+
+                <li>
+                    <a class="phone-link" href="tel:0345-410-2222">
+                        <i class="fas fa-phone fa-xs"> &nbsp; </i> 0345 410 2222</a>
+                </li>
+
+            </ul>
+        </nav>
+        
+    </header>
+
+</aura:component>

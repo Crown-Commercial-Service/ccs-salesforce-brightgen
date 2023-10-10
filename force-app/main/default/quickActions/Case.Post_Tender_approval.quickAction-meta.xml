@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Submits for approval when contract is awarded</description>
+    <fieldOverrides>
+        <field>Award_approval_status__c</field>
+        <literalValue>Pending</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>File_s_to_Approve__c</field>
+        <formula>Case.Google_Folder__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Submit_Award_for_Approval__c</field>
+        <formula>TRUE</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Submitter_Comments__c</field>
+        <formula>&quot; &quot;</formula>
+    </fieldOverrides>
+    <icon>People</icon>
+    <label>Approval-OL&amp;C</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Contract_Award_Approver__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Submitter_Comments__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>File_s_to_Approve__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>Submitted for Approval</successMessage>
+    <type>Update</type>
+</QuickAction>

@@ -1,0 +1,27 @@
+<apex:page controller="bg_Freeze_Users_Controller" tabStyle="User" lightningStylesheets="True"> 
+    
+    <apex:pageBlock mode="detail">
+        <apex:form >
+            <apex:commandButton action="{!freezeUsers}" value="{!$Label.bg_Freeze_Users_Button}" rerender="unfrozenUsers"/>
+            <apex:commandButton action="{!unfreezeUsers}" value="{!$Label.bg_Unfreeze_Users_Button}" rerender="unfrozenUsers"/>
+            <apex:commandButton action="{!back}" value="{!$Label.bg_Previous_Button}" rerender="unfrozenUsers"/>
+            <apex:commandButton action="{!next}" value="{!$Label.bg_Next_Button}" rerender="unfrozenUsers"/>
+        </apex:form>        
+        <br/>
+        
+        <apex:pageBlockSection title="{!$Label.bg_User_Freeze_UI}" columns="1" id="unfrozenUsers">
+            <apex:outputPanel rendered="{!action}">
+                <img src="/img/loading32.gif" width="25" height="25"/>
+                    <apex:outputLabel value="Working..."/>   
+                </apex:outputPanel> 
+        
+            <apex:outputText value="Displaying {!displaySize} out of {!unfrozenSize} records"/>
+            <apex:pageBlockTable value="{!displayUsers}" var="user" align="center">
+                <apex:column headerValue="{!$Label.bg_Freeze_Name_Header}" value="{!user.Name}"/>
+                <apex:column headerValue="{!$Label.bg_Freeze_Email_Header}" value="{!user.Email}"/>
+                <apex:column headerValue="{!$Label.bg_Freeze_Profile_Header}" value="{!user.Profile.Name}"/> 
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>    
+            
+    </apex:pageBlock>
+</apex:page>

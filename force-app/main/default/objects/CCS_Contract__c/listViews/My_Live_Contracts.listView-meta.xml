@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Live_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>Contract_Reference__c</columns>
+    <columns>Effective_Contract_Value__c</columns>
+    <columns>Contract_Spend_To_Date__c</columns>
+    <columns>Spend_Value_Status__c</columns>
+    <columns>CCS_Category__c</columns>
+    <columns>Customer__c</columns>
+    <columns>Supplier__c</columns>
+    <columns>Master_Framework_Title__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>Effective_End_Date__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <label>My Live Contracts</label>
+</ListView>

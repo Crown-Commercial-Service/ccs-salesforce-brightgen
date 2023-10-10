@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Forecast_Budget</fullName>
+    <availability>online</availability>
+    <description>Javascript button which triggers a batch process to generate budget forecast records after selecting a business plan year..</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Generate Forecast Budget</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+if (&apos;{!$Profile.Id}&apos; != &apos;00eb0000000IfPP&apos;  &amp;&amp; &apos;{!$Profile.Id}&apos; != &apos;00eb0000000EgD5&apos;){
+
+alert(&apos;You are not authorised to perform this action.&apos;);
+
+}else{
+
+
+var records = {!GETRECORDIDS($ObjectType.Master_Framework__c)}; 
+
+var URL = &apos;/apex/FrameworkBudgetCustomButton?ids=&apos; + records.join(&apos;,&apos;);
+
+if (records.length) {
+    if (records.length &lt;= 100) {
+    window.open(URL, &apos;_blank&apos;,
+    &apos;height=186,width=600,resizable=yes,scrollbars=yes,toolbar=n‌​o,menubar=no&apos;);   
+
+    } else {
+        alert(&apos;Select 100 or fewer frameworks&apos;);
+    }
+} else {
+    alert(&apos;Select one or more Frameworks&apos;);
+}
+}</url>
+</WebLink>

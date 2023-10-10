@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;
+      &lt;strong&gt;Welcome to the Crown Commercial Service&lt;/strong&gt;
+      &lt;br&gt;Better buying solutions for the public sector &lt;!--render facet: 13:58;a--&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;h1&gt;
+      &lt;strong&gt;Quick links&lt;/strong&gt;
+    &lt;/h1&gt;
+    &lt;h1&gt;&amp;nbsp;&lt;/h1&gt;
+    &lt;h1&gt;
+      &lt;span style=&quot;font-size:16px&quot;&gt;Buy something&lt;/span&gt;
+    &lt;/h1&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;http://ccs-agreements.cabinetoffice.gov.uk/&quot; target=&quot;_blank&quot;&gt;Frameworks&lt;/a&gt;&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://ccs.cataloguemarketplace.co.uk&quot; target=&quot;_blank&quot;&gt;eCatalogue&lt;/a&gt; (tech products)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://buyers.procserveonline.com/admin/login/auth?marketplace=bootstrap-gem&amp;amp;locale=en&quot; target=&quot;_blank&quot;&gt;eMarketplace&lt;/a&gt; (other low-value items)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://www.digitalmarketplace.service.gov.uk/&quot; target=&quot;_blank&quot;&gt;Digital Marketplace&lt;/a&gt; (digital people &amp;amp; services)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://ccsportal.energycloud.com&quot; target=&quot;_blank&quot;&gt;Energy portal&lt;/a&gt;&amp;nbsp;(energy / utilities)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://gpsfleetportal.cabinetoffice.gov.uk/home.mth&quot; target=&quot;_blank&quot;&gt;Fleet portal&lt;/a&gt;&amp;nbsp;(vehicles)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://www.trips.uk.com/js/SABS/Corporate.html&quot; target=&quot;_blank&quot;&gt;Travel portal&lt;/a&gt; (travel and accomodation)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:16px&quot;&gt;Manage your procurement&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://www.contractsfinder.service.gov.uk/Search&quot; target=&quot;_blank&quot;&gt;Contracts Finder&lt;/a&gt; (advertise / find new contracts)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://crowncommercialservice.bravosolution.co.uk/web/login.shtml&quot; target=&quot;_blank&quot;&gt;eSourcing&lt;/a&gt;&amp;nbsp;(Emptoris / BRAVO)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:16px&quot;&gt;Links for suppliers&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;a href=&quot;https://miso.ccs.cabinetoffice.gov.uk/Pub/Login.aspx?ReturnUrl=%2f&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;font-size:10px&quot;&gt;MISO&lt;/span&gt;&lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;http://ccs-agreements.cabinetoffice.gov.uk/procurement-pipeline&quot; target=&quot;_blank&quot;&gt;Framework pipeline&lt;/a&gt; (become a CCS supplier)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;!--render facet: 56:97;a--&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column1</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>column2</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>column3</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>column4</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>column5</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;div&gt;
+      &lt;div style=&quot;width: 274px; margin: 0 auto; border: 1px solid #cfd4d9; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; box-shadow: 0 1px 1px 1px #d7d6d5; -moz-box-shadow: 0 1px 1px 1px #d7d6d5; -webkit-box-shadow: 0 1px 1px 1px #d7d6d5;&quot;&gt;
+        &lt;div style=&quot;margin: 10px 17px 5px; display: table; table-layout: fixed; width: 200px; height: 125px;&quot;&gt;
+          &lt;a href=&quot;https://ccs.cataloguemarketplace.co.uk/mvc/login&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;border:0; display:table-cell; height:125px; overflow:hidden; text-align:center; vertical-align:middle; width:200px&quot;&gt;&lt;img src=&quot;https://c.eu6.content.force.com/servlet/servlet.ImageServer?id=01558000000BbJV&amp;amp;oid=00D58000000dkjU&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;font-family: Arial,Helvetica,Sans-serif; font-size: 16px; color: #696e71; background-color: #e8eaeb; height: 48px; padding-top: 14px; padding-left: 25px; text-decoration: none; overflow: hidden; display: block; text-overflow: ellipsis; white-space: nowrap;&quot;&gt;
+          &lt;a href=&quot;https://ccs.cataloguemarketplace.co.uk/mvc/login&quot; target=&quot;_blank&quot;&gt;&lt;span&gt;Mercato Catalogue Marketplace&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;arrow&quot;&gt;&amp;nbsp;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--render facet: 13:185;a--&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>header</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>content</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>footer</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Home_PEM_SSO_Home</masterLabel>
+    <template>
+        <name>siteforce:sldsOneColLayout</name>
+    </template>
+    <type>CommAppPage</type>
+</FlexiPage>

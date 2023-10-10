@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sprint_Q2</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>US_Subject__c</columns>
+    <columns>US_Plan_Estimate__c</columns>
+    <columns>US_Business_Owner__c</columns>
+    <columns>US_Developer__c</columns>
+    <columns>US_MOSCOW__c</columns>
+    <columns>US_Sprint__c</columns>
+    <columns>US_Status__c</columns>
+    <columns>Stage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>US_Sprint__c</field>
+        <operation>equals</operation>
+        <value>Sprint Q</value>
+    </filters>
+    <label>Sprint Q (June)</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <group>CCS_Development_BAU</group>
+    </sharedTo>
+</ListView>

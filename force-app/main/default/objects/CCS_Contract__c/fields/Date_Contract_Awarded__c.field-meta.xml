@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Contract_Awarded__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the date the Contract was signed by the final party. Prior to 24/06/21 this was the date the outcome was issued.</inlineHelpText>
+    <label>Contract Award Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

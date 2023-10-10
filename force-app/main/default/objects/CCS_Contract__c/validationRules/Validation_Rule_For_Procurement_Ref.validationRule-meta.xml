@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_Rule_For_Procurement_Ref</fullName>
+    <active>true</active>
+    <description>If the Contract is not Transitioned Contract, Procurement Reference must be populated</description>
+    <errorConditionFormula>AND( RecordType.DeveloperName = &quot;Procurement Contract&quot;, ISBLANK(Procurement_Reference__c) &amp;&amp; 
+!(Transitioned_Contract__c ))</errorConditionFormula>
+    <errorMessage>If the Contract is not Transitioned Contract, Procurement Reference must be populated.</errorMessage>
+</ValidationRule>

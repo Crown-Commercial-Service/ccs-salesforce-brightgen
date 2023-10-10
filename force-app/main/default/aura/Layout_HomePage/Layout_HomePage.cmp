@@ -1,0 +1,70 @@
+<aura:component implements="forceCommunity:layout" description="Home Layout" access="global">
+    <aura:attribute name="topColumn1" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="topColumn2" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="topColumn3" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="topColumn4" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="midColumn1" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="midColumn2" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="endColumn1" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="endColumn2" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="contentHeader" type="Aura.Component[]" required="false"></aura:attribute>
+
+
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+
+    <div class="grid-row">
+        <div class="center-blk">
+            {!v.contentHeader}
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="center-blk home-routes">
+	
+
+                <div class="column-quarter">{!v.topColumn1}</div>
+
+                <div class="column-quarter">{!v.topColumn2}</div>
+
+                <div class="column-quarter">{!v.topColumn3}</div>
+
+                <div class="column-quarter">{!v.topColumn4}</div>
+
+            </div>
+        </div>
+ 
+    
+    <div class="grid-row call-to-action-wrap">
+
+        <div class="center-blk">
+
+            <div class="column-half">{!v.midColumn1}</div>
+
+            <div class="column-half">{!v.midColumn2}</div>
+
+        </div>
+        
+    </div>
+    
+    <div class="grid-row">
+
+        <div class="center-blk">
+
+            <div class="column-third no-left-gutter">{!v.endColumn1}</div>
+
+            <div class="column-two-thirds no-right-gutter has-video">{!v.endColumn2}</div>
+
+        </div>
+        
+    </div>
+
+</aura:component>

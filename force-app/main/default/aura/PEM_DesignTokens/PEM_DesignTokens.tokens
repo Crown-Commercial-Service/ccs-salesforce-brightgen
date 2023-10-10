@@ -1,0 +1,102 @@
+<aura:tokens extends="force:base">
+    
+<aura:token name="govuk_blue" value="#005ea5"/>
+<aura:token name="mainstream-brand" value="govuk-blue"/>
+
+<aura:token name="purple" value="#2e358b"/>
+<aura:token name="purple-50" value="#9799c4"/>
+<aura:token name="purple-25" value="#d5d6e7"/>
+<aura:token name="mauve" value="#6f72af"/>
+<aura:token name="mauve-50" value="#b7b9d7"/>
+<aura:token name="mauve-25" value="#e2e2ef"/>
+<aura:token name="fuschia" value="#912b88"/>
+<aura:token name="fuschia-50" value="#c994c3"/>
+<aura:token name="fuschia-25" value="#e9d4e6"/>
+<aura:token name="pink" value="#d53880"/>
+<aura:token name="pink-50" value="#eb9bbe"/>
+<aura:token name="pink-25" value="#f6d7e5"/>
+<aura:token name="baby-pink" value="#f499be"/>
+<aura:token name="baby-pink-50" value="#faccdf"/>
+<aura:token name="baby-pink-25" value="#fdebf2"/>
+<aura:token name="red" value="#b10e1e"/>
+<aura:token name="red-50" value="#d9888c"/>
+<aura:token name="red-25" value="#efcfd1"/>
+<aura:token name="mellow-red" value="#df3034"/>
+<aura:token name="mellow-red-50" value="#ef9998"/>
+<aura:token name="mellow-red-25" value="#f9d6d6"/>
+<aura:token name="orange" value="#f47738"/>
+<aura:token name="orange-50" value="#fabb96"/>
+<aura:token name="orange-25" value="#fde4d4"/>
+<aura:token name="brown" value="#b58840"/>
+<aura:token name="brown-50" value="#dac39c"/>
+<aura:token name="brown-25" value="#f0e7d7"/>
+<aura:token name="yellow" value="#ffbf47"/>
+<aura:token name="yellow-50" value="#ffdf94"/>
+<aura:token name="yellow-25" value="#fff2d3"/>
+<aura:token name="grass-green" value="#85994b"/>
+<aura:token name="grass-green-50" value="#c2cca3"/>
+<aura:token name="grass-green-25" value="#e7ebda"/>
+<aura:token name="green" value="#006435"/>
+<aura:token name="green-50" value="#7fb299"/>
+<aura:token name="green-25" value="#cce0d6"/>
+<aura:token name="turquoise" value="#28a197"/>
+<aura:token name="turquoise-50" value="#95d0cb"/>
+<aura:token name="turquoise-25" value="#d5ecea"/>
+<aura:token name="light-blue" value="#2b8cc4"/>
+<aura:token name="light-blue-50" value="#96c6e2"/>
+<aura:token name="light_blue_25" value="#d5e8f3"/>
+
+<aura:token name="black" value="#0b0c0c"/>
+<aura:token name="grey_1" value="#6f777b"/>
+<aura:token name="grey_2" value="#bfc1c3"/>
+<aura:token name="grey_3" value="#dee0e2"/>
+<aura:token name="grey_4" value="#f8f8f8"/>
+<aura:token name="white" value="#fff"/>
+
+<aura:token name="link-colour" value="govuk-blue"/>
+<aura:token name="link-active-colour" value="light-blue"/>
+<aura:token name="link-hover-colour" value="light-blue"/>
+<aura:token name="link-visited-colour" value="#4c2c92"/>
+<aura:token name="button-colour" value="#00823b"/>  
+<aura:token name="button_colour" value="#00823b"/>     
+<aura:token name="colorBackgroundButtonBrand" value="#00823b"/>
+<aura:token name="box-colour" value="#003618"/>    
+<aura:token name="box_colour" value="#003618"/>     
+<aura:token name="focus-colour" value="yellow"/>
+<aura:token name="text-colour" value="black"/>             
+<aura:token name="secondary-text-colour" value="grey-1"/>  
+<aura:token name="border-colour" value="grey-2"/>         
+<aura:token name="panel-colour" value="grey-3"/>           
+<aura:token name="canvas-colour" value="grey-4"/>          
+<aura:token name="highlight-colour" value="grey-4"/>       
+<aura:token name="page-colour" value="white"/>             
+<aura:token name="discovery-colour" value="fuschia"/>      
+<aura:token name="alpha-colour" value="pink"/>             
+<aura:token name="beta-colour" value="orange"/>            
+<aura:token name="live-colour" value="grass-green"/>       
+<aura:token name="banner_text_colour" value="#000"/>        
+<aura:token name="error-colour" value="red"/>              
+<aura:token name="error-background" value="#fef7f7"/>       
+    
+<aura:token name="full-width" value="100%"/>
+<aura:token name="one-quarter" value="full-width / 4"/>
+<aura:token name="one-third" value="full-width / 3"/>
+<aura:token name="half" value="full-width / 2"/>
+<aura:token name="two-thirds" value="(full-width) - (one-third)"/>
+<aura:token name="three-quarters" value="(full-width) - (one-quarter)"/>
+    
+<aura:token name="gutter" value="30px"/>
+<aura:token name="gutter-one-quarter" value="gutter / 4"/>
+<aura:token name="gutter-one-third" value="gutter / 3"/>
+<aura:token name="gutter-half" value="gutter / 2"/>
+<aura:token name="gutter-two-thirds" value="gutter - gutter-one-third"/>    
+    
+<aura:token name="base-font-size" value="16"/>
+<aura:token name="NTA_Light" value="'nta', Arial, sans-serif"/>
+<aura:token name="NTA-Light-Tabular" value="ntatabularnumbers, NTA-Light"/>
+<aura:token name="Helvetica-Regular" value="HelveticaNeue, Helvetica Neue, Arial, Helvetica, sans-serif"/>
+<aura:token name="toolkit-font-stack" value="NTA-Light default"/>
+<aura:token name="toolkit-font-stack-tabular" value="NTA-Light-Tabular default"/>
+<aura:token name="Print-reset" value="sans-serif"/>    
+    
+</aura:tokens>

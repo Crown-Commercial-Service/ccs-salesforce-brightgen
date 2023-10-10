@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decommissioned__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether the system has been decommissioned or not</description>
+    <externalId>false</externalId>
+    <label>Decommissioned?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

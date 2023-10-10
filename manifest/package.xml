@@ -30,10 +30,6 @@
     </types>
     <types>
         <members>*</members>
-        <name>CompactLayout</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>CustomLabels</name>
     </types>
     <types>
@@ -50,18 +46,6 @@
     </types>
     <types>
         <members>*</members>
-        <name>CustomTab</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>EscalationRules</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>FieldSet</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>FlexiPage</name>
     </types>
     <types>
@@ -70,27 +54,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>GlobalValueSet</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Group</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Layout</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>PathAssistant</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>QuickAction</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>QueueRoutingConfig</name>
     </types>
     <types>
         <members>*</members>
@@ -106,15 +70,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>StaticResource</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>Workflow</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>WebLink</name>
     </types>
     <types>
         <members>*</members>

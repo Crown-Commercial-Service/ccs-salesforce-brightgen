@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alert_Date_Day__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( 
+MOD(   Alert_Date_2__c   - DATE( 1900, 1, 8 ), 7 ), 
+0, &quot;Monday&quot;, 
+1, &quot;Tuesday&quot;, 
+2, &quot;Wednesday&quot;, 
+3, &quot;Thursday&quot;, 
+4, &quot;Friday&quot;, 
+5, &quot;Saturday&quot;, 
+6, &quot;Sunday&quot;, 
+&quot;&quot; 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The day of the week of the Alert Date (on which the Stage-End Alert email will be sent)</inlineHelpText>
+    <label>Alert Date Day</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

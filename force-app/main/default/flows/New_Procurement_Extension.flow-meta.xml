@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>What_is_the_Procurement_Stage</name>
+        <label>What is the Procurement Stage?</label>
+        <locationX>428</locationX>
+        <locationY>274</locationY>
+        <defaultConnector>
+            <targetReference>Screen1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other Stage</defaultConnectorLabel>
+        <rules>
+            <name>N_A_Early_Engagement_or_Closing_Actions</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>theProcurementCaseSObject.Stage_with_seq__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>N/A</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>theProcurementCaseSObject.Stage_with_seq__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Early Engagement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>theProcurementCaseSObject.Stage_with_seq__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Closing Actions</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CannotExtendinWrongStage</targetReference>
+            </connector>
+            <label>N/A, Early Engagement or Closing Actions</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>What_is_the_Procurement_Status</name>
+        <label>What is the Procurement Status?</label>
+        <locationX>426</locationX>
+        <locationY>162</locationY>
+        <defaultConnector>
+            <targetReference>CannotExtendUnlessInProgress</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other Status</defaultConnectorLabel>
+        <rules>
+            <name>In_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>theProcurementCaseSObject.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>What_is_the_Procurement_Stage</targetReference>
+            </connector>
+            <label>In Progress</label>
+        </rules>
+    </decisions>
+    <description>US547.  Flow to create new Procurement Extension.  Launched by Button.</description>
+    <dynamicChoiceSets>
+        <name>ReasonforExtension</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Reason_for_Extension__c</picklistField>
+        <picklistObject>Procurement_Extension__c</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>New Procurement Extension {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>New Procurement Extension</label>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_New_Procurement_Extension</name>
+        <label>Create New Procurement Extension</label>
+        <locationX>429</locationX>
+        <locationY>514</locationY>
+        <inputAssignments>
+            <field>Extension_Comments__c</field>
+            <value>
+                <elementReference>Comments</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Former_Agreed_Award_Date__c</field>
+            <value>
+                <elementReference>theProcurementCaseSObject.Agreed_Award_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Procurement__c</field>
+            <value>
+                <elementReference>theProcurementCaseIDvariable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reason_for_Extension__c</field>
+            <value>
+                <elementReference>Reason_for_Extension</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Revised_Agreed_Award_Date__c</field>
+            <value>
+                <elementReference>Revised_Baseline_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Procurement_Extension__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Lookup_the_Procurement_Case</name>
+        <label>Lookup the Procurement Case</label>
+        <locationX>231</locationX>
+        <locationY>51</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Fast_Update_to_check_user_permissions</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>theProcurementCaseIDvariable</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>theProcurementCaseSObject</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Agreed_Award_Date__c</queriedFields>
+        <queriedFields>Procurement_Reference__c</queriedFields>
+        <queriedFields>Stage_with_seq__c</queriedFields>
+        <queriedFields>Status</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Fast_Update_to_check_user_permissions</name>
+        <label>Fast Update to check user permissions</label>
+        <locationX>427</locationX>
+        <locationY>49</locationY>
+        <connector>
+            <targetReference>What_is_the_Procurement_Status</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>ERROR</targetReference>
+        </faultConnector>
+        <inputReference>theProcurementCaseSObject</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>CannotExtendinWrongStage</name>
+        <label>CannotExtendinWrongStage</label>
+        <locationX>815</locationX>
+        <locationY>272</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Message2</name>
+            <fieldText>You can only extend a Procurement if it is currently between the ITT Development Stage and the Contract Award Stage (inclusive).
+
+If you have not yet selected the Procurement route, the Procurement will not yet have any Stages.
+
+If the Procurement is still in Early Engagement, you can change the Agreed Award Date by changing the Planned End Date for the Contract Award Stage.
+
+If the Procurement is in Closing Actions, there is no reason to extend the Agreed Award Date; as the Actual Award Date has already passed.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>CannotExtendUnlessInProgress</name>
+        <label>CannotExtendUnlessInProgress</label>
+        <locationX>813</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Message1</name>
+            <fieldText>You can only add an extension if the procurement is &apos;In Progress&apos;.
+
+Procurement {!theProcurementCaseSObject.Procurement_Reference__c} has the status: {!theProcurementCaseSObject.Status}.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>ERROR</name>
+        <label>ERROR</label>
+        <locationX>811</locationX>
+        <locationY>46</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ErrorExtension</name>
+            <fieldText>ERROR
+
+It has not been possible to create a new Procurement Extension on this Procurement ({!theProcurementCaseSObject.Procurement_Reference__c})
+
+This is probably because you do not have edit/write permission on this specific procurement.
+
+If this is not the case, please contact the CCS Salesforce Administrators at SFAdmin@crowncommercial.gov.uk</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Screen1</name>
+        <label>Screen1</label>
+        <locationX>428</locationX>
+        <locationY>383</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_New_Procurement_Extension</targetReference>
+        </connector>
+        <fields>
+            <name>YouAreAboutToCreateExtension</name>
+            <fieldText>You are about to create a new Extension on Procurement {!theProcurementCaseSObject.Procurement_Reference__c}.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Blankline1</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>CurrentBaseLineIs</name>
+            <fieldText>The current Agreed Award Date on this procurement is {!theProcurementCaseSObject.Agreed_Award_Date__c}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>BlankLine2</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>PleaseEnterThisInformation</name>
+            <fieldText>Please enter this information to create the new Extension:</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>BlankLine3</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Revised_Baseline_Date</name>
+            <dataType>Date</dataType>
+            <defaultValue>
+                <elementReference>theProcurementCaseSObject.Agreed_Award_Date__c</elementReference>
+            </defaultValue>
+            <fieldText>Revised Agreed Award Date</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>BlankLine4</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Reason_for_Extension</name>
+            <choiceReferences>ReasonforExtension</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Reason for Extension</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>BlankLine5</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Comments</name>
+            <fieldText>Comments</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>BlankLine6</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>DontForget</name>
+            <fieldText>Don&apos;t forget that - if timelines have changed - you will also have to amend the dates of the Procurement&apos;s Stages.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>BlankLine7</name>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>NowClickNext</name>
+            <fieldText>Now click &apos;Next&apos; to create the Procurement Extension (or click the &apos;Back&apos; button on your browser to cancel).</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Lookup_the_Procurement_Case</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>theProcurementCaseIDvariable</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>theProcurementCaseSObject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Risk_Assigned</fullName>
+        <description>Risk Assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CCS_Risk_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>RAID_Emails/Risk_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CRM_RAID_Actual_Resolution_Date</fullName>
+        <description>When a RAID record is Re-Opened the Actual Resolution Date is set to blank</description>
+        <field>Actual_Resolution_Date__c</field>
+        <name>CRM RAID Actual Resolution Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CCS RAID Actual Resolution Date</fullName>
+        <actions>
+            <name>CRM_RAID_Actual_Resolution_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>CRM_RAID__c.RAID_Status__c</field>
+            <operation>equals</operation>
+            <value>RE-Opened</value>
+        </criteriaItems>
+        <description>Used to set the Actual Resolution Date to null if a RAID record is Re-Opened</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

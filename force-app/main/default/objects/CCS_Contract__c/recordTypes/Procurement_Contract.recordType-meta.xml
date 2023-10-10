@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Procurement_Contract</fullName>
+    <active>true</active>
+    <description>A contract which is generated from a CCS Procurement</description>
+    <label>Procurement Contract</label>
+    <picklistValues>
+        <picklist>Business_Area__c</picklist>
+        <values>
+            <fullName>Brexit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buildings - Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buildings - Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buildings Pillar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CCT Programme Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CDD Senior Management Team Including McKinsey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEO %26 Private Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Business Services Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Government Account Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Continuous Improvement Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complex Transactions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Contingency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Pillar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Solutions - Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Solutions - Contact Centre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Solutions - Financial Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Solutions - Fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Solutions - Information %26 Content Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Solutions - Travel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CrownMarketPlace %28CMP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Insight %26 Resource Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deputy Chief Commercial Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Technology Platform %28DTP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disputes %26 Policy Resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU %26 Domestic Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estates Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FastStreamers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing %26 Comms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Markets %26 Suppliers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NHS FOM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People - Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People Pillar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Policy Programme Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procurement Ops Senior Management Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Sector Resourcing %28PSR%29 Big %26 Bold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Risk Management%2C Business Continuity %26 Assurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Savings %26 Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Savings %26 Performance Including Accelerator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Ops Newport %26 Bristol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sourcing Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic Support Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategy%2C Planning %26 Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplier Assurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology - Hardware%2C Software %26 Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology - Network Services %26 Telecoms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology - Payroll Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Governance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Pillar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unattributable Plan Spend %26 Income</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whitehall Boiler System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whitehall Standby Distribution Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wider Public Sector</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Intentions__c</picklist>
+        <values>
+            <fullName>Cancel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lapse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Replace</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Management_Tier__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Next_Steps__c</picklist>
+        <values>
+            <fullName>%EF%BB%BFOption to extend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leave to expire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potential to replace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Replaced by contract%2Fprocurement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Tier__c</picklist>
+        <values>
+            <fullName>Business Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Important%2C but not urgent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Critical</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Type__c</picklist>
+        <values>
+            <fullName>Goods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goods %26 Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Works</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contracts_Finder_Not_Applicable_Reason__c</picklist>
+        <values>
+            <fullName>Below %C2%A310%2C000 threshold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overseas Contracts%2FLocal Restrictions%2FCustoms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reasons of National Security</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OJEU_Procedure_Type__c</picklist>
+        <values>
+            <fullName>Accelerated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AcceleratedNegotiated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CompetitiveDialog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NotApplicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NotSpecified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Restricted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Procurement_Route__c</picklist>
+        <values>
+            <fullName>Call Off %28Competition%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Off %28Direct Award%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OJEU - Open Procedure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OJEU - Restricted Procedure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Market</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Tender Action</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Regions__c</picklist>
+        <values>
+            <fullName>Channel Islands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>East Midlands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>East of England</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Isle of Man</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northern Ireland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scotland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Midlands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yorkshire and The Humber</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Terminated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Team_Name__c</picklist>
+        <values>
+            <fullName>Apollo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Artemis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Athena</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dionysus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hecate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hera</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hermes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hypnos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poseidon</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Team_Site__c</picklist>
+        <values>
+            <fullName>CSC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liverpool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norwich</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tier_and_Managed__c</picklist>
+        <values>
+            <fullName>Tier 1 Managed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 1 Non-Managed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2 Managed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 2 Non-Managed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 3 Managed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 3 Non-Managed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

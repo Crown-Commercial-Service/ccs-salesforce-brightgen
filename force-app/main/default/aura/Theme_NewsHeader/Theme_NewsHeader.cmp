@@ -1,0 +1,38 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="News Header Theme">
+    
+    <aura:attribute name="navigationMenu" type="Aura.Component[]" required="false" />
+    <aura:attribute name="betaMessage" type="Aura.Component[]" required="false" />
+    <aura:attribute name="mainFooter" type="Aura.Component[]" required="false" />
+    <aura:attribute name="cookieMessage" type="Aura.Component[]" required="false" />
+
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+
+    <div class="grid-row">
+        {!v.betaMessage}
+    </div>
+    <div class="grid-row standard-header">
+        {!v.navigationMenu}
+    </div>
+    <div>
+        {!v.body}
+    </div>
+    <div class="grid-row footer-region">
+        <div class="center-blk">
+            {!v.mainFooter}
+        </div>
+    </div>
+    <div class="grid-row cookie-banner">
+        {!v.cookieMessage}
+    </div>
+
+</aura:component>

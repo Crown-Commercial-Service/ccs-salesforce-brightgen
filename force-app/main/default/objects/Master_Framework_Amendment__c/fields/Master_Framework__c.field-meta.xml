@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Framework__c</fullName>
+    <externalId>false</externalId>
+    <label>Framework</label>
+    <referenceTo>Master_Framework__c</referenceTo>
+    <relationshipLabel>Framework Amendments</relationshipLabel>
+    <relationshipName>Framework_Amendments</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

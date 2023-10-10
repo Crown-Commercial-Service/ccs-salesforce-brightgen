@@ -1,0 +1,66 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="articleId" type="String" default="" access="global" required="true" />
+    <aura:attribute name="cardSize" type="String" default="Small" access="global" required="true" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+     <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+
+
+    <article class="card-comparison" role="region">
+
+        <h3 class="heading-medium">{!v.helpArticle.Title}</h3>
+        <div class="row-wrap card-inner">
+
+            <aura:if isTrue="{!v.cardSize == 'Small'}">
+
+                <p>
+
+                    <ui:outputRichText value="{!v.helpArticle.What_you_can_buy_Summary__c}" />
+
+                </p>
+
+
+                <aura:set attribute="else">
+
+
+
+                    <p>
+                        <ui:outputRichText value="{!v.helpArticle.What_you_can_buy_Summary__c}" />
+                    </p>
+                    <p>
+                        <strong>Time to supply: </strong> {!v.helpArticle.Time_to_supply_Summary__c}</p>
+                    <p>
+                        <strong>Pros: </strong> {!v.helpArticle.Pros_Summary__c}</p>
+
+                    <aura:if isTrue="{!v.helpArticle.Cons_Summary__c}">
+                        <p><strong>Cons: </strong> {!v.helpArticle.Cons_Summary__c}</p>
+                    </aura:if>
+
+
+                    
+
+                </aura:set>
+            </aura:if>
+
+            <p>
+                <aura:if isTrue="{!v.helpArticle.Site_URL__c}">
+                    <a class="button low-priority" href="{!v.helpArticle.Site_URL__c}" title="Visit site">Visit site</a>
+                </aura:if>
+                <c:Portal_Standard_LinkComponent linkURL="{!'/article/' + v.helpArticle.UrlName}" linkText="Learn more"/>
+            </p>
+        </div>
+    </article>
+
+</aura:component>

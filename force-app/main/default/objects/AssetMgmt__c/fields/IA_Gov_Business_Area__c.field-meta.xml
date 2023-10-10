@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_Gov_Business_Area__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Area</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Small Business Policy</fullName>
+                <default>false</default>
+                <label>Small Business Policy</label>
+            </value>
+            <value>
+                <fullName>EU/International &amp; Domestic</fullName>
+                <default>false</default>
+                <label>EU/International &amp; Domestic</label>
+            </value>
+            <value>
+                <fullName>FOI &amp; Parliamentary Correspondance</fullName>
+                <default>false</default>
+                <label>FOI &amp; Parliamentary Correspondance</label>
+            </value>
+            <value>
+                <fullName>Mystery Shopper</fullName>
+                <default>false</default>
+                <label>Mystery Shopper</label>
+            </value>
+            <value>
+                <fullName>Commissioning Academy</fullName>
+                <default>false</default>
+                <label>Commissioning Academy</label>
+            </value>
+            <value>
+                <fullName>Disputes and Policy Implementation</fullName>
+                <default>false</default>
+                <label>Disputes and Policy Implementation</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Estates</fullName>
+                <default>false</default>
+                <label>Estates</label>
+            </value>
+            <value>
+                <fullName>Governance</fullName>
+                <default>false</default>
+                <label>Governance</label>
+            </value>
+            <value>
+                <fullName>Business Planning</fullName>
+                <default>false</default>
+                <label>Business Planning</label>
+            </value>
+            <value>
+                <fullName>Communications</fullName>
+                <default>false</default>
+                <label>Communications</label>
+            </value>
+            <value>
+                <fullName>Business Implementation</fullName>
+                <default>false</default>
+                <label>Business Implementation</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <label>Technology</label>
+            </value>
+            <value>
+                <fullName>Change &amp; Transformation</fullName>
+                <default>false</default>
+                <label>Change &amp; Transformation</label>
+            </value>
+            <value>
+                <fullName>Transformation</fullName>
+                <default>false</default>
+                <label>Transformation</label>
+            </value>
+            <value>
+                <fullName>Customer Relations</fullName>
+                <default>false</default>
+                <label>Customer Relations</label>
+            </value>
+            <value>
+                <fullName>Business Performance</fullName>
+                <default>false</default>
+                <label>Business Performance</label>
+            </value>
+            <value>
+                <fullName>HR Operations</fullName>
+                <default>false</default>
+                <label>HR Operations</label>
+            </value>
+            <value>
+                <fullName>Contract &amp; Supplier Management</fullName>
+                <default>false</default>
+                <label>Contract &amp; Supplier Management</label>
+            </value>
+            <value>
+                <fullName>Performance &amp; Supplier Assurance</fullName>
+                <default>false</default>
+                <label>Performance &amp; Supplier Assurance</label>
+            </value>
+            <value>
+                <fullName>SCM - Corporate Solutions</fullName>
+                <default>false</default>
+                <label>SCM - Corporate Solutions</label>
+            </value>
+            <value>
+                <fullName>SCM - Buildings</fullName>
+                <default>false</default>
+                <label>SCM - Buildings</label>
+            </value>
+            <value>
+                <fullName>SCM - People</fullName>
+                <default>false</default>
+                <label>SCM - People</label>
+            </value>
+            <value>
+                <fullName>SCM - Technology</fullName>
+                <default>false</default>
+                <label>SCM - Technology</label>
+            </value>
+            <value>
+                <fullName>Management</fullName>
+                <default>false</default>
+                <label>Management</label>
+            </value>
+            <value>
+                <fullName>Sourcing Operations</fullName>
+                <default>false</default>
+                <label>Sourcing Operations</label>
+            </value>
+            <value>
+                <fullName>Service Operations</fullName>
+                <default>false</default>
+                <label>Service Operations</label>
+            </value>
+            <value>
+                <fullName>Category Services</fullName>
+                <default>false</default>
+                <label>Category Services</label>
+            </value>
+            <value>
+                <fullName>Savings Delivery</fullName>
+                <default>false</default>
+                <label>Savings Delivery</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

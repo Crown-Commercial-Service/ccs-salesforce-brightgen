@@ -1,0 +1,17 @@
+<aura:documentation>
+	<aura:description>
+        <p>This is the standard Government Digital Service confirmation message component</p>
+        <p>The component has the following attributes:</p>
+        <ul><li><code>bold_large</code>:</li>Main Title</ul> 
+        <ul><li><code>heading_text</code>:</li>Heading text</ul> 
+        <ul><li><code>heading_medium</code>:</li>Heading medium</ul>     
+        <ul><li><code>next</code>:</li>Next text</ul> 
+        <ul><li><code>confirmation_message</code>:</li>Confirmation message</ul> 
+        <ul><li><code>message_line1</code>:</li>Message detail line 1</ul> 
+        <ul><li><code>message_line2</code>:</li>Message detail line 2</ul>   
+    </aura:description>
+	<aura:example name="PEM_Confirmation" ref="c:PEM_Confirmation" label="Using the
+c:PEM_Confirmation Component">
+        <p>This example shows a simple setup of <code>PEM_Confirmation</code>.</p>
+    </aura:example>    
+</aura:documentation>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Domain__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Used to store the Email Domains of Buyer/Supplier Accounts to reference in Portal User Registration Journeys - US1576</description>
+    <externalId>false</externalId>
+    <label>Email Domain</label>
+    <length>50</length>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

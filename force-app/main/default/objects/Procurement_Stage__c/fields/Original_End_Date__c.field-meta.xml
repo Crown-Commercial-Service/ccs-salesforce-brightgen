@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_End_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides the original end dates for each stage of the procurement following discussion with the customer. N.B The dates are pre-populated based on the standard SLA duration against each stage</inlineHelpText>
+    <label>Original End Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

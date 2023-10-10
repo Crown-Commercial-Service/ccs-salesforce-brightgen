@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Publish_On_Website_Tickbox</fullName>
+    <active>true</active>
+    <description>Do not allow anybody apart from administrators to untick the website publish checkbox</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Create_draft_web_page__c)
+, PRIORVALUE( Create_draft_web_page__c ) = TRUE
+, $User.ProfileId &lt;&gt; &apos;00eb0000000IfPP&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Create_draft_web_page__c</errorDisplayField>
+    <errorMessage>Unticking &apos;Create draft web page&apos; is not allowed as it will not remove the agreement page from the website. Contact the content management team for help.&apos;</errorMessage>
+</ValidationRule>

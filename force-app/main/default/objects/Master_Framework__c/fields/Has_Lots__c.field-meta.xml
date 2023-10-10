@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Lots__c</fullName>
+    <externalId>false</externalId>
+    <label>Has Lots?</label>
+    <summaryFilterItems>
+        <field>Master_Framework_Lot__c.Name</field>
+        <operation>notEqual</operation>
+        <value>Nil Return</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Master_Framework_Lot__c.Master_Framework__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

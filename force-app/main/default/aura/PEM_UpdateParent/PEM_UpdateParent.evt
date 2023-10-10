@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Update Parent Event" >
+    <aura:attribute name="attrName" type="String"/>
+    <aura:attribute name="value" type="Object"/>
+</aura:event>

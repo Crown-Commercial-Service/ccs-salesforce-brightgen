@@ -1,0 +1,9 @@
+<apex:page controller="COW_RealignLaterStagesController" tabStyle="Procurement_Stage__c" title="Realign Later Stages" lightningStylesheets="true" >
+
+    <apex:pageMessages />
+    
+    <apex:form >
+        <apex:commandButton action="{!realignLaterStages}" value="Realign" rendered="{!allowRealign}" />
+        <apex:commandButton action="{!returnToRecord}" value="Cancel" immediate="true" />
+    </apex:form>
+</apex:page>

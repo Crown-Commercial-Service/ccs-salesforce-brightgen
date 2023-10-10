@@ -1,0 +1,78 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Dynamic Header Theme" controller="getArticleController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="newsArticle" type="Portal_News_Article__kav" />
+    <aura:attribute name="hasHeaderArticle" type="Boolean" />
+
+    <aura:attribute name="navigationMenuDynamic" type="Aura.Component[]" required="false" />
+    <aura:attribute name="betaMessageDynamic" type="Aura.Component[]" required="false" />
+    <aura:attribute name="mainFooterDynamic" type="Aura.Component[]" required="false" />
+    <aura:attribute name="cookieMessageDynamic" type="Aura.Component[]" required="false" />
+
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+
+    <div class="grid-row">
+        {!v.betaMessageDynamic}
+    </div>
+    
+    <!-- IF THERE IS A HEADER IMAGE -->
+    <aura:if isTrue="{!v.hasHeaderArticle}">
+        
+        
+        <!-- HEADER IMAGE NAV -->
+        <div class="grid-row header-region">
+            {!v.navigationMenuDynamic}
+        </div>
+        
+        
+        <!-- IF THERE IS NOT A HEADER IMAGE -->
+        <aura:set attribute="else">
+
+        
+        
+        
+       		<!-- STANDARD NAV -->
+            <div class="grid-row no-hero-header">
+                {!v.navigationMenuDynamic}
+            </div>
+            
+        
+        
+        
+        
+        
+        
+        
+        </aura:set>
+    </aura:if>
+
+
+    
+    
+    
+    
+
+    
+    <div class="grid-row bg-light-grey content-region">
+        {!v.body}
+    </div>
+    <div class="grid-row footer-region">
+        <div class="center-blk">
+            {!v.mainFooterDynamic}
+        </div>
+    </div>
+    <div class="grid-row cookie-banner">
+        {!v.cookieMessageDynamic}
+    </div>
+
+</aura:component>

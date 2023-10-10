@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Past_End</fullName>
+    <active>true</active>
+    <errorConditionFormula>Sprint_Deployment_Date__c &gt;  Sprint_End_Date__c</errorConditionFormula>
+    <errorDisplayField>Sprint_Deployment_Date__c</errorDisplayField>
+    <errorMessage>Deployment Date cannot be greater than the Sprint End Date</errorMessage>
+</ValidationRule>

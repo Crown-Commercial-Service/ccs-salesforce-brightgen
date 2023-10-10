@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Framework_Supplier__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Type &apos;FS&apos; into the field to bring up search options to select the Framework Supplier.</inlineHelpText>
+    <label>Framework Supplier</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Framework_Supplier__c.Framework__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Framework__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Framework_Supplier__c</referenceTo>
+    <relationshipLabel>Feedback</relationshipLabel>
+    <relationshipName>Feedback</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

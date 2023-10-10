@@ -1,0 +1,15 @@
+<aura:component implements="forceCommunity:layout" description="PEM Confirmation page 1:2:1 ratio" access="global">
+	<aura:attribute name="column1" type="Aura.Component[]" required="false" description="Column 1, width 1/4 "/>
+	<aura:attribute name="column2" type="Aura.Component[]" required="false" description="Column 2, width 1/2"/>
+	<aura:attribute name="column3" type="Aura.Component[]" required="false" description="Column 3, width 1/4"/>
+
+	<aura:registerEvent name="toggleProfileSection" type="c:PEM_ToggleProfileSection"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+
+	<div class="grid-row row">
+		<div class="column-one-quarter col col-left">{!v.column1}</div>
+		<div class="column-one-half col col-center">{!v.column2}</div>
+		<div class="column-one-quarter col col-right">{!v.column3}</div>
+	</div>
+</aura:component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reprocurement_Procurement_Reference</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(TEXT(Contract_Next_Steps__c )= &quot;Replaced by contract/procurement&quot;,
+ ISBLANK(Reprocurement_Procurement_Reference__c ))</errorConditionFormula>
+    <errorDisplayField>Reprocurement_Procurement_Reference__c</errorDisplayField>
+    <errorMessage>Please enter corresponding procurement reference</errorMessage>
+</ValidationRule>

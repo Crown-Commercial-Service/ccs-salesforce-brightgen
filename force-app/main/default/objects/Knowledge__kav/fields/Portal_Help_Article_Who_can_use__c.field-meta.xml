@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_Help_Article_Who_can_use__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Used in overview table</inlineHelpText>
+    <label>Who can use</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

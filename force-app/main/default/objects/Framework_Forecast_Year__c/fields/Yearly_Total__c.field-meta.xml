@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Yearly_Total__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( M01__c + M02__c + M03__c +  M04__c  + M05__c + M06__c + M07__c +  M08__c  + M09__c + M10__c + M11__c +  M12__c &lt;&gt; 0, M01__c + M02__c + M03__c +  M04__c  + M05__c + M06__c + M07__c +  M08__c  + M09__c + M10__c + M11__c +  M12__c,
+IF (Q1__c + Q2__c + Q3__c + Q4__c &lt;&gt; 0 ,  Q1__c + Q2__c + Q3__c + Q4__c, Annual__c
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Yearly Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

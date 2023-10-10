@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Contract_Decision_Date_Reached_Notification</fullName>
+        <description>Contract:Decision Date Reached Notification Alert to Contract Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contract_Decision_Date_Reached_Notification_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_is_expiring</fullName>
+        <description>Contract is expiring</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Customer_Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CCS_CRM_Email_Templates/Contract_Expiring</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Contract_Owner_Notification</fullName>
+        <description>New Contract Owner Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Procurement_Contract_Ownership</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_CCS_Contract_Expire</fullName>
+        <description>Send email to CCS Contract Expire</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Additional_Contract_Management_Support__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/CCS_Contract_Expire</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Status_Field</fullName>
+        <field>Status__c</field>
+        <literalValue>Expired</literalValue>
+        <name>Update Status Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Contract Status to Expired</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>CCS_Contract__c.Effective_End_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CCS_Contract__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Pending</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Update_Status_Field</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>CCS_Contract__c.Effective_End_Date__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

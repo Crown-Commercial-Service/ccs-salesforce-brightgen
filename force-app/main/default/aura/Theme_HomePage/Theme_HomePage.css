@@ -1,0 +1,86 @@
+.THIS {
+    position: relative;
+    z-index: 1;
+}
+
+.THIS.navigation-region {
+    z-index: 20;
+    width: 100%;
+}
+
+.THIS.footer-region {
+    background-color: #2F2F2F;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.THIS.cookie-banner {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 100;
+}
+
+.THIS.page-has-banner header#global-header {
+    position: absolute;
+    top: 0;
+    background: transparent;
+}
+
+.THIS.page-has-banner #main-content {
+    padding-top: 0;
+}
+
+.THIS.page-has-banner {
+    z-index: 10;
+}
+
+.THIS.page-has-banner header.page-header {
+    padding-top: 190px;
+    background: #9B1A47;
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    color: #FFF;
+}
+
+.THIS.page-has-banner header.page-header .center-blk {
+    z-index: 10;
+}
+
+.THIS.page-has-banner header.page-header .heading-xxlarge {
+    color: inherit;
+}
+
+.THIS.page-has-banner header.home-header {
+    padding-bottom: 30px;
+}
+
+@media screen and (min-height: 600px) {
+    .THIS.page-has-banner header.home-header {
+        padding-top: calc(160px + 8vh);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .THIS.page-has-banner header.home-header {
+        padding-bottom: calc(80px + 1vh);
+    }
+}
+
+.THIS.page-has-banner header.home-header .column-half {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.THIS.page-has-banner header.home-header .column-half .inset-blk {
+    max-width: 500px;
+}
+
+@media screen and (min-width: 641px) {
+    .THIS.page-has-banner header.home-header .column-half .inset-blk {
+        width: 90%;
+        max-width: 500px;
+        float: right;
+    }
+}

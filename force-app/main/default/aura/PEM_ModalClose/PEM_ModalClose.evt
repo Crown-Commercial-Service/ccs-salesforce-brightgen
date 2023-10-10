@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Close modal event">
+	<aura:attribute name="modalName" type="String" required="false" />
+</aura:event>

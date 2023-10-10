@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decision_By_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides a date by which the Contracting Authority needs to make a decision on whether to extend, re-procure or leave the contract expire. Date is set by the contract manager and should take into account the procurement route</inlineHelpText>
+    <label>Contract Expiry Decision Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

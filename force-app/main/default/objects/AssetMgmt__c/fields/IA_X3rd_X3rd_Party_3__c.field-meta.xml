@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_X3rd_X3rd_Party_3__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Supplier Organisation 3</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>CCS Assets (Supplier Organisation 3)</relationshipLabel>
+    <relationshipName>CCS_Assets2</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

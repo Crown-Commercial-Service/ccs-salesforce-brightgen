@@ -1,0 +1,26 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="GDS Navigation Component">
+    <aura:attribute name="selectedItem" type="string" default="homeURL"/>
+    <aura:attribute name="item1Name" type="string" default="Home" description="Item 1 name"/>
+    <aura:attribute name="item1URL" type="string" default="/" description="Item 1 URL"/>
+    <aura:attribute name="item2Name" type="string" default="Frameworks" description="Item 2 name"/>
+    <aura:attribute name="item2URL" type="string" default="/" description="Item 2 URL"/>
+    <aura:attribute name="item3Name" type="string" default="Find a supplier" description="Item 3 name"/>
+    <aura:attribute name="item3URL" type="string" default="/" description="Item 3 URL"/>
+    <aura:attribute name="item4Name" type="string" default="About CCS" description="Item 4 name"/>
+    <aura:attribute name="item4URL" type="string" default="/" description="Item 4 URL"/>
+    <aura:attribute name="item5Name" type="string" default="Help and Support" description="Item 5 name"/>
+    <aura:attribute name="item5URL" type="string" default="/" description="Item 5 URL"/>
+    <aura:attribute name="item6Name" type="string" default="" description="Item 6 name"/>
+    <aura:attribute name="item6URL" type="string" default="/" description="Item 6 URL"/>   
+    <div class="nav">
+    <ul>
+      <aura:if isTrue="{!v.item1Name!=''}"><li><ui:outputURL aura:id="homeURL" class="{!v.selectedItem =='homeURL' ? 'active' : ''}" alt="{!v.item1URL}" value="" label="{!v.item1Name}" click="{!c.navigate}"/></li></aura:if>
+      <aura:if isTrue="{!v.item2Name!=''}"><li><ui:outputURL aura:id="frameworksURL" class="{!v.selectedItem =='frameworksURL' ? 'active' : ''}" alt="{!v.item2URL}" value=""  label="{!v.item2Name}" click="{!c.navigate}"/></li></aura:if>
+      <aura:if isTrue="{!v.item3Name!=''}"><li><ui:outputURL aura:id="supplierURL" class="{!v.selectedItem =='supplierURL' ? 'active' : ''}" alt="{!v.item3URL}" value=""  label="{!v.item3Name}" click="{!c.navigate}"/></li></aura:if>
+      <aura:if isTrue="{!v.item4Name!=''}"><li><ui:outputURL aura:id="ccsURL" class="{!v.selectedItem =='ccsURL' ? 'active' : ''}" alt="{!v.item4URL}" value=""  label="{!v.item4Name}" click="{!c.navigate}"/></li></aura:if>
+      <aura:if isTrue="{!v.item5Name!=''}"><li><ui:outputURL aura:id="helpURL" class="{!v.selectedItem =='helpURL' ? 'active' : ''}" alt="{!v.item5URL}" value=""  label="{!v.item5Name}" click="{!c.navigate}"/></li></aura:if>
+      <aura:if isTrue="{!v.item6Name!=''}"><li><ui:outputURL aura:id="extraURL" class="{!v.selectedItem =='extraURL' ? 'active' : ''}" alt="{!v.item6URL}" value=""  label="{!v.item6Name}" click="{!c.navigate}"/></li></aura:if>
+      <!-- class="clear-child" // use to force a breakpoint-->
+    </ul>
+    </div>
+</aura:component>

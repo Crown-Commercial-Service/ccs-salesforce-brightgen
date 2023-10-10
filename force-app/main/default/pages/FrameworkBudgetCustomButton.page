@@ -1,0 +1,37 @@
+<apex:page controller="FrameworkBudgetButtonController" showHeader="false" standardStylesheets="true" lightningStylesheets="true">
+
+    <apex:pageBlock title="{!$Label.FF_Generate_Forecast_Budget}">
+        
+        <apex:outputPanel rendered="{!!showBatchExecutedMessage}">
+            <apex:form >
+        
+                <p>{!$Label.FF_Budget_Instructions}</p>
+                <br />
+                <div>
+                    <label style="font-weight:bold;">{!$Label.FF_Label_Business_Plan_Year}</label>
+                        <apex:selectList id="selectedYear" value="{!selectedYear}" size="1" required="true">
+                            <apex:selectOptions value="{!businessPlanYears}"/>
+                        </apex:selectList>
+                </div>
+
+                <p>{!$Label.FF_Budget_Warning}</p>
+    
+                <br />
+                <apex:commandButton action="{!createBudgetRecords}" value="{!$Label.FF_Generate_Budget}"></apex:commandButton>
+                <apex:commandButton onclick="window.close(); return false;" value="{!$Label.FF_Cancel}"></apex:commandButton>
+    
+            </apex:form>
+        
+        </apex:outputPanel> 
+        <apex:outputPanel rendered="{!showBatchExecutedMessage}">
+            <apex:form >
+                <p>{!$Label.FF_Budget_Process_Success}</p>
+                <br /><br />
+                <apex:commandButton onclick="window.close(); return false;" value="{!$Label.FF_Close}"></apex:commandButton>
+                <br /><br />
+            </apex:form>
+        </apex:outputPanel>
+    </apex:pageBlock>
+        
+        
+</apex:page>

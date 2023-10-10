@@ -1,0 +1,3 @@
+<design:component label="Home Theme">
+	<design:attribute name="headerURL" description="Header Image URL"/>
+</design:component>

@@ -1,0 +1,33 @@
+<apex:page standardcontroller="Master_Framework__c" extensions="FrameworkLotSupplierRelatedList_CX" showHeader="false" sidebar="false" showChat="false" lightningStylesheets="true">
+<style>
+    a.disabled {
+        pointer-events: none;
+        cursor: default;
+        color: gray;
+    }
+</style>
+    <apex:form >
+        <apex:pageBlock title="Framework Lot Suppliers" mode="edit" id="frSuppliersPb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandLink value="Cancel" action="{!goBackToFramework}" styleClass="btn" style="text-decoration:none" 
+                    rendered="{!showFullPage}"/>
+            </apex:pageBlockButtons>
+            <apex:pageMessages />
+            <apex:variable value="{!suppliers.size > 0}" var="suppliersAvailable"/>
+            <apex:outputText escape="false" value="&nbsp;&nbsp;No Framework Suppliers" rendered="{!!suppliersAvailable}"/>
+            <apex:pageBlockTable value="{!suppliers}" var="supplier" id="suppliersPbt" rendered="{!suppliersAvailable}">
+                <apex:column headerValue="Supplier">
+                    <apex:outputLink value="/{!supplier.Id}" target="_blank">{!supplier.Name}</apex:outputLink><br/>
+                </apex:column>
+                <apex:column value="{!supplier.suppFrameworkLot.Supplier_Code__c}"/>
+            </apex:pageBlockTable>
+            <apex:panelGrid columns="6" rendered="{!suppliersAvailable}">
+                <apex:commandLink action="{!first}" reRender="frSuppliersPb" styleClass="{!IF(isFirst, 'disabled', '')}">First</apex:commandlink>
+                <apex:commandLink action="{!previous}" reRender="frSuppliersPb" styleClass="{!IF(!hasPrevious, 'disabled', '')}">Previous</apex:commandlink>
+                <apex:commandLink action="{!next}" reRender="frSuppliersPb" styleClass="{!IF(!hasNext, 'disabled', '')}">Next</apex:commandlink>
+                <apex:commandLink action="{!last}" reRender="frSuppliersPb" styleClass="{!IF(!hasNext, 'disabled', '')}">Last</apex:commandlink>&nbsp;
+                <apex:commandLink action="{!goToList}" target="_blank" rendered="{!!showFullPage}">Go to list ({!recordsSize}) »</apex:commandlink>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

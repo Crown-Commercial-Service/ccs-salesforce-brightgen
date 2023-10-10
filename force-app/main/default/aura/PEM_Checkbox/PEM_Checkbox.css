@@ -1,0 +1,46 @@
+.THIS.checkbox-container .checkbox-item {
+	position: relative;
+	display: flex;
+  cursor: pointer;
+}
+
+.THIS.checkbox-container .checkbox-item input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+.THIS.checkbox-container .checkbox-item label{
+  display: block;
+  position: relative;
+  font-weight: 300;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.THIS.checkbox-container .checkbox-item .check{
+  display: block;
+  position: relative;
+  border: 1px solid #000000;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+	z-index: 5;
+  margin-right: 10px;
+}
+
+.THIS.checkbox-container .checkbox-item .check::before {
+  display: block;
+  position: absolute;
+	content: '';
+  border-radius: 100%;
+  height: 15px;
+  width: 15px;
+  top: 4px;
+	left: 4px;
+  margin: auto;
+  background: initial;
+}
+
+.THIS.checkbox-container .checkbox-item.selected .check::before{
+  background: #000000;
+}

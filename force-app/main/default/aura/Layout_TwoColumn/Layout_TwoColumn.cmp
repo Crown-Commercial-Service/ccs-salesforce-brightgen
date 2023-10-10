@@ -1,0 +1,30 @@
+<aura:component implements="forceCommunity:layout" description="Two Columns" access="global">
+    <aura:attribute name="column1" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="column2" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="contentFooter" type="Aura.Component[]" required="false"></aura:attribute>
+    
+    <ltng:require styles="{!join(',', 
+    
+    '/s/sfsites/c/resource/portalAssets/assets/css/reset.css', 
+                          
+    '/s/sfsites/c/resource/portalAssets/assets/css/govuk-template-base.css',
+                          
+    '/s/sfsites/c/resource/portalAssets/assets/css/crown-commercial-service.css',
+                          
+    '/s/sfsites/c/resource/portalAssets/assets/css/fontawesome-ccs.css')}" />
+
+    <div class="center-blk" id="main-content" role="main">
+        <div class="column-half peek-up">
+            {!v.column1}
+        </div>
+        <div class="column-half peek-up">
+            {!v.column2}
+        </div>
+    </div>
+    <div class="grid-row bg-light-grey">
+        <div class="center-blk">
+            {!v.contentFooter}
+        </div>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Framework_Expired</fullName>
+        <field>Status__c</field>
+        <literalValue>Expired</literalValue>
+        <name>Framework: Expired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Framework_Status_Data_Still_Received</fullName>
+        <field>Status__c</field>
+        <literalValue>Expired - Data Still Received</literalValue>
+        <name>Framework: Status Data Still Received</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status</fullName>
+        <field>Status__c</field>
+        <literalValue>Live</literalValue>
+        <name>Update Status to Live</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Framework%3A Change Status to Live</fullName>
+        <active>false</active>
+        <formula>AND(Start_Date__c &gt;= TODAY(), ISPICKVAL(Status__c, &quot;Awarded (Pipeline)&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Update_Status</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Master_Framework__c.Start_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Framework%3A Data Still Received</fullName>
+        <active>true</active>
+        <formula>Effective_End_Date__c &lt;  Last_Lot_Expected__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Framework_Status_Data_Still_Received</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Master_Framework__c.Effective_End_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Framework%3A Expired</fullName>
+        <active>true</active>
+        <formula>Last_Lot_Expected__c &gt;= TODAY()</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Framework_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Master_Framework__c.Last_Lot_Expected__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

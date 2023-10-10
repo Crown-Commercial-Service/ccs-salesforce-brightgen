@@ -1,0 +1,67 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="link1Text" type="String" default="" required="true" description="Link 1 Text"/>
+    <aura:attribute name="link2Text" type="String" default="" required="false" description="Link 2 Text"/>
+    <aura:attribute name="link3Text" type="String" default="" required="false" description="Link 3 Text"/>
+    <aura:attribute name="link4Text" type="String" default="" required="false" description="Link 4 Text"/>
+    <aura:attribute name="link5Text" type="String" default="" required="false" description="Link 5 Text"/>
+    <aura:attribute name="link6Text" type="String" default="" required="false" description="Link 6 Text"/>
+    <aura:attribute name="link1URL" type="String" default="" required="true" description="Link 1 URL"/>
+    <aura:attribute name="link2URL" type="String" default="" required="false" description="Link 2 URL"/>
+    <aura:attribute name="link3URL" type="String" default="" required="false" description="Link 3 URL"/>
+    <aura:attribute name="link4URL" type="String" default="" required="false" description="Link 4 URL"/>
+    <aura:attribute name="link5URL" type="String" default="" required="false" description="Link 5 URL"/>
+    <aura:attribute name="link6URL" type="String" default="" required="false" description="Link 6 URL"/>
+    <aura:attribute name="link1Description" type="String" default="" required="true" description="Link 1 Description"/>
+    <aura:attribute name="link2Description" type="String" default="" required="false" description="Link 2 Description"/>
+    <aura:attribute name="link3Description" type="String" default="" required="false" description="Link 3 Description"/>
+    <aura:attribute name="link4Description" type="String" default="" required="false" description="Link 4 Description"/>
+    <aura:attribute name="link5Description" type="String" default="" required="false" description="Link 5 Description"/>
+    <aura:attribute name="link6Description" type="String" default="" required="false" description="Link 6 Description"/>
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <div class="inset-blk bg-white box-shadow">
+        <h2 class="heading-medium">Quick Links</h2>
+        
+        <aura:if isTrue="{!v.link1Text}">
+            <h4 class="heading-small"><c:Portal_Standard_LinkComponent linkURL="{!v.link1URL}" linkText="{!v.link1Text}" /></h4>
+        	<p>{!v.link1Description}</p>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.link2Text}">
+            <h4 class="heading-small"><c:Portal_Standard_LinkComponent linkURL="{!v.link2URL}" linkText="{!v.link2Text}" /></h4>
+        	<p>{!v.link2Description}</p>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.link3Text}">
+            <h4 class="heading-small"><c:Portal_Standard_LinkComponent linkURL="{!v.link3URL}" linkText="{!v.link3Text}" /></h4>
+        	<p>{!v.link3Description}</p>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.link4Text}">
+            <h4 class="heading-small"><c:Portal_Standard_LinkComponent linkURL="{!v.link4URL}" linkText="{!v.link4Text}" /></h4>
+        	<p>{!v.link4Description}</p>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.link5Text}">
+            <h4 class="heading-small"><c:Portal_Standard_LinkComponent linkURL="{!v.link5URL}" linkText="{!v.link5Text}" /></h4>
+        	<p>{!v.link5Description}</p>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.link6Text}">
+            <h4 class="heading-small"><c:Portal_Standard_LinkComponent linkURL="{!v.link6URL}" linkText="{!v.link6Text}" /></h4>
+        	<p>{!v.link6Description}</p>
+        </aura:if>
+        
+    </div>  
+</aura:component>

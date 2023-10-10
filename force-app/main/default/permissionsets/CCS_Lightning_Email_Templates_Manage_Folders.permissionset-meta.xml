@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Group to allow users to create public email template folders in Lightning</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CCS Lightning Email Templates Manage Folders</label>
+    <license>Salesforce</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CreateLtngTempFolder</name>
+    </userPermissions>
+</PermissionSet>

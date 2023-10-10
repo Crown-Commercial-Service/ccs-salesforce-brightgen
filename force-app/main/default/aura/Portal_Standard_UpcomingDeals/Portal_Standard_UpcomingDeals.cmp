@@ -1,0 +1,28 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <div class="center-blk">
+        <h1 class="heading-xxlarge light">Upcoming deals</h1>
+        <p class="lede">Frameworks which are planned or to be renewed</p>  
+        <aura:if isTrue="{!v.showSpinner}">
+            <div class="loading-spinner">
+            	<lightning:spinner variant="base"  size="large" title="Loading..." alternativeText="Loading..." /> 
+            </div>
+        </aura:if> 
+        
+    </div>
+	
+</aura:component>

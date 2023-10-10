@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Duration__c</fullName>
+    <description>Holds the default duration (in days) taken from the template custom settings. This is Read Only.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides default duration for the stage based on the standard SLA. N.B additional stages will not show a default duration. If alt. SLA agreed with customer, duration override field will need to be populated within relevant stage prior to reaching stage</inlineHelpText>
+    <label>Default Duration</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

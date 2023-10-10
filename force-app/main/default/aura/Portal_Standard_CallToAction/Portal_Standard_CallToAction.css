@@ -1,0 +1,35 @@
+.THIS {
+    margin-top: 20px;
+}
+
+.THIS.card-call-to-action {
+  background: #FFFFFF;
+  border: 1px solid #E7E4DF;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+  padding: 25px;
+}
+
+.THIS.card-call-to-action.card-icon {
+  padding-top: 80px;
+  background-size: 55px;
+  background-position: 26px 24px;
+  background-repeat: no-repeat;
+}
+
+.THIS.card-call-to-action p:nth-last-child(-n+2) {
+  margin-bottom: 0;
+}
+
+.THIS.card-call-to-action .heading-small {
+  margin: 0;
+}
+
+.THIS.card-call-to-action.card-icon.icon-aggregation {
+  background-image: url('/resource/portalAssets/assets/images/aggregation.svg');
+  background-size: 55px;
+}
+
+.THIS.card-call-to-action.card-icon.icon-help {
+  background-image: url('/resource/portalAssets/assets/images/help.svg');
+  background-size: 43px;
+}

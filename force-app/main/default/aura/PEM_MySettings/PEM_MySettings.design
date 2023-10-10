@@ -1,0 +1,17 @@
+<design:component label="PEM My Settings">
+    <design:attribute name="heading" label="Heading"/>
+    <design:attribute name="headingAccount" label="Account Heading"/>
+    <design:attribute name="headingLocation" label="Location Heading"/>
+    <design:attribute name="passTitle" label="Change Password Label"/>
+    <design:attribute name="passTitleExternal" label="External Change Password Label"/>
+    <design:attribute name="passExternalLink" label="External Change Password Link"/>
+    <design:attribute name="username" label="Username Label"/>
+    <design:attribute name="emailAddress" label="Email Label"/>
+    <design:attribute name="password" label="Password Label"/>
+    <design:attribute name="language"  label="Language Label"/>
+    <design:attribute name="locale" label="Locale Label"/>
+    <design:attribute name="timeZone" label="Timezone Label"/>
+    <design:attribute name="editButton" label="Edit Button Label"/>
+    <design:attribute name="saveButton" label="Save Button Label"/>
+    <design:attribute name="cancelButton" label="Cancel Button Label"/> 
+</design:component>

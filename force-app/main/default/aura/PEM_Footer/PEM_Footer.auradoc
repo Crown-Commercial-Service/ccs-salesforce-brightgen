@@ -1,0 +1,12 @@
+<aura:documentation>
+	<aura:description>
+        <p>This is the standard Government Digital Service Footer component</p>
+        <p>The header has 2 attributes:</p>
+        <ul><li><code>licence_link</code>:</li>This is used for the licence link.</ul>
+        <ul><li><code>copyright_link</code>:</li>This is used for the header copyright link.</ul>    
+    </aura:description>
+	<aura:example name="PEM_Header" ref="c:PEM_Footer" label="Using the
+c:PEM_Footer Component">
+        <p>This example shows a simple setup of <code>PEM_Footer</code>.</p>
+    </aura:example>    
+</aura:documentation>

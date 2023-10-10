@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APR_Approval_Stage__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TEXT(APR_Status__c) = &quot;New Approval&quot; , IMAGE(&quot;img/feeds/follow12.png&quot;, &quot;New&quot;), 
+IF(TEXT(APR_Status__c) = &quot;UAT/QA Pending&quot;, IMAGE(&quot;img/icon/people16.png&quot;, &quot;Pending&quot;), 
+IF(TEXT(APR_Status__c) = &quot;UAT/QA Approved&quot;, IMAGE(&quot;resource/CCSIcons/Pause16.png&quot;, &quot;Green&quot;), 
+IF(TEXT(APR_Status__c) = &quot;Production Sign Off Pending&quot;, IMAGE(&quot;img/icon/people16.png&quot;, &quot;Pending&quot;), 
+IF(TEXT(APR_Status__c) = &quot;Production Sign Off Approved&quot;, IMAGE(&quot;img/msg_icons/confirm16.png&quot;, &quot;Approved&quot;), 
+IF(TEXT(APR_Status__c) = &quot;Approval Rejected&quot;, IMAGE(&quot;img/msg_icons/error16.png&quot;, &quot;Rejected&quot;), 
+IMAGE(&quot;img/icon/ideabubble16.png&quot;, &quot;Other&quot;) 
+) ) ) ) ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

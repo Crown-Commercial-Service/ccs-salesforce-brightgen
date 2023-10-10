@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Delay_Proc_Cannot_Have_Active_Delay</fullName>
+    <active>true</active>
+    <description>US547.  You cannot create a new Customer Delay if the Procurement already has an active Customer Delay.</description>
+    <errorConditionFormula>AND(
+ ISNEW() ,
+  Procurement_has_Active_Delay__c 
+)</errorConditionFormula>
+    <errorMessage>You cannot create a new Customer Delay if the Procurement already has an active Customer Delay.</errorMessage>
+</ValidationRule>

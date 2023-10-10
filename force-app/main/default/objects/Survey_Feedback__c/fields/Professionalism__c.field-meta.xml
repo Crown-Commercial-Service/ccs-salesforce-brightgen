@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Professionalism__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Answer given in response to Q4 on CCS Helpdesk form (Clicktools Closed Case Survey NPS): On a scale of 1-10, how satisfied were you with the professionalism of our Customer Service Centre personnel when dealing with your query?</inlineHelpText>
+    <label>Professionalism</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

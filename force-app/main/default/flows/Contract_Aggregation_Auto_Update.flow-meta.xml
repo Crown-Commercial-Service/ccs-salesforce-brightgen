@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Check_Organisation_Name</name>
+        <label>Check Organisation Name</label>
+        <locationX>314</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CCS_Aggregation_Org</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Customer__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CCS Aggregation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Finder_Inapplicable_Tick</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>CCS Aggregation Org</label>
+        </rules>
+        <rules>
+            <name>Not_CCS_Aggregation_Org</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Customer__r.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>CCS Aggregation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Finder_Inapplicable_Untick</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Not CCS Aggregation Org</label>
+        </rules>
+    </decisions>
+    <description>Automatically updates contract finder fields if organisation name is changed to or from &apos;CCS Aggregation&apos;</description>
+    <interviewLabel>Contract Aggregation Auto Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract Aggregation Auto Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Finder_Inapplicable_Tick</name>
+        <label>Finder Inapplicable Tick</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Contracts_Finder_Applicability_Comments__c</field>
+            <value>
+                <stringValue>Transparency will be completed by the contracting authority</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contracts_Finder_Not_Applicable_Reason__c</field>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contracts_Finder_Not_Applicable__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Finder_Inapplicable_Untick</name>
+        <label>Finder Inapplicable Untick</label>
+        <locationX>314</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Contracts_Finder_Applicability_Comments__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contracts_Finder_Not_Applicable_Reason__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contracts_Finder_Not_Applicable__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Organisation_Name</targetReference>
+        </connector>
+        <object>CCS_Contract__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

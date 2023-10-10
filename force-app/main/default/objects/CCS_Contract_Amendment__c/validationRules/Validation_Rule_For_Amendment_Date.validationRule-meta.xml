@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_Rule_For_Amendment_Date</fullName>
+    <active>true</active>
+    <description>If Amendment Completed flag is set to true, Amendment Date must be completed</description>
+    <errorConditionFormula>ISBLANK(  Amended_Date__c  ) &amp;&amp; ( Amendment_Completed__c = true)</errorConditionFormula>
+    <errorMessage>If Amendment Completed flag is set to true, Amendment Date must be completed.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_Rule_For_Decision_By_Date</fullName>
+    <active>true</active>
+    <description>If the Decision By Date has reached or passed, then Comments field must be populated and have more than 10 characters entered.</description>
+    <errorConditionFormula>AND( RecordType.DeveloperName = &quot;Procurement Contract&quot;, LEN( Comments__c ) &lt; 10 &amp;&amp; (( TODAY() - Decision_By_Date__c ) &gt;= 0))</errorConditionFormula>
+    <errorMessage>If the Decision By Date has reached or passed, Comments must be populated and have more than 10 characters entered.</errorMessage>
+</ValidationRule>

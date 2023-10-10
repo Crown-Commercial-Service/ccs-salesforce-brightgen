@@ -1,0 +1,44 @@
+<apex:page standardcontroller="Case" extensions="CaseEmailsRelatedList_CX" showHeader="false" sidebar="false">
+	<style>
+		.columnWithImg {
+			width : 40px;
+		}
+	</style>
+	<apex:form >
+		<apex:pageBlock title="Please select target Case" mode="edit" id="emailsPb">
+			<apex:pageBlockButtons location="both">
+				<apex:commandLink value="Proceed" action="{!moveEmails}" reRender="emailsPb" styleClass="btn" style="text-decoration:none"/>
+				<!-- <apex:commandLink value="Back" action="{!goToList}" styleClass="btn" style="text-decoration:none"/> -->
+				<apex:commandLink value="Cancel" action="{!goBackToCase}" styleClass="btn" style="text-decoration:none"/>
+			</apex:pageBlockButtons>
+			<apex:pageMessages />
+			<apex:pageBlockSection >
+				<apex:pageBlockSectionItem >
+					<apex:outputPanel >
+						<apex:outputLabel value="Target Case"/>&nbsp;
+						<apex:inputField value="{!targetCase.ParentId}"/>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockTable value="{!selectedEmails}" var="email" id="emailsPbt">
+				<apex:column value="{!email.record.Status}"/>
+				<apex:column styleClass="columnWithImg">
+					<apex:outputField value="{!email.record.Was_Moved__c}"/>
+				</apex:column>
+				<apex:column >
+					<apex:variable value="{!IF(email.record.Incoming, 'Inbound', 'Outbound')}" var="emailSource"/>
+					<img src="/img/email{!emailSource}.gif" alt="{!emailSource}" width="16" height="13" title="{!emailSource}"/>
+					<apex:image value="/img/emailHasAttach.gif" title="Has Attachment" rendered="{!email.record.HasAttachment}"/>
+				</apex:column>
+				<apex:column headerValue="Subject">
+					<apex:outputLink target="_blank" value="/{!email.record.Id}">{!email.record.Subject}</apex:outputLink><br/>
+					<font style="font-style:italic;font-decoration:none;font-size:11px;">
+						{!LEFT(email.Record.TextBody, 80)} {!IF(ISBLANK(email.Record.TextBody), '', '...')}
+					</font>
+				</apex:column>
+				<apex:column value="{!email.record.FromAddress}"/>
+				<apex:column value="{!email.record.MessageDate}"/>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,114 @@
+<apex:component >
+	<apex:attribute name="forecast" description="Parent Framework forecast for forecast years" type="Framework_Forecast__c" required="true" />
+	<apex:attribute name="forecastYears" description="Years of forecast to be entered" type="Framework_Forecast_Year__c[]" required="true" />
+	<apex:attribute name="newForecast" description="New forecast records for completion" type="Framework_Forecast_Year__c[]" required="true" />
+	<apex:attribute name="saveMethod" description="The save method from the parent controller" type="ApexPages.Action" required="true"/>
+	<apex:attribute name="cancelMethod" description="The cancel method from the parent controller" type="ApexPages.Action" required="true"/>
+	<apex:form >
+		<apex:sectionHeader title="{!$Label.FF_Maintain_Forecasts}" subtitle="{!$Label.FF_Create_New_Forecast} {!forecast.Framework__r.Name} {!$Label.FF_Editor_Separator} {!forecast.Business_Plan_Year__c}" description="{!$Label.FF_Create_Description}"/>
+		<apex:pageMessages />
+		
+		<apex:repeat value="{!forecastYears}" var="currentYear">
+
+   		<apex:pageBlock title="{!currentYear.Relative_Year_Plus_Actual__c}">
+	
+		<apex:outputPanel rendered="{!currentYear.Relative_Forecast_Year__c = $Label.FF_Year_0 || currentYear.Relative_Forecast_Year__c = $Label.FF_Year_1 || currentYear.Relative_Forecast_Year__c = $Label.FF_Year_2}">
+	
+		<table class="list" width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr class="headerRow">
+				<!--  convert to custom labels -->
+				<th>{!$Label.FF_Sector}</th>
+				<th>{!$Label.FF_M01_April}</th>
+				<th>{!$Label.FF_M02_May}</th>
+				<th>{!$Label.FF_M03_June}</th>
+				<th>{!$Label.FF_M04_July}</th>
+				<th>{!$Label.FF_M05_August}</th>
+				<th>{!$Label.FF_M06_September}</th>
+				<th>{!$Label.FF_M07_October}</th>
+				<th>{!$Label.FF_M08_November}</th>
+				<th>{!$Label.FF_M09_December}</th>
+				<th>{!$Label.FF_M10_January}</th>
+				<th>{!$Label.FF_M11_February}</th>
+				<th>{!$Label.FF_M12_March}</th>
+			</tr>
+		
+			<apex:repeat value="{!newForecast}" var="nf">
+                <apex:outputPanel rendered="{!IF(currentYear.Relative_Forecast_Year__c=nf.Relative_Forecast_Year__c,true,false)}">
+				<tr class="dataRow">
+					<td>
+						<apex:outputText value="{!nf.Sector__c}" />
+					</td>
+					<apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Monthly_Forecast}" var="field" >	
+		                 <td>
+		                   	<apex:inputField style="width:92px;" value="{!nf[field]}" />
+		                  </td> 
+		         	</apex:repeat> 
+				</tr>
+                </apex:outputPanel>
+			</apex:repeat>
+		</table>
+	</apex:outputPanel>
+        
+	<apex:outputPanel rendered="{!currentYear.Relative_Forecast_Year__c = $Label.FF_Year_3}">
+	
+		<table class="list" width="500px" border="0" cellspacing="0" cellpadding="0">
+			<tr class="headerRow">
+				<th>{!$Label.FF_Sector}</th>
+				<th>{!$Label.FF_QTR_01}</th>
+				<th>{!$Label.FF_QTR_02}</th>
+				<th>{!$Label.FF_QTR_03}</th>
+				<th>{!$Label.FF_QTR_04}</th>
+			</tr>
+		
+			<apex:repeat value="{!newForecast}" var="nf">
+                <apex:outputPanel rendered="{!IF(currentYear.Relative_Forecast_Year__c=nf.Relative_Forecast_Year__c,true,false)}">
+				<tr class="dataRow">
+					<td>
+						<apex:outputText value="{!nf.Sector__c}" />
+					</td>
+					<apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Quarterly_Forecast}" var="field" >	
+		                 <td>
+		                   	<apex:inputField style="width:92px;" value="{!nf[field]}" />
+		                  </td> 
+		         	</apex:repeat> 
+				</tr>
+                </apex:outputPanel>
+			</apex:repeat>
+		</table>
+	</apex:outputPanel>
+        
+	<apex:outputPanel rendered="{!currentYear.Relative_Forecast_Year__c = $Label.FF_Year_4}">
+	
+		<table class="list" border="0" cellspacing="0" cellpadding="0">
+			<tr class="headerRow">
+				<th>{!$Label.FF_Sector}</th>
+				<th>{!$Label.FF_Annual}</th>
+			</tr>
+		
+			<apex:repeat value="{!newForecast}" var="nf">
+                <apex:outputPanel rendered="{!IF(currentYear.Relative_Forecast_Year__c=nf.Relative_Forecast_Year__c,true,false)}">
+				<tr class="dataRow">
+					<td>
+						<apex:outputText value="{!nf.Sector__c}" />
+					</td>
+					<apex:repeat value="{!$ObjectType.Framework_Forecast_Year__c.FieldSets.Annual_Forecast}" var="field" >	
+		                 <td>
+		                   	<apex:inputField style="width:92px;" value="{!nf[field]}" />
+		                  </td> 
+		         	</apex:repeat> 
+				</tr>
+                </apex:outputPanel>
+			</apex:repeat>
+		</table>
+	</apex:outputPanel>
+
+	</apex:pageBlock>	
+	</apex:repeat>
+    
+   		<div style="text-align:center;">
+    		<apex:commandButton action="{!saveMethod}" value="Save Forecasts" id="save"/>
+    		<apex:commandButton action="{!cancelMethod}" value="Cancel" id="cancelForecastEdit" immediate="TRUE" />
+    	</div>
+    </apex:form>
+
+</apex:component>

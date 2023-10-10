@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Impact_Score</fullName>
+    <active>true</active>
+    <description>Impact score must be values 1 to 5</description>
+    <errorConditionFormula>Impact_Score__c &lt; 1 || 
+  Impact_Score__c &gt; 5</errorConditionFormula>
+    <errorDisplayField>Impact_Score__c</errorDisplayField>
+    <errorMessage>Impact score needs to be a value between 1 and 5 inclusive</errorMessage>
+</ValidationRule>

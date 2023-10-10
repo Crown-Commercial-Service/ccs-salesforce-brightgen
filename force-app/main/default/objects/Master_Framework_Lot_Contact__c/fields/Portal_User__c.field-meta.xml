@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_User__c</fullName>
+    <description>US0564</description>
+    <externalId>false</externalId>
+    <formula>Supplier_Contact__r.Portal_User_Display__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If this Contact is a Portal Enabled User, do not update their email address details as this is used for Single Sign On.</inlineHelpText>
+    <label>Portal User</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

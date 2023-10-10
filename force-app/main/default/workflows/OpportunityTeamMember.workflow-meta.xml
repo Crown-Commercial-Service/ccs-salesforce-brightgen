@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Opportunity_Team_Member_Notifications</fullName>
+        <description>Opportunity Team Member Notifications</description>
+        <protected>false</protected>
+        <recipients>
+            <field>UserId</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Team_Member_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Team_Member_Role_Change</fullName>
+        <description>Opportunity Team Member Role Change</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Category Additional Support</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Category Opportunity Owner</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>CxD Additional Support</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>CxD Opportunity Owner</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Procurement Operations</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Team_Member_Change_Notification</template>
+    </alerts>
+    <rules>
+        <fullName>Send Opportunity Members Notifications</fullName>
+        <actions>
+            <name>Opportunity_Team_Member_Notifications</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>OpportunityTeamMember.UserId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>When a user is added as a Team Member on an Opportunity, the new member should receive email notification.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

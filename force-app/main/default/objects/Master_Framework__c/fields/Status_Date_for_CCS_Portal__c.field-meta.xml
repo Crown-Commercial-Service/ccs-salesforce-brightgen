@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Date_for_CCS_Portal__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  Create_draft_web_page__c = true,
+  null,
+IF(
+  Start_Date__c &lt;= TODAY() &amp;&amp; (TEXT(Framework_Terms__c) &lt;&gt; &quot;DPS&quot;),
+  null,
+IF(
+   Tender_Closing_Date__c &lt;= TODAY(),
+  null,
+IF(
+  OJEU_Date_Target__c &gt; TODAY(),
+  &quot;Tenders Open: &quot; + IF(LEN(TEXT(DAY(OJEU_Date_Target__c))) &gt; 1 , TEXT(DAY(OJEU_Date_Target__c)), &quot;0&quot; + TEXT(DAY(OJEU_Date_Target__c))) + &quot;/&quot; + IF(LEN(TEXT(MONTH(OJEU_Date_Target__c))) &gt; 1 , TEXT(MONTH(OJEU_Date_Target__c)), &quot;0&quot; + TEXT(MONTH(OJEU_Date_Target__c))) + &quot;/&quot; + TEXT(YEAR(OJEU_Date_Target__c)),
+IF(
+  Start_Date__c &gt; TODAY() &amp;&amp; ISBLANK(OJEU_Date_Target__c) &amp;&amp; (TEXT(Framework_Terms__c) &lt;&gt; &quot;DPS&quot;),
+  &quot;Tenders Open - TBC&quot;,
+IF(
+  (OJEU_Date_Target__c &lt;= TODAY() || Start_Date__c &lt;= TODAY()) &amp;&amp; Effective_End_Date__c &gt; TODAY() &amp;&amp; TEXT(Framework_Terms__c) = &quot;DPS&quot;,
+  &quot;Tenders Close: &quot; + IF(LEN(TEXT(DAY(Effective_End_Date__c))) &gt; 1 , TEXT(DAY(Effective_End_Date__c)), &quot;0&quot; + TEXT(DAY(Effective_End_Date__c))) + &quot;/&quot; + IF(LEN(TEXT(MONTH(Effective_End_Date__c))) &gt; 1 , TEXT(MONTH(Effective_End_Date__c)), &quot;0&quot; + TEXT(MONTH(Effective_End_Date__c))) + &quot;/&quot; + TEXT(YEAR(Effective_End_Date__c)),
+IF(
+  OJEU_Date_Target__c &lt;= TODAY() &amp;&amp; ISBLANK(Tender_Closing_Date__c),
+  &quot;Tenders Close - TBC&quot;,
+IF(
+  OJEU_Date_Target__c &lt;= TODAY() &amp;&amp; Tender_Closing_Date__c &gt; TODAY(),
+  &quot;Tenders Close: &quot; + IF(LEN(TEXT(DAY(Tender_Closing_Date__c))) &gt; 1 , TEXT(DAY(Tender_Closing_Date__c)), &quot;0&quot; + TEXT(DAY(Tender_Closing_Date__c))) + &quot;/&quot; + IF(LEN(TEXT(MONTH(Tender_Closing_Date__c))) &gt; 1 , TEXT(MONTH(Tender_Closing_Date__c)), &quot;0&quot; + TEXT(MONTH(Tender_Closing_Date__c))) + &quot;/&quot; + TEXT(YEAR(Tender_Closing_Date__c)),
+  null
+))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status Date (for CCS Portal)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

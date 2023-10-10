@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Next_Steps__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides the current contractual position to support capacity/pipeline management. Note: if all contract extensions have been used the option should be Leave to expire or Potential to replace.</inlineHelpText>
+    <label>Contract Next Steps</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Leave to expire</fullName>
+                <default>false</default>
+                <label>Leave to expire</label>
+            </value>
+            <value>
+                <fullName>Option to extend</fullName>
+                <default>false</default>
+                <label>Option to extend</label>
+            </value>
+            <value>
+                <fullName>Potential to replace</fullName>
+                <default>false</default>
+                <label>Potential to replace</label>
+            </value>
+            <value>
+                <fullName>Replaced by contract/procurement</fullName>
+                <default>false</default>
+                <label>Replaced by contract/procurement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

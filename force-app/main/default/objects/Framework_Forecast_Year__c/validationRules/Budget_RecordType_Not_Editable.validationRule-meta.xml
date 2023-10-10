@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budget_RecordType_Not_Editable</fullName>
+    <active>true</active>
+    <description>Stop non-admin/api users updating records on the &quot;Budget&quot; record type directly</description>
+    <errorConditionFormula>AND(
+RecordType.Name = &quot;Budget&quot;,
+$User.ProfileId &lt;&gt; &quot;00e4J000000tMiJ&quot;,
+$User.ProfileId &lt;&gt; &quot;00eb0000000EgD5&quot;,
+$User.ProfileId &lt;&gt; &quot;00eb0000000IfPP&quot;
+)</errorConditionFormula>
+    <errorMessage>The Budget record is fixed at the start of the FY and cannot be changed.</errorMessage>
+</ValidationRule>

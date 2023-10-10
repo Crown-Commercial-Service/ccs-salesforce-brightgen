@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alert_Date_2__c</fullName>
+    <description>The date that the Stage-End Alert is to be sent.  Populated by the &apos;Calculate a Stage&apos;s Alert Date&apos; Process.  Used to trigger the &apos;Schedule Stage End Alert&apos; Process.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The date that the Stage-End Email Alert is to be sent for this Stage.</inlineHelpText>
+    <label>Alert Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

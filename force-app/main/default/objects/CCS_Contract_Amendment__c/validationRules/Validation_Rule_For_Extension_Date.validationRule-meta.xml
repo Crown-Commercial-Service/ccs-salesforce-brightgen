@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_Rule_For_Extension_Date</fullName>
+    <active>true</active>
+    <description>If Amendment Type is Extension, Extension Date must be populated</description>
+    <errorConditionFormula>ISBLANK(   Extension_Date__c   ) &amp;&amp; (   ISPICKVAL( Amendment_Type__c , &quot;Extension&quot;) )</errorConditionFormula>
+    <errorMessage>If Amendment Type is set to Extension, New End Date must be populated.</errorMessage>
+</ValidationRule>

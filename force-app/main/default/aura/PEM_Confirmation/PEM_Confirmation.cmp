@@ -1,0 +1,36 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="CCS Confirmation Message">
+
+<aura:attribute name="bold_large" type="string" default="Application complete" description="Main Title"/>
+<aura:attribute name="heading_text" type="string" default="Your reference number is " description="Heading text"/>
+<aura:attribute name="heading_medium" type="string" default="HDJ2123F" description="Heading medium"/>    
+<aura:attribute name="next" type="string" default="What happens next" description="Next text"/>    
+<aura:attribute name="confirmation_message" type="string" default="We have sent you a confirmation email." description="Confirmation message"/>    
+<aura:attribute name="message_line1" type="string" default="We've sent your application to Hackney Electoral Register Office." description="Message detail line 1"/>    
+<aura:attribute name="message_line2" type="string" default="They will contact you either to confirm your registration, or to ask for more information." description="Message detail line 2"/>    
+    
+<div class="main" id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-middle">
+
+      <div class='headerbox'>
+        <h1 class="bold-large">{!v.bold_large}</h1>
+        <p>
+            {!v.heading_text} <br/>
+          <strong class="heading-medium">{!v.heading_medium}</strong>
+        </p>
+      </div>
+      <div class="content">
+        <p>{!v.confirmation_message}</p>
+        <h2 class="heading-medium">{!v.next}</h2>
+        <p>{!v.message_line1}</p>
+        <p>{!v.message_line2}</p>
+      </div>
+
+        <!--<p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>//-->
+
+    </div>
+  </div>
+</div>
+
+</aura:component>

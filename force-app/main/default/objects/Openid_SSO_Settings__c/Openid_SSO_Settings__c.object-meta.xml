@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>A list of key:value pairs to be used to describe any system variables for custom apex OpenID handlers</description>
+    <enableFeeds>false</enableFeeds>
+    <label>OpenID SSO Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

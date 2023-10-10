@@ -1,0 +1,19 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <div class="center-blk">
+        <h2 class="heading-large">Can't find what you need?</h2>
+        <p><c:Portal_Standard_LinkComponent linkURL="/contact-ccs" linkText="Contact us"/> and we'll be happy to help.</p>
+	</div>
+</aura:component>

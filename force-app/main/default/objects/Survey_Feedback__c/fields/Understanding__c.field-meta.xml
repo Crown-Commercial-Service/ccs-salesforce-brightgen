@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Understanding__c</fullName>
+    <description>Captures customer response to &apos;Understanding&apos; survey-question.  Currently used in Procurement-completion survey.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Captures customer response to &apos;Understanding&apos; survey-question.  Currently used in Procurement-completion survey.</inlineHelpText>
+    <label>Understanding</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

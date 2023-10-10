@@ -1,0 +1,22 @@
+<aura:component implements="forceCommunity:layout" description="Error 404" access="global">
+    <aura:attribute name="content" type="Aura.Component[]" required="false"></aura:attribute>
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+	
+    <div id="main-content" role="main" class="grid-row bg-dark-pink ">
+        <div class="center-blk">
+            {!v.content}
+        </div>
+    </div>
+
+</aura:component>

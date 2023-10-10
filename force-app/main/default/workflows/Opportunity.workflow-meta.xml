@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Opportunity_Team_Member_Notifications_for_Closed_Lost_Closed_Won</fullName>
+        <description>Opportunity Team Member Notifications for Closed Lost/Closed Won</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Category</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Experience</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Procurement Operations</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Team_Member_notification_for_Closed_Won_Closed_Lost</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Team_Member_Notifications_for_Stage_3</fullName>
+        <description>Opportunity Team Member Notifications for Stage 3</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Category</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Experience</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Procurement Operations</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Team_Member_notification_for_stage_3</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_Opportunity_Team_that_the_Framework_may_expire_before_the_Opp_Star</fullName>
+        <description>Send email to Opportunity Team that the Framework may expire before the Opp Start Date</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Category</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Customer Experience</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Procurement Operations</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_and_Framework_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Populate_Number_of_Full_FY_Placeholder</fullName>
+        <field>Number_of_Full_FY_Years_Placeholder__c</field>
+        <formula>Number_of_Full_FY__c</formula>
+        <name>Populate Number of Full FY Placeholder</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Opportunity_Engagement_ID</fullName>
+        <field>Engagement_ID__c</field>
+        <literalValue>O</literalValue>
+        <name>Set Opportunity Engagement ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Current_FY_Months</fullName>
+        <field>Curreny_FY_Months_Placeholder__c</field>
+        <formula>Months_in_Current_FY__c</formula>
+        <name>Update Current FY Months</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_FY_Months_Placeholder</fullName>
+        <field>Number_of_Last_FY_Months_Placeholder__c</field>
+        <formula>Months_in_Last_FY__c</formula>
+        <name>Update Last FY Months Placeholder</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Opp_Name</fullName>
+        <field>Name</field>
+        <formula>IF( ISBLANK(Opp_Name_Placeholder__c),  Organisation__c &amp;&quot;-&quot;&amp; Lead_Contact_Name__c  ,Opp_Name_Placeholder__c)</formula>
+        <name>Update Opp Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Placeholder_Field</fullName>
+        <field>FirstFY_Placeholder__c</field>
+        <formula>First_FY__c</formula>
+        <name>Update Placeholder Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Notify Opportunity Team Members - Closed Lost%2FClosed Won</fullName>
+        <actions>
+            <name>Opportunity_Team_Member_Notifications_for_Closed_Lost_Closed_Won</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Lost,Closed Won</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify Opportunity Team Members - stage 3</fullName>
+        <actions>
+            <name>Opportunity_Team_Member_Notifications_for_Stage_3</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Stage 3 = Procurement Activity</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Populate Opportunity Name with Need Field</fullName>
+        <actions>
+            <name>Update_Opp_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Lead_Contact_Name__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>In case the Need field is populated part of the Lead Conversion. In case the Need field is not populated, the Default will be &quot;Organisation Name - Contact Name&quot;</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Populate the Date Placeholder Field</fullName>
+        <actions>
+            <name>Populate_Number_of_Full_FY_Placeholder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Current_FY_Months</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Last_FY_Months_Placeholder</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Placeholder_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>TRUE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Opportunity Engagement ID</fullName>
+        <actions>
+            <name>Set_Opportunity_Engagement_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Engagement_ID__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,4 @@
+<apex:page lightningStylesheets="True">
+    <h1>Restricted Access</h1>
+    <p>Site is currently under maintenance, users frozen out</p>
+</apex:page>

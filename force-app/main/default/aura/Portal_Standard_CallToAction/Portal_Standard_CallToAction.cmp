@@ -1,0 +1,26 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="actionTitle" type="String" access="global" required="true"/>
+    <aura:attribute name="actionText" type="String" access="global" required="true"/>
+    <aura:attribute name="actionIcon" type="String" access="global" required="true"/>
+    <aura:attribute name="actionLinkText" type="String" access="global" required="true"/>
+    <aura:attribute name="actionURL" type="String" access="global" required="true"/>
+    
+     <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <div class="{!'card-call-to-action card-icon ' + v.actionIcon}">
+        <h3 class="heading-small semibold">{!v.actionTitle}</h3>
+        <p>{!v.actionText}</p>
+        <p><c:Portal_Standard_LinkComponent linkURL="{!v.actionURL}" linkText="{!v.actionLinkText}"/></p>
+    </div>
+	
+</aura:component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profile_Name__c</fullName>
+    <description>26/10/2016 - Garth James (Salesforce) - created to store User Profile for the SupplierJITProvisioner class. This is the profile that will be given to the user created through just-in-time provisioning for Suppliers.</description>
+    <externalId>false</externalId>
+    <label>Profile Name</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

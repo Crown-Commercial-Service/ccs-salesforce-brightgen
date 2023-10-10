@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RAG_Indicator__c</fullName>
+    <description>RAG Status flag indicator based on value selected in RAG Status field</description>
+    <externalId>false</externalId>
+    <formula>IF( Risk_Score__c &gt;= 1 &amp;&amp; Risk_Score__c &lt; 7, 
+     IMAGE(&quot;img/msg_icons/confirm16.png&quot;, &quot;green&quot;, 20, 20),
+     IF(Risk_Score__c &gt; 7  &amp;&amp;  Risk_Score__c &lt; 17,
+        IMAGE(&quot;img/msg_icons/warning16.png&quot;, &quot;yellow&quot;, 20, 20),
+           IF (Risk_Score__c &gt; 16,
+              IMAGE(&quot;img/msg_icons/error16.png&quot;, &quot;red&quot;, 20, 20),
+                  IMAGE(&quot;img/msg_icons/info16.png&quot;, &quot;Alert&quot;, 20, 20)
+            )
+     )
+)</formula>
+    <inlineHelpText>Risk Score of  1 to  7 = Green
+Risk Score of  8 to 16 = Amber 
+Risk Score of  17 to 25 = Red</inlineHelpText>
+    <label>RAG Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

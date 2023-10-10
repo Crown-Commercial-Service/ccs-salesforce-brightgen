@@ -1,0 +1,12 @@
+<aura:documentation>
+	<aura:description>
+        <p>This is the standard Government Digital Service Header component</p>
+        <p>The header has 2 attributes:</p>
+        <ul><li><code>proposition_name</code>:</li>This is used for the header title.</ul>
+        <ul><li><code>proposition_link</code>:</li>This is used for the header title link.</ul>    
+    </aura:description>
+	<aura:example name="PEM_Header" ref="c:PEM_Header" label="Using the
+c:PEM_Header Component">
+        <p>This example shows a simple setup of <code>PEM_Header</code>.</p>
+    </aura:example>    
+</aura:documentation>

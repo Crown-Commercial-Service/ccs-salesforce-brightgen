@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_Gov_Supplier_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Prime Supplier - Supplier who the CCS has a contract with
+
+Third Party - Subcontractors that CCS don’t have a contract or formal agreement with but are part of the supply chain under contract to the Prime Supplier or Delivery Partner</inlineHelpText>
+    <label>Supplier Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Prime Supplier</fullName>
+                <default>false</default>
+                <label>Prime Supplier</label>
+            </value>
+            <value>
+                <fullName>3rd Party</fullName>
+                <default>false</default>
+                <label>3rd Party</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

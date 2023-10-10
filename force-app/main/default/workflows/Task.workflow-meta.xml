@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Task_Is_Still_Open</fullName>
+        <description>Task Is Still Open</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>CCS_CRM_Email_Templates/Task_Is_Still_Open</template>
+    </alerts>
+    <rules>
+        <fullName>Task Is Still Not Completed</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Status</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Status</field>
+            <operation>notEqual</operation>
+            <value>Completed - no longer required</value>
+        </criteriaItems>
+        <description>Used to notify a Task Creator that a Task is still open x days before Due Date</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Task_Is_Still_Open</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Task.ActivityDate</offsetFromField>
+            <timeLength>-3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

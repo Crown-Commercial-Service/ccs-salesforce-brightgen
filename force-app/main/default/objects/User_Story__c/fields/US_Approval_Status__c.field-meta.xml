@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Approval_Status__c</fullName>
+    <description>US0548 - SPRINT v2</description>
+    <externalId>false</externalId>
+    <label>Approval Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Review Approved</fullName>
+                <default>false</default>
+                <label>Business Review Approved</label>
+            </value>
+            <value>
+                <fullName>Business Review Rejected</fullName>
+                <default>false</default>
+                <label>Business Review Rejected</label>
+            </value>
+            <value>
+                <fullName>QA-UAT Accepted</fullName>
+                <default>false</default>
+                <label>QA-UAT Accepted</label>
+            </value>
+            <value>
+                <fullName>QA-UAT Rejected</fullName>
+                <default>false</default>
+                <label>QA-UAT Rejected</label>
+            </value>
+            <value>
+                <fullName>Production UAT Approved</fullName>
+                <default>false</default>
+                <label>Production UAT Approved</label>
+            </value>
+            <value>
+                <fullName>Production UAT Rejected</fullName>
+                <default>false</default>
+                <label>Production UAT Rejected</label>
+            </value>
+            <value>
+                <fullName>Approval Pending</fullName>
+                <default>false</default>
+                <label>Approval Pending</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

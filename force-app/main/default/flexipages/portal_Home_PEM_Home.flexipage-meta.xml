@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;
+      &lt;strong&gt;Welcome to the Crown Commercial Service&lt;/strong&gt;
+      &lt;br&gt;Better buying solutions for the public sector &lt;!--render facet: 13:58;a--&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.gov.uk/government/collections/ccs-brochures&quot; title=&quot;Read the CCS brochures article&quot;&gt;&lt;img alt=&quot;A fan display of front cover of a range of CCS brochures&quot; src=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/48550/s630_Brochures.jpg&quot;&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;!--render facet: 13:58;a--&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column1</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;h1&gt;
+      &lt;strong&gt;Quick links&lt;/strong&gt;
+    &lt;/h1&gt;
+    &lt;h1&gt;&amp;nbsp;&lt;/h1&gt;
+    &lt;h1&gt;
+      &lt;span style=&quot;font-size:16px&quot;&gt;Buy something&lt;/span&gt;
+    &lt;/h1&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;http://ccs-agreements.cabinetoffice.gov.uk/&quot; target=&quot;_blank&quot;&gt;Frameworks&lt;/a&gt;&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://purchasingplatform.crowncommercial.gov.uk&quot; target=&quot;_blank&quot;&gt;eCatalogue&lt;/a&gt; (tech products)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://buyers.procserveonline.com/admin/login/auth?marketplace=bootstrap-gem&amp;amp;locale=en&quot; target=&quot;_blank&quot;&gt;eMarketplace&lt;/a&gt; (other low-value items)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://www.digitalmarketplace.service.gov.uk/&quot; target=&quot;_blank&quot;&gt;Digital Marketplace&lt;/a&gt; (digital people &amp;amp; services)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://ccsportal.energycloud.com&quot; target=&quot;_blank&quot;&gt;Energy portal&lt;/a&gt;&amp;nbsp;(energy / utilities)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://gpsfleetportal.cabinetoffice.gov.uk/home.mth&quot; target=&quot;_blank&quot;&gt;Fleet portal&lt;/a&gt;&amp;nbsp;(vehicles)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://www.trips.uk.com/js/SABS/Corporate.html&quot; target=&quot;_blank&quot;&gt;Travel portal&lt;/a&gt; (existing Redfern customers only)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:16px&quot;&gt;Manage your procurement&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://www.contractsfinder.service.gov.uk/Search&quot; target=&quot;_blank&quot;&gt;Contracts Finder&lt;/a&gt; (advertise / find new contracts)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;https://crowncommercialservice.bravosolution.co.uk/web/login.shtml&quot; target=&quot;_blank&quot;&gt;eSourcing&lt;/a&gt;&amp;nbsp;(Emptoris / BRAVO)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:16px&quot;&gt;Links for suppliers&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;a href=&quot;https://miso.ccs.cabinetoffice.gov.uk/Pub/Login.aspx?ReturnUrl=%2f&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;font-size:10px&quot;&gt;MISO&lt;/span&gt;&lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;h3&gt;
+      &lt;span style=&quot;font-size:10px&quot;&gt;&lt;a href=&quot;http://ccs-agreements.cabinetoffice.gov.uk/procurement-pipeline&quot; target=&quot;_blank&quot;&gt;Framework pipeline&lt;/a&gt; (upcoming frameworks)&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;!--render facet: 56:97;a--&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column2</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;A panel of business experts from across the UK is meeting for the first time today under plans to boost government spending with small and medium sized enterprises.&lt;/p&gt;
+    &lt;p&gt;
+      &lt;img alt=&quot;gov is open for business&quot; src=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/58216/s300_Gov_is_open_for_business_for_gov_uk.jpeg&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;The advisory panel, made up of 24 entrepreneurs and leading business figures boasting a wide range of experience, will work with the government to ensure that by 2020, &amp;pound;1 of every &amp;pound;3 invested by Whitehall in goods and services goes to small and medium-sized enterprises (SME).&lt;/p&gt;
+    &lt;p&gt;If met, the target would mean almost &amp;pound;3 billion of new business up for grabs each year, either directly or through the supply chain.&lt;/p&gt;
+    &lt;p&gt;The Cabinet Office has estimated that 27% of government&amp;rsquo;s procurement spending, or &amp;pound;12.1 billion, reached SMEs in 2014 to 15, surpassing its target of 25%.&lt;/p&gt;
+    &lt;!--render facet: 85:98;a--&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column3</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;A new agreement for traffic management technology products and services has been launched by the Crown Commercial Service.&lt;/p&gt;
+    &lt;p&gt;
+      &lt;img alt=&quot;close up of green traffic light&quot; src=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/58049/s300_close_up_of_green_traffic_light.jpg&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;The agreement contains 90 suppliers, over 50% of which are SMEs. It will provide these suppliers with a great opportunity to win new public sector work and reflects the government&amp;rsquo;s commitment to being open for business and buying from smaller enterprises wherever they offer best value.&lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;!--render facet: 114:98;a--&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column4</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;The Crown Commercial Service is delighted to announce the award of the new and improved Technology Products 2 (TP2) agreement.&lt;/p&gt;
+    &lt;p&gt;
+      &lt;img alt=&quot;woman on ipad with technology backdrop of servers&quot; src=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/57818/s300_Tech_Prod_2.jpg&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;http://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3733&quot; rel=&quot;external&quot;&gt;Technology Products 2 (RM3733)&lt;/a&gt;&amp;nbsp;is now live offering customers a flexible and compliant route to market for all their commodity technology product needs. Whether it is a single cable or an entire corporate infrastructure&amp;nbsp;&lt;abbr&gt;TP2&lt;/abbr&gt;aims to be the agreement of choice for the whole of the public sector.&lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;!--render facet: 143:98;a--&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column5</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Home_PEM_Home</masterLabel>
+    <template>
+        <name>PEM_HomePageLayout</name>
+    </template>
+    <type>CommAppPage</type>
+</FlexiPage>

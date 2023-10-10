@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes"
+                controller="HomePageInfoCtrl">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="customText" type="string"/>
+    
+    <lightning:card iconName="utility:info" variant="base" title="Messages from the System Administrator">
+        <div class="slds-card__body_inner">
+            <lightning:layout>
+                <lightning:layoutItem flexibility="grow">
+                    <ui:outputRichText class="slds-text-longform" value="{!v.customText}"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </lightning:card>
+    
+</aura:component>

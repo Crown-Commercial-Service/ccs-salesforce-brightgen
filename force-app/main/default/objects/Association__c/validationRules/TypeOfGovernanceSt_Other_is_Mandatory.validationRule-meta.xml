@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TypeOfGovernanceSt_Other_is_Mandatory</fullName>
+    <active>true</active>
+    <description>When Type Of Governance Structure is Other, the Other Governance Structure field is made mandatory.</description>
+    <errorConditionFormula>AND(ISBLANK(Other_Governance_Structure__c ), TEXT(Type_of_Governance_Structure__c) = &quot;Other&quot;)</errorConditionFormula>
+    <errorDisplayField>Other_Governance_Structure__c</errorDisplayField>
+    <errorMessage>You have selected Other as Type Of Governance Structure. Please complete the Other Governance Structure field.</errorMessage>
+</ValidationRule>

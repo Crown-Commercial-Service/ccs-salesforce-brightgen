@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiry_Alert_Due__c</fullName>
+    <description>Check if contract is within a year of expiring for expiry opportunity auto generation</description>
+    <externalId>false</externalId>
+    <formula>TODAY() =  Decision_By_Date__c - 365</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Expiry Alert Due?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

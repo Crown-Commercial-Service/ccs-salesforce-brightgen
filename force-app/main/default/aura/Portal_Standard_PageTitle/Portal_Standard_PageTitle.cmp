@@ -1,0 +1,32 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="title" type="String" default="Title" access="global" required="true"/>
+    <aura:attribute name="subtitle" type="String" default="Subtitle" access="global" required="true"/>
+    <aura:attribute name="alignment" type="String" access="global" required="true"/>
+    
+     <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <div>
+        <div class="page-title" style="{!'text-align: ' + v.alignment}">
+            <h1 class="heading-xxlarge">{!v.title}</h1>
+                
+            <aura:if isTrue="{!v.alignment == 'Center'}">
+                <p class="lede banner-lede centered">{!v.subtitle}</p>
+        	</aura:if>
+            
+            <aura:if isTrue="{!v.alignment == 'Left'}">
+                <p class="lede banner-lede">{!v.subtitle}</p>
+        	</aura:if>
+            
+        </div>
+    </div>
+</aura:component>

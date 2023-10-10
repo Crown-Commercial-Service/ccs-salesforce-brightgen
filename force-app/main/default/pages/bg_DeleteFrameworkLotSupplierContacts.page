@@ -1,0 +1,53 @@
+<apex:page showHeader="true" sidebar="true" controller="bg_DeleteSupplierContactsController" lightningStylesheets="true">
+
+<script type="text/javascript">
+        
+        function closeExit() {
+            window.close();   
+        }
+</script>
+    <apex:pageBlock id="addframeworkLots" title="Delete Supplier Contacts"/>
+ <c:bg_FrameworkLotSupplierContactSearch searchResultCarrier="{!searchResult}" framework="{!FrameworkID}"/>
+<apex:form >
+
+    <apex:pageBlock id="deleteSupplierContacts" title="Delete Supplier Contacts from Lots">
+
+     <apex:messages />
+
+    <apex:pageBlockButtons location="top">
+    <apex:commandButton style="centre" value="Find Framework Lots" action="{!find}" reRender="deleteSupplierContacts"/>
+    </apex:pageBlockButtons>
+
+    <apex:pageBlockSection id="frameworkLots" title="Framework Lots" columns="2" collapsible="false">
+
+    <apex:pageBlockSection title="Framework Lot Name" columns="1" collapsible="false">
+
+     <apex:repeat value="{!frameworkLotContactList}" var="contacts">
+            <apex:outputLabel value="{!contacts.Master_Framework_Lot__r.Name}"/> 
+      </apex:repeat>
+
+    </apex:pageBlockSection>
+
+    <apex:pageBlockSection title="Delete" columns="1" collapsible="false">
+
+     <apex:repeat value="{!itterator}" var="itterator">
+           <apex:inputCheckbox value="{!decision[itterator]}"/> 
+      </apex:repeat>
+
+    </apex:pageBlockSection>
+
+     
+    </apex:pageBlockSection>
+
+    <div align="center" draggable="false" >
+    <apex:commandButton style="centre" value="Delete" action="{!remove}" reRender="deleteSupplierContacts"/>
+    <apex:commandButton style="centre" value="Close" action="{!close}" onComplete="closeExit()"/>
+    </div>
+
+    </apex:pageBlock>
+
+
+</apex:form>
+
+    
+</apex:page>

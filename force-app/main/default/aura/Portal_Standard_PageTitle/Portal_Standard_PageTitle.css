@@ -1,0 +1,19 @@
+.THIS {
+    padding-bottom: 20px;
+}
+
+.THIS .page-title h1 {
+    color: #ffffff !important;
+}
+
+.THIS .page-title p.lede.banner-lede {
+    color: #ffffff !important;
+    max-width: 830px;
+}
+
+.THIS .page-title p.lede.banner-lede.centered {
+    color: #ffffff !important;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+}

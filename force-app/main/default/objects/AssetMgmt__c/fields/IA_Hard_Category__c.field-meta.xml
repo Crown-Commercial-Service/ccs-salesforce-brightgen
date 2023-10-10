@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_Hard_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Server</fullName>
+                <default>false</default>
+                <label>Server</label>
+            </value>
+            <value>
+                <fullName>Client Device</fullName>
+                <default>false</default>
+                <label>Client Device</label>
+            </value>
+            <value>
+                <fullName>Peripheral</fullName>
+                <default>false</default>
+                <label>Peripheral</label>
+            </value>
+            <value>
+                <fullName>Application</fullName>
+                <default>false</default>
+                <label>Application</label>
+            </value>
+            <value>
+                <fullName>Software as a Service</fullName>
+                <default>false</default>
+                <label>Software as a Service</label>
+            </value>
+            <value>
+                <fullName>Infrastructure as a Service</fullName>
+                <default>false</default>
+                <label>Infrastructure as a Service</label>
+            </value>
+            <value>
+                <fullName>Platform as a Service</fullName>
+                <default>false</default>
+                <label>Platform as a Service</label>
+            </value>
+            <value>
+                <fullName>Network Devices</fullName>
+                <default>false</default>
+                <label>Network Devices</label>
+            </value>
+            <value>
+                <fullName>Managed Service</fullName>
+                <default>false</default>
+                <label>Managed Service</label>
+            </value>
+            <value>
+                <fullName>Hybrid as a Service</fullName>
+                <default>false</default>
+                <label>Hybrid as a Service</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

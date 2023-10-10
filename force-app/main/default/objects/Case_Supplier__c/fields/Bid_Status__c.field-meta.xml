@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bid_Status__c</fullName>
+    <description>Holds status of supplier bid for this procurement</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides a status for the suppliers bid i.e Not Invited, Submitted Tender, Did not Submit, Submitted - Non- Compliant, Submitted - Lost, Winning Supplier</inlineHelpText>
+    <label>Bid Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Invited</fullName>
+                <default>false</default>
+                <label>Not Invited</label>
+            </value>
+            <value>
+                <fullName>Submitted Tender</fullName>
+                <default>false</default>
+                <label>Submitted Tender</label>
+            </value>
+            <value>
+                <fullName>Did not Submit</fullName>
+                <default>false</default>
+                <label>Did not Submit</label>
+            </value>
+            <value>
+                <fullName>Submitted - Non-Compliant</fullName>
+                <default>false</default>
+                <label>Submitted - Non-Compliant</label>
+            </value>
+            <value>
+                <fullName>Submitted - Lost</fullName>
+                <default>false</default>
+                <label>Submitted - Lost</label>
+            </value>
+            <value>
+                <fullName>Winning Supplier</fullName>
+                <default>false</default>
+                <label>Winning Supplier</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

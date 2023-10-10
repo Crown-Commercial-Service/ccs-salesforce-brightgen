@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCS_Contact_Lead__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the daily CCS contact</inlineHelpText>
+    <label>CCS Contact Lead</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Associations (CCS Contact Lead)</relationshipLabel>
+    <relationshipName>Associations1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

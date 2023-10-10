@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_Acknowledged_Annual_Forecast</fullName>
+    <description>Used in framework forecast acknowledgement visualforce page for relative years which require the annual fields.</description>
+    <displayedFields>
+        <field>Acknowledged_Annual__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Previous Acknowledged Annual Forecast</label>
+</FieldSet>

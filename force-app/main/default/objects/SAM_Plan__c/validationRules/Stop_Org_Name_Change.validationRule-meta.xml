@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Org_Name_Change</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED( Organisation__c ), NOT( ISNEW() ))</errorConditionFormula>
+    <errorDisplayField>Organisation__c</errorDisplayField>
+    <errorMessage>Changes cannot be saved. Please do not edit the Organisation field on the SAM plan record</errorMessage>
+</ValidationRule>

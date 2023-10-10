@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approval_Complete</fullName>
+        <description>Approval Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>SPRINT/Email_to_Approval_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Post_Deployment_Approval_Request</fullName>
+        <description>Post Deployment Approval Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>APR_Production_Sign_Off__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>SPRINT/Email_to_sign_off_Post_Deployment_Demonstration</template>
+    </alerts>
+    <alerts>
+        <fullName>User_Story_Approved_Pending_Deployment</fullName>
+        <description>User Story Approved Pending Deployment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>SPRINT/Email_to_Approval_Owner_UAT_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>User_Story_Testing_Availability</fullName>
+        <description>User Story Testing Availability</description>
+        <protected>false</protected>
+        <recipients>
+            <field>APR_Production_Sign_Off__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SPRINT/Email_to_confirm_availability_for_Post_Deployment_sign_off</template>
+    </alerts>
+    <alerts>
+        <fullName>User_Story_UAT_Approval_Request</fullName>
+        <description>User Story UAT Approval Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>APR_UAT_QA_Sign_Off__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>SPRINT/Email_to_sign_off_UAT</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>User_Story_Approval_Rejected</fullName>
+        <field>APR_Status__c</field>
+        <literalValue>Approval Rejected</literalValue>
+        <name>User Story Approval Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Story_Business_Approved</fullName>
+        <field>APR_Status__c</field>
+        <literalValue>Production Sign Off Approved</literalValue>
+        <name>User Story Business Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Story_Deployed</fullName>
+        <field>APR_Status__c</field>
+        <literalValue>Production Sign Off Pending</literalValue>
+        <name>User Story Deployed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Story_QA_UAT_Complete</fullName>
+        <field>APR_Status__c</field>
+        <literalValue>UAT/QA Approved</literalValue>
+        <name>User Story QA/UAT Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Story_QA_UAT_Pending</fullName>
+        <field>APR_Status__c</field>
+        <literalValue>UAT/QA Pending</literalValue>
+        <name>User Story QA/UAT Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

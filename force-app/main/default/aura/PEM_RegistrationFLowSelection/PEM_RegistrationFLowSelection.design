@@ -1,0 +1,40 @@
+<design:component label="PEM Registration FLow Selection">
+	<!-- Component design attributes -->
+	<design:attribute name="title" default="Register"/>
+	<design:attribute name="publicLabel" default="Public sector"/>
+	<design:attribute name="privateLabel" default="Private sector"/>
+	<design:attribute name="description" default="What type of organisation do you work for?"/>
+	<!-- Component attributes -->
+
+	<!-- Public registration attributes -->
+	<design:attribute name="public_accountId" />
+	<design:attribute name="public_regConfirmUrl"/>
+	<design:attribute name="public_firstnameLabel" default="First Name"/>
+	<design:attribute name="public_lastnameLabel" default="Last Name"/>
+	<design:attribute name="public_emailLabel" default="Email"/>
+	<design:attribute name="public_submitButtonLabel" default="Sign Up"/>
+	<design:attribute name="public_contactNumberLabel" default="Contact Number"/>
+	<design:attribute name="public_organizationNameLabel" default="Organization name"/>
+	<design:attribute name="public_organizationSelectLabel" default="Select organication"/>
+
+	<design:attribute name="public_registrationDescription2" default="Registration description 2"/>
+	<design:attribute name="public_registrationDescription3" default="Registration description 23"/>
+	<design:attribute name="public_registrationTitle2" default="Registration title 2"/>
+	<design:attribute name="public_forgottenPasswordLink" default="/ForgottenPassword"/>
+	<design:attribute name="public_forgottenPasswordLabel" default="Forgotten password label"/>
+	<design:attribute name="public_loginLink" default="/login"/>
+	<design:attribute name="public_loginLabel" default="Login label"/>
+
+	<design:attribute name="public_selectOtherLabel" default="Other"/>
+
+	<design:attribute name="public_termsAndConditionsLink" default=""/>
+	<design:attribute name="public_termsAndConditionsLabel" default=""/>
+	<design:attribute name="public_termsAndConditionsCheckboxLabel" default=""/>
+	<!-- Public registration attributes -->
+	
+	<!-- Private registration attributes -->
+	<design:attribute name="private_description" default=""/>
+	<design:attribute name="private_buttonLabel" default=""/>
+    <design:attribute name="private_link" default="/"/>
+	<!-- Private registration attributes -->
+</design:component>

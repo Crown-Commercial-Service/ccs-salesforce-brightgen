@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effective_End_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISBLANK( New_End_Date__c ),  Expiry_Date__c  , New_End_Date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Formula field that show original end date to begin AND updates with new end after a framework extension</inlineHelpText>
+    <label>Effective End Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

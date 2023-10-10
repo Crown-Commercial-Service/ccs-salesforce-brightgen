@@ -1,0 +1,59 @@
+<apex:page standardcontroller="Case" extensions="CaseEmailsRelatedList_CX" showHeader="false" sidebar="false" showChat="false">
+	<style>
+		.columnWithImg {
+			width : 40px;
+		}
+		a.disabled {
+			pointer-events: none;
+			cursor: default;
+			color: gray;
+		}
+	</style>
+	<apex:form >
+		<apex:pageBlock title="Emails" mode="edit" id="emailsPb">
+			<apex:pageBlockButtons location="top">
+				<apex:commandLink value="Move Emails" styleClass="btn{!IF(isAbleToSendEmail, '', 'Disabled')}" target="_top"
+					style="text-decoration:none" action="{!openMoveEmailsPage}" onclick="{!IF(!isAbleToSendEmail, 'return false;', '')}"
+					title="{!IF(!isAbleToSendEmail, $Label.No_access_to_move_Emails, '')}"/>
+				<apex:commandLink value="Cancel" action="{!goBackToCase}" styleClass="btn" style="text-decoration:none" 
+					rendered="{!showFullPage}"/>
+			</apex:pageBlockButtons>
+			<apex:pageMessages />
+			<apex:variable value="{!emails.size > 0}" var="emailsAvailable"/>
+			<apex:outputText escape="false" value="&nbsp;&nbsp;No Emails Available" rendered="{!!emailsAvailable}"/>
+			<apex:pageBlockTable value="{!emails}" var="email" id="emailsPbt" rendered="{!emailsAvailable}">
+				<apex:column > <apex:inputCheckbox value="{!email.isSelected}"/> </apex:column>
+				<apex:column value="{!email.record.Status}"/>
+				<apex:column styleClass="columnWithImg">
+					<apex:outputField value="{!email.record.Was_Moved__c}"/>
+				</apex:column>
+				<apex:column styleClass="columnWithImg">
+					<apex:variable value="{!IF(email.record.Incoming, 'Inbound', 'Outbound')}" var="emailSource"/>
+					<img src="/img/email{!emailSource}.gif" alt="{!emailSource}" width="16" height="13" title="{!emailSource}"/>
+					<apex:image value="/img/emailHasAttach.gif" title="Has Attachment" rendered="{!email.record.HasAttachment}"/>
+				</apex:column>
+				<apex:column headerValue="Subject">
+					<apex:outputLink value="/{!email.record.Id}" target="_blank">{!email.record.Subject}</apex:outputLink><br/>
+					<font style="font-style:italic;font-decoration:none;font-size:11px;">
+						{!LEFT(email.Record.TextBody, 80)} {!IF(ISBLANK(email.Record.TextBody), '', '...')}
+					</font>
+				</apex:column>
+				<apex:column value="{!email.record.FromAddress}"/>
+				<apex:column value="{!email.record.MessageDate}"/>
+			</apex:pageBlockTable>
+<!-- 			<apex:outputPanel rendered="{!AND(NOT(showFullPage), emailsAvailable)}">
+				<div class="pShowMore">
+					<apex:commandLink action="{!showMore}" reRender="emailsPb">Show more »</apex:commandlink> |&nbsp;
+					<apex:commandLink action="{!goToList}" target="_blank">Go to list ({!recordsSize}) »</apex:commandlink>
+				</div>
+			</apex:outputPanel> -->
+			<apex:panelGrid columns="6" rendered="{!emailsAvailable}">
+				<apex:commandLink action="{!first}" reRender="emailsPb" styleClass="{!IF(isFirst, 'disabled', '')}">First</apex:commandlink>
+				<apex:commandLink action="{!previous}" reRender="emailsPb" styleClass="{!IF(!hasPrevious, 'disabled', '')}">Previous</apex:commandlink>
+				<apex:commandLink action="{!next}" reRender="emailsPb" styleClass="{!IF(!hasNext, 'disabled', '')}">Next</apex:commandlink>
+				<apex:commandLink action="{!last}" reRender="emailsPb" styleClass="{!IF(!hasNext, 'disabled', '')}">Last</apex:commandlink>&nbsp;
+				<apex:commandLink action="{!goToList}" target="_blank">Go to list ({!recordsSize}) »</apex:commandlink>
+			</apex:panelGrid>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

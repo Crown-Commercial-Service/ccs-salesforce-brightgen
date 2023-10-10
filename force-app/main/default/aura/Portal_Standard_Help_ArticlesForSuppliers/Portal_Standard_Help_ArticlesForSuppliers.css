@@ -1,0 +1,116 @@
+.THIS.container {
+    max-width: 620px;
+}
+
+/* Remove Skuid styles */
+.THIS .nx-page .nx-page-content {
+    padding: 0 0 0 0;
+    background-color: transparent;
+}
+
+.THIS .nx-page {
+    background-color: transparent;
+}
+
+.THIS .inset-blk {
+    min-height: 300px;
+}
+
+.THIS .loading-spinner {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.THIS .slds-spinner_container {
+    position: relative !important;
+}
+
+.THIS .card-help-support {
+  background: #f5f5f5;
+  border-left: 5px solid transparent;
+  padding: 15px;
+  position: relative;
+  margin: 0 0 5px;
+  transition: background .15s ease-in-out;
+  -moz-transition: background .15s ease-in-out;
+  -webkit-transition: background .15s ease-in-out;
+}
+
+/* for no-background attribute */
+.THIS .no-background .card-help-support {
+  background: #ffffff;
+}
+
+.THIS .card-help-support.has-hot-spot:hover {
+  background: #eaeaea;
+}
+
+.THIS .card-help-support.current {
+  background: #6C6C6C;
+  color: #FFF;
+}
+
+.THIS .card-help-support.current:hover {
+  background: #087B9E;
+  color: #FFF;
+}
+
+.THIS .card-help-support.current a,
+.THIS .card-help-support.current p {
+  color: #FFF !important;
+  font-weight: 600;
+}
+
+.THIS .card-help-support.buyers {
+  border-color: #29AA69;
+}
+
+.THIS .card-help-support.sellers {
+  border-color: #904AA2;
+}
+
+.THIS .card-help-support.nest-item {
+  margin-left: 20px;
+}
+
+.THIS .card-help-support h3 {
+  font-size: 18px;
+  line-height: 1.1;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.THIS .card-help-support.current h3 {
+  font-weight: 600;
+}
+
+.THIS .card-help-support p {
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.15;
+  display: inline-block;
+}
+
+.THIS .card-help-support a:link {
+  color: #087B9E;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+}
+
+.THIS .card-help-support a:visited {
+  /* color: #4c2c92; LOUIS EDIT */
+  color: #087B9E;
+}
+
+.THIS .card-help-support a:hover {
+  color: #2D9ABA;
+}
+
+.THIS .card-help-support a:active {
+  color: #2b8cc4;
+}
+
+.THIS .card-help-support a:focus {
+    outline: 3px solid #ffc9dc;
+    background-color: rgba(0,0,0,0.1);
+}

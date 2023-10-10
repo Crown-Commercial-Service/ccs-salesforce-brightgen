@@ -1,0 +1,160 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+
+     <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+
+    <footer class="footer">
+        <div class="column-quarter">
+            <div class="site-branding">
+                <a class="footer-logo-link" href="javascript:void(0)" title="Go to the CCS homepage" aria-label="Link to CCS homepage" onclick="{!c.goHome}">
+                    <img class="site-logo" src="{!$Resource.portalAssets + '/assets/images/CCS_WHITE_SML_AW.png'}" alt="Crown Commercial Service Homepage"
+                    />
+                </a>
+            </div>
+        </div>
+        <div class="column-three-quarters no-gutters">
+            <div class="grid-row">
+                <div class="column-third">
+                    <div class="footer-section">
+                        <h4 class="heading-small">
+                            <c:Portal_Standard_LinkComponent linkURL="/article/buy-through-CCS" linkText="Buy through CCS" />
+                        </h4>
+                        <ul>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/article/purchasing-platform" linkText="Purchasing Platform" />
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/article/emarketplace" linkText="eMarketplace" />
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/article/digital-marketplace" linkText="Digital Marketplace" />
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/article/frameworks" linkText="Frameworks" />
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/article/aggregation" linkText="Aggregation" />
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/article/eu-tender" linkText="EU tender" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="heading-small">Procurement services</h4>
+                        <ul>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/upcoming-deals" linkText="Upcoming deals" />
+                            </li>
+                            <li>
+                                <a href="https://www.gov.uk/contracts-finder">Contracts Finder</a>
+                            </li>
+                            <li>
+                                <a href="http://ccs-forms.cabinetoffice.gov.uk/using-esourcing-suite-0">eSourcing</a>
+                            </li>
+                            <li>
+                                <a href="http://ted.europa.eu/TED/main/HomePage.do">Tenders Electronic Daily (TED)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column-third">
+                    <div class="footer-section">
+                        <h4 class="heading-small">Existing buyers</h4>
+                        <ul>
+                            <li>
+                                <a href="https://ccsportal.energycloud.com/home/#/session">Energy</a>
+                            </li>
+                            <li>
+                                <a href="https://fleetportal.crowncommercial.gov.uk/login.mth">Fleet</a>
+                            </li>
+                            <li>
+                                <a href="https://travel.crowncommercial.gov.uk">Travel</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="heading-small">
+                            <c:Portal_Standard_LinkComponent linkURL="/suppliers" linkText="Suppliers" />
+                        </h4>
+                        <ul>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/article/why-sell-CCS" linkText="Why sell through CCS" />
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/article/how-sell-CCS" linkText="How to sell through CCS" />
+                            </li>
+                            <li>
+                                <a href="https://www.reportmi.crowncommercial.gov.uk/support/frameworks">Submit your MI returns</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="heading-small">
+                            <c:Portal_Standard_LinkComponent linkURL="/help-support" linkText="Help and support" />
+                        </h4>
+                        <ul>
+                            	<li>
+                               		<a href="https://status.crowncommercial.gov.uk/">Service Status</a>
+                            	</li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="column-third">
+                    <div class="footer-section">
+                        <h4 class="heading-small">
+                            <c:Portal_Standard_LinkComponent linkURL="/news" linkText="News" />
+                        </h4>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="heading-small">About and contact</h4>
+                        <ul>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/about-ccs" linkText="About CCS" />
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/contact-ccs" linkText="Contact CCS" />
+                            </li>
+                            <li>
+                                <a href="https://www.gov.uk/government/organisations/crown-commercial-service/about/recruitment">Careers</a>
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/terms-use" linkText="Terms and conditions" />
+                            </li>
+                            <li>
+                                <c:Portal_Standard_LinkComponent linkURL="/cookie-policy" linkText="Cookie Policy" />
+                            </li>
+                            <li>
+                                <a href="https://www.gov.uk/government/organisations/crown-commercial-service">Corporate information</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-row footer-base">
+            <div class="footer-links">
+                <div class="social-media-links ">
+                    <a href="https://twitter.com/gov_procurement?lang=en" aria-label="Crown Commercial Service on Twitter">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a> &nbsp; &nbsp;
+                    <a href="https://www.linkedin.com/company/government-procurement-service/" aria-label="Crown Commercial Service on LinkedIn">
+                        <i class="fab fa-linkedin-in fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <p class="copyright-text">© Crown Copyright</p>
+        </div>
+    </footer>
+    
+</aura:component>

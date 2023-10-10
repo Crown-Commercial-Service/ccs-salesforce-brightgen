@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Difference_Between_Total_Value_and_Spend__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Uplifted_Contract_Value1__c = 0, Contract_Value__c   -  Contract_Spend_To_Date__c,  Uplifted_Contract_Value1__c  - Contract_Spend_To_Date__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>An auto populated field that calculates the difference between the contract value and contract spend</inlineHelpText>
+    <label>Difference Between Total Value and Spend</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

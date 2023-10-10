@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notice_Value__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provides the maximum contract value under the OJEU or other notice issued for this contract during the procurement. If the contract was procured under a call off competition/Open Market, the maximum value indicator to suppliers should be provided</inlineHelpText>
+    <label>Notice Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

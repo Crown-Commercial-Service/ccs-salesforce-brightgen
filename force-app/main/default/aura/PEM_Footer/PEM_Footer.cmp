@@ -1,0 +1,55 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="CCS Footer">
+
+    <aura:attribute name="licence_link" type="string" default="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" description="Licence Link"/>
+    <aura:attribute name="copyright_link" type="string" default="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/" description="Copyright Link"/>
+
+    <aura:attribute name="helpAndSupportLink" type="String" default="/topiccatalog" description="Help and support link"/>
+    <aura:attribute name="helpAndSupportLabel" type="String" default="Help and support" description="Help and support label"/>
+
+    <aura:attribute name="contactUsLink" type="String" default="/contactus" description="Contact us link"/>
+    <aura:attribute name="contactUsLabel" type="String" default="Contact us" description="Contact us label"/>
+
+    <aura:attribute name="cookiesLink" type="String" default="/cookie-policy" description="Cookies link"/>
+    <aura:attribute name="cookiesLabel" type="String" default="Cookies" description="Cookies label"/>
+
+    <aura:attribute name="termsandconditionsLink" type="String" default="/terms-and-conditions" description="Terms and Conditions link"/>
+    <aura:attribute name="termsandconditionsLabel" type="String" default="Terms and conditions" description="Terms and conditions label"/>
+
+    <aura:dependency resource="markup://c:PEM_FooterLink" type="COMPONENT"/>
+    
+	<div>
+    <footer class="group js-footer" id="footer" role="contentinfo">
+
+      <div class="footer-wrapper">
+
+
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            <div class="open-government-licence row">
+              <p class="link">
+                <c:PEM_FooterLink link="{#v.helpAndSupportLink}" label="{#v.helpAndSupportLabel}"/>
+              </p>
+              <p class="link">
+                <c:PEM_FooterLink link="{#v.contactUsLink}" label="{#v.contactUsLabel}"/>
+              </p>
+              <p class="link">
+                <c:PEM_FooterLink link="{#v.cookiesLink}" label="{#v.cookiesLabel}"/>
+              </p>
+                <p class="link">
+                <c:PEM_FooterLink link="{#v.termsandconditionsLink}" label="{#v.termsandconditionsLabel}"/>
+              </p>
+            </div>
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+                <p>All content is available under the <a href="{!v.licence_link}" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="{!v.copyright_link}">&copy; Crown copyright</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div>
+</aura:component>

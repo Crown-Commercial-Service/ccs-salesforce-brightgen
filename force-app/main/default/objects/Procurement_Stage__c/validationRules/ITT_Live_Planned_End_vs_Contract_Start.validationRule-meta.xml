@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ITT_Live_Planned_End_vs_Contract_Start</fullName>
+    <active>true</active>
+    <description>Contract Start Date cannot predate the Planned End Date of the ITT Live Stage.</description>
+    <errorConditionFormula>AND(
+Name = &quot;ITT Live&quot;,
+NOT(ISBLANK(Procurement__r.Contract_Start_Date__c)),
+Planned_End_Date__c &gt; Procurement__r.Contract_Start_Date__c
+)</errorConditionFormula>
+    <errorMessage>Contract Start Date cannot predate the Planned End Date of the ITT Live Stage. Please review your data.</errorMessage>
+</ValidationRule>

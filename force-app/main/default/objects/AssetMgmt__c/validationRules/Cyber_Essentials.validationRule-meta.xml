@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cyber_Essentials</fullName>
+    <active>true</active>
+    <errorConditionFormula>IA_Gov_Cyber_Essentials__c  = True &amp;&amp; ISBLANK( IA_Gov_Cyber_Essentials_Certificate__c)</errorConditionFormula>
+    <errorDisplayField>IA_Gov_Cyber_Essentials_Certificate__c</errorDisplayField>
+    <errorMessage>Please specify a Cyber Essentials certificate number for this asset.</errorMessage>
+</ValidationRule>

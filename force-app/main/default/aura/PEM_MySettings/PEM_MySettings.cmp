@@ -1,0 +1,105 @@
+<aura:component controller="PEM_MySettings_CC" implements="forceCommunity:availableForAllPageTypes" description="PEM My Settings">
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="currentUser" type="User" default="{'sobjectType':'User'}" />
+    <aura:attribute name="copyUser" type="User" default="{'sobjectType':'User'}" />
+    <aura:attribute name="profileMode" type="String" default="view" access="private" />
+    <aura:attribute name="heading" type="String" default="My Settings" />
+    <aura:attribute name="headingAccount" type="String" default="Account" />
+    <aura:attribute name="headingLocation" type="String" default="Location" />
+    <aura:attribute name="passTitle" type="String" default="Update your password"/>
+    <aura:attribute name="passTitleExternal" type="String" default="Update your password"/>
+    <aura:attribute name="passExternalLink" type="String" default="https://sid4gov.cabinetoffice.gov.uk/forgotten_password"/>
+    <aura:attribute name="username" type="String" default="Username" />
+    <aura:attribute name="emailAddress" type="String" default="Email address" />
+    <aura:attribute name="password" type="String" default="Password" />
+    <aura:attribute name="language" type="String" default="Language" />
+    <aura:attribute name="locale" type="String" default="Locale" />
+    <aura:attribute name="timeZone" type="String" default="Time zone" />
+    <aura:attribute name="editButton" type="String" default="Edit" />
+    <aura:attribute name="saveButton" type="String" default="Save" />
+    <aura:attribute name="cancelButton" type="String" default="Cancel" />
+    <aura:attribute name="hasError" type="Boolean" default="false" access="private" />
+    <aura:attribute name="errorMessage" type="String" default="" access="private" />
+    <aura:attribute name="blockUpdate" type="Boolean" default="false" access="private" />
+    <aura:attribute name="showPassModal" type="Boolean" default="false"/>
+    <aura:attribute name="passUpdated" type="Boolean" default="false"/>
+    <aura:attribute name="params" type="Map" default="{}"/>
+    <aura:attribute name="modalContentName" type="String" default="c:PEM_ChangePassword"/>
+    <aura:handler name="closeModal" event="c:PEM_ModalClose" action="{!c.onModalCancel}"/>
+    <aura:handler event="c:PEM_UpdateParent" action="{!c.onPasswordSuccess}"/>
+    <aura:If isTrue="{!v.showPassModal == true}">
+        <c:PEM_Modal contentComponent="{!v.modalContentName}" params="{!v.params}"/>
+    </aura:If>
+    <lightning:spinner aura:id="spinner" variant="brand" size="large"/>
+
+    <aura:if isTrue="{!v.currentUser.UserType!='Guest'}">
+
+    <div class="{!v.profileMode=='view'?'':'invisible'}" style='margin-left:30px;'>
+      <div class="grid-row">
+        <p><strong style='margin-right:15px;'>{!v.password}</strong>
+          <aura:if isTrue="{!v.currentUser.Is_Supplier__c==True}">
+            <a rel="external" href="{!v.passExternalLink}" target="_blank"><ui:outputText value="{!v.passTitleExternal}"/></a>
+              <aura:set attribute="else">
+                <ui:outputURL value="" label="{!v.passTitle}" click="{!c.onPasswordPress}"/>
+              </aura:set>
+          </aura:if>
+        </p>
+      </div>
+    </div>
+
+  <!-- User profile - edit -->
+  <div class="{!v.profileMode=='edit'?'':'invisible'}">
+    <div ondragover="{!c.onDragOver}" ondragleave="{!c.onDragLeave}">
+      <div class="grid-row">
+        <div class="column-full">
+          <aura:if isTrue="{!v.hasError}">
+            <div class="error-summary" role="group" aria-labelledby="error-summary" tabindex="-1">
+              <ul class="error-summary-list">
+                <li>{!v.errorMessage}</li>
+              </ul>
+            </div>
+          </aura:if>
+        </div>
+        <form aura:id="edit-form">
+          <div class="form-group">
+            <div class="column-one-half">
+              <h2 class="heading-medium">{!v.headingAccount}</h2>
+              <p><strong>{!v.username}</strong></p>
+              <p><force:outputField value="{!v.currentUser.Username}"/></p>
+              <p><strong>{!v.emailAddress}</strong></p>
+              <p><force:outputField value="{!v.currentUser.Email}"/></p>
+              <p><strong>{!v.password}</strong></p>
+              <p>
+                <aura:if isTrue="{!v.currentUser.Is_Supplier__c==True}">
+                  <a rel="external" href="{!v.passExternalLink}" target="_blank">
+                    <ui:outputText value="{!v.passTitleExternal}"/>
+                  </a>&nbsp;
+                  <aura:set attribute="else">
+                    <ui:outputURL value="" label="{!v.passTitle}" click="{!c.onPasswordPress}"/>
+                  </aura:set>
+                </aura:if>
+              </p>
+            </div>
+            <div class="column-one-half">
+              <h2 class="heading-medium">{!v.headingLocation}</h2>
+              <p><strong>{!v.language}</strong></p>
+              <p><ui:inputSelect class="form-control" aura:id="languageLocaleKey" value="{!v.currentUser.LanguageLocaleKey}"/></p>
+              <p><strong>{!v.locale}</strong></p>
+              <p><ui:inputSelect class="form-control" aura:id="localeSidKey" value="{!v.currentUser.LocaleSidKey}"/></p>
+              <p><strong>{!v.timeZone}</strong></p>
+              <p><ui:inputSelect class="form-control" aura:id="timeZoneSidKey" value="{!v.currentUser.TimeZoneSidKey}"/></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    <div class="grid-row">
+      <div class="column-full">
+        <ui:button label="{!v.cancelButton}" class="button" press="{!c.cancel}" />
+        <ui:button label="{!v.saveButton}" class="button" press="{!c.updateUser}" disabled="{!v.blockUpdate}" />
+      </div>
+    </div>
+  </div>
+  </div>
+</aura:if>
+</aura:component>

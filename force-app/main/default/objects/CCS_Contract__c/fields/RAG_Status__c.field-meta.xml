@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RAG_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND( Effective_End_Date__c &lt; TODAY() ), IMAGE(&quot;https://png.icons8.com/metro/30/000000/delete-sign.png&quot;, &quot;Black&quot;),
+IF( AND( Effective_End_Date__c &lt; TODAY() + 30 ), IMAGE(&quot;https://png.icons8.com/office/30/000000/high-priority.png&quot;, &quot;Red&quot;),
+IF( AND( Effective_End_Date__c &lt; TODAY() + 90 ), IMAGE(&quot;https://png.icons8.com/office/30/000000/error.png&quot;, &quot;Amber&quot;),
+IF( AND( Effective_End_Date__c = NULL), IMAGE(&quot;https://png.icons8.com/office/30/000000/help.png&quot;, &quot;Unknown&quot;),
+IMAGE(&quot;https://png.icons8.com/color/30/000000/checked.png&quot;, &quot;Okay&quot;)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RAG Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RAG_Amber_Contract_Contract_Intensions</fullName>
+    <active>true</active>
+    <description>RAG Status is Amber and Contract Intentions are blank</description>
+    <errorConditionFormula>AND(RecordType.Id = &quot;012b00000001Bgv&quot;,  RAG_Amber_Trigger__c = TRUE &amp;&amp;  ISPICKVAL(Contract_Intentions__c,&quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>Contract_Intentions__c</errorDisplayField>
+    <errorMessage>This contact is RAG Amber and you must state your intentions</errorMessage>
+</ValidationRule>

@@ -1,0 +1,30 @@
+.THIS#global-cookie-message {
+	border-top: solid 2px rgba(0,0,0,0.1);
+    width: 100%;
+    background-color: #DDF3FF; 
+    opacity: 1;
+    color: #424242;
+    overflow: hidden;
+}
+
+.THIS#global-cookie-message p {
+    margin: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    float: left;
+
+}
+
+.THIS#global-cookie-message a.close-cookie-icon {
+    float: right;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+@media screen and (max-width: 600px) {
+    
+    .THIS#global-cookie-message p {
+  		font-size: 15px;
+	}
+}

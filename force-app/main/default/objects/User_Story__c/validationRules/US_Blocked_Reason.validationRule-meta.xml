@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>US_Blocked_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>US_Blocked__c = TRUE &amp;&amp; ISBLANK(Reason__c )  ||  Reason__c  = &quot;-&quot;</errorConditionFormula>
+    <errorDisplayField>US_Blocked__c</errorDisplayField>
+    <errorMessage>Please enter a reason for blocking this User Story</errorMessage>
+</ValidationRule>

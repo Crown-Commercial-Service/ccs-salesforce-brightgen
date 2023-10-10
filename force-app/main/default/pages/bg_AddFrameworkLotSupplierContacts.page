@@ -1,0 +1,58 @@
+<apex:page showHeader="true" sidebar="true" controller="bg_AddSupplierContactsController" lightningStylesheets="true">
+    
+    <script type="text/javascript">
+    
+    function closeExit() {
+        window.close();   
+    }
+    
+    function addContactChecked(myselection, cbid)
+    {
+        if (document.getElementById(cbid).checked == false)
+        {
+            document.getElementById(cbid).checked = myselection.checked;  
+        }
+    }
+    
+    function webContactChecked(myselection, cbid)
+    {
+        if (document.getElementById(cbid).checked == true)
+        {
+            document.getElementById(cbid).checked = myselection.checked;  
+        }
+    }
+    </script>
+    <apex:pageBlock id="addframeworkLots" title="Add Supplier Contacts"/>
+    <c:bg_FrameworkLotSupplierContactSearch searchResultCarrier="{!searchResult}" framework="{!FrameworkID}"/>
+    <apex:form >       
+        <!--  FRAMEWORK LOT SEARCH -->
+        <apex:pageBlock id="addframeworkLots" title="Add Supplier Contacts to Lots">
+            <apex:messages />
+            
+            <apex:pageBlockButtons location="top">
+            <apex:commandButton style="centre" value="Find Framework Lots" action="{!find}" reRender="addframeworkLots"/>
+            </apex:pageBlockButtons>
+                
+
+            
+            <apex:pageBlockSection title="Framework Lots" columns="3" collapsible="false">
+                <apex:pageBlockSection title="Framework Lot Name" columns="1" collapsible="false" />
+                <apex:pageBlockSection title="Add" columns="1" collapsible="false" />
+                <apex:pageBlockSection title="Make Website Contact" columns="1" collapsible="false" />
+                
+                <apex:repeat value="{!frameworkLotDecisions}" var="frameworkLotDecision" >
+                    <apex:outputLabel value="{!frameworkLotDecision.frameworkLot.Name}"/>
+                    <apex:inputCheckbox id="addContact" value="{!frameworkLotDecision.addContact}" onclick="webContactChecked(this,'{!$Component.addWebContact}')"/>
+                    <apex:inputCheckbox id="addWebContact" value="{!frameworkLotDecision.addWebContact}" onclick="addContactChecked(this,'{!$Component.addContact}')" /> 
+                </apex:repeat>
+            </apex:pageBlockSection>
+            
+            <apex:pageMessage severity="info" strength="1" summary="{!$Label.Website_Contact_Overwrite_Label}" />
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton style="centre" value="Save" action="{!save}" reRender="addframeworkLots"/>
+                <apex:commandButton style="centre" value="Close" action="{!close}" onComplete="closeExit()"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

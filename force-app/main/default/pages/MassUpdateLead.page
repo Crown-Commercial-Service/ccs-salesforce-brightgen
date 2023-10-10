@@ -1,0 +1,506 @@
+<apex:page standardController="Lead" recordSetvar="unused" extensions="MassUpdateSimpleController" id="page">
+    <!-- for this page to work with a specific custom object, change standController="entityname" to custom object api name  
+For example, if custom object name is Warehouse__c, change first part of the first line to standardController="warehouse__c" 
+and then change the column to display such a.Name etc below <apex:pageBlockTable var="a" value="{!selected}">-->
+    <apex:variable var="uiTheme" value="lightningDesktop" rendered="{!$User.UIThemeDisplayed == 'Theme4d' || contains($CurrentPage.URL, 'lightning.force.com')}">
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS221, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+    </apex:variable>
+    <apex:includeScript value="{!$Resource.UtilJS}" />
+    
+    <apex:outputPanel id="lightningwizard" rendered="{! $User.UIThemeDisplayed == 'Theme4d' || contains($CurrentPage.URL, 'lightning.force.com')}">       
+        
+        <apex:stylesheet value="{!$Resource.MassUpdateCSS}" />
+        <apex:form >
+            <apex:actionFunction name="next1" action="{!lexstep2}" reRender="lightningwizard"/>
+            <apex:actionFunction name="previous2" action="{!lexstep1}" reRender="lightningwizard"/>
+            <apex:actionFunction name="next2" action="{!lexstep3}" reRender="lightningwizard"/>
+            <apex:actionFunction name="setFieldName" oncomplete="next2()">
+                <apex:param assignTo="{!fieldName}" name="selectedField" value=""/>
+            </apex:actionFunction>
+            <apex:actionFunction name="setFieldValue" oncomplete="next3()">
+                <apex:param assignTo="{!valueToUpdate}" name="selectedValue" value=""/>
+            </apex:actionFunction>
+            <apex:actionFunction name="previous3" action="{!lexstep2}" reRender="lightningwizard"/>
+            <apex:actionFunction name="next3" action="{!lexstep4}" reRender="lightningwizard"/>
+            <apex:actionFunction name="previous4" action="{!lexstep3}" reRender="lightningwizard"/>
+            <apex:actionFunction name="next4" action="{!lexstep5}" reRender="lightningwizard"/>
+        </apex:form>
+        <script>
+        
+        
+        setTimeout(function(){
+            
+            var currentStep = parseInt("{!HTMLENCODE(step)}");
+            var progressBar = document.getElementById("progressBar");
+            var wlis = document.getElementById("wizardlist").getElementsByTagName("li");
+            for (i=0; i<wlis.length; i++){
+                
+                if (i<currentStep) {
+                    wlis[i].classList.add("slds-is-active");
+                }else {
+                    wlis[i].classList.remove("slds-is-active");
+                }
+            }
+            switch (currentStep) {
+                case 1:
+                    progressBar.style.width="0%";
+                    break;
+                case 2:
+                    progressBar.style.width="25%";
+                    break;
+                case 3:
+                    progressBar.style.width="50%";
+                    break;
+                case 4:
+                    progressBar.style.width="75%";
+                    break;
+                case 5:
+                    progressBar.style.width="100%";
+            }
+            // debugger;
+            var spinningEl = document.getElementById("spinning");
+            spinningEl.style.visibility  = "hidden";
+            var modalEl = document.getElementById("cancel-modal");
+            modalEl.style.visibility  = "hidden";
+            var modalBackEl = document.getElementById("cancel-modal-backdrop");
+            modalBackEl.style.visibility  = "hidden";
+            
+            
+        });
+        
+        function openCancelModal(){
+            var modalEl = document.getElementById("cancel-modal");
+            var modalBackEl = document.getElementById("cancel-modal-backdrop");
+            modalEl.style.visibility  = "visible";
+            modalBackEl.style.visibility  = "visible";
+        }
+        
+        function closeCancelModal(){
+            var modalEl = document.getElementById("cancel-modal");
+            var modalBackEl = document.getElementById("cancel-modal-backdrop");
+            modalEl.style.visibility  = "hidden";
+            modalBackEl.style.visibility  = "hidden";
+        }
+        
+        function showSpinning(){
+            var spinningEl = document.getElementById("spinning");
+            spinningEl.style.visibility  = "visible";
+        }
+        
+        function goBack(){
+            if( typeof sforce != 'undefined' && sforce != null ){
+                sforce.one.back(true);
+            }
+        }
+        
+        </script>
+        <div class="mass-update-mass-edit">
+            <div id="spinning" class="slds-spinner_container">
+                <div class="slds-spinner--brand slds-spinner slds-spinner--medium" role="alert">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+            
+            <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open" id="cancel-modal">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="closeCancelModal();">
+                            <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.LDS_212, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                            </svg>
+                            
+                            
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="header43" class="slds-text-heading--medium">Cancel</h2>
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <p>Are you sure you wish to cancel?</p>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button--neutral" onclick="closeCancelModal();">No</button>
+                        <button class="slds-button slds-button--brand" onclick="goBack();">Yes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open" id="cancel-modal-backdrop"></div>
+            <div style="padding: 30px 30px 30px 0px;">
+                <div class="slds-wizard" role="navigation">
+                    <ol id="wizardlist" class="slds-wizard__list">
+                        <li class="slds-wizard__item slds-is-active">
+                            <a href="javascript:void(0);" class="slds-wizard__link">
+                                <span class="slds-wizard__marker"></span>
+                                <span class="slds-wizard__label slds-text-title--caps">Confirm records</span>
+                            </a>
+                        </li>
+                        <li class="slds-wizard__item">
+                            <a href="javascript:void(0);" class="slds-wizard__link">
+                                <span class="slds-wizard__marker"></span>
+                                <span class="slds-wizard__label slds-text-title--caps">Specify the field</span>
+                            </a>
+                        </li>
+                        <li class="slds-wizard__item">
+                            <a href="javascript:void(0);" class="slds-wizard__link">
+                                <span class="slds-wizard__marker"></span>
+                                <span class="slds-wizard__label slds-text-title--caps">Specify the new value</span>
+                            </a>
+                        </li>
+                        <li class="slds-wizard__item">
+                            <a href="javascript:void(0);" class="slds-wizard__link">
+                                <span class="slds-wizard__marker"></span>
+                                <span class="slds-wizard__label slds-text-title--caps">Confirmation</span>
+                            </a>
+                        </li>
+                        <li class="slds-wizard__item">
+                            <a href="javascript:void(0);" class="slds-wizard__link">
+                                <span class="slds-wizard__marker"></span>
+                                <span class="slds-wizard__label slds-text-title--caps">Results</span>
+                            </a>
+                        </li>
+                    </ol>
+                    <span class="slds-wizard__progress" style="left:2%;width: 97%;">
+                        <span id="progressBar" class="slds-wizard__progress-bar" style="width:0%"></span>
+                    </span>
+                </div>
+            </div>
+            <!--wizard ends-->
+            
+            <apex:outputPanel id="step1" rendered="{!step='1'}">
+                
+                <div class="slds-panel" style="margin-top:50px;">
+                    <div class="slds-panel__section">
+                        <span class="slds-text-heading--small slds-m-bottom--medium">STEP 1</span>
+                        <div class="slds-form-element slds-hint-parent">
+                            <span class="slds-text-heading--label">Confirm records to be updated</span>
+                        </div>
+                        <div class="slds-form-element__control">
+                            <span class="slds-form-element__static">Number of records selected for update: {!recordSize}</span>
+                        </div>
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                            <thead>
+                                <tr class="slds-text-title--caps">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Name">Name</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Email">Email</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Company">Company</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Amount">Lead Source</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <apex:repeat value="{!selected}" var="a">
+                                    <tr>
+                                        <th scope="row" data-label="Opportunity Name">
+                                            <div class="slds-truncate" title="{!a.Name}">{!a.Name}</div>
+                                        </th>
+                                        <td data-label="Account Name">
+                                            <div class="slds-truncate" title="{!a.Email}">{!a.Email}</div>
+                                        </td>
+                                        <td data-label="Close Date">
+                                            <div class="slds-truncate" title="{!a.Company}">
+                                                {!a.Company}
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div class="slds-truncate" title="{!a.LeadSource}">
+                                                {!a.LeadSource}" 
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                        </table>
+                    </div>      
+                </div>
+                <div class="slds-docked-form-footer">     
+                    <div class="slds-button-group" role="group">
+                        <button class="slds-button slds-button--neutral" onclick="openCancelModal();">Cancel</button>
+                        <button class="slds-button slds-button--neutral slds-button--brand" onclick="showSpinning();next1();">Next</button>
+                    </div>
+                </div> 
+                
+            </apex:outputPanel>
+            <!--step 1 ends-->
+            <apex:outputPanel id="step2" rendered="{!step='2'}">
+                <script>
+                function selectField(){
+                    var fieldSelection = document.getElementById("fieldSelection").getElementsByTagName("span");
+                    var selectedValue = fieldSelection[0].innerHTML;
+                    debugger;
+                    if (!(selectedValue==null||selectedValue=='')){
+                        setFieldName(selectedValue);
+                    }        
+                } 
+                </script>
+                
+                <div class="slds-panel" style="margin-top:50px;">
+                    <div class="slds-panel__section">
+                        <h3 class="slds-text-heading--small slds-m-bottom--medium">STEP 2</h3>
+                        <div class="slds-form-element slds-hint-parent">
+                            <span class="slds-text-heading--label">Specify the field to be udpated</span>
+                        </div>
+                        <div class="slds-form--inline" style="margin-top:10px;">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="name">Field Name</label>
+                                <div class="slds-form-element__control">
+                                    <c:LEXSelection fieldTypeOptions="{!fieldTypeOptions}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-docked-form-footer">     
+                    <div class="slds-button-group" role="group">
+                        <button class="slds-button slds-button--neutral" onclick="openCancelModal();">Cancel</button>
+                        <button class="slds-button slds-button--neutral" onclick="showSpinning();previous2();">Previous</button>
+                        <button class="slds-button slds-button--neutral slds-button--brand" onclick="showSpinning();selectField();">Next</button>
+                    </div>
+                </div> 
+                
+            </apex:outputPanel>
+            <!--step 2 ends-->
+            <apex:outputPanel id="step3" rendered="{!step='3'}">
+                <script>
+                function selectValue(){
+                    
+                    var selectedValue=''; 
+                    var isTextField = "{!displayTexField}";
+                    var isTextAreaField = "{!displayTextArea}";
+                    var isCheckboxField = "{!displayCheckBox}";
+                    var isPicklistField = "{!displayPicklist}"
+                    if (isTextField=='true' || isTextAreaField=='true'){
+                        selectedValue = document.getElementById("fieldValue").value;
+                    }
+                    if (isCheckboxField=='true'){
+                        selectedValue = document.querySelector('input[name="fieldValue"]:checked').value;
+                    } 
+                    if (isPicklistField=='true'){
+                        var fieldSelection = document.getElementById("fieldSelection").getElementsByTagName("span");
+                        selectedValue = fieldSelection[0].innerHTML;
+                    }  
+                    setFieldValue(selectedValue);                          
+                } 
+                </script> 
+                
+                <div class="slds-panel" style="margin-top:50px;">
+                    <div class="slds-panel__section">
+                        <span class="slds-text-heading--small slds-m-bottom--medium">STEP 3</span>
+                        <div class="slds-form-element slds-hint-parent">
+                            <span class="slds-text-heading--label">Specify the new value for field - {!fieldName}</span>
+                        </div>
+                        <div class="slds-form-element__control">
+                            <span class="slds-form-element__label">
+                                <apex:outputText value="{!fieldInfoToDisplay}"/>
+                            </span>
+                        </div>
+                        <div class="slds-form--inline" style="margin-top:10px;">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="name">Field Value</label>
+                                <div class="slds-form-element__control">
+                                    <apex:outputPanel rendered="{!HTMLENCODE(displayTexField)=='true'}">
+                                        <input id="fieldValue" class="slds-input" type="text" />
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!HTMLENCODE(displayTextArea)=='true'}">
+                                        <textarea id="fieldValue" class="slds-textarea"></textarea>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!HTMLENCODE(displayCheckBox)=='true'}">
+                                        <span class="slds-radio">
+                                            <input type="radio" id="fieldValueYes" name="fieldValue" value="true" />
+                                            <label class="slds-radio__label" for="fieldValueYes">
+                                                <span class="slds-radio--faux"></span>
+                                                <span class="slds-form-element__label">True</span>
+                                            </label>
+                                        </span>
+                                        <span class="slds-radio">
+                                            <input type="radio" id="fieldValueNo" name="fieldValue" value="false"/>
+                                            <label class="slds-radio__label" for="fieldValueNo">
+                                                <span class="slds-radio--faux"></span>
+                                                <span class="slds-form-element__label">False</span>
+                                            </label>
+                                        </span>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!HTMLENCODE(displayPicklist)=='true'}">
+                                        <c:LEXSelection fieldTypeOptions="{!picklistvalues}"/>
+                                    </apex:outputPanel>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="slds-docked-form-footer">     
+                    <div class="slds-button-group" role="group">
+                        <button class="slds-button slds-button--neutral" onclick="openCancelModal();">Cancel</button>
+                        <button class="slds-button slds-button--neutral" onclick="showSpinning();previous3();">Previous</button>
+                        <button class="slds-button slds-button--neutral slds-button--brand" onclick="showSpinning();selectValue();">Next</button>
+                    </div>
+                </div>
+                
+            </apex:outputPanel>
+            <!--step3 ends-->
+            <apex:outputPanel id="step4" rendered="{!step='4'}">
+                
+                <div class="slds-panel" style="margin-top:50px;">
+                    <div class="slds-panel__section">
+                        <h3 class="slds-text-heading--small slds-m-bottom--medium">STEP 4</h3>
+                        <div class="slds-form-element slds-hint-parent">
+                            <span class="slds-text-heading--label">Review and Confirm</span>
+                        </div>
+                        
+                        <apex:repeat value="{!confirmationMessage}" var="msg">
+                            <div class="slds-form-element slds-hint-parent">   
+                                <div class="slds-form-element__label">
+                                    <span class="slds-form-element__static">
+                                        <apex:outputText value="{!msg}"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </apex:repeat>
+                    </div>
+                </div> 
+                
+                <div class="slds-docked-form-footer">   
+                    <div class="slds-button-group slds-button-space-right" role="group">
+                        <button class="slds-button slds-button--neutral" onclick="openCancelModal();">Cancel</button>
+                        <button class="slds-button slds-button--neutral" onclick="showSpinning();previous4();">Previous</button>
+                        <button class="slds-button slds-button--neutral slds-button--brand" onclick="showSpinning();next4();">Update</button>
+                    </div>
+                </div>
+                
+            </apex:outputPanel>
+            <!--step4 ends-->
+            <apex:outputPanel id="step5" rendered="{!step='5'}">
+                <script>
+                var elm = document.getElementById("approvalIcon");
+                var svgTag = document.createElement("svg");
+                var useTag = document.createElement("use");
+                svgTag.setAttribute("aria-hidden","true");
+                svgTag.setAttribute("class","slds-icon slds-icon--medium");
+                useTag.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+                useTag.setAttribute("xlink:href", "/resource/LDS_212/assets/icons/action-sprite/svg/symbols.svg#approval");
+                svgTag.appendChild(useTag);
+                elm.appendChild(svgTag);
+                elm.innerHTML = elm.innerHTML;
+                </script>
+                
+                <div class="slds-panel" style="margin-top:50px;">
+                    <div class="slds-panel__section">
+                        <div class="slds-align--absolute-center"> 
+                            <span id="approvalIcon" class="slds-icon_container slds-icon-action-approval slds-icon_container--circle"> 
+                                <svg aria-hidden="true" class="slds-icon slds-icon--large">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.LDS_212, '/assets/icons/action-sprite/svg/symbols.svg#approval')}"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="slds-align--absolute-center">  
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__label">
+                                    <apex:outputText value="{!resultMessage}"/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-docked-form-footer">
+                    <div class="slds-button-group slds-button-space-right" role="group">
+                        <button class="slds-button slds-button--neutral slds-button--brand" onclick="goBack();">End</button>
+                    </div>
+                </div>               
+            </apex:outputPanel>
+            
+        </div>
+        
+    </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme3' && !contains($CurrentPage.URL, 'lightning.force.com')}">  
+        <apex:form id="wizard">
+            
+            <apex:sectionHeader title="Mass Update Wizard" subtitle="Step {!step} of 5"/>
+            
+            <apex:pageBlock id="step1" title="Step 1. Confirm records to be updated" mode="edit" rendered="{!step='1'}">
+                <apex:pagemessages escape="false"></apex:pagemessages>
+                <apex:pageBlockSection >
+                    <apex:pageBlockTable var="a" value="{!selected}">
+                        <apex:column value="{!a.Name}"/>
+                        <apex:column value="{!a.Email}"/>
+                        <apex:column value="{!a.Company}"/>
+                        <apex:column value="{!a.LeadSource}"/>		
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+                <apex:panelGrid columns="2">
+                </apex:panelGrid>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cancel}" value="Previous"/>
+                    <apex:commandButton action="{!step2}" value="Next"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock> 
+            
+            <apex:pageBlock id="field" title="Step 2. Specify the field to be udpated" mode="edit" rendered="{!step='2'}">
+                <apex:pagemessages escape="false"></apex:pagemessages>
+                <apex:selectList id="pickList" size="1" value="{!fieldName}" required="true">
+                    <apex:selectOptions value="{!fieldTypeOptions}"/>
+                </apex:selectList>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!step3}" value="Next"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel" onclick="return confirmCancel()" immediate="true" style="margin-left: 2em"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock> 
+            
+            <apex:pageBlock id="step3" title="Step 3. Specify the new value for field - {!fieldName}" mode="edit" rendered="{!step='3'}">
+                <apex:pagemessages escape="false"></apex:pagemessages>
+                <apex:inputText rendered="{!fieldType='CURRENCY'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='DATE'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='DATETIME'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='TEXT'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='NUMBER'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='COMBOBOX'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='DOUBLE'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='EMAIL'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='ID'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='INTEGER'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='PERCENT'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='MULTIPICKLIST'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='PHONE'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='STRING'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='REFERENCE'}" value="{!valueToUpdate}" />
+                <apex:inputText rendered="{!fieldType='BASE64'}" value="{!valueToUpdate}" />
+                <apex:inputTextArea rendered="{!fieldType='TEXTAREA'}" rows="15" cols="100" value="{!valueToUpdate}" />
+                <apex:inputCheckBox rendered="{!fieldType='BOOLEAN'}" value="{!valueToUpdate}" />
+                <apex:selectList rendered="{!fieldType='PICKLIST'}" value="{!valueToUpdate}" size="1">
+                    <apex:selectOptions value="{!picklistvalues}"/>
+                </apex:selectList>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!step2}" value="Previous"/>
+                    <apex:commandButton action="{!step4}" value="Next"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel" onclick="return confirmCancel()" immediate="true" style="margin-left: 2em"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock> 
+            
+            <apex:pageBlock id="step4" title="Step 4. Confirmation" mode="edit" rendered="{!step='4'}">
+                <apex:pagemessages escape="false"></apex:pagemessages>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!step3}" value="Previous"/>
+                    <apex:commandButton action="{!step5}" value="Update"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel" onclick="return confirmCancel()" immediate="true" style="margin-left: 2em"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock> 
+            
+            
+            <apex:pageBlock id="step5" title="Step 5. Results" mode="edit" rendered="{!step='5'}">
+                <apex:pagemessages escape="false"></apex:pagemessages>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cancel}" value="Done"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock> 
+            
+        </apex:form>
+    </apex:outputPanel>
+</apex:page>

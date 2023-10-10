@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agree_Stage_Dates</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Agree Stage Dates</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/21.0/connection.js&quot;)} 
+if (confirm(&apos;Are you sure you wish to proceed?&apos;)) 
+{ 
+var c = new sforce.SObject(&quot;Case&quot;); 
+c.id = &quot;{!Case.Id}&quot;; 
+c.Set_Planned_Dates__c = true; 
+var result = sforce.connection.update([c]); 
+if (result[0].success == &apos;false&apos;) { 
+alert(result[0].errors.message); 
+} 
+else 
+{ 
+window.location.reload(); 
+
+alert (&quot;Planned Dates successfully set&quot;); 
+} 
+}</url>
+</WebLink>

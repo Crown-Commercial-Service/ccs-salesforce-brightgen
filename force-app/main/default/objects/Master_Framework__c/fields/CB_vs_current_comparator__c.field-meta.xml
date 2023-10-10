@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CB_vs_current_comparator__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If a value is also entered for a specific Lot on this framework, the Lot-level value will take precedence over the value at the framework level.</inlineHelpText>
+    <label>Fw. CB vs. current comparator</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

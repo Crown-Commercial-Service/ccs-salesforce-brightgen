@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Area__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>People - Professional Services</fullName>
+                <default>false</default>
+                <label>People - Professional Services</label>
+            </value>
+            <value>
+                <fullName>Technology - Network Services &amp; Telecoms</fullName>
+                <default>false</default>
+                <label>Technology - Network Services &amp; Telecoms</label>
+            </value>
+            <value>
+                <fullName>Technology - Hardware, Software &amp; Services</fullName>
+                <default>false</default>
+                <label>Technology - Hardware, Software &amp; Services</label>
+            </value>
+            <value>
+                <fullName>Buildings - Property</fullName>
+                <default>false</default>
+                <label>Buildings - Property</label>
+            </value>
+            <value>
+                <fullName>Corporate Solutions - Communications</fullName>
+                <default>false</default>
+                <label>Corporate Solutions - Communications</label>
+            </value>
+            <value>
+                <fullName>Corporate Solutions - Information &amp; Content Management</fullName>
+                <default>false</default>
+                <label>Corporate Solutions - Information &amp; Content Management</label>
+            </value>
+            <value>
+                <fullName>Corporate Solutions - Contact Centre</fullName>
+                <default>false</default>
+                <label>Corporate Solutions - Contact Centre</label>
+            </value>
+            <value>
+                <fullName>Corporate Solutions - Financial Services</fullName>
+                <default>false</default>
+                <label>Corporate Solutions - Financial Services</label>
+            </value>
+            <value>
+                <fullName>Corporate Solutions - Travel</fullName>
+                <default>false</default>
+                <label>Corporate Solutions - Travel</label>
+            </value>
+            <value>
+                <fullName>Corporate Solutions - Fleet</fullName>
+                <default>false</default>
+                <label>Corporate Solutions - Fleet</label>
+            </value>
+            <value>
+                <fullName>Technology - Payroll Solutions</fullName>
+                <default>false</default>
+                <label>Technology - Payroll Solutions</label>
+            </value>
+            <value>
+                <fullName>Buildings - Energy</fullName>
+                <default>false</default>
+                <label>Buildings - Energy</label>
+            </value>
+            <value>
+                <fullName>Savings &amp; Performance</fullName>
+                <default>false</default>
+                <label>Savings &amp; Performance</label>
+            </value>
+            <value>
+                <fullName>CDD Senior Management Team Including McKinsey</fullName>
+                <default>false</default>
+                <label>CDD Senior Management Team Including McKinsey</label>
+            </value>
+            <value>
+                <fullName>Unattributable Plan Spend &amp; Income</fullName>
+                <default>false</default>
+                <label>Unattributable Plan Spend &amp; Income</label>
+            </value>
+            <value>
+                <fullName>Public Sector Resourcing (PSR) Big &amp; Bold</fullName>
+                <default>false</default>
+                <label>Public Sector Resourcing (PSR) Big &amp; Bold</label>
+            </value>
+            <value>
+                <fullName>Savings &amp; Performance Including Accelerator</fullName>
+                <default>false</default>
+                <label>Savings &amp; Performance Including Accelerator</label>
+            </value>
+            <value>
+                <fullName>CrownMarketPlace (CMP)</fullName>
+                <default>false</default>
+                <label>CrownMarketPlace (CMP)</label>
+            </value>
+            <value>
+                <fullName>Markets &amp; Suppliers</fullName>
+                <default>false</default>
+                <label>Markets &amp; Suppliers</label>
+            </value>
+            <value>
+                <fullName>Deputy Chief Commercial Office</fullName>
+                <default>false</default>
+                <label>Deputy Chief Commercial Office</label>
+            </value>
+            <value>
+                <fullName>Complex Transactions</fullName>
+                <default>false</default>
+                <label>Complex Transactions</label>
+            </value>
+            <value>
+                <fullName>Commercial Continuous Improvement Team</fullName>
+                <default>false</default>
+                <label>Commercial Continuous Improvement Team</label>
+            </value>
+            <value>
+                <fullName>Strategic Support Team</fullName>
+                <default>false</default>
+                <label>Strategic Support Team</label>
+            </value>
+            <value>
+                <fullName>CCT Programme Team</fullName>
+                <default>false</default>
+                <label>CCT Programme Team</label>
+            </value>
+            <value>
+                <fullName>Service Ops Newport &amp; Bristol</fullName>
+                <default>false</default>
+                <label>Service Ops Newport &amp; Bristol</label>
+            </value>
+            <value>
+                <fullName>Buildings Pillar</fullName>
+                <default>false</default>
+                <label>Buildings Pillar</label>
+            </value>
+            <value>
+                <fullName>People Pillar</fullName>
+                <default>false</default>
+                <label>People Pillar</label>
+            </value>
+            <value>
+                <fullName>Corporate Pillar</fullName>
+                <default>false</default>
+                <label>Corporate Pillar</label>
+            </value>
+            <value>
+                <fullName>Technology Pillar</fullName>
+                <default>false</default>
+                <label>Technology Pillar</label>
+            </value>
+            <value>
+                <fullName>Procurement Ops Senior Management Team</fullName>
+                <default>false</default>
+                <label>Procurement Ops Senior Management Team</label>
+            </value>
+            <value>
+                <fullName>Sourcing Operations</fullName>
+                <default>false</default>
+                <label>Sourcing Operations</label>
+            </value>
+            <value>
+                <fullName>Central Government Account Management</fullName>
+                <default>false</default>
+                <label>Central Government Account Management</label>
+            </value>
+            <value>
+                <fullName>Customer Services</fullName>
+                <default>false</default>
+                <label>Customer Services</label>
+            </value>
+            <value>
+                <fullName>Disputes &amp; Policy Resolution</fullName>
+                <default>false</default>
+                <label>Disputes &amp; Policy Resolution</label>
+            </value>
+            <value>
+                <fullName>SME</fullName>
+                <default>false</default>
+                <label>SME</label>
+            </value>
+            <value>
+                <fullName>EU &amp; Domestic Policy</fullName>
+                <default>false</default>
+                <label>EU &amp; Domestic Policy</label>
+            </value>
+            <value>
+                <fullName>Policy Programme Team</fullName>
+                <default>false</default>
+                <label>Policy Programme Team</label>
+            </value>
+            <value>
+                <fullName>Wider Public Sector</fullName>
+                <default>false</default>
+                <label>Wider Public Sector</label>
+            </value>
+            <value>
+                <fullName>NHS FOM</fullName>
+                <default>false</default>
+                <label>NHS FOM</label>
+            </value>
+            <value>
+                <fullName>Brexit</fullName>
+                <default>false</default>
+                <label>Brexit</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Estates Management</fullName>
+                <default>false</default>
+                <label>Estates Management</label>
+            </value>
+            <value>
+                <fullName>Governance</fullName>
+                <default>false</default>
+                <label>Governance</label>
+            </value>
+            <value>
+                <fullName>Corporate Contingency</fullName>
+                <default>false</default>
+                <label>Corporate Contingency</label>
+            </value>
+            <value>
+                <fullName>Risk Management, Business Continuity &amp; Assurance</fullName>
+                <default>false</default>
+                <label>Risk Management, Business Continuity &amp; Assurance</label>
+            </value>
+            <value>
+                <fullName>Strategy, Planning &amp; Performance</fullName>
+                <default>false</default>
+                <label>Strategy, Planning &amp; Performance</label>
+            </value>
+            <value>
+                <fullName>Central Finance</fullName>
+                <default>false</default>
+                <label>Central Finance</label>
+            </value>
+            <value>
+                <fullName>Supplier Assurance</fullName>
+                <default>false</default>
+                <label>Supplier Assurance</label>
+            </value>
+            <value>
+                <fullName>Whitehall Boiler System</fullName>
+                <default>false</default>
+                <label>Whitehall Boiler System</label>
+            </value>
+            <value>
+                <fullName>Whitehall Standby Distribution Systems</fullName>
+                <default>false</default>
+                <label>Whitehall Standby Distribution Systems</label>
+            </value>
+            <value>
+                <fullName>Technology Support</fullName>
+                <default>false</default>
+                <label>Technology Support</label>
+            </value>
+            <value>
+                <fullName>Technology Delivery</fullName>
+                <default>false</default>
+                <label>Technology Delivery</label>
+            </value>
+            <value>
+                <fullName>Data Insight &amp; Resource Planning</fullName>
+                <default>false</default>
+                <label>Data Insight &amp; Resource Planning</label>
+            </value>
+            <value>
+                <fullName>Change</fullName>
+                <default>false</default>
+                <label>Change</label>
+            </value>
+            <value>
+                <fullName>Digital Technology Platform (DTP)</fullName>
+                <default>false</default>
+                <label>Digital Technology Platform (DTP)</label>
+            </value>
+            <value>
+                <fullName>Technology Governance</fullName>
+                <default>false</default>
+                <label>Technology Governance</label>
+            </value>
+            <value>
+                <fullName>Marketing &amp; Comms</fullName>
+                <default>false</default>
+                <label>Marketing &amp; Comms</label>
+            </value>
+            <value>
+                <fullName>Central Business Services Team</fullName>
+                <default>false</default>
+                <label>Central Business Services Team</label>
+            </value>
+            <value>
+                <fullName>Human Resources</fullName>
+                <default>false</default>
+                <label>Human Resources</label>
+            </value>
+            <value>
+                <fullName>FastStreamers</fullName>
+                <default>false</default>
+                <label>FastStreamers</label>
+            </value>
+            <value>
+                <fullName>Central HR</fullName>
+                <default>false</default>
+                <label>Central HR</label>
+            </value>
+            <value>
+                <fullName>CEO &amp; Private Office</fullName>
+                <default>false</default>
+                <label>CEO &amp; Private Office</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

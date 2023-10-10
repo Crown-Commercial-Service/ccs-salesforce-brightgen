@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Procurement__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Defaults with the case number and should not be amended</inlineHelpText>
+    <label>Procurement</label>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Level 4 Categorisation Codes</relationshipLabel>
+    <relationshipName>Procurement_Cat_Codes</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

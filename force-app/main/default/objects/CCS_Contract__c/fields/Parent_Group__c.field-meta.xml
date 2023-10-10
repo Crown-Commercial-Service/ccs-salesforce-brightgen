@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Group__c</fullName>
+    <description>US451</description>
+    <externalId>false</externalId>
+    <formula>Customer__r.Parent_Group__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This shows the organisation&apos;s ultimate parent or - if it has no parent - it shows the organisation itself</inlineHelpText>
+    <label>Parent Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

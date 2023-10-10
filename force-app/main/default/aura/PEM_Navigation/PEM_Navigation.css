@@ -1,0 +1,28 @@
+.THIS .nav {
+    background-color: #828282 !important;
+    width:900px;
+    height:20px;
+}
+.THIS li {
+    float: left;
+    list-style-type: none;
+    background-color: #828282 !important;
+}
+
+.THIS li a {
+    display: block;
+    color: white !important;
+    text-align: center;
+    padding: 8px 20px;
+    text-decoration: none;
+}
+
+.THIS li a:hover {
+    background-color: white;
+    color: #333 !important;
+}
+
+.THIS .active {
+    background-color: white;
+    color: #333 !important;
+}

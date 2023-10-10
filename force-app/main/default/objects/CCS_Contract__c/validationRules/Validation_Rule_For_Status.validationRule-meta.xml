@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_Rule_For_Status</fullName>
+    <active>true</active>
+    <description>If the count of Level 4 Codes associated with the Contract is 0, i.e. if there are no Sub Cats associated with the Contract, then the Status cannot be set to Open</description>
+    <errorConditionFormula>AND( RecordType.DeveloperName = &quot;Procurement Contract&quot;, ISPICKVAL( Status__c , &quot;Open&quot;) &amp;&amp; Count_of_Level_4_Codes__c = 0)</errorConditionFormula>
+    <errorMessage>If there are no Level 4 Codes associated with the Contract, the Status cannot be set to Open.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_status_options_for_non_BI</fullName>
+    <active>true</active>
+    <description>Restrict certain status options for non-BI (or admin) users</description>
+    <errorConditionFormula>AND(OR(ISPICKVAL(Status__c, &apos;Live&apos;),ISPICKVAL(Status__c, &apos;Expired&apos;),ISPICKVAL(Status__c, &apos;Expired - Data Still Received&apos;),ISPICKVAL(Status__c, &apos;Awarded (Pipeline)&apos;)),
+(ISCHANGED(Status__c)) &amp;&amp;
+NOT($Profile.Name = &quot;System Administrator&quot; || $Profile.Name = &quot;CCS System Administrator&quot; || $Profile.Name = &quot;CCS Business Intelligence&quot;))</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Only BI or admin users can update status to &quot;Awarded (Pipeline)&quot;, &quot;Live&quot;, &quot;Expired&quot; or &quot;Expired - Data Still Received&quot;</errorMessage>
+</ValidationRule>

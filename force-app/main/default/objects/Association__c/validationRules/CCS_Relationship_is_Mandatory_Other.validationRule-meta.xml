@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCS_Relationship_is_Mandatory_Other</fullName>
+    <active>true</active>
+    <description>When CCS Relationship is Other, the CCS Other Relationship is made mandatory.</description>
+    <errorConditionFormula>AND(ISBLANK(CCS_Other_Relationship__c ), TEXT(CCS_Relationship__c) = &quot;Other&quot;)</errorConditionFormula>
+    <errorDisplayField>CCS_Other_Relationship__c</errorDisplayField>
+    <errorMessage>You have selected  Other as CCS Relationship. Please complete the CCS Other Relationship field.</errorMessage>
+</ValidationRule>

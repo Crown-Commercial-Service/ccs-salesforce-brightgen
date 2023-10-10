@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_End_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirms the revised end date of the contract which is auto populated based on the contract amendment related list record. I.e this will auto populate where a contract extension is put in place</inlineHelpText>
+    <label>New End Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

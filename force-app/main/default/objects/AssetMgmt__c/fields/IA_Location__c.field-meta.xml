@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_Location__c</fullName>
+    <externalId>false</externalId>
+    <label>Location</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Liverpool</fullName>
+                <default>false</default>
+                <label>Liverpool</label>
+            </value>
+            <value>
+                <fullName>Norwich</fullName>
+                <default>false</default>
+                <label>Norwich</label>
+            </value>
+            <value>
+                <fullName>Newport</fullName>
+                <default>false</default>
+                <label>Newport</label>
+            </value>
+            <value>
+                <fullName>London AVH</fullName>
+                <default>false</default>
+                <label>London AVH</label>
+            </value>
+            <value>
+                <fullName>London 1HGR</fullName>
+                <default>false</default>
+                <label>London 1HGR</label>
+            </value>
+            <value>
+                <fullName>Bristol</fullName>
+                <default>false</default>
+                <label>Bristol</label>
+            </value>
+            <value>
+                <fullName>Leeds</fullName>
+                <default>false</default>
+                <label>Leeds</label>
+            </value>
+            <value>
+                <fullName>Cloud Based</fullName>
+                <default>false</default>
+                <label>Cloud Based</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

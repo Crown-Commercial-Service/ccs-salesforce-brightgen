@@ -1,0 +1,135 @@
+.THIS.news-header {
+    padding-top: 40px;
+}
+
+.THIS .card-news {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #E7E7E7;
+  width: 100%;
+}
+
+.THIS .card-news .meta-data {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+.THIS .card-news .card-inner {
+  padding: 25px 22px;
+  overflow: hidden;
+}
+
+.THIS.menu-background {
+    height: 190px;
+    background-color: #9B1A47;
+    width: 100%;
+}
+
+
+/* Title area for header image */
+.THIS .meta-data {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.THIS.news-header-image header.page-header h2 {
+    color: #ffffff;
+    max-width: 830px;
+    margin-bottom: 0.2em;
+    line-height: 1;
+}
+
+@media screen and (max-width: 600px) {
+    
+    .THIS.news-header-image header.page-header h2.heading-xlarge {
+        font-size: 36px;
+    }
+}
+
+.THIS.news-header-image header.page-header p.lede {
+    color: #ffffff;
+    font-weight: 400;
+    max-width: 830px;
+    font-size: 20px;
+}
+
+.THIS.news-header-image header#global-header {
+    position: absolute;
+    top: 0;
+    background: transparent;
+}
+
+.THIS.news-header-image #main-content {
+    padding-top: 0;
+}
+
+.THIS.news-header-image {
+    z-index: 10;
+}
+
+.THIS.news-header-image header.page-header {
+    padding-top: 190px;
+    background: #9B1A47;
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    color: #FFF;
+}
+
+.THIS.news-header-image header.page-header .center-blk {
+    z-index: 10;
+}
+
+.THIS.news-header-image header.page-header .heading-xxlarge {
+    color: inherit;
+}
+
+.THIS.news-header-image header.home-header {
+    padding-bottom: 30px;
+}
+
+.THIS .header-link {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.THIS .header-link:hover {
+    text-decoration: none;
+}
+
+@media screen and (min-height: 600px) {
+    .THIS.news-header-image header.home-header {
+        padding-top: calc(160px + 10vh);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .THIS.news-header-image header.home-header {
+        padding-bottom: calc(30px + 1vh);
+    }
+}
+
+.THIS.news-header-image header.home-header .column-half {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.THIS.news-header-image header.home-header .column-half .inset-blk {
+    max-width: 500px;
+}
+
+@media screen and (min-width: 641px) {
+    .THIS.news-header-image header.home-header .column-half .inset-blk {
+        width: 90%;
+        max-width: 500px;
+        float: right;
+    }
+}

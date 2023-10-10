@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_Rule_For_Extension_Details</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK(  Extension_Details__c )  &amp;&amp; ( Extension_Options__c  = true)</errorConditionFormula>
+    <errorMessage>If Extension Options flag is set, Extension Details must be populated</errorMessage>
+</ValidationRule>

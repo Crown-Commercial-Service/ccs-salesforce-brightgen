@@ -1,0 +1,13 @@
+<design:component label="GDS Standard Footer">
+    <design:attribute name="licence_link" label="Proposition Name"/>
+    <design:attribute name="copyright_link" label="Copyright Link"/>
+
+    <design:attribute name="helpAndSupportLabel" label="Help and support label"/>
+    <design:attribute name="helpAndSupportLink" label="Help and support link"/>
+
+    <design:attribute name="contactUsLabel" label="Contact us label"/>
+    <design:attribute name="contactUsLink" label="Contact us link"/>
+
+    <design:attribute name="cookiesLabel" label="Cookies label"/>
+    <design:attribute name="cookiesLink" label="Cookies link"/>
+</design:component>

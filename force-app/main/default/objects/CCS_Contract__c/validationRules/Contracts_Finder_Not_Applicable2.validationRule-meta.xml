@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_Finder_Not_Applicable2</fullName>
+    <active>true</active>
+    <description>If the Contracts Finder Not Applicable Reason is &apos;Other&apos;, then written justification must be provided in the Comment Box.</description>
+    <errorConditionFormula>AND(
+ TEXT(Contracts_Finder_Not_Applicable_Reason__c)=&quot;Other&quot;,
+  Contracts_Finder_Applicability_Comments__c =&quot;&quot;
+)</errorConditionFormula>
+    <errorMessage>If the Contracts Finder Not Applicable Reason is &apos;Other&apos;, then justification must be provided in the associated Comments box.</errorMessage>
+</ValidationRule>

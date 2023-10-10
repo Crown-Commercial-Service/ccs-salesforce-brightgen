@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feedback_Topic__c</fullName>
+    <description>Multi choice feedback topic selection</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this feedback related to any wider topics, select one or multiple topics if relevant.</inlineHelpText>
+    <label>Feedback Topic</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accessibility</fullName>
+                <default>false</default>
+                <label>Accessibility</label>
+            </value>
+            <value>
+                <fullName>Aggregation</fullName>
+                <default>false</default>
+                <label>Aggregation</label>
+            </value>
+            <value>
+                <fullName>Agreement triage</fullName>
+                <default>false</default>
+                <label>Agreement triage</label>
+            </value>
+            <value>
+                <fullName>Carbon Net Zero</fullName>
+                <default>false</default>
+                <label>Carbon Net Zero</label>
+            </value>
+            <value>
+                <fullName>CCS guidance</fullName>
+                <default>false</default>
+                <label>CCS guidance</label>
+            </value>
+            <value>
+                <fullName>CCS process</fullName>
+                <default>false</default>
+                <label>CCS process</label>
+            </value>
+            <value>
+                <fullName>CCS support</fullName>
+                <default>false</default>
+                <label>CCS support</label>
+            </value>
+            <value>
+                <fullName>Competitor information</fullName>
+                <default>false</default>
+                <label>Competitor information</label>
+            </value>
+            <value>
+                <fullName>Contacting CCS</fullName>
+                <default>false</default>
+                <label>Contacting CCS</label>
+            </value>
+            <value>
+                <fullName>Customer experience</fullName>
+                <default>false</default>
+                <label>Customer experience</label>
+            </value>
+            <value>
+                <fullName>Customer First - Consistency</fullName>
+                <default>false</default>
+                <label>Customer First - Consistency</label>
+            </value>
+            <value>
+                <fullName>Customer First - Engagement</fullName>
+                <default>false</default>
+                <label>Customer First - Engagement</label>
+            </value>
+            <value>
+                <fullName>Customer First - Pace</fullName>
+                <default>false</default>
+                <label>Customer First - Pace</label>
+            </value>
+            <value>
+                <fullName>Customer First - Simplicity</fullName>
+                <default>false</default>
+                <label>Customer First - Simplicity</label>
+            </value>
+            <value>
+                <fullName>Customer guidance</fullName>
+                <default>false</default>
+                <label>Customer guidance</label>
+            </value>
+            <value>
+                <fullName>Customer journey</fullName>
+                <default>false</default>
+                <label>Customer journey</label>
+            </value>
+            <value>
+                <fullName>Customer suggestion</fullName>
+                <default>false</default>
+                <label>Customer suggestion</label>
+            </value>
+            <value>
+                <fullName>Digital support</fullName>
+                <default>false</default>
+                <label>Digital support</label>
+            </value>
+            <value>
+                <fullName>Documentation</fullName>
+                <default>false</default>
+                <label>Documentation</label>
+            </value>
+            <value>
+                <fullName>eMarketplace</fullName>
+                <default>false</default>
+                <label>eMarketplace</label>
+            </value>
+            <value>
+                <fullName>Health CAG</fullName>
+                <default>false</default>
+                <label>Health CAG</label>
+            </value>
+            <value>
+                <fullName>Information</fullName>
+                <default>false</default>
+                <label>Information</label>
+            </value>
+            <value>
+                <fullName>Internal feedback</fullName>
+                <default>false</default>
+                <label>Internal feedback</label>
+            </value>
+            <value>
+                <fullName>Knowledge</fullName>
+                <default>false</default>
+                <label>Knowledge</label>
+            </value>
+            <value>
+                <fullName>Knowledge sharing</fullName>
+                <default>false</default>
+                <label>Knowledge sharing</label>
+            </value>
+            <value>
+                <fullName>Marketing and communications</fullName>
+                <default>false</default>
+                <label>Marketing and communications</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Praise</fullName>
+                <default>false</default>
+                <label>Praise</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Procurement process</fullName>
+                <default>false</default>
+                <label>Procurement process</label>
+            </value>
+            <value>
+                <fullName>Public Procurement Gateway</fullName>
+                <default>false</default>
+                <label>Public Procurement Gateway</label>
+            </value>
+            <value>
+                <fullName>Route to market</fullName>
+                <default>false</default>
+                <label>Route to market</label>
+            </value>
+            <value>
+                <fullName>Savings</fullName>
+                <default>false</default>
+                <label>Savings</label>
+            </value>
+            <value>
+                <fullName>Social value</fullName>
+                <default>false</default>
+                <label>Social value</label>
+            </value>
+            <value>
+                <fullName>Supplier related</fullName>
+                <default>false</default>
+                <label>Supplier related</label>
+            </value>
+            <value>
+                <fullName>T&amp;Cs</fullName>
+                <default>false</default>
+                <label>T&amp;Cs</label>
+            </value>
+            <value>
+                <fullName>Webinars</fullName>
+                <default>false</default>
+                <label>Webinars</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Transforming Public Procurement (TPP)&apos;</fullName>
+                <default>false</default>
+                <label>Transforming Public Procurement (TPP)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

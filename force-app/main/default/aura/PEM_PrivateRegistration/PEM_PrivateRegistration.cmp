@@ -1,0 +1,14 @@
+<aura:component >
+	<aura:attribute name="description" type="String" default=""/>
+	<aura:attribute name="buttonLabel" type="String" default="Press"/>
+    <aura:attribute name="buttonLink" type="String" default="/"/>
+    
+    <aura:dependency resource="markup://force:navigateToURL" type="EVENT"/>
+    
+	<div>
+		<div>{#v.description}</div>
+		<div class="sfdc button-container">
+			<ui:button label="{#v.buttonLabel}" class="sfdc_button button" press="{!c.redirect}"/>
+		</div>
+	</div>
+</aura:component>

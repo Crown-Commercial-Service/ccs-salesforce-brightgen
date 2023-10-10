@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Apex_Trigger_Error_Phase_Delete_Failed</fullName>
+        <categories>Apex_Trigger_Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apex_Trigger_Error_Phase_Delete_Failed</shortDescription>
+        <value>Failed to delete obsolete procurement project phases during update.</value>
+    </labels>
+    <labels>
+        <fullName>Apex_Trigger_Error_Project_Deferral</fullName>
+        <categories>Apex_Trigger_Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apex_Trigger_Error_Project_Deferral</shortDescription>
+        <value>An error occurred calculating project deferral</value>
+    </labels>
+    <labels>
+        <fullName>Apex_Trigger_Error_Project_Phasing</fullName>
+        <categories>Apex_Trigger_Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apex_Trigger_Error_Project_Phasing</shortDescription>
+        <value>An error occurred generating project phases</value>
+    </labels>
+    <labels>
+        <fullName>AssignBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssignBtn</shortDescription>
+        <value>Assign</value>
+    </labels>
+    <labels>
+        <fullName>AssignSuccessSummary</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssignSuccessSummary</shortDescription>
+        <value>The opportunities you selected and their attached open activities have successfully been reassigned.</value>
+    </labels>
+    <labels>
+        <fullName>AssignSuccessTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssignSuccessTitle</shortDescription>
+        <value>Reassignment successfully completed!</value>
+    </labels>
+    <labels>
+        <fullName>AssignToBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssignToBtn</shortDescription>
+        <value>Assign to:</value>
+    </labels>
+    <labels>
+        <fullName>AssigningBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AssigningBtn</shortDescription>
+        <value>In progress ...</value>
+    </labels>
+    <labels>
+        <fullName>CFI_BtnUpsert</fullName>
+        <categories>Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_BtnUpsert</shortDescription>
+        <value>Send to Contract Finder</value>
+    </labels>
+    <labels>
+        <fullName>CFI_CalloutError</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_CalloutError</shortDescription>
+        <value>Code: {0} ;Message: {1}; Property {2}</value>
+    </labels>
+    <labels>
+        <fullName>CFI_LogginErrorMsg</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_LogginErrorMsg</shortDescription>
+        <value>Fail to login to Contract finder</value>
+    </labels>
+    <labels>
+        <fullName>CFI_ON_FailAdditionalDetails</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_ON_FailAdditionalDetails</shortDescription>
+        <value>Draft Opportunity Notice created, but Additional CF Information were not send. Notice id:</value>
+    </labels>
+    <labels>
+        <fullName>CFI_ON_Only_Edit_Access_Can_Send</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_ON_Only_Edit_Access_Can_Send</shortDescription>
+        <value>You cannot send an Opportunity Notice to Contract Finder for this Procurement because you do not have the necessary Edit rights</value>
+    </labels>
+    <labels>
+        <fullName>CFI_ON_StartMsg</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_ON_StartMsg</shortDescription>
+        <value>Create Draft Opportunity Notice in Contract Finder.</value>
+    </labels>
+    <labels>
+        <fullName>CFI_ON_SucessMsg</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_ON_SucessMsg</shortDescription>
+        <value>Draft Opportunity Notice successfully created. Notice id:</value>
+    </labels>
+    <labels>
+        <fullName>CFI_On_StartMsgAlreadyCreated</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_On_StartMsgAlreadyCreated</shortDescription>
+        <value>Opportunity Notice already created in Contract Finder.</value>
+    </labels>
+    <labels>
+        <fullName>CFI_Only_Edit_Access_Can_Send</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_Only_Edit_Access_Can_Send</shortDescription>
+        <value>You cannot send an Award Notice to Contract Finder for this Contract because you do not have the necessary Edit rights</value>
+    </labels>
+    <labels>
+        <fullName>CFI_ReqFieldMissing_AN</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_ReqFieldMissing_AN</shortDescription>
+        <value>You are not yet able to send the draft Award Notice to Contracts Finder because your Contact is missing information in the following fields:</value>
+    </labels>
+    <labels>
+        <fullName>CFI_ReqFieldMissing_ON</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_ReqFieldMissing_ON</shortDescription>
+        <value>You are not yet able to send the draft Opportunity Notice to Contracts Finder because your Procurement is missing information in the following fields:</value>
+    </labels>
+    <labels>
+        <fullName>CFI_StartMsg</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_StartMsg</shortDescription>
+        <value>Send contract to Contract Finder</value>
+    </labels>
+    <labels>
+        <fullName>CFI_StartMsgCallOff</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_StartMsgCallOff</shortDescription>
+        <value>Contacts Finder Opportunity Notices are not published for procurements which are call-offs from framework agreements</value>
+    </labels>
+    <labels>
+        <fullName>CFI_StartMsgContractCreated</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_StartMsgContractCreated</shortDescription>
+        <value>Contract can not be send to Contract finder</value>
+    </labels>
+    <labels>
+        <fullName>CFI_StartMsgSinTenAction</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_StartMsgSinTenAction</shortDescription>
+        <value>Contacts Finder Opportunity Notices are not published for procurements which are Single Tender Actions</value>
+    </labels>
+    <labels>
+        <fullName>CFI_SuccessMessage</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_SuccessMessage</shortDescription>
+        <value>Contract successful created and public. Notice id:</value>
+    </labels>
+    <labels>
+        <fullName>CFI_UnexpectedError</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CFI_UnexpectedError</shortDescription>
+        <value>Unexpected error occurred: {0}</value>
+    </labels>
+    <labels>
+        <fullName>COW_CATEGORYCODEINCORRECT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_CATEGORYCODEINCORRECT</shortDescription>
+        <value>Category code {0} is incorrect - it must contain 2 letters.</value>
+    </labels>
+    <labels>
+        <fullName>COW_Email_NoEditAccessToCase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_Email_NoEditAccessToCase</shortDescription>
+        <value>You need to have edit permissions on the record to be able to send an email.</value>
+    </labels>
+    <labels>
+        <fullName>COW_MAXSEQEXCEEDED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_MAXSEQEXCEEDED</shortDescription>
+        <value>The maximum allowed sequence (Z00) for category code {0} has been exceeded.</value>
+    </labels>
+    <labels>
+        <fullName>COW_NOSEQUENCECOUNTER</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_NOSEQUENCECOUNTER</shortDescription>
+        <value>Category code {0} does not have a defined sequence counter.</value>
+    </labels>
+    <labels>
+        <fullName>COW_NoCategoryCode_Case</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_NoCategoryCode_Case</shortDescription>
+        <value>You cannot allocate a Procurement Reference unless you have defined the Procurement&apos;s CAS Category. Please populate the CAS Category Field and try again.</value>
+    </labels>
+    <labels>
+        <fullName>COW_NoCategoryCode_Contract</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_NoCategoryCode_Contract</shortDescription>
+        <value>You cannot allocate a Contract Reference unless you have selected at least one Level 4 categorisation Code.  Please add a Level 4 code and try again.</value>
+    </labels>
+    <labels>
+        <fullName>COW_NoCategoryCode_Generic</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_NoCategoryCode_Generic</shortDescription>
+        <value>You must provide a 2-letter category code in order to generate a reference.</value>
+    </labels>
+    <labels>
+        <fullName>COW_ProvideFieldParameter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_ProvideFieldParameter</shortDescription>
+        <value>Please provide field to store the reference in ({0})</value>
+    </labels>
+    <labels>
+        <fullName>COW_REFERENCECONFLICT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_REFERENCECONFLICT</shortDescription>
+        <value>Somebody else is trying to create a refrence for code {0} as well. Please try again.</value>
+    </labels>
+    <labels>
+        <fullName>COW_REFERENCEEXISTS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_REFERENCEEXISTS</shortDescription>
+        <value>This record already has a reference: {0}</value>
+    </labels>
+    <labels>
+        <fullName>COW_Realign_Confirm</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_Realign_Confirm</shortDescription>
+        <value>Realigning later stages will overwrite their current {0} dates. It may also modify your current stage. Do you want to proceed?</value>
+    </labels>
+    <labels>
+        <fullName>COW_Realign_IsCompleted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_Realign_IsCompleted</shortDescription>
+        <value>This stage has been completed and can no longer be realigned.</value>
+    </labels>
+    <labels>
+        <fullName>COW_Realign_NoLaterStages</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_Realign_NoLaterStages</shortDescription>
+        <value>This Procurement Stage has no later stages and does not need any updating. No actions have been be performed.</value>
+    </labels>
+    <labels>
+        <fullName>COW_Realign_NoRecordId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_Realign_NoRecordId</shortDescription>
+        <value>You must provide a Procurement Stage record Id as a parameter ({0})</value>
+    </labels>
+    <labels>
+        <fullName>COW_Realign_NoSeq</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_Realign_NoSeq</shortDescription>
+        <value>This Procurement Stage does not have a defined sequence (Seq).</value>
+    </labels>
+    <labels>
+        <fullName>COW_Realign_NoStartSate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_Realign_NoStartSate</shortDescription>
+        <value>This Procurement Stage does not have a defined {0} Start Date.</value>
+    </labels>
+    <labels>
+        <fullName>COW_ReferenceCreated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COW_ReferenceCreated</shortDescription>
+        <value>New reference has been created: {0}</value>
+    </labels>
+    <labels>
+        <fullName>Choose_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choose Contact</shortDescription>
+        <value>Click the contact name you wish to add then click Find Framework Lots below.</value>
+    </labels>
+    <labels>
+        <fullName>CloseDateCriteriaLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CloseDateCriteriaLabel</shortDescription>
+        <value>Closed Date</value>
+    </labels>
+    <labels>
+        <fullName>CriteriaSearchSection</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CriteriaSearchSection</shortDescription>
+        <value>Search with a search criteria</value>
+    </labels>
+    <labels>
+        <fullName>DisplayViewLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DisplayViewLabel</shortDescription>
+        <value>Display:</value>
+    </labels>
+    <labels>
+        <fullName>Employee_SSO_DomainNotAuthorised</fullName>
+        <categories>SSO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Employee_SSO_DomainNotAuthorised</shortDescription>
+        <value>User {0} Not Authorised to Login. For assistance, contact sfhelp@crowncommercial.gov.uk</value>
+    </labels>
+    <labels>
+        <fullName>Employee_SSO_EmployeeProfileNotDefined</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Employee_SSO_EmployeeProfileNotDefined_CANDELETE</shortDescription>
+        <value>Employee Settings Record Not Found in Custom Setting: {0}.</value>
+    </labels>
+    <labels>
+        <fullName>Employee_SSO_NoHostedDomain</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Employee_SSO_NoHostedDomain_CANDELETE</shortDescription>
+        <value>Hosted Domain List Not Defined in Custom Setting: {0}.</value>
+    </labels>
+    <labels>
+        <fullName>Employee_SSO_UserNotFound</fullName>
+        <categories>SSO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Employee_SSO_UserNotFound</shortDescription>
+        <value>User {0} Not Found. For assistance, contact sfhelp@crowncommercial.gov.uk</value>
+    </labels>
+    <labels>
+        <fullName>Error_Delete_Case_Suppliers</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error_Delete_Case_Suppliers</shortDescription>
+        <value>There was a problem whilst trying to delete existing Case Supplier records, as part of the Add Suppliers to Procurement process builder.</value>
+    </labels>
+    <labels>
+        <fullName>FF_Annual</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Annual</shortDescription>
+        <value>Annual</value>
+    </labels>
+    <labels>
+        <fullName>FF_Budget_Instructions</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Budget Instructions</shortDescription>
+        <value>Please select the business plan year you would like to create budget records for.</value>
+    </labels>
+    <labels>
+        <fullName>FF_Budget_Process_Success</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Budget Process Success</shortDescription>
+        <value>Your forecast budget request is being processed.
+You may close the window.</value>
+    </labels>
+    <labels>
+        <fullName>FF_Budget_Warning</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Budget Warning</shortDescription>
+        <value>Warning: Creating new budget records will over write any existing ones for the current selection</value>
+    </labels>
+    <labels>
+        <fullName>FF_Cancel</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>FF_Central_Government</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Central Government</shortDescription>
+        <value>Central Government</value>
+    </labels>
+    <labels>
+        <fullName>FF_Close</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Close</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>FF_Create_Description</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Create Description</shortDescription>
+        <value>Enter forecast figures for each year to create a new forecast.</value>
+    </labels>
+    <labels>
+        <fullName>FF_Create_New_Forecast</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Create New Forecast</shortDescription>
+        <value>Create new forecast for</value>
+    </labels>
+    <labels>
+        <fullName>FF_Edit_Description</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Edit Description</shortDescription>
+        <value>Edit live forecast figures to keep forecasts up to date.</value>
+    </labels>
+    <labels>
+        <fullName>FF_Edit_Forecast</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Edit Forecast</shortDescription>
+        <value>Edit forecast for</value>
+    </labels>
+    <labels>
+        <fullName>FF_Editor_Separator</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Editor Separator</shortDescription>
+        <value>-</value>
+    </labels>
+    <labels>
+        <fullName>FF_Forecast_Not_Saved_Error</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Forecast Not Saved Error</shortDescription>
+        <value>Unable to save forecasts, please check with your system administrator that you have permission to create or edit forecast years.</value>
+    </labels>
+    <labels>
+        <fullName>FF_Generate_Budget</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Generate Budget</shortDescription>
+        <value>Generate budget</value>
+    </labels>
+    <labels>
+        <fullName>FF_Generate_Forecast_Budget</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Generate Forecast Budget</shortDescription>
+        <value>Generate forecast budget</value>
+    </labels>
+    <labels>
+        <fullName>FF_Label_Business_Plan_Year</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Label Business Plan Year</shortDescription>
+        <value>Business plan year</value>
+    </labels>
+    <labels>
+        <fullName>FF_M01_Apr</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M01 Apr</shortDescription>
+        <value>M01-Apr</value>
+    </labels>
+    <labels>
+        <fullName>FF_M01_April</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M01 April</shortDescription>
+        <value>M01-April</value>
+    </labels>
+    <labels>
+        <fullName>FF_M02_May</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M02 May</shortDescription>
+        <value>M02-May</value>
+    </labels>
+    <labels>
+        <fullName>FF_M03_Jun</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M03 Jun</shortDescription>
+        <value>M03-Jun</value>
+    </labels>
+    <labels>
+        <fullName>FF_M03_June</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M03 June</shortDescription>
+        <value>M03-June</value>
+    </labels>
+    <labels>
+        <fullName>FF_M04_Jul</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M04 Jul</shortDescription>
+        <value>M04-Jul</value>
+    </labels>
+    <labels>
+        <fullName>FF_M04_July</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M04 July</shortDescription>
+        <value>M04-July</value>
+    </labels>
+    <labels>
+        <fullName>FF_M05_Aug</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M05 Aug</shortDescription>
+        <value>M05-Aug</value>
+    </labels>
+    <labels>
+        <fullName>FF_M05_August</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M05 August</shortDescription>
+        <value>M05-August</value>
+    </labels>
+    <labels>
+        <fullName>FF_M06_Sep</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M06 Sep</shortDescription>
+        <value>M06-Sep</value>
+    </labels>
+    <labels>
+        <fullName>FF_M06_September</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M06 September</shortDescription>
+        <value>M06-September</value>
+    </labels>
+    <labels>
+        <fullName>FF_M07_Oct</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M07-Oct</shortDescription>
+        <value>M07 Oct</value>
+    </labels>
+    <labels>
+        <fullName>FF_M07_October</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M07 October</shortDescription>
+        <value>M07-October</value>
+    </labels>
+    <labels>
+        <fullName>FF_M08_Nov</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M08 Nov</shortDescription>
+        <value>M08-Nov</value>
+    </labels>
+    <labels>
+        <fullName>FF_M08_November</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M08 November</shortDescription>
+        <value>M08-November</value>
+    </labels>
+    <labels>
+        <fullName>FF_M09_Dec</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M09 Dec</shortDescription>
+        <value>M09-Dec</value>
+    </labels>
+    <labels>
+        <fullName>FF_M09_December</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M09 December</shortDescription>
+        <value>M09-December</value>
+    </labels>
+    <labels>
+        <fullName>FF_M10_Jan</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M10 Jan</shortDescription>
+        <value>M10-Jan</value>
+    </labels>
+    <labels>
+        <fullName>FF_M10_January</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M10 January</shortDescription>
+        <value>M10-January</value>
+    </labels>
+    <labels>
+        <fullName>FF_M11_Feb</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M11 Feb</shortDescription>
+        <value>M11-Feb</value>
+    </labels>
+    <labels>
+        <fullName>FF_M11_February</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M11 February</shortDescription>
+        <value>M11-February</value>
+    </labels>
+    <labels>
+        <fullName>FF_M12_Mar</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M12 Mar</shortDescription>
+        <value>M12-Mar</value>
+    </labels>
+    <labels>
+        <fullName>FF_M12_March</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF M12 March</shortDescription>
+        <value>M12-March</value>
+    </labels>
+    <labels>
+        <fullName>FF_Maintain_Forecasts</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Maintain Forecasts</shortDescription>
+        <value>Maintain forecasts</value>
+    </labels>
+    <labels>
+        <fullName>FF_No_Framework_Forecast_Error</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF No Framework Forecast Error</shortDescription>
+        <value>Sorry, but you don&apos;t appear to have a Framework Forecast, please go to a Framework Forecast detail page and click the &quot;Maintain Forecast Plan&quot; button.</value>
+    </labels>
+    <labels>
+        <fullName>FF_QTR_01</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF QTR 01</shortDescription>
+        <value>QTR 01</value>
+    </labels>
+    <labels>
+        <fullName>FF_QTR_02</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF QTR 02</shortDescription>
+        <value>QTR 02</value>
+    </labels>
+    <labels>
+        <fullName>FF_QTR_03</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF QTR 03</shortDescription>
+        <value>QTR 03</value>
+    </labels>
+    <labels>
+        <fullName>FF_QTR_04</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF QTR 04</shortDescription>
+        <value>QTR 04</value>
+    </labels>
+    <labels>
+        <fullName>FF_Record_Type_Actual</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Record Type Actual</shortDescription>
+        <value>Actual</value>
+    </labels>
+    <labels>
+        <fullName>FF_Record_Type_Budget</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Record Type Budget</shortDescription>
+        <value>Budget</value>
+    </labels>
+    <labels>
+        <fullName>FF_Record_Type_Live</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Record Type Live</shortDescription>
+        <value>Live</value>
+    </labels>
+    <labels>
+        <fullName>FF_Sector</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Sector</shortDescription>
+        <value>Sector</value>
+    </labels>
+    <labels>
+        <fullName>FF_Sector_CG</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Sector CG</shortDescription>
+        <value>CG</value>
+    </labels>
+    <labels>
+        <fullName>FF_Sector_WPS</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Sector WPS</shortDescription>
+        <value>WPS</value>
+    </labels>
+    <labels>
+        <fullName>FF_Type</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>FF_Wider_Public_Sector</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Wider Public Sector</shortDescription>
+        <value>Wider Public Sector</value>
+    </labels>
+    <labels>
+        <fullName>FF_Year_0</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Year 0</shortDescription>
+        <value>Year 0</value>
+    </labels>
+    <labels>
+        <fullName>FF_Year_1</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Year 1</shortDescription>
+        <value>Year 1</value>
+    </labels>
+    <labels>
+        <fullName>FF_Year_2</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Year 2</shortDescription>
+        <value>Year 2</value>
+    </labels>
+    <labels>
+        <fullName>FF_Year_3</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Year 3</shortDescription>
+        <value>Year 3</value>
+    </labels>
+    <labels>
+        <fullName>FF_Year_4</fullName>
+        <categories>Framework Forecasting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FF Year 4</shortDescription>
+        <value>Year 4</value>
+    </labels>
+    <labels>
+        <fullName>Generic_Error_NoParameters</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic_Error_NoParameters</shortDescription>
+        <value>Unfortunately, something has gone wrong.</value>
+    </labels>
+    <labels>
+        <fullName>Generic_Error_PleaseContactHelpdesk</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic_Error_PleaseContactHelpdesk</shortDescription>
+        <value>Please contact Crown Commercial Service customer support on 0345 410 2222 or info@crowncommercial.gov.uk quoting the above error number for further assistance.</value>
+    </labels>
+    <labels>
+        <fullName>Generic_Error_TypeAndReference</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic_Error_TypeAndReference</shortDescription>
+        <value>An error of type {0} has occurred and has been logged with reference number {1}.</value>
+    </labels>
+    <labels>
+        <fullName>HeaderText</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HeaderText</shortDescription>
+        <value>Mass reassign opportunities</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_AccountMismatch</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_AccountMismatch_ CANDELETE</shortDescription>
+        <value>Account Mismatch! Contact record ({0}) already exists in Salesforce and is associated with account id {1}, whereas assertion wants to create a new account (temp id: {2}) to associate with the existing contact.</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_DUNSNumberNotSupplied</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_DUNSNumberNotSupplied_CANDELETE</shortDescription>
+        <value>Required Field &apos;organisation_duns_number&apos; Not Supplied</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_DUNSNumberNull</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_DUNSNumberNull_ CANDELETE</shortDescription>
+        <value>Required Field &apos;organisation_duns_number&apos; does not contain a value</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_ExistingAccountNotMatchedByDUNSNumber</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_ExistingAccountNotMatchedByDUNSNumber_ CANDELETE</shortDescription>
+        <value>No Account found with supplied DUNS Number ({0}) in an UPDATE SAML Assertion. This might mean the account was provisioned with a different DUNS number, but the DUNS number has changed during their salesforce session.</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_ExistingContactNotMatchedByEmail</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_ExistingContactNotMatchedByEmail_ CANDELETE</shortDescription>
+        <value>No Contact found with supplied Email Address {0} in an UPDATE SAML Assertion. This might mean the contact was provisioned with a different email address, but the email address has changed during their login session.</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_NoAccountOwner</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_NoAccountOwner_ CANDELETE</shortDescription>
+        <value>Unable to find Account Owner: {0}</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_NoDomainSuffix</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_NoDomainSuffix_ CANDELETE</shortDescription>
+        <value>Unable to get Domain Suffix from Custom Setting &apos;SSO_JIT_Provisioning_Settings__c&apos;</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_NoSupplierProfile</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_NoSupplierProfile_ CANDELETE</shortDescription>
+        <value>Unable to find Profile:  {0}</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_SupplierAccountOwnerNotDefined</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_SupplierAccountOwnerNotDefined_ CANDELETE</shortDescription>
+        <value>Unable to get Account Owner from Custom Setting &apos;SSO_JIT_Provisioning_Settings__c&apos;</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_SupplierProfileNotDefined</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_SupplierProfileNotDefined_ CANDELETE</shortDescription>
+        <value>Unable to get Profile Name from Custom Setting &apos;SSO_JIT_Provisioning_Settings__c&apos;</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_TooManyContactsMatchedByEmail</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_TooManyContactsMatchedByEmail_ CANDELETE</shortDescription>
+        <value>Too many Contact records found matching supplied Email Address ({0}).</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_UnableToCreateAccount</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_UnableToCreateAccount_ CANDELETE</shortDescription>
+        <value>SAML Assertion Okay, but unable to create Account. Error: {0}.</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_UnableToCreateContact</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_UnableToCreateContact_ CANDELETE</shortDescription>
+        <value>SAML Assertion Okay, but unable to create Contact. Error: {0}.</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_UserEmailNotSupplied</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_UserEmailNotSupplied_ CANDELETE</shortDescription>
+        <value>Required Field &apos;user_email&apos; Not Supplied</value>
+    </labels>
+    <labels>
+        <fullName>JIT_SSO_UserEmailNull</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JIT_SSO_UserEmailNull_ CANDELETE</shortDescription>
+        <value>Required Field &apos;user_email&apos; does not contain a value</value>
+    </labels>
+    <labels>
+        <fullName>Master_Framework_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Master_Framework_ID</shortDescription>
+        <value>CF00Nb000000ASERv</value>
+    </labels>
+    <labels>
+        <fullName>NewViewLinkLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NewViewLinkLabel</shortDescription>
+        <value>Create new view</value>
+    </labels>
+    <labels>
+        <fullName>NoResultSummary</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoResultSummary</shortDescription>
+        <value>Please modify your search criteria</value>
+    </labels>
+    <labels>
+        <fullName>NoResultTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoResultTitle</shortDescription>
+        <value>No results</value>
+    </labels>
+    <labels>
+        <fullName>NoViewSelection</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoViewSelection</shortDescription>
+        <value>- None -</value>
+    </labels>
+    <labels>
+        <fullName>No_access_to_move_Emails</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No access to move Emails</shortDescription>
+        <value>You don&apos;t have access to move Email(s).</value>
+    </labels>
+    <labels>
+        <fullName>No_emails_selected</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No emails selected</shortDescription>
+        <value>No emails selected. Please make your selection.</value>
+    </labels>
+    <labels>
+        <fullName>No_emails_under_source_Case</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No emails under source Case</shortDescription>
+        <value>No Emails exist under source Case.</value>
+    </labels>
+    <labels>
+        <fullName>No_target_Case_selected</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No target Case selected</shortDescription>
+        <value>No target Case selected. Please make your selection.</value>
+    </labels>
+    <labels>
+        <fullName>Only_Admin_Can_Delete</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Only_Admin_Can_Delete</shortDescription>
+        <value>Only System Administrator can delete this record.</value>
+    </labels>
+    <labels>
+        <fullName>OpenID_SSO_CustomSettingNotDefined</fullName>
+        <categories>SSO, OpenId</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpenID_SSO_CustomSettingNotDefined</shortDescription>
+        <value>{0} not defined.</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_creating_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity creating Label</shortDescription>
+        <value>Please fill in the table below new Opportunities (Procurement Projects), which should be created in bulk.</value>
+    </labels>
+    <labels>
+        <fullName>Out_of_Office_Default_Msg</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Out of Office Default Msg</shortDescription>
+        <value>I am currently out of the office and will respond to your email upon my return. Best regards,
+{0}</value>
+    </labels>
+    <labels>
+        <fullName>PEM_ContactNumberInvalid</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM Contact Number Invalid</shortDescription>
+        <value>You cannot have alpha characters in the phone number</value>
+    </labels>
+    <labels>
+        <fullName>PEM_ContactNumberRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM Contact Number Required</shortDescription>
+        <value>Contact number is required.</value>
+    </labels>
+    <labels>
+        <fullName>PEM_DomainBlacklisted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM Domain Blacklisted</shortDescription>
+        <value>This domain cannot be used to register.</value>
+    </labels>
+    <labels>
+        <fullName>PEM_EmailAddressInvalid</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM Email address is invalid</shortDescription>
+        <value>Please enter a valid email address</value>
+    </labels>
+    <labels>
+        <fullName>PEM_EmailAlreadyExist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM_EmailAlreadyExist</shortDescription>
+        <value>This email address is already registered - please use a different email address or %login%.</value>
+    </labels>
+    <labels>
+        <fullName>PEM_EmailRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM_EmailRequired</shortDescription>
+        <value>Email is required</value>
+    </labels>
+    <labels>
+        <fullName>PEM_FirstNameInvalidChars</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM First name invalid characters</shortDescription>
+        <value>Sorry - only these special characters allowed: é - &apos;</value>
+    </labels>
+    <labels>
+        <fullName>PEM_FirstNameRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM First name is required</shortDescription>
+        <value>First name is required</value>
+    </labels>
+    <labels>
+        <fullName>PEM_FrameworkArticlePrefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM Framework Article Prefix</shortDescription>
+        <value>Framework-</value>
+    </labels>
+    <labels>
+        <fullName>PEM_GeneralErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM_GeneralErrorMessage</shortDescription>
+        <value>Something went wrong. Please contact your administrator.</value>
+    </labels>
+    <labels>
+        <fullName>PEM_HelpTopicsPrefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM Help Topics Prefix</shortDescription>
+        <value>Help Topics-</value>
+    </labels>
+    <labels>
+        <fullName>PEM_LastNameInvalidChars</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM Last name invalid characters</shortDescription>
+        <value>Sorry - only these special characters allowed: é - &apos;</value>
+    </labels>
+    <labels>
+        <fullName>PEM_LastNameRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM_LastNameRequired</shortDescription>
+        <value>Last name is required</value>
+    </labels>
+    <labels>
+        <fullName>PEM_Line_Break</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM Line Break</shortDescription>
+        <value>-
+-</value>
+    </labels>
+    <labels>
+        <fullName>PEM_OrgRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PEM_OrgRequired</shortDescription>
+        <value>Organisation is required.</value>
+    </labels>
+    <labels>
+        <fullName>ResultBlockTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ResultBlockTitle</shortDescription>
+        <value>Results</value>
+    </labels>
+    <labels>
+        <fullName>SID4GOV_ErrorNumberHeader</fullName>
+        <categories>SSO, Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SID4GOV_ErrorNumberHeader</shortDescription>
+        <value>Unfortunately an error occurred when trying to access the service using your sid4gov credentials.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_AccountMismatch_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_AccountMismatch_log</shortDescription>
+        <value>Account Mismatch! Contact record ({0}) already exists in Salesforce and is associated with account id {1}, whereas assertion wants to create a new account (temp id: {2}) to associate with the existing contact.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_AccountMismatch_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_AccountMismatch_ui</shortDescription>
+        <value>SSO_2008001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_ContactAssociatedWithUserButUserNotFound_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_ContactAssociatedWithUserButUserNotFound_log</shortDescription>
+        <value>Contact (Id: {0}) is already associated with one or more existing users, but the existing user was not found by the provisioner! This is probably because the existing user has a null Federation Identifier.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_ContactAssociatedWithUserButUserNotFound_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_ContactAssociatedWithUserButUserNotFound_ui</shortDescription>
+        <value>SSO_3008001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_CustomSettingNotDefined_log</fullName>
+        <categories>OpenId, SSO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_CustomSettingNotDefined_log</shortDescription>
+        <value>{0} not defined.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_CustomSettingNotDefined_ui</fullName>
+        <categories>OpenId, SSO</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_CustomSettingNotDefined_ui</shortDescription>
+        <value>SSO_3004004</value>
+    </labels>
+    <labels>
+        <fullName>SSO_DUNSNumberNotSupplied_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_DUNSNumberNotSupplied_log</shortDescription>
+        <value>Required Field &apos;organisation_duns_number&apos; Not Supplied</value>
+    </labels>
+    <labels>
+        <fullName>SSO_DUNSNumberNotSupplied_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_DUNSNumberNotSupplied_ui</shortDescription>
+        <value>SSO_1001001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_DUNSNumberNull_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_DUNSNumberNull_log</shortDescription>
+        <value>Required Field &apos;organisation_duns_number&apos; does not contain a value</value>
+    </labels>
+    <labels>
+        <fullName>SSO_DUNSNumberNull_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_DUNSNumberNull_ui</shortDescription>
+        <value>SSO_1002001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_ExistingAccountNotMatchedByDUNSNumber_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_ExistingAccountNotMatchedByDUNSNumber_log</shortDescription>
+        <value>No Account found with supplied DUNS Number ({0}) in an UPDATE SAML Assertion. This might mean the account was provisioned with a different DUNS number, but the DUNS number has changed during their salesforce session.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_ExistingAccountNotMatchedByDUNSNumber_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_ExistingAccountNotMatchedByDUNSNumber_ui</shortDescription>
+        <value>SSO_1005001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_ExistingContactNotMatchedByEmail_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_ExistingContactNotMatchedByEmail_log</shortDescription>
+        <value>No Contact found with supplied Email Address {0} in an UPDATE SAML Assertion. This might mean the contact was provisioned with a different email address, but the email address has changed during their login session.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_ExistingContactNotMatchedByEmail_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_ExistingContactNotMatchedByEmail_ui</shortDescription>
+        <value>SSO_2005001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_FederationIdentifierNull_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_FederationIdentifierNull_log</shortDescription>
+        <value>Federation Id does not contain a value</value>
+    </labels>
+    <labels>
+        <fullName>SSO_FederationIdentifierNull_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_FederationIdentifierNull_ui</shortDescription>
+        <value>SSO_3002002</value>
+    </labels>
+    <labels>
+        <fullName>SSO_NoAccountOwner_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_NoAccountOwner_log</shortDescription>
+        <value>Unable to find Account Owner: {0}</value>
+    </labels>
+    <labels>
+        <fullName>SSO_NoAccountOwner_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_NoAccountOwner_ui</shortDescription>
+        <value>SSO_1004001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_NoDomainSuffix_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_NoDomainSuffix_log</shortDescription>
+        <value>Unable to get Domain Suffix from Custom Setting &apos;SSO_JIT_Provisioning_Settings__c&apos;</value>
+    </labels>
+    <labels>
+        <fullName>SSO_NoDomainSuffix_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_NoDomainSuffix_ui</shortDescription>
+        <value>SSO_3004001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_NoSupplierProfile_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_NoSupplierProfile_log</shortDescription>
+        <value>Unable to find Profile: {0}</value>
+    </labels>
+    <labels>
+        <fullName>SSO_NoSupplierProfile_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_NoSupplierProfile_ui</shortDescription>
+        <value>SSO_3004002</value>
+    </labels>
+    <labels>
+        <fullName>SSO_SupplierAccountOwnerNotDefined_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_SupplierAccountOwnerNotDefined_log</shortDescription>
+        <value>Unable to get Account Owner from Custom Setting &apos;SSO_JIT_Provisioning_Settings__c&apos;</value>
+    </labels>
+    <labels>
+        <fullName>SSO_SupplierAccountOwnerNotDefined_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_SupplierAccountOwnerNotDefined_ui</shortDescription>
+        <value>SSO_1004002</value>
+    </labels>
+    <labels>
+        <fullName>SSO_SupplierProfileNotDefined_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_SupplierProfileNotDefined_log</shortDescription>
+        <value>Unable to get Profile Name from Custom Setting &apos;SSO_JIT_Provisioning_Settings__c&apos;</value>
+    </labels>
+    <labels>
+        <fullName>SSO_SupplierProfileNotDefined_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_SupplierProfileNotDefined_ui</shortDescription>
+        <value>SSO_3004003</value>
+    </labels>
+    <labels>
+        <fullName>SSO_TooManyContactsMatchedByEmail_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_TooManyContactsMatchedByEmail_log</shortDescription>
+        <value>Too many Contact records found matching supplied Email Address ({0}).</value>
+    </labels>
+    <labels>
+        <fullName>SSO_TooManyContactsMatchedByEmail_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_TooManyContactsMatchedByEmail_ui</shortDescription>
+        <value>SSO_2007001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_UnableToCreateAccount_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_UnableToCreateAccount_log</shortDescription>
+        <value>SAML Assertion Okay, but unable to create Account. Error: {0}.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_UnableToCreateAccount_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_UnableToCreateAccount_ui</shortDescription>
+        <value>SSO_1099001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_UnableToCreateContact_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_UnableToCreateContact_log</shortDescription>
+        <value>SAML Assertion Okay, but unable to create Contact. Error: {0}.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_UnableToCreateContact_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_UnableToCreateContact_ui</shortDescription>
+        <value>SSO_2099001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_UserEmailNotSupplied_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_UserEmailNotSupplied_log</shortDescription>
+        <value>Required Field &apos;user_email&apos; Not Supplied</value>
+    </labels>
+    <labels>
+        <fullName>SSO_UserEmailNotSupplied_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_UserEmailNotSupplied_ui</shortDescription>
+        <value>SSO_3001001</value>
+    </labels>
+    <labels>
+        <fullName>SSO_UserEmailNull_log</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_UserEmailNull_log</shortDescription>
+        <value>Required Field &apos;user_email&apos; does not contain a value</value>
+    </labels>
+    <labels>
+        <fullName>SSO_UserEmailNull_ui</fullName>
+        <categories>JITProvisioning, SSO, SAML</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO_UserEmailNull_ui</shortDescription>
+        <value>SSO_3002001</value>
+    </labels>
+    <labels>
+        <fullName>SearchBlockTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchBlockTitle</shortDescription>
+        <value>Search opportunities</value>
+    </labels>
+    <labels>
+        <fullName>SearchBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchBtn</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>SearchingBtn</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SearchingBtn</shortDescription>
+        <value>Searching ...</value>
+    </labels>
+    <labels>
+        <fullName>Success_msg</fullName>
+        <categories>Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Success msg</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>TooManyRowsError</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TooManyRowsError</shortDescription>
+        <value>The total number of open activities on the opportunities you selected is greater than the system can handle. Please reduce the number of opportunities to reassign</value>
+    </labels>
+    <labels>
+        <fullName>TooManyRowsSummary</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TooManyRowsSummary</shortDescription>
+        <value>The view you selected returned more than 1000 rows. Only the 1000 first ones will be displayed</value>
+    </labels>
+    <labels>
+        <fullName>TooManyRowsTitle</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TooManyRowsTitle</shortDescription>
+        <value>Too many rows returned</value>
+    </labels>
+    <labels>
+        <fullName>TotalFooterLabel</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TotalFooterLabel</shortDescription>
+        <value>Number</value>
+    </labels>
+    <labels>
+        <fullName>ViewSearchSection</fullName>
+        <categories>Opty Reassign Page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ViewSearchSection</shortDescription>
+        <value>Search with a view</value>
+    </labels>
+    <labels>
+        <fullName>Website_Contact_Overwrite_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Website Contact Overwrite Label</shortDescription>
+        <value>Please be aware that website contact assignments will overwrite the existing website contact for the respective Lot</value>
+    </labels>
+    <labels>
+        <fullName>bg_Freeze_Email_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bg Freeze Email Header</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>bg_Freeze_Name_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bg Freeze Name Header</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>bg_Freeze_Profile_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bg Freeze Profile Header</shortDescription>
+        <value>Profile</value>
+    </labels>
+    <labels>
+        <fullName>bg_Freeze_Users_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bg Freeze Users Button</shortDescription>
+        <value>Freeze Users</value>
+    </labels>
+    <labels>
+        <fullName>bg_Next_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bg Next Button</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>bg_Previous_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bg Previous Button</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>bg_Unfreeze_Users_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bg Unfreeze Users Button</shortDescription>
+        <value>Unfreeze Users</value>
+    </labels>
+    <labels>
+        <fullName>bg_User_Freeze_UI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>bg User Freeze UI</shortDescription>
+        <value>Unfrozen Users</value>
+    </labels>
+    <labels>
+        <fullName>jit_sso_supplierprofilenotdefinedforuser</fullName>
+        <categories>CANDELETE</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>jit_sso_supplierprofilenotdefinedforuser300_ CANDELETE</shortDescription>
+        <value>SSO_3004003</value>
+    </labels>
+</CustomLabels>

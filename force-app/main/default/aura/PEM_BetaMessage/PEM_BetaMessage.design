@@ -1,0 +1,7 @@
+<design:component label="PEM Beta Message">
+	<design:attribute name="BETATag" label="BETA Tag"/>
+	<design:attribute name="BETAMessagePreLink" label="BETA Message Pre Link"/>
+	<design:attribute name="BETAMessageLinkLabel" label="BETA Message Link Label"/>
+	<design:attribute name="BETAMessageLinkURL" label="BETA Message Link URL"/>
+	<design:attribute name="BETAMessagePostLink" label="BETA Message Post Link"/>
+</design:component>

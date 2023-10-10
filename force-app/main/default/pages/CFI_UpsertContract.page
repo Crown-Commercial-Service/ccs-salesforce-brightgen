@@ -1,0 +1,33 @@
+<apex:page showHeader="false" sidebar="true" standardController="CCS_Contract__c" extensions="CFI_UpsertContract_CX" lightningStylesheets="true">
+    <div style="overflow-y: auto; height:120px" >
+        <apex:form >
+            <apex:pageBlock id="pbMessage">
+                <apex:pageMessages escape="false" ></apex:pageMessages>
+                <!--
+                <apex:commandButton action="{! UpsertContract }" value="{! $Label.CFI_BtnUpsert }" disabled="{! disableUpsert }"
+                    title="{! IF(disableUpsert, $Label.CFI_StartMsgContractCreated , '') }" reRender="pbMessage"> </apex:commandButton>
+                -->
+
+                <apex:pageBlockButtons location="bottom">
+                    <apex:actionStatus id="status">
+                                    <apex:facet name="stop">
+                                                    <apex:outputPanel >
+                                                    <apex:commandButton action="{! UpsertContract }" value="{! $Label.CFI_BtnUpsert }" disabled="{! disableUpsert }"
+                                                        title="{! IF(disableUpsert, $Label.CFI_StartMsgContractCreated , '') }" reRender="pbMessage" status="status">
+                                                    </apex:commandButton>
+                                                    </apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:facet name="start">
+                                                    <apex:outputPanel >
+                                                    <apex:commandButton action="{! UpsertContract }" value="{! $Label.CFI_BtnUpsert }" disabled="true"
+                                                        title="{! IF(disableUpsert, $Label.CFI_StartMsgContractCreated , '') }" reRender="pbMessage">
+                                                    </apex:commandButton>
+                                                                 <img id="status" src="/img/loading.gif" alt="Loading..." title="Loading..."/>
+                                                    </apex:outputPanel>
+                                    </apex:facet>
+                    </apex:actionStatus>
+                </apex:pageBlockButtons>
+        </apex:pageBlock>
+        </apex:form>
+    </div>
+</apex:page>

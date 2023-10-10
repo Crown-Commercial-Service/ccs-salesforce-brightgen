@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCSContract__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When a contract is inserted or edited and the Status is set to Open, add a Apex sharing to enable the Contract Customer Contact Read only access.  If the Status is changed to anything but Open then remove the share.</description>
+    <externalId>false</externalId>
+    <label>CCSContract</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

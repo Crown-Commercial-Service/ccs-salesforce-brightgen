@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner_Nickname__c</fullName>
+    <description>26/10/2016 - Garth James (Salesforce) - Created. 
+This field stores the Username for the account owner for newly created accounts during JIT provisioning for suppliers. Said another way, when the SupplierJITProvisioner class runs to create a new account, it will use this value to find the account owner. 
+
+To be clear: this is meant to be that user&apos;s NICKNAME (as opposed to Username or Email address). This is because the Nickname is unique.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When the SupplierJITProvisioner class runs to create a new account, it will use this value to find the account owner. To be clear: this is meant to be that user&apos;s NICKNAME (as opposed to Username or Email address). This is because the Nickname is unique.</inlineHelpText>
+    <label>Account Owner Nickname</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

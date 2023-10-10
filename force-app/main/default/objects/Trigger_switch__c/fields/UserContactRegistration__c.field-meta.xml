@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserContactRegistration__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When a portal user is created, update the contact record and set the Company Name specified at registration into the Portal_Reg_Org_Name__c Field.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When a portal user is created, update the contact record and set the Company Name specified at registration into the Portal_Reg_Org_Name__c Field.</inlineHelpText>
+    <label>UserContactRegistration</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,62 @@
+.THIS {
+    background-color: #000000;
+
+    color: #ffffff;
+}
+
+.THIS.beta-banner {
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    width: 100%;
+}
+
+.THIS .beta-text {
+	background-color: #ffffff;
+    color: #000000;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.THIS .beta-message {
+    padding-top: 3px;
+    padding-left: 10px;
+    display: inline-block;
+    padding-bottom: 3px;
+}
+
+.THIS .beta-message a:link {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.THIS .beta-message a:visited {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.THIS .beta-message a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.THIS .beta-message a:focus {
+    background-color: #ffc9dc;
+    outline: 3px solid #ffc9dc;
+    color: #424242;
+}
+
+@media screen and (max-width: 600px) {
+    
+    .THIS.beta-banner {
+  		font-size: 12px;
+        text-align: center;
+	}
+    
+    .THIS .beta-text {
+  		display: none;
+	}
+}

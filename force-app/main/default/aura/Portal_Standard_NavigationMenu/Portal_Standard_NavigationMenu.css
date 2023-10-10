@@ -1,0 +1,258 @@
+.THIS {
+    width: 100%;
+    z-index: 99;
+    position: absolute;
+    height: 190px;
+}
+
+/* General Nav */
+
+.THIS header#global-header {
+    position: relative;
+    z-index: 10;
+    height: 190px;
+    width: 100%;
+    padding: 25px 0;
+    background: #9B1A47;
+}
+
+.THIS .center-blk.full-nav {
+    padding-top: 30px;
+    z-index: 25;
+}
+
+/* Logo */
+
+@media screen and (min-width: 1024px) {
+    .THIS .header-logo {
+        float: left;
+    }
+}
+
+.THIS .header-logo a {
+    display: block;
+    line-height: 0;
+}
+
+.THIS .header-logo a:hover {
+    opacity: 0.5;
+}
+
+.THIS .header-logo a:focus {
+    opacity: 0.5;
+    background-color: #000000;
+}
+
+.THIS .header-logo a:visited {
+    opacity: 1;
+}
+
+
+/* Proposition Menu */
+
+.THIS nav#proposition-menu {
+    float: right;
+    margin-top: 30px;
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .THIS nav#proposition-menu {
+        display: block;
+    }
+}
+
+.THIS nav#proposition-menu ul#proposition-links {
+    display: block;
+}
+
+.THIS nav#proposition-menu ul#proposition-links li {
+    display: block;
+    width: auto;
+    padding: 0 10px 0 0;
+    float: left;
+    font-size: 21px;
+}
+
+@media screen and (min-width: 1024px) {
+    .THIS nav#proposition-menu ul#proposition-links li {
+        padding: 0 25px 0 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .THIS nav#proposition-menu ul#proposition-links li {
+        padding: 0 40px 0 0;
+        font-size: 23px;
+    }
+}
+
+.THIS nav#proposition-menu ul#proposition-links li:last-child {
+    padding-right: 0;
+}
+
+.THIS nav#proposition-menu ul#proposition-links li a {
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    color: #FFF;
+    padding: 5px 0 6px;
+}
+
+.THIS nav#proposition-menu ul#proposition-links li a:hover {
+    border-color: #FFF;
+}
+
+.THIS nav#proposition-menu ul#proposition-links li a:focus {
+    border-bottom: 2px solid #ffffff;
+    background-color: transparent;
+    outline: none;
+}
+
+/* this isn't currently in use */
+.THIS nav#proposition-menu ul#proposition-links li .active {
+    border-bottom: 2px solid #ffffff !important;
+}
+
+/* Global Menu */
+
+.THIS nav#global-menu {
+    float: right;
+    margin-top: 40px;
+    display: none;
+    clear: right;
+}
+
+@media screen and (min-width: 1024px) {
+    .THIS nav#global-menu {
+        display: block;
+    }
+}
+
+.THIS nav#global-menu ul#global-links {
+    display: block;
+}
+
+.THIS nav#global-menu ul#global-links li {
+    display: block;
+    width: auto;
+    padding: 0 20px 0 0;
+    float: left;
+    font-size: 20px;
+}
+
+@media screen and (min-width: 960px) {
+    .THIS nav#global-menu ul#global-links li {
+        padding: 0 40px 0 0;
+    }
+}
+
+.THIS nav#global-menu ul#global-links li:last-child {
+    padding-right: 0;
+}
+
+.THIS nav#global-menu ul#global-links li a {
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    color: #FFF;
+    padding: 5px 0 6px;
+}
+
+.THIS nav#global-menu ul#global-links li a:hover {
+    border-color: #FFF;
+}
+
+.THIS nav#global-menu ul#global-links li a:focus {
+    border-bottom: 2px solid #ffffff;
+    background-color: transparent;
+    outline: none;
+}
+
+.THIS nav#global-menu ul#global-links li.phone-link {
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    color: #FFF;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Mobile Menu */
+
+.THIS .mobile-nav.hide-mobile-nav {
+    display: none !important;
+}
+
+.THIS nav#mobile-menu {
+    display: block;
+    position: absolute;
+    padding-top: 180px;
+    width: 100%;
+    height: 10000px;
+    z-index: 20;
+    top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .THIS nav#mobile-menu {
+        display: none;
+    }
+}
+
+.THIS nav#mobile-menu ul#mobile-menu-links {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+}
+
+.THIS nav#mobile-menu ul#mobile-menu-links li {
+    font-size: 22px;
+    padding-top: 8px;
+}
+
+.THIS nav#mobile-menu ul#mobile-menu-links li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.THIS nav#mobile-menu ul#mobile-menu-links li a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: solid 2px #ffffff;
+}
+
+.THIS nav#mobile-menu ul#mobile-menu-links li a.phone-link {
+    text-decoration: underline;
+}
+
+.THIS nav#mobile-menu ul#mobile-menu-links li a.phone-link:hover {
+    border-color: transparent;
+    text-decoration: none;
+}
+
+
+
+/* Mobile Menu Toggle */
+
+.THIS #mobile-nav-toggle {
+    background-color: rgba(0,0,0,0.2);
+    padding: 5px 15px;
+    display: inline-block;
+    right: 0;
+    top: 75px;
+    position: absolute;
+    border-radius: 3px;
+}
+
+.THIS button#mobile-nav-toggle  {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 18px;
+    border: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .THIS #mobile-nav-toggle {
+        display: none;
+    }
+}

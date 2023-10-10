@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sprint_V</fullName>
+    <columns>RECORDTYPE</columns>
+    <columns>US_Blocked__c</columns>
+    <columns>NAME</columns>
+    <columns>US_MOSCOW__c</columns>
+    <columns>US_Subject__c</columns>
+    <columns>US_Plan_Estimate__c</columns>
+    <columns>US_Status__c</columns>
+    <columns>Stage__c</columns>
+    <columns>US_Category__c</columns>
+    <columns>US_Business_Owner__c</columns>
+    <columns>US_Developer__c</columns>
+    <columns>US_Tester__c</columns>
+    <columns>US_Sprint__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>US_Sprint__c</field>
+        <operation>equals</operation>
+        <value>Sprint V</value>
+    </filters>
+    <label>Sprint V (November)</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <group>CCS_Development_BAU</group>
+    </sharedTo>
+</ListView>

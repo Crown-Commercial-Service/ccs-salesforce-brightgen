@@ -1,0 +1,7 @@
+<design:component label="New to Procurement">
+	<design:attribute name="title" label="Title" />
+    <design:attribute name="text" label="Text" />
+    <design:attribute name="linkText" label="Link Text" />
+    <design:attribute name="linkURL" label="Link URL" />
+    <design:attribute name="linkSubText" label="Text Below Link" />
+</design:component>

@@ -1,0 +1,5 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+	<div>
+		<a onclick="{!c.goBack}">Back</a>
+	</div>
+</aura:component>

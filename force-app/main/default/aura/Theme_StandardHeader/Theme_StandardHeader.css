@@ -1,0 +1,25 @@
+.THIS {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.THIS.standard-header {
+    height: 190px;
+    z-index: 20;
+    width: 100%;
+    background-color: #9B1A47;
+}
+
+.THIS.footer-region {
+    background-color: #2F2F2F;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.THIS.cookie-banner {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 100;
+}

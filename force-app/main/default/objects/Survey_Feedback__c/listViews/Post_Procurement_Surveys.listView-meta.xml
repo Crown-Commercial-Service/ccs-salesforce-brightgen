@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Procurement_Surveys</fullName>
+    <columns>NAME</columns>
+    <columns>Case_Close_Date__c</columns>
+    <columns>Date_Response_Submitted__c</columns>
+    <columns>Organisation__c</columns>
+    <columns>Case__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Achievement_Rating__c</columns>
+    <columns>Performance__c</columns>
+    <columns>Did_Well__c</columns>
+    <columns>Improve__c</columns>
+    <columns>Agree_to_Contact__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Survey_Name__c</field>
+        <operation>equals</operation>
+        <value>Post Procurement,2017 Post Procurement Survey,Post Procurement NPS survey</value>
+    </filters>
+    <label>Post Procurement Surveys</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

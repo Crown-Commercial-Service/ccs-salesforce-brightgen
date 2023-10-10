@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Current_Business_Plan_Year__c</fullName>
+    <description>Works out if the framework forecast is for the current business plan year, i.e. the current date is between March-Apr of that business year</description>
+    <externalId>false</externalId>
+    <formula>AND(
+   TODAY() &gt;= DATE(2000+VALUE(RIGHT(LEFT(TEXT(Business_Plan_Year__c), 4),2)),4,1),/*Cuts the first year of the BY from the text, assuming the format is FYYY/YY, e.g. FY17/18*/
+   TODAY() &lt; DATE(2001+ VALUE(RIGHT(LEFT(TEXT(Business_Plan_Year__c), 4),2)),4,1)
+)</formula>
+    <label>Is Current Business Plan Year</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

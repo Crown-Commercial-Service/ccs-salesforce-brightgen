@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Communities_of_Practice_Teams</fullName>
+    <columns>NAME</columns>
+    <columns>Pillar__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>equals</operation>
+        <value>Central CoP,North CoP,South CoP,Devolved Government CoP,London CoP</value>
+    </filters>
+    <label>Communities of Practice Teams</label>
+</ListView>

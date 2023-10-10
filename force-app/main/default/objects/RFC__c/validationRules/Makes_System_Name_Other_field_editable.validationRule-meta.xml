@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Makes_System_Name_Other_field_editable</fullName>
+    <active>true</active>
+    <description>If &apos;Other&apos; is selected under &apos;System Name&apos; then &apos;Other System Name&apos; becomes automatically required</description>
+    <errorConditionFormula>AND( ISPICKVAL( System_Name__c, &apos;Other&apos;), ISBLANK( System_Name_Other__c ) )</errorConditionFormula>
+    <errorDisplayField>System_Name_Other__c</errorDisplayField>
+    <errorMessage>If &apos;Other&apos; is selected under &apos;System Name&apos; then &apos;Other System Name&apos; must be completed</errorMessage>
+</ValidationRule>

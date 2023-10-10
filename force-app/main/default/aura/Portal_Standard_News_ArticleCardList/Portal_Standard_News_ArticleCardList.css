@@ -1,0 +1,139 @@
+.THIS .news-thumbnails {
+    padding-top: 40px;
+}
+
+/* Pagination */
+
+.THIS a.link-arrow:before,
+.THIS a.link-arrow:after {
+  content: "";
+  background: transparent url('/resource/portalAssets/assets/images/arrow-right.svg') no-repeat left center;
+  background-size: 13px;
+  position: absolute;
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+  line-height: 1;
+  right: 0;
+  top: 2px;
+  height: 21px;
+  width: 13px;
+  display: none;
+}
+
+.THIS a.link-previous {
+  position: relative;
+  padding-left: 19px;
+  display: inline-block;
+}
+
+.THIS a.link-previous:before {
+  display: block;
+  left: 0;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.THIS a.link-previous:focus:before {
+  border: none;
+  outline: none;
+}
+
+.THIS a.link-next {
+  position: relative;
+  padding-right: 19px;
+  display: inline-block;
+}
+
+.THIS a.link-arrow.link-next:after {
+  display: block;
+}
+
+.THIS a.link-next:focus:after {
+  border: none;
+  outline: none;
+}
+
+.THIS .article-pagination {
+  display: block;
+  margin: 40px 0;
+  padding-top: 40px;
+  border-top: 1px solid #cccccc;
+}
+
+.THIS .article-pagination.listing-pagination {
+  border: none;
+}
+
+.THIS .article-pagination:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.THIS .article-pagination ul.pagination-list {
+  display: block;
+}
+
+.THIS .article-pagination ul.pagination-list li {
+  list-style: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+  float: left;
+}
+
+@media (min-width: 641px) {
+  .THIS .article-pagination ul.pagination-list li {
+    width: 50%;
+  }
+}
+
+.THIS .article-pagination ul.pagination-list li .pagination-link-label {
+  clear: both;
+  font-size: 16px;
+  padding: 0 30px;
+  display: block;
+}
+
+.THIS .article-pagination ul.pagination-list li a:visited {
+  color: #087B9E;
+}
+
+.THIS .article-pagination ul.pagination-list li.item-next {
+  float: right;
+  text-align: right;
+  padding-top: 15px;
+}
+
+@media (min-width: 641px) {
+  .THIS .article-pagination ul.pagination-list li.item-next {
+    padding-top: 0;
+  }
+}
+
+.THIS .article-pagination ul.pagination-list li.item-next .pagination-link-label.page-count {
+  padding-left: 0;
+}
+
+.THIS .article-pagination ul.pagination-list li a.link-arrow {
+  font-size: 22px;
+  padding: 0 29px;
+  line-height: 1.1;
+}
+
+.THIS .article-pagination ul.pagination-list li a.link-arrow.disabled {
+  text-decoration: none;
+  color: #424242;
+}
+
+.THIS .article-pagination ul.pagination-list li a.link-arrow:before,
+.THIS .article-pagination ul.pagination-list li a.link-arrow:after {
+  background-size: 16px;
+  height: 22px;
+  width: 17px;
+}

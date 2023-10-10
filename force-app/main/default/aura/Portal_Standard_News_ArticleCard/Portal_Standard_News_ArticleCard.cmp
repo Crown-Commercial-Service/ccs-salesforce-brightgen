@@ -1,0 +1,37 @@
+<aura:component controller="getArticleController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+    <aura:attribute name="thumbnailUrl" type="String" default="" required="true" description=""/>
+    <aura:attribute name="thumbnailAltText" type="String" default="" required="true" description=""/>
+    <aura:attribute name="title" type="String" default="" required="true" description=""/>
+    <aura:attribute name="category" type="String" default="" required="true" description=""/>
+    <aura:attribute name="publishedDate" type="Date" default="" required="true" description=""/>
+    <aura:attribute name="summary" type="String" default="" required="true" description=""/>
+    <aura:attribute name="urlName" type="String" default="" required="true" description=""/>
+    
+    
+    <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+    
+    <article class="card-news has-hot-spot">
+        <div class="bg-img" role="img" style="{!'background-image: url(' + v.thumbnailUrl + ');'}">
+            <img class="visuallyhidden" src="{!v.thumbnailUrl}" title="" alt="{!v.thumbnailAltText}"></img>
+            </div>
+            <div class="card-inner">
+                <div class="meta-data">{!v.category} | <ui:outputDate format="dd MMMM yyyy" value="{!v.publishedDate}"/></div>
+                <h2 class="heading-small semibold">{!v.title}</h2>
+                <p class="excerpt">{!v.summary}</p>
+                <c:Portal_Standard_LinkComponent linkURL="{!'/article/' + v.urlName}" linkText="Read article" linkClass="visuallyhidden" linkTabIndex="-1"/>
+            </div>
+        	<c:Portal_Standard_LinkComponent linkURL="{!'/article/' + v.urlName}" linkText="" linkClass="hot-spot" linkAriaHidden="true" />
+        </article>
+    
+</aura:component>

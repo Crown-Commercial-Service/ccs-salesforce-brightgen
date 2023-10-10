@@ -1,0 +1,12 @@
+<apex:page controller="FrameworkForecastController" sidebar="false" tabStyle="Master_Framework__c" lightningStylesheets="true">
+    <apex:stylesheet value="{!URLFOR($Resource.FrameworkForecastStyles)}"/>
+    
+    <apex:outputPanel rendered="{!IF(hasForecastYears == False,true,false)}">
+        <c:FrameworkForecastCreate forecast="{!frameworkForecast}" forecastYears="{!relativeYears}" newForecast="{!ffLive}" saveMethod="{!saveNewForecast}" cancelMethod="{!redirectToForecast}" />
+    </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!IF(hasForecastYears == True,true,false)}">
+        <c:FrameworkForecastEdit forecast="{!frameworkForecast}" forecastYears="{!relativeYears}" live="{!ffLive}" actual="{!ffActuals}" budget="{!ffBudget}" saveMethod="{!saveForecast}" cancelMethod="{!redirectToForecast}" />
+    </apex:outputPanel>
+
+</apex:page>

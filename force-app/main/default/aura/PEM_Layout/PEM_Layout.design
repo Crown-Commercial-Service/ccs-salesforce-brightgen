@@ -1,0 +1,6 @@
+<design:component >
+	<design:attribute name="proposition_name" label="Proposition Name"/>
+    <design:attribute name="proposition_link" label="Proposition Link"/>
+    <design:attribute name="contact_support" label="Contact Support Text"/>
+    <design:attribute name="contact_support_link" label="Contact Support Link"/>
+</design:component>

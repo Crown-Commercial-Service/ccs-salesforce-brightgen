@@ -1,0 +1,26 @@
+<design:component label="PEM Self Register">
+  <design:attribute name="regConfirmUrl" default="/apex/SiteRegisterConfirm"/>
+  <design:attribute name="firstnameLabel" default="First Name"/>
+  <design:attribute name="lastnameLabel" default="Last Name"/>
+  <design:attribute name="emailLabel" default="Email"/>
+  <design:attribute name="submitButtonLabel" default="Sign Up"/>
+
+  <design:attribute name="contactNumberLabel" default="Contact number"/>
+  <design:attribute name="organizationNameLabel" default="Organization name"/>
+  <design:attribute name="organizationSelectLabel" default="Select organication"/>
+
+  <design:attribute name="forgottenPasswordLink" default="/ForgottenPassword"/>
+  <design:attribute name="forgottenPasswordLabel" default="Forgotten password label"/>
+  <design:attribute name="loginLink" default="/login"/>
+  <design:attribute name="loginLabel" default="Login label"/>
+
+  <design:attribute name="registrationDescription2" default="Registration description 2"/>
+  <design:attribute name="registrationTitle2" default="Registration title 2"/>
+  <design:attribute name="registrationDescription3" default="Registration description 3"/>
+
+  <design:attribute name="selectOtherLabel" default="Other"/>
+
+  <design:attribute name="termsAndConditionsLink" default=""/>
+  <design:attribute name="termsAndConditionsLabel" default=""/>
+  <design:attribute name="termsAndConditionsCheckboxLabel" default=""/>
+</design:component>

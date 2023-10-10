@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Reference</fullName>
+    <availability>online</availability>
+    <description>generate contract reference</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Generate Reference</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/COW_GenerateReferencePage?catCode={!LEFT(CCS_Contract__c.CAS_Category_Code__c,2)}&amp;recordId={!CCS_Contract__c.Id}</url>
+</WebLink>

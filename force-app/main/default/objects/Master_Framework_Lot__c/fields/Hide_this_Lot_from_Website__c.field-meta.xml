@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hide_this_Lot_from_Website__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>US0687</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Selecting this checkbox will prevent the framework lot from showing on the Website.</inlineHelpText>
+    <label>Hide this Lot from Website</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

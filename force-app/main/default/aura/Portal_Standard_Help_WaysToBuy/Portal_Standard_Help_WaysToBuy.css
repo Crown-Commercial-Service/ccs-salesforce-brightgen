@@ -1,0 +1,20 @@
+.THIS {
+}
+
+.THIS .ways-to-buy-section {
+    border-top: solid 1px #424242;
+    padding-top: 40px;
+    margin-top: 40px;
+}
+
+.THIS .column-quarter {   
+    padding-right: 30px;
+}
+
+@media screen and (min-width: 1024px) {
+    .THIS .ways-to-buy-title {
+        border-top: solid 4px #424242;
+        margin-top: -40px;
+        padding-top: 16px;
+    }
+}

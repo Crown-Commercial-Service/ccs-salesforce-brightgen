@@ -1,0 +1,8 @@
+<design:component >
+<design:attribute name="CookieLinkText" label="Cookie Link Text" />
+<design:attribute name="CookieLinkURL" label="Cookie Link URL" />
+<design:attribute name="CookieMessage" label="Cookie Link Message" />
+<design:attribute name="ManageCookiesText" label="Manage Cookie Text" />
+<design:attribute name="ManageCookiesURL" label="Manage Cookie URL" />
+<design:attribute name="CloseButtonText" label="Close Button Text" />	    
+</design:component>

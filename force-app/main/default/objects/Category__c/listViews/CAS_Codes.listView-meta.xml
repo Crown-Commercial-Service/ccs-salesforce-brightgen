@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAS_Codes</fullName>
+    <columns>NAME</columns>
+    <columns>Code_Type__c</columns>
+    <columns>Product_Group_Description__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Parent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CategoryType__c</field>
+        <operation>equals</operation>
+        <value>Code</value>
+    </filters>
+    <label>CAS Codes</label>
+</ListView>

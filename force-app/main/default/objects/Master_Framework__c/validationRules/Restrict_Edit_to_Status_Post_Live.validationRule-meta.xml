@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Edit_to_Status_Post_Live</fullName>
+    <active>true</active>
+    <description>You cannot update the Status of this Framework as the Framework is now Live.</description>
+    <errorConditionFormula>AND( 
+Start_Date__c &lt; TODAY() , 
+(ISCHANGED(Status__c)) &amp;&amp; 
+NOT($Profile.Name = &quot;System Administrator&quot; || $Profile.Name = &quot;CCS System Administrator&quot; || $Profile.Name = &quot;CCS Business Intelligence&quot; ))</errorConditionFormula>
+    <errorMessage>You cannot update the Status of this Framework as the Framework is now Live.</errorMessage>
+</ValidationRule>

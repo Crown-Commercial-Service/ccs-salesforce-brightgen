@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Framework_DEMO_Is_approved__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Just for demo purpose - 2016.09.30 
+Should not be deployed to QA</description>
+    <externalId>false</externalId>
+    <label>DEMO Is approved</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

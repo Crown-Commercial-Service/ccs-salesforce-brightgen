@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;
+      &lt;strong&gt;Welcome to CCS &amp;nbsp;&lt;/strong&gt;better buying solutions for the public sector.&lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.gov.uk/government/collections/ccs-brochures&quot; title=&quot;Read the CCS brochures article&quot;&gt;&lt;img alt=&quot;A fan display of front cover of a range of CCS brochures&quot; src=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/48550/s630_Brochures.jpg&quot;&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:189;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column1</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;
+      &lt;strong&gt;Quick Links&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;p&gt;CMP&lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;http://ccs-agreements.cabinetoffice.gov.uk/procurement-pipeline&quot; target=&quot;_blank&quot;&gt;Procurement Pipeline&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://crowncommercialservice.bravosolution.co.uk/web/login.shtml&quot; target=&quot;_blank&quot;&gt;eSourcing&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://itportal.decc.gov.uk/eng/fox/live/PORTAL_LOGIN/login&quot; target=&quot;_blank&quot;&gt;Energy Portal&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://gpsfleetportal.cabinetoffice.gov.uk/&quot; target=&quot;_blank&quot;&gt;Fleet Portal&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.gov.uk/guidance/emarketplace-a-guide-for-public-sector-buyers&quot; target=&quot;_blank&quot;&gt;E-Catalogue&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.digitalmarketplace.service.gov.uk/&quot; target=&quot;_blank&quot;&gt;Digital Marketplace&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;Procurement Request&lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:195;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column2</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Brochures from the Crown Commercial Service (CCS) providing information about the organisation and the range of goods and services available through CCS.&lt;/p&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.gov.uk/guidance/nhs-improvement-approved-health-temporary-staff-frameworks&quot; title=&quot;Read the CCS health temporary staff frameworks article&quot;&gt;&lt;img alt=&quot;group of smiling medical staff&quot; src=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/feature/image/44271/s300_group_of_smiling_medical_staff.jpg&quot;&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;17 October 2016&amp;nbsp;&amp;mdash; Guidance&lt;/p&gt;
+    &lt;h2&gt;
+      &lt;a href=&quot;https://www.gov.uk/guidance/nhs-improvement-approved-health-temporary-staff-frameworks&quot;&gt;CCS health temporary staff frameworks&lt;/a&gt;
+    &lt;/h2&gt;
+    &lt;p&gt;Information for NHS trusts on the Crown Commercial Service (CCS) health temporary staff frameworks approved by NHS Improvement.&lt;/p&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:192;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column3</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Intellegi quidem, ut propter aliam quampiam rem, verbi Non modo carum sibi quemque, verum etiam vehementer carum esse?&lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:198;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column4</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;Intellegi quidem, ut propter aliam quampiam rem, verbi Non modo carum sibi quemque, verum etiam vehementer carum esse?&lt;/p&gt;
+    &lt;p&gt;
+      &lt;!--render facet: 13:201;a--&gt;
+    &lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richText</componentName>
+                <identifier>forceCommunity_richText5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column5</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Home</masterLabel>
+    <template>
+        <name>PEM_HomePageLayout</name>
+    </template>
+    <type>CommAppPage</type>
+</FlexiPage>

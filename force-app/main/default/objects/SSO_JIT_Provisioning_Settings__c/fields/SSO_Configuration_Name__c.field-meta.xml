@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SSO_Configuration_Name__c</fullName>
+    <description>Garth James - 10.11.2016 - created to store which SSO Configuration will be used for this group of settings. Note that SAML provisioning will itself already know which SSO Configuration it has been invoked through - this has just been created to support that for integrity checks and testing</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Stores which SSO Configuration will be used for this group of settings. Note that SAML provisioning will itself already know which SSO Configuration it has been invoked through - this exists to support integrity checks and testing.</inlineHelpText>
+    <label>SSO Configuration Name</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

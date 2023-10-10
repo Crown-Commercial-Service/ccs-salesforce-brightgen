@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supplier_and_Guarantor_must_not_match</fullName>
+    <active>true</active>
+    <description>The selection must not allow the same supplier record as has been chosen in the &apos;Supplier&apos; field</description>
+    <errorConditionFormula>Supplier__c   =  Guarantor__c</errorConditionFormula>
+    <errorDisplayField>Guarantor__c</errorDisplayField>
+    <errorMessage>The Guarantor must not be the same Supplier as selected in the Supplier field</errorMessage>
+</ValidationRule>

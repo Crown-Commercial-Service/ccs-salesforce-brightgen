@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Must_Be_After_Start</fullName>
+    <active>true</active>
+    <description>US547.  On a Customer Delay, the Stop DateTime cannot be before the Start DateTime.</description>
+    <errorConditionFormula>Stop_DateTime__c &lt;  Start_DateTime__c</errorConditionFormula>
+    <errorMessage>On a Customer Delay, the Stop DateTime cannot be before the Start DateTime.</errorMessage>
+</ValidationRule>

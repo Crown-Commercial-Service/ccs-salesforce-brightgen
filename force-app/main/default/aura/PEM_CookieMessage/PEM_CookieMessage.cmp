@@ -1,0 +1,16 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="CCS Cookie Message">
+
+    <aura:attribute name="CookieLinkText" type="String" default="CCS uses cookies" />
+    <aura:attribute name="CookieLinkURL" type="String" default="cookie-policy/" />
+    <aura:attribute name="CookieMessage" type="String" default=" to improve your online experience. If you're happy with this, please carry on browsing or you can" />
+    <aura:attribute name="ManageCookiesText" type="String" default=" manage your cookies." />
+    <aura:attribute name="ManageCookiesURL" type="String" default="http://www.aboutcookies.org/how-to-control-cookies/" />
+    <aura:attribute name="CloseButtonText" type="String" default="I know about cookies, please close this banner." />
+
+    <ltng:require scripts="/sfsites/c/resource/PEM_CookieBundle/pem_cookiebundle/pem_cookie.js" />
+    <div id="global-cookie-message" style='text-align:center;display:none;'>
+    	<p><a href="{!v.CookieLinkURL}" class='cookieClick' id='js-cookie-int' title="{!v.CookieLinkText}">{!v.CookieLinkText}</a> {!v.CookieMessage} <a style='color:#2e8aca;' href="{!v.ManageCookiesURL}" class='cookieClick' id='js-cookie-ext' title="{!v.ManageCookiesText}">{!v.ManageCookiesText}</a>
+      <a href="#" id='js-cookie-close' class='cookieClick' title="{!v.CloseButtonText}"><img style='width: 22px;margin-left: 3px;' src='/sfsites/c/resource/PEM_CookieBundle/pem_cookiebundle/ccs_closeIcon.png'/></a></p>
+    </div>
+
+</aura:component>

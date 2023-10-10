@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portal_News_Article_Publish_Date_For_W40__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the publish date that will be shown on the CCS Portal Website. It also determines the order of news articles on that site.</inlineHelpText>
+    <label>Publish Date (For Website)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

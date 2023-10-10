@@ -1,0 +1,11 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="linkURL" type="String" default="" required="true" description="Link URL"/>
+    <aura:attribute name="linkText" type="String" default="" required="true" description="Link Text"/>
+    <aura:attribute name="linkTitle" type="String" default="" required="false" description="Link Title"/>
+    <aura:attribute name="linkClass" type="String" default="link" required="false" description="Link Class"/>
+    <aura:attribute name="linkId" type="String" default="" required="false" description="Link Id"/>
+    <aura:attribute name="linkAriaHidden" type="String" default="false" required="false" description="Aria Hidden Attribute"/>
+    <aura:attribute name="linkTabIndex" type="String" default="" required="false" description="Tab Index Attribute"/>
+    
+    <a href="javascript:void(0)" title="{! (v.linkTitle) ? v.linkTitle : v.linkText}" onclick="{!c.navigate}" class="{!v.linkClass}" id="{!v.linkId}" aria-hidden="{!v.linkAriaHidden}" tabindex="{!v.linkTabIndex}" >{!v.linkText}</a>
+</aura:component>

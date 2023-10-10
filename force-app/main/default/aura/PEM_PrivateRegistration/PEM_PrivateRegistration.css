@@ -1,0 +1,8 @@
+.THIS .button-container {
+	display: flex;
+	margin-top: 35px;
+}
+.THIS .button-container .button {
+	margin: auto !important;
+	width: 250px;
+}

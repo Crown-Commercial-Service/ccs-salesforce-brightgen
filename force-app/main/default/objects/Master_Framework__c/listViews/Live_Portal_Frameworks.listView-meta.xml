@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Live_Portal_Frameworks</fullName>
+    <columns>NAME</columns>
+    <columns>CCS_Category__c</columns>
+    <columns>Pillar__c</columns>
+    <columns>RM_Number__c</columns>
+    <columns>Framework_on_a_Page__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Live</value>
+    </filters>
+    <label>Live Portal Frameworks</label>
+    <sharedTo>
+        <allCustomerPortalUsers></allCustomerPortalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,3 @@
+<aura:documentation>
+	<aura:description>Abstract Data Component use to allow components to inherit Server-side access utilities</aura:description>
+</aura:documentation>

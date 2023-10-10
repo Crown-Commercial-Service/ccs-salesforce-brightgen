@@ -1,0 +1,10 @@
+<aura:documentation>
+	<aura:description>
+        <p>This is the homepage custom page layout</p>
+        <p>The page has a 2:1 ratio on the top section and a 2:1:1 ratio on the bottom section</p>
+    </aura:description>
+	<aura:example name="PEM_HomePageLayout" ref="c:PEM_HomePageLayout" label="Using the
+c:PEM_HomePageLayout Component">
+        <p>This example shows a simple setup of <code>PEM_HomePageLayout</code>.</p>
+    </aura:example>    
+</aura:documentation>

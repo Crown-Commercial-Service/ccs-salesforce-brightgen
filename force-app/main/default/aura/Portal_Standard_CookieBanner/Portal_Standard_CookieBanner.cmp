@@ -1,0 +1,24 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    
+     <ltng:require styles="{!join(',', 
+    
+    	$Resource.portalAssets + '/assets/css/reset.css', 
+                          
+        $Resource.portalAssets + '/assets/css/govuk-template-base.css',
+                          
+        $Resource.portalAssets + '/assets/css/crown-commercial-service.css',
+                          
+        $Resource.portalAssets + '/assets/css/fontawesome-all.css')}"
+                  
+    />
+
+    <ltng:require scripts="{!$Resource.portalAssets + '/assets/js/cookie.js'}" />
+    
+    <div id="global-cookie-message" style="display: none;">
+        <div class="center-blk">
+            <p>We use cookies to give you the best experience on this site. By continuing use of this site you consent to accept our <c:Portal_Standard_LinkComponent linkURL="/cookie-policy" linkClass='cookieClick' linkId='js-cookie-int' linkText="cookie policy" linkTitle="Cookie Policy Page" /></p>
+        </div>
+        <a href="#" id='js-cookie-close' class='cookieClick close-cookie-icon' title="I know about cookies, please close this banner"><i class="fas fa-times-circle"></i></a>
+    </div>
+	
+</aura:component>

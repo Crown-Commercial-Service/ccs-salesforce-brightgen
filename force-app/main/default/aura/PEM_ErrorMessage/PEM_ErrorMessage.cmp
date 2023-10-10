@@ -1,0 +1,20 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description="PEM Error Message Component">
+    
+    <aura:attribute name="bold_large" type="string" default="Oops! Page Not Found" description="Main Title"/>
+	<aura:attribute name="heading_text" type="string" default="" description="Heading text"/>
+	<aura:attribute name="heading_medium" type="string" default="" description="Heading medium"/>    
+	<aura:attribute name="next" type="string" default="" description="Next text"/>    
+	<aura:attribute name="confirmation_message" type="string" default="" description="Confirmation message"/>    
+	<aura:attribute name="message_line1" type="string" default="" description="Message detail line 1"/>    
+	<aura:attribute name="message_line2" type="string" default="" description="Message detail line 2"/> 
+    
+    <aura:handler name="init" value="{!this}" action="{!c.update}"/>
+    
+    <c:PEM_Confirmation bold_large="{!v.bold_large}" 
+                        heading_text="{!v.heading_text}" 
+                        heading_medium="{!v.heading_medium}" 
+                        next="{!v.next}" 
+                        confirmation_message="{!v.confirmation_message}"
+                        message_line1="{!v.message_line1}"
+                        message_line2="{!v.message_line2}"/>
+</aura:component>

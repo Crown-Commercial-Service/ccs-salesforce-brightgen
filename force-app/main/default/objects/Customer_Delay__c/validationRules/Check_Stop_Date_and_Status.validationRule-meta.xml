@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Stop_Date_and_Status</fullName>
+    <active>true</active>
+    <description>US547.  A Customer Delay can only be &apos;Closed&apos; if it has a Stop DateTime (and vice versa).</description>
+    <errorConditionFormula>OR(
+    AND(
+        TEXT(Status__c) = &apos;Closed&apos;,
+        ISBLANK( Stop_DateTime__c )
+        ),
+    AND(
+        TEXT(Status__c) = &apos;Open&apos;,
+        NOT(ISBLANK(Stop_DateTime__c))
+        )
+)</errorConditionFormula>
+    <errorMessage>A Customer Delay can only be &apos;Closed&apos; if it has a Stop DateTime (and vice versa).</errorMessage>
+</ValidationRule>

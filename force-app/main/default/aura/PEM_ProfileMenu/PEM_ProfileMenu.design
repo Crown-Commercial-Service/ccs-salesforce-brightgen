@@ -1,0 +1,16 @@
+<design:component label="PEM Profile Menu">
+	<design:attribute name="item1Name" label="Item 1 Label"/>
+    <design:attribute name="item1URL" label="Item 1 URL"/>
+ 	<design:attribute name="item2Name" label="Item 2 Label"/>
+    <design:attribute name="item2URL" label="Item 2 URL"/>
+	<design:attribute name="item3Name" label="Item 3 Label"/>
+    <design:attribute name="item3URL" label="Item 3 URL"/>
+	<design:attribute name="item4Name" label="Item 4 Label"/>
+    <design:attribute name="item4URL" label="Item 4 URL"/>
+	<design:attribute name="loginName" label="login Label"/>
+    <design:attribute name="loginURL" label="login URL"/>
+	<design:attribute name="logoutName" label="logout Label"/>
+    <design:attribute name="logoutURL" label="logout URL"/>    
+	<design:attribute name="registerName" label="register Label"/>
+    <design:attribute name="registerURL" label="register URL"/>     
+</design:component>

@@ -1,0 +1,67 @@
+<apex:component controller="bg_FrameworkLotSupplierContactSearchCtrl" >
+    <apex:attribute name="searchResultCarrier" type="bg_ContactSearchResultCarrier" description="Search Result" assignTo="{!searchResult}"/>
+    <apex:attribute name="framework" type="String" description="framework ID" assignTo="{!frameworkId}"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    window.onload=function() {
+        document.getElementById("{!$Component.thePb.thepbs.conName}").focus();
+    }
+  
+    </script>
+    
+    <apex:form >
+        <apex:pageBlock id="thePb" title="Contact Search">
+     
+            <apex:pageblockSection id="thepbs">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Contact or Organisation Name</apex:outputLabel>
+                    <apex:inputText value="{!searchName}" required="false" id="conName"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageblockSection>
+            <apex:pageblockButtons location="bottom">
+                <apex:commandButton value="Search" action="{!searchCon}" />
+            </apex:pageblockButtons>  
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Results" id="noRec" rendered="{! IF( contactWrapperList != null && contactWrapperList.size ==0 , true, false)}" >
+            <apex:outputPanel >
+                <h1>No Records Found </h1>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Results" id="details" rendered="{! IF( contactWrapperList != null && contactWrapperList.size >0, true, false)}" >
+            <apex:outputPanel id="resultsTable"> 
+                {!$Label.Choose_Contact}
+                <apex:pageBlockTable value="{!contactWrapperList}" var="c" rules="rows" >
+                    
+                    
+                    <apex:column headerValue="Selected" width="20px">
+                        <apex:outputText value="{!IF(c.checked, '✓','')}"/>
+                    </apex:column> 
+                    <apex:column headerValue="Contact Name" >
+                        <apex:commandLink rerender="details" value=" {!c.contactRecord.Name}" action="{!chooseContact}" reRender="resultsTable" >    
+                            <apex:param name="contactId" value="{!c.contactRecord.Id}" assignTo="{!con.Id}"/> 
+                            <apex:param name="contactName" value="{!c.contactRecord.Name}" assignTo="{!con.Name}"/>  
+							<apex:param name="contactAccount" value="{!c.contactRecord.AccountId}" assignTo="{!con.AccountId}"/>                             
+                        </apex:commandLink> 
+                    </apex:column>               
+                    
+                    <apex:column value="{!c.contactRecord.Email}" headerValue="Email"/>
+                    <apex:column value="{!c.contactRecord.Account.Name}" headerValue="Organisation"/>  
+                </apex:pageBlockTable>
+            </apex:outputPanel>
+            <apex:pageblockButtons >
+                <apex:commandButton value="First Page" rerender="details" action="{!FirstPage}" disabled="{!prev}"/>
+                <apex:commandButton value="Previous" rerender="details" action="{!previous}" disabled="{!prev}"/>
+                <apex:commandButton value="Next" rerender="details" action="{!next}" disabled="{!nxt}"/>
+                <apex:commandButton value="Last Page" rerender="details" action="{!LastPage}" disabled="{!nxt}"/>
+            </apex:pageblockButtons>
+            
+        </apex:pageBlock>
+        
+        
+    
+    </apex:form>
+    
+</apex:component>

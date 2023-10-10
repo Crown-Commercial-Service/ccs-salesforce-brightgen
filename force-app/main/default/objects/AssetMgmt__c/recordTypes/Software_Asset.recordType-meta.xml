@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software_Asset</fullName>
+    <active>true</active>
+    <description>This record type is used for Software Asset only</description>
+    <label>Software Asset</label>
+    <picklistValues>
+        <picklist>IA_Disp_Status__c</picklist>
+        <values>
+            <fullName>Disposed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_Business_Area__c</picklist>
+        <values>
+            <fullName>Business Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Category Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change %26 Transformation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commissioning Academy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract %26 Supplier Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Relations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disputes and Policy Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU%2FInternational %26 Domestic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOI %26 Parliamentary Correspondance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Governance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mystery Shopper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance %26 Supplier Assurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCM - Buildings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCM - Corporate Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCM - People</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SCM - Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Savings Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Business Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sourcing Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transformation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_Cyber_Essentials_Type__c</picklist>
+        <values>
+            <fullName>Basic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plus</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_Data_Type__c</picklist>
+        <values>
+            <fullName>Personal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Sensitive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unclassified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_Deployment_Model__c</picklist>
+        <values>
+            <fullName>Community</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hybrid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_GSC_Classification__c</picklist>
+        <values>
+            <fullName>Confidential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Official</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Official Sensitive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secret</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unclassified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_SIRO_OGCSIRO__c</picklist>
+        <values>
+            <fullName>Granted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_Service_Classification__c</picklist>
+        <values>
+            <fullName>Back Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Facing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Directorate Function</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Recording</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_Supplier_Type__c</picklist>
+        <values>
+            <fullName>3rd Party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime Supplier</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Gov_Type__c</picklist>
+        <values>
+            <fullName>Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hosting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hosting %26 System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Hard_Category__c</picklist>
+        <values>
+            <fullName>Application</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Managed Service</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Hardware_Type__c</picklist>
+        <values>
+            <fullName>Desktop Computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Firewall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laptop Computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Telephone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Network Switch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physical Server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Router</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Server</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Lifecycle__c</picklist>
+        <values>
+            <fullName>End-of-Life</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mid-Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Startup</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Location__c</picklist>
+        <values>
+            <fullName>Bristol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud Based</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leeds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liverpool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London 1HGR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London AVH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norwich</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Status__c</picklist>
+        <values>
+            <fullName>Decommissioned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disposed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Use</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New %26 Not Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stolen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IA_Warranty__c</picklist>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third-Party</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

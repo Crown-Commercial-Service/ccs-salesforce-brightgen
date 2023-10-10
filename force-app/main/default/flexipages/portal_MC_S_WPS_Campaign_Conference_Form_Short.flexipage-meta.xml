@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;img class=&quot;sfdcCbImage&quot; src=&quot;{!contentAsset.graphicshomepageLOGO4.1}&quot; /&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:richTextInline</componentName>
+                <identifier>forceCommunity_richTextInline</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>header</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;form action=&quot;https://crowncommercial.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&quot; method=&quot;POST&quot;&gt;
+
+&lt;input type=hidden name=&quot;orgid&quot; value=&quot;00Db0000000egy4&quot;&gt;
+&lt;input type=hidden name=&quot;retURL&quot; value=&quot;https://buying.crowncommercial.gov.uk/s/thank-you&quot;&gt;
+
+            &lt;input type=&quot;hidden&quot; id=&quot;priority&quot; name=&quot;priority&quot; value=&quot;Green&quot; /&gt;
+            &lt;input type=&quot;hidden&quot; id=&quot;recordType&quot; name=&quot;recordType&quot; value=&quot;012b00000005NWC&quot; /&gt;
+            &lt;input type=&quot;hidden&quot; id=&quot;subject&quot; maxlength=&quot;80&quot; name=&quot;subject&quot; size=&quot;20&quot; value=&quot;WPS Campaign&quot; /&gt;
+            &lt;input type=&quot;hidden&quot; id=&quot;00Nb0000009IXEW&quot; maxlength=&quot;12&quot; name=&quot;00Nb0000009IXEW&quot; size=&quot;20&quot; value=&quot;WPS17/18&quot; /&gt;
+			&lt;input type=hidden name=&quot;retURL&quot; value=&quot;https://buying.crowncommercial.gov.uk/s/thank-you&quot;&gt;       
+            
+			&lt;table class=&quot;form-section&quot; style=&quot;width: 100%&quot;&gt;
+				&lt;tr&gt;
+					&lt;td style=&quot;width: 30%; height: 40px;&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;How can we help you?&lt;/h1&gt;&lt;/td&gt;
+					&lt;td style=&quot;width: 35%; height: 40px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+					&lt;td style=&quot;height: 40px&quot;&gt;
+                    &amp;nbsp;&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr class=&quot;form-element&quot;&gt;
+					&lt;td style=&quot;width: 30%&quot; valign=&quot;top&quot;&gt;&lt;label for=&quot;name&quot;&gt;Full name&lt;sup&gt;*&lt;br&gt;&lt;/sup&gt;&lt;/label&gt;
+					&lt;input class=&quot;required typeahead&quot; id=&quot;name&quot; maxlength=&quot;80&quot; name=&quot;name&quot; size=&quot;20&quot; type=&quot;text&quot; required=&quot;TRUE&quot; style=&quot;width: 90%&quot; /&gt;&lt;label class=&quot;form-label&quot; for=&quot;company&quot;&gt;&lt;br&gt;Organisation&lt;sup&gt;*&lt;br&gt;&lt;/sup&gt;&lt;/label&gt;
+					&lt;input class=&quot;required typeahead&quot; id=&quot;company&quot; name=&quot;company&quot; type=&quot;text&quot; required=&quot;TRUE&quot; style=&quot;width: 90%&quot; /&gt;&lt;br&gt;
+					&lt;label for=&quot;email&quot;&gt;Email&lt;sup&gt;*&lt;br&gt;&lt;/sup&gt;&lt;/label&gt;
+					&lt;input class=&quot;required typeahead&quot; id=&quot;email&quot; maxlength=&quot;80&quot; name=&quot;email&quot; size=&quot;20&quot; type=&quot;email&quot; placeholder=&quot;your.name@website.com&quot; required=&quot;TRUE&quot; style=&quot;width: 90%&quot; /&gt;&lt;br&gt;&lt;/td&gt;
+					&lt;td valign=&quot;top&quot; style=&quot;width: 35%&quot;&gt;
+					&lt;label for=&quot;phone&quot;&gt;Phone&lt;sup&gt;*&lt;br&gt;&lt;/sup&gt;&lt;/label&gt;
+					&lt;input class=&quot;required typeahead&quot; id=&quot;phone&quot; maxlength=&quot;40&quot; name=&quot;phone&quot; size=&quot;20&quot; type=&quot;text&quot; required=&quot;TRUE&quot; style=&quot;width: 90%&quot; /&gt;
+                    &lt;br&gt;&lt;br&gt;&lt;h4 class=&quot;title&quot;&gt;Would you like to (tick all that apply)&lt;/h4&gt;
+					&lt;label class=&quot;checkbox-label&quot;&gt;&lt;input  id=&quot;00Nb0000009IXEn&quot; name=&quot;00Nb0000009IXEn&quot; type=&quot;checkbox&quot; value=&quot;1&quot; /&gt;&lt;span&gt; Sign up to receive news and updates&lt;/span&gt;&lt;/label&gt;
+                		&lt;label class=&quot;checkbox-label&quot;&gt;&lt;br&gt;&lt;input  id=&quot;00Nb0000009IXEd&quot; name=&quot;00Nb0000009IXEd&quot; type=&quot;checkbox&quot; value=&quot;1&quot; /&gt;&lt;span&gt; Find out more about aggregation opportunities&lt;/span&gt;&lt;/label&gt;
+               	 		&lt;label class=&quot;checkbox-label&quot;&gt;&lt;br&gt;&lt;input  id=&quot;00Nb0000009IXEg&quot; name=&quot;00Nb0000009IXEg&quot; type=&quot;checkbox&quot; value=&quot;1&quot; /&gt;&lt;span&gt; Speak to someone&lt;/span&gt;&lt;/label&gt;&lt;/td&gt;
+                &lt;td valign=&quot;top&quot;&gt;
+
+            &lt;div class=&quot;form-element&quot;&gt;
+                    &lt;h4 class=&quot;title&quot;&gt;Is there anything specific we can help you with?&lt;/h4&gt;
+                    &lt;p&gt;Please give us as much detail as possible, including the framework name and number (if applicable to your enquiry).&lt;/p&gt;
+
+                &lt;textarea id=&quot;description&quot; name=&quot;description&quot; rows=&quot;3&quot; type=&quot;text&quot; style=&quot;width: 90%&quot; cols=&quot;20&quot; &gt;&lt;/textarea&gt;&lt;br /&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;form-element last-form-element&quot;&gt;
+                &lt;div class=&quot;submit-wrapper&quot;&gt;
+                    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+        			&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;/table&gt;
+
+
+        &lt;/div&gt;
+
+        &lt;div class=&quot;col-xs-12 col-md-4&quot;&gt;
+
+        &lt;/div&gt;
+
+    &lt;/form&gt;</value>
+                </componentInstanceProperties>
+                <componentName>forceCommunity:htmlBlock</componentName>
+                <identifier>forceCommunity_htmlBlock</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>content</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <appendable>enabled</appendable>
+        <name>footer</name>
+        <prependable>enabled</prependable>
+        <replaceable>enabled</replaceable>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>MC - (S) WPS Campaign_Conference Form Short</masterLabel>
+    <template>
+        <name>siteforce:sldsOneColLayout</name>
+    </template>
+    <type>CommAppPage</type>
+</FlexiPage>

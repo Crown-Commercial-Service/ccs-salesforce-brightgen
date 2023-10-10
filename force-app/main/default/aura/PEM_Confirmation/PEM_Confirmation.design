@@ -1,0 +1,11 @@
+<design:component label="CCS Confirmation Message">
+    
+<design:attribute name="bold_large" label="Heading Title"/>
+<design:attribute name="heading_text" label="Heading Text"/>
+<design:attribute name="heading_medium" label="Heading Reference"/>    
+<design:attribute name="next" label="What happens next message"/>    
+<design:attribute name="confirmation_message" label="Confirmation Message"/>    
+<design:attribute name="message_line1" label="Message line 1"/>    
+<design:attribute name="message_line2" label="Message line 2"/>    
+    
+</design:component>
