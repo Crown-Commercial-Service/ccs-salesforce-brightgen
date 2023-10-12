@@ -118,10 +118,13 @@ public class EmailMessageUtil {
             oldEmailId2newEmail.put(em.Id, emCloned);
         }
 
+        System.debug(LoggingLevel.ERROR, '*** JB originCaseId = ' + originCaseId);
+        System.debug(LoggingLevel.ERROR, '*** JB targetCaseId = ' + targetCaseId);
+
         try {
             EmailMessageTriggerHelper.CHECK_EDIT_RIGHTS_ON_CASE = false;
             insert oldEmailId2newEmail.values();
-            copyOverAttachmentsToNewEmail(oldEmailId2newEmail);
+            copyOverAttachmentsToNewEmail(oldEmailId2newEmail, targetCaseId);
             EmailMessageTriggerHelper.ALLOW_DELETION = true;
            // delete originCase.EmailMessages;
             
@@ -170,27 +173,111 @@ public class EmailMessageUtil {
             //end US0521
             
         } catch(Exception e) { 
+            System.debug(LoggingLevel.ERROR, '*** JB e.getMessage() = ' + e.getMessage());
+            System.debug(LoggingLevel.ERROR, '*** JB e.getStackTraceString() = ' + e.getStackTraceString());
             return e.getMessage();
         }
         
         //return Label.Success_msg;
     }
 
-    private static void copyOverAttachmentsToNewEmail(Map<Id, EmailMessage> oldEmailId2newEmail) {
-        List<Attachment> newAttachments = new List<Attachment>();
+    private static void copyOverAttachmentsToNewEmail(Map<Id, EmailMessage> oldEmailId2newEmail, Id targetCaseId) {
+        // Need to initialise any collections we need
+        List<ContentVersion> cvToInsert = new List<ContentVersion>();
+        List<ContentDocumentLink> cdlToInsert = new List<ContentDocumentLink>();
+        List<ContentDocumentLink> cdlsToDelete = new List<ContentDocumentLink>();
+        Set<Id> insertedCvIds = new Set<Id>();
+        Set<Id> documentIds = new Set<Id>();
+        Map<String, Id> emailIdByDocumentTitle = new Map<String, Id>();
+
+        // Query for possible attachments related to the email
         List<Attachment> attachments = [
-            SELECT Id, Name, Body, ParentId
+            SELECT Id, Name, Body, ParentId, ContentType
             FROM Attachment
             WHERE ParentId IN :oldEmailId2newEmail.keySet()
         ];
 
-        for(Attachment att : attachments) {
-            Attachment newAttachment = att.clone();
-            newAttachment.ParentId = oldEmailId2newEmail.get(att.ParentId).Id;
-            newAttachments.add(newAttachment);
+        // Query for possible CDLs related to the emails
+        List<ContentDocumentLink> cdls = [SELECT Id, LinkedEntityId, ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId IN :oldEmailId2newEmail.keySet()];
+
+        // Loop through all attachments and create a new content version of it
+        if(attachments.size() > 0)
+        {
+            for(Attachment att : attachments) 
+            {
+                ContentVersion cv = new ContentVersion();
+                cv.Title = att.Name;
+                cv.VersionData = att.Body;
+                cv.PathOnClient = att.Name + att.ContentType;
+
+                cvToInsert.add(cv);
+
+                emailIdByDocumentTitle.put(att.Name, oldEmailId2newEmail.get(att.ParentId).Id);
+            }
         }
 
-        insert newAttachments;
+        // Need to also create new CDLs if there are some attached to the email
+        if(cdls.size() > 0)
+        {
+            for(ContentDocumentLink cdl : cdls) 
+            {
+                ContentDocumentLink newCDLEmail = cdl.clone(false, true, false, false);
+                newCDLEmail.LinkedEntityId = oldEmailId2newEmail.get(cdl.LinkedEntityId).Id;
+
+                ContentDocumentLink newCDLCase = cdl.clone(false, true, false, false);
+                newCDLCase.LinkedEntityId = targetCaseId;
+
+                cdlToInsert.add(newCDLEmail);
+                cdlToInsert.add(newCDLCase);
+                cdlsToDelete.add(cdl);
+            }
+        }
+
+        // Insert the new content versions
+        if(!cvToInsert.isEmpty())
+        {
+            insert cvToInsert;
+        }
+        
+        // Add the newly inserted content versions IDs to a set
+        for(ContentVersion cv : cvToInsert)
+        {
+            insertedCvIds.add(cv.Id);
+        }
+
+        // Query for the inserted content versions so that we can get the contentdocumentid
+        List<ContentVersion> insertedContentVersions = [SELECT Id, ContentDocumentId, Title FROM ContentVersion WHERE Id IN :insertedCvIds];
+
+        if(!insertedContentVersions.isEmpty())
+        {
+            // Loop through all insert content versions and create a contentdocumentlink so we can share the record
+            for(ContentVersion cv : insertedContentVersions)
+            {
+                ContentDocumentLink cdlEmail = new ContentDocumentLink();
+                cdlEmail.ContentDocumentId = cv.ContentDocumentId;
+                cdlEmail.LinkedEntityId = emailIdByDocumentTitle.get(cv.Title);
+                cdlEmail.Visibility = 'AllUsers';
+
+                ContentDocumentLink cdlCase = new ContentDocumentLink();
+                cdlCase.ContentDocumentId = targetCaseId;
+                cdlCase.LinkedEntityId = emailIdByDocumentTitle.get(cv.Title);
+                cdlCase.Visibility = 'AllUsers';
+
+                cdlToInsert.add(cdlEmail);
+                cdlToInsert.add(cdlCase);
+            }
+        }
+
+        // Create the links so users are able to find the files
+        if(!cdlToInsert.isEmpty())
+        {
+            insert cdlToInsert;
+        }
+        // Delete the old links
+        if(!cdlsToDelete.isEmpty())
+        {
+            delete cdlsToDelete;
+        }
     }
 
     public class EmailMessageWrapper{
