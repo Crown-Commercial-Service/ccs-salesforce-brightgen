@@ -118,9 +118,6 @@ public class EmailMessageUtil {
             oldEmailId2newEmail.put(em.Id, emCloned);
         }
 
-        System.debug(LoggingLevel.ERROR, '*** JB originCaseId = ' + originCaseId);
-        System.debug(LoggingLevel.ERROR, '*** JB targetCaseId = ' + targetCaseId);
-
         try {
             EmailMessageTriggerHelper.CHECK_EDIT_RIGHTS_ON_CASE = false;
             insert oldEmailId2newEmail.values();
@@ -173,8 +170,6 @@ public class EmailMessageUtil {
             //end US0521
             
         } catch(Exception e) { 
-            System.debug(LoggingLevel.ERROR, '*** JB e.getMessage() = ' + e.getMessage());
-            System.debug(LoggingLevel.ERROR, '*** JB e.getStackTraceString() = ' + e.getStackTraceString());
             return e.getMessage();
         }
         
@@ -200,23 +195,7 @@ public class EmailMessageUtil {
         // Query for possible CDLs related to the emails
         List<ContentDocumentLink> cdls = [SELECT Id, LinkedEntityId, ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId IN :oldEmailId2newEmail.keySet()];
 
-        // Loop through all attachments and create a new content version of it
-        if(attachments.size() > 0)
-        {
-            for(Attachment att : attachments) 
-            {
-                ContentVersion cv = new ContentVersion();
-                cv.Title = att.Name;
-                cv.VersionData = att.Body;
-                cv.PathOnClient = att.Name + att.ContentType;
-
-                cvToInsert.add(cv);
-
-                emailIdByDocumentTitle.put(att.Name, oldEmailId2newEmail.get(att.ParentId).Id);
-            }
-        }
-
-        // Need to also create new CDLs if there are some attached to the email
+        // If we have found some cdls then we will need to handle transferring those
         if(cdls.size() > 0)
         {
             for(ContentDocumentLink cdl : cdls) 
@@ -232,39 +211,58 @@ public class EmailMessageUtil {
                 cdlsToDelete.add(cdl);
             }
         }
-
-        // Insert the new content versions
-        if(!cvToInsert.isEmpty())
+        else if(cdls.size() < 1)
         {
-            insert cvToInsert;
-        }
-        
-        // Add the newly inserted content versions IDs to a set
-        for(ContentVersion cv : cvToInsert)
-        {
-            insertedCvIds.add(cv.Id);
-        }
+            // If we don't have any cdls then we have attachments and will need to handle those
 
-        // Query for the inserted content versions so that we can get the contentdocumentid
-        List<ContentVersion> insertedContentVersions = [SELECT Id, ContentDocumentId, Title FROM ContentVersion WHERE Id IN :insertedCvIds];
-
-        if(!insertedContentVersions.isEmpty())
-        {
-            // Loop through all insert content versions and create a contentdocumentlink so we can share the record
-            for(ContentVersion cv : insertedContentVersions)
+            if(attachments.size() > 0)
             {
-                ContentDocumentLink cdlEmail = new ContentDocumentLink();
-                cdlEmail.ContentDocumentId = cv.ContentDocumentId;
-                cdlEmail.LinkedEntityId = emailIdByDocumentTitle.get(cv.Title);
-                cdlEmail.Visibility = 'AllUsers';
+                for(Attachment att : attachments) 
+                {
+                    ContentVersion cv = new ContentVersion();
+                    cv.Title = att.Name;
+                    cv.VersionData = att.Body;
+                    cv.PathOnClient = att.Name + att.ContentType;
 
-                ContentDocumentLink cdlCase = new ContentDocumentLink();
-                cdlCase.ContentDocumentId = targetCaseId;
-                cdlCase.LinkedEntityId = emailIdByDocumentTitle.get(cv.Title);
-                cdlCase.Visibility = 'AllUsers';
+                    cvToInsert.add(cv);
 
-                cdlToInsert.add(cdlEmail);
-                cdlToInsert.add(cdlCase);
+                    emailIdByDocumentTitle.put(att.Name, oldEmailId2newEmail.get(att.ParentId).Id);
+                }
+            }
+
+            // Insert the new content versions
+            if(!cvToInsert.isEmpty())
+            {
+                insert cvToInsert;
+            }
+            
+            // Add the newly inserted content versions IDs to a set
+            for(ContentVersion cv : cvToInsert)
+            {
+                insertedCvIds.add(cv.Id);
+            }
+
+            // Query for the inserted content versions so that we can get the contentdocumentid
+            List<ContentVersion> insertedContentVersions = [SELECT Id, ContentDocumentId, Title FROM ContentVersion WHERE Id IN :insertedCvIds];
+
+            if(!insertedContentVersions.isEmpty())
+            {
+                // Loop through all insert content versions and create a contentdocumentlink so we can share the record
+                for(ContentVersion cv : insertedContentVersions)
+                {
+                    ContentDocumentLink cdlEmail = new ContentDocumentLink();
+                    cdlEmail.ContentDocumentId = cv.ContentDocumentId;
+                    cdlEmail.LinkedEntityId = emailIdByDocumentTitle.get(cv.Title);
+                    cdlEmail.Visibility = 'AllUsers';
+
+                    ContentDocumentLink cdlCase = new ContentDocumentLink();
+                    cdlCase.ContentDocumentId = cv.ContentDocumentId;
+                    cdlCase.LinkedEntityId = targetCaseId;
+                    cdlCase.Visibility = 'AllUsers';
+
+                    cdlToInsert.add(cdlEmail);
+                    cdlToInsert.add(cdlCase);
+                }
             }
         }
 
