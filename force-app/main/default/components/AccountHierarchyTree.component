@@ -70,13 +70,13 @@
             </span>
             <div> </div>
             <apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),false,true)}">
-                <div id='{!pos.nodeId}'>
+                <div id='{!pos.nodeId}'></div>
             </apex:outputText>
             <apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),true,false)}">
                 <div id='{!pos.nodeId}'><apex:image url="/s.gif" alt="" width="1" height="1"/></div>
             </apex:outputText>
             <apex:repeat value="{!pos.closeFlag}" var="close">
-                </div>
+                
             </apex:repeat>            
 
     </apex:repeat>

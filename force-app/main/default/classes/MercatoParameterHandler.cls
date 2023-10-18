@@ -26,7 +26,7 @@ global class MercatoParameterHandler extends Auth.ConnectedAppPlugin{
   static String PRM_EMAIL_ADDRESS     = 'MERCATO_SP_PARAMETER_EMAIL_ADDRESS';
 
   static String SSO_CUSTOM_SETTING_OBJECT_NAME  = 'OpenID SSO Settings';
-	static String URN_FIELD = 'Account_URN__c';
+  static String URN_FIELD = 'Account_URN__c';
     
   /*******************************************************************
   Purpose:  This method returns a map of custom attributes to be added to the OAuth response. This is an OOTB method (signature unchanged) that has been overridden.
@@ -74,14 +74,14 @@ global class MercatoParameterHandler extends Auth.ConnectedAppPlugin{
         } else {
           // so...get the internal account
           Org_Settings__c orgSettings  = Org_Settings__c.getOrgDefaults();
-          //List<Account> listOfAccounts = [SELECT Id, Account_URN__c, Name FROM Account WHERE Id = :orgSettings.Internal_Account_Id__c];
+            // List<Account> listOfAccounts = [SELECT Id, Account_URN__c, Name FROM Account WHERE Id = :orgSettings.Internal_Account_Id__c];
           	 Id internalAccId = orgSettings.Internal_Account_Id__c;
              String accountQuery = 'SELECT Id, ' + URN_FIELD + ', Name FROM Account WHERE Id = :internalAccId';
              List<Account> listOfAccounts = Database.query(accountQuery);
-          if(listOfAccounts.size()>0 || listOfAccounts!=null) {
-            companyName = listOfAccounts.get(0).Name;
-            //accountURN  = listOfAccounts.get(0).Account_URN__c;
-			accountURN   = (string)listOfAccounts.get(0).get('Account_URN__c'); 
+             if(listOfAccounts.size() > 0 || listOfAccounts != null) {
+              companyName = listOfAccounts.get(0).Name;
+              accountURN  = listOfAccounts.get(0).Account_URN__c;
+			  accountURN   = (string)listOfAccounts.get(0).get('Account_URN__c'); 
           } else {
             companyName = UserInfo.getOrganizationName(); 
             accountURN  = UserInfo.getOrganizationId(); 
@@ -99,6 +99,7 @@ global class MercatoParameterHandler extends Auth.ConnectedAppPlugin{
         formulaDefinedAttributes.put(oAuthStringMap.get(PRM_EMAIL_ADDRESS)      , emailAddress);
 
       }
+
 
       return formulaDefinedAttributes;
   }  

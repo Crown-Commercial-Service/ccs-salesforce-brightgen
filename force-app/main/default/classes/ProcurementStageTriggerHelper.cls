@@ -25,26 +25,39 @@ public class ProcurementStageTriggerHelper {
 	{
 		setStageDuration(triggerNew,oldMap);
 	}
-	
-	public static Map<String, Map<String, Ops_Workflow_Templates__c>> templatesWF
+
+	public static Map<String, Ops_Workflow_Templates__c> templatesWF(String recordTypeDeveloperName)
 	{
-		get
+		Map<String, Map<String, Ops_Workflow_Templates__c>> templatesWFByString = new Map<String, Map<String, Ops_Workflow_Templates__c>>();
+		Map<String, Ops_Workflow_Templates__c> templatesWF = new Map<String, Ops_Workflow_Templates__c>();
+		List<Ops_Workflow_Templates__c> wftemps = new List<Ops_Workflow_Templates__c>();
+
+		if(Test.isRunningTest())
 		{
-			if(templatesWF == null)
+			wftemps = [SELECT Name, End_SLA1__c, End_SLA2__c, Record_Type_Name__c, Seq__c, Stage_Duration__c, Stage_Id__c, Start_SLA1__c, Start_SLA2__c, Template_Name__c FROM Ops_Workflow_Templates__c];
+		}
+		else 
+		{
+			wftemps = Ops_Workflow_Templates__c.getAll().values();	
+		}
+
+		if(wftemps.size() != 0)
+		{
+			for(Ops_Workflow_Templates__c wftemp : wftemps)
 			{
-				templatesWF = new Map<String, Map<String, Ops_Workflow_Templates__c>>();
-				List<Ops_Workflow_Templates__c> wftemps = Ops_Workflow_Templates__c.getAll().values();
-				for(Ops_Workflow_Templates__c wftemp : wftemps)
+				if(!templatesWFByString.containsKey(wftemp.Record_Type_Name__c)) 
 				{
-					if(!templatesWF.containsKey(wftemp.Record_Type_Name__c)) 
-					{
-						templatesWF.put(wftemp.Record_Type_Name__c, new Map<String, Ops_Workflow_Templates__c>());
-					}
-					templatesWF.get(wftemp.Record_Type_Name__c).put(wftemp.Stage_Id__c, wftemp);
+					templatesWFByString.put(wftemp.Record_Type_Name__c, new Map<String, Ops_Workflow_Templates__c>());
+					templatesWF.put(wftemp.Stage_Id__c, wftemp);
+				}
+				else
+				{
+					templatesWF.put(wftemp.Stage_Id__c, wftemp);
 				}
 			}
-			return templatesWF;
 		}
+
+		return templatesWF;
 	}
 	
 	// US710 (calculate the actual time (in working days) that it took to deliver a stage)
