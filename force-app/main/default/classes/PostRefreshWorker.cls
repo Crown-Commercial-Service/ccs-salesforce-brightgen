@@ -66,7 +66,7 @@ global class PostRefreshWorker implements SandboxPostCopy {
 		try {
 			updateTriggerSwitch(true);
 			queryAccounts();
-			updateOrgSettings('ORG_URL__c', System.URL.getSalesforceBaseUrl().toExternalForm());
+			updateOrgSettings('ORG_URL__c', System.URL.getOrgDomainUrl().toExternalForm());
 			createAccounts();
 			Id entitlementId = createEntitlement();
 			updateOrgSettings('Entitlement_ID__c', entitlementId);
