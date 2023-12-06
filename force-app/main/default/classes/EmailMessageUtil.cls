@@ -121,7 +121,7 @@ public class EmailMessageUtil {
         try {
             EmailMessageTriggerHelper.CHECK_EDIT_RIGHTS_ON_CASE = false;
             insert oldEmailId2newEmail.values();
-            copyOverAttachmentsToNewEmail(oldEmailId2newEmail, targetCaseId);
+            copyOverAttachmentsToNewEmail(oldEmailId2newEmail, targetCaseId, originCaseId);
             EmailMessageTriggerHelper.ALLOW_DELETION = true;
            // delete originCase.EmailMessages;
             
@@ -176,7 +176,7 @@ public class EmailMessageUtil {
         //return Label.Success_msg;
     }
 
-    private static void copyOverAttachmentsToNewEmail(Map<Id, EmailMessage> oldEmailId2newEmail, Id targetCaseId) {
+    private static void copyOverAttachmentsToNewEmail(Map<Id, EmailMessage> oldEmailId2newEmail, Id targetCaseId, Id originCaseId) {
         // Need to initialise any collections we need
         List<ContentVersion> cvToInsert = new List<ContentVersion>();
         List<ContentDocumentLink> cdlToInsert = new List<ContentDocumentLink>();
@@ -193,21 +193,36 @@ public class EmailMessageUtil {
         ];
 
         // Query for possible CDLs related to the emails
-        List<ContentDocumentLink> cdls = [SELECT Id, LinkedEntityId, ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId IN :oldEmailId2newEmail.keySet()];
+        List<ContentDocumentLink> cdls = [SELECT Id, LinkedEntityId, ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId IN :oldEmailId2newEmail.keySet() OR LinkedEntityId = :originCaseId];
 
         // If we have found some cdls then we will need to handle transferring those
         if(cdls.size() > 0)
         {
             for(ContentDocumentLink cdl : cdls) 
             {
-                ContentDocumentLink newCDLEmail = cdl.clone(false, true, false, false);
-                newCDLEmail.LinkedEntityId = oldEmailId2newEmail.get(cdl.LinkedEntityId).Id;
+                ContentDocumentLink newCDLEmail = null;
+                ContentDocumentLink newCDLCase = null;
 
-                ContentDocumentLink newCDLCase = cdl.clone(false, true, false, false);
-                newCDLCase.LinkedEntityId = targetCaseId;
+                // Checking if we are dealing with an email or not
+                // if it is a case we will get a null reference error
+                if (oldEmailId2newEmail.get(cdl.LinkedEntityId) != null && null != oldEmailId2newEmail.get(cdl.LinkedEntityId).Id)
+                {
+                    newCDLEmail = cdl.clone(false, true, false, false);
+                    newCDLEmail.LinkedEntityId = oldEmailId2newEmail.get(cdl.LinkedEntityId).Id;
 
-                cdlToInsert.add(newCDLEmail);
-                cdlToInsert.add(newCDLCase);
+                    newCDLCase = cdl.clone(false, true, false, false);
+                    newCDLCase.LinkedEntityId = targetCaseId;
+                }
+
+                if(newCDLEmail != null)
+                {
+                    cdlToInsert.add(newCDLEmail);
+                }
+                if(newCDLCase != null)
+                {
+                    cdlToInsert.add(newCDLCase);
+                }
+                
                 cdlsToDelete.add(cdl);
             }
         }
