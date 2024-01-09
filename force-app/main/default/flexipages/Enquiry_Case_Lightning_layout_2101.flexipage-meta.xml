@@ -211,13 +211,6 @@
             <componentInstance>
                 <componentName>bg_CaseEmailsReparent</componentName>
                 <identifier>bg_CaseEmailsReparent</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!$User.Profile.Name}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>CCS System Administrator</rightValue>
-                    </criteria>
-                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>Facet-9d2225e2-fe07-4316-8af0-465bc2027ef6</name>

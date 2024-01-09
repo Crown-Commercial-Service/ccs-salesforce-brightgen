@@ -334,6 +334,26 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
+            <assignedTo>SPAM_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Case.SuppliedEmail</field>
+                <operation>equals</operation>
+                <value>contract.award.service@notifications.service.gov.uk</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>New buyer organisation in eSourcing requires manual intervention</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>DUNs number not found for Jaggaer</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
             <assignedTo>Service_Desk</assignedTo>
             <assignedToType>Queue</assignedToType>
             <criteriaItems>
@@ -511,15 +531,6 @@
             <criteriaItems>
                 <field>Case.Origin</field>
                 <operation>equals</operation>
-                <value>Tech Support - eSourcing Suite</value>
-            </criteriaItems>
-        </ruleEntry>
-        <ruleEntry>
-            <assignedTo>Duty_Officer_Technology_Support</assignedTo>
-            <assignedToType>Queue</assignedToType>
-            <criteriaItems>
-                <field>Case.Origin</field>
-                <operation>equals</operation>
                 <value>Tech Support - eMarketplace</value>
             </criteriaItems>
         </ruleEntry>
@@ -569,7 +580,7 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>Duty_Officer_PPG</assignedTo>
+            <assignedTo>Service_Desk</assignedTo>
             <assignedToType>Queue</assignedToType>
             <criteriaItems>
                 <field>Case.Website_URL__c</field>
@@ -578,7 +589,7 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>Duty_Officer_PPG</assignedTo>
+            <assignedTo>Service_Desk</assignedTo>
             <assignedToType>Queue</assignedToType>
             <criteriaItems>
                 <field>Case.Website_URL__c</field>
@@ -824,7 +835,7 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>Duty_Officer_PPG</assignedTo>
+            <assignedTo>Service_Desk</assignedTo>
             <assignedToType>Queue</assignedToType>
             <criteriaItems>
                 <field>Case.Origin</field>
@@ -856,6 +867,29 @@
                 <value>Policy &amp; Legal Case</value>
             </criteriaItems>
             <template>unfiled$public/Case_Assignment_for_policy</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>D_B_Alerts</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>D&amp;B Alerts</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Duty_Officer_Internal_Triage</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Duty Officer - Internal Triage</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>notEqual</operation>
+                <value>SPAM Queue</value>
+            </criteriaItems>
         </ruleEntry>
         <ruleEntry>
             <assignedTo>Service_Desk</assignedTo>

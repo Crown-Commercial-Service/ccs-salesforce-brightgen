@@ -330,6 +330,11 @@ US-1287</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.SAM_Parent_Organisation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.SME_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>

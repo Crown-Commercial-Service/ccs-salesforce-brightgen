@@ -160,7 +160,6 @@
     </nameField>
     <pluralLabel>abc</pluralLabel>
     <searchLayouts>
-        <listViewButtons>Mass_t</listViewButtons>
         <listViewButtons>Mass_Update</listViewButtons>
         <listViewButtons>Mass_Edit</listViewButtons>
     </searchLayouts>

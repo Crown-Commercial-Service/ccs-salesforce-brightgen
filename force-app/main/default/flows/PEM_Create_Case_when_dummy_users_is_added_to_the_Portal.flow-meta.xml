@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>57.0</apiVersion>
+    <apiVersion>49.0</apiVersion>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -37,7 +37,7 @@
                 <stringValue>&quot;Here is a new case that requires to be added to a customer account.&quot; &amp; SUBSTITUTE($Label.PEM_Line_Break,&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Firstname: &quot; &amp; [Contact].FirstName &amp; SUBSTITUTE($Label.PEM_Line_Break,&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Lastname: &quot; &amp; [Contact].LastName &amp; SUBSTITUTE($Label.PEM_Line_Break,&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Email: &quot; &amp; [Contact].Email &amp; SUBSTITUTE($Label.PEM_Line_Break,&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Email Domain: &quot; &amp; SUBSTITUTE([Contact].Email, LEFT([Contact].Email, FIND(&quot;@&quot;, [Contact].Email)), NULL) &amp; SUBSTITUTE($Label.PEM_Line_Break,&quot;-&quot;, &quot;&quot;) &amp; &quot;Organisation Name: &quot; &amp; [Contact].Portal_Reg_Org_Name__c &amp; SUBSTITUTE($Label.PEM_Line_Break,&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Phone: &quot; &amp; [Contact].Phone</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_0707363086</name>
+        <name>formula_2_myRule_1_A1_6698304863</name>
         <dataType>String</dataType>
         <expression>&quot;Here is a new case that requires to be added to a customer account.&quot; &amp; SUBSTITUTE({!$Label.PEM_Line_Break},&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Firstname: &quot; &amp; {!myVariable_current.FirstName} &amp; SUBSTITUTE({!$Label.PEM_Line_Break},&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Lastname: &quot; &amp; {!myVariable_current.LastName} &amp; SUBSTITUTE({!$Label.PEM_Line_Break},&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Email: &quot; &amp; {!myVariable_current.Email} &amp; SUBSTITUTE({!$Label.PEM_Line_Break},&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Email Domain: &quot; &amp; SUBSTITUTE({!myVariable_current.Email}, LEFT({!myVariable_current.Email}, FIND(&quot;@&quot;, {!myVariable_current.Email})), NULL) &amp; SUBSTITUTE({!$Label.PEM_Line_Break},&quot;-&quot;, &quot;&quot;) &amp; &quot;Organisation Name: &quot; &amp; {!myVariable_current.Portal_Reg_Org_Name__c} &amp; SUBSTITUTE({!$Label.PEM_Line_Break},&quot;-&quot;, &quot;&quot;) &amp; &quot;Contact Phone: &quot; &amp; {!myVariable_current.Phone}</expression>
     </formulas>
@@ -48,7 +48,7 @@
                 <stringValue>$Setup.Org_Settings__c.Technology_Support_Quick_Fix_Case__c</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_5492448404</name>
+        <name>formula_3_myRule_1_A1_5818988872</name>
         <dataType>String</dataType>
         <expression>{!$Setup.Org_Settings__c.Technology_Support_Quick_Fix_Case__c}</expression>
     </formulas>
@@ -56,14 +56,14 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>[Contact].Portal_Reg_Org_Name__c &lt;&gt; null &amp;&amp; $User.FirstName = &apos;portal&apos; &amp;&amp; $User.LastName = &apos;Site Guest User&apos;</stringValue>
+                <stringValue>[Contact].Portal_Reg_Org_Name__c &lt;&gt; null &amp;&amp; $User.FirstName = &apos;portal&apos; &amp;&amp; $User.LastName = &apos;Site Guest User&apos; &amp;&amp; [Contact].Portal_User__c = TRUE</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
-        <expression>{!myVariable_current.Portal_Reg_Org_Name__c} &lt;&gt; null &amp;&amp; {!$User.FirstName} = &apos;portal&apos; &amp;&amp; {!$User.LastName} = &apos;Site Guest User&apos;</expression>
+        <expression>{!myVariable_current.Portal_Reg_Org_Name__c} &lt;&gt; null &amp;&amp; {!$User.FirstName} = &apos;portal&apos; &amp;&amp; {!$User.LastName} = &apos;Site Guest User&apos; &amp;&amp; {!myVariable_current.Portal_User__c} = TRUE</expression>
     </formulas>
-    <interviewLabel>PEM_Create_Case_when_dummy_users_is_added_to_the_Portal-43_InterviewLabel</interviewLabel>
+    <interviewLabel>PEM_Create_Case_when_dummy_users_is_added_to_the_Portal-44_InterviewLabel</interviewLabel>
     <label>PEM Create Case when dummy users is added to the Portal</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -182,7 +182,7 @@
             </processMetadataValues>
             <field>Description</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_0707363086</elementReference>
+                <elementReference>formula_2_myRule_1_A1_6698304863</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -242,7 +242,7 @@
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_5492448404</elementReference>
+                <elementReference>formula_3_myRule_1_A1_5818988872</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

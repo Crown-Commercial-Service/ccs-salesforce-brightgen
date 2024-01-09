@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Organisation_Procurement_Maturity__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Include details around the organisation’s procurement maturity, e.g. do they have a specific procurement/ commercial function? How established are their procurement processes? etc.</inlineHelpText>
+    <label>Organisation Procurement Maturity</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

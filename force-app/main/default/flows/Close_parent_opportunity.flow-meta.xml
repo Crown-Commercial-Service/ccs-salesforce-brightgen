@@ -20,8 +20,8 @@
     <decisions>
         <name>Check_if_still_open</name>
         <label>Check if still open</label>
-        <locationX>270</locationX>
-        <locationY>674</locationY>
+        <locationX>1150</locationX>
+        <locationY>782</locationY>
         <defaultConnector>
             <targetReference>Check_child_opp_status</targetReference>
         </defaultConnector>
@@ -44,9 +44,9 @@
     </decisions>
     <decisions>
         <name>Close_parent_opportunity</name>
-        <label>Close parent opportunity</label>
-        <locationX>314</locationX>
-        <locationY>242</locationY>
+        <label>Close parent opportunity?</label>
+        <locationX>1194</locationX>
+        <locationY>458</locationY>
         <defaultConnectorLabel>Don&apos;t close</defaultConnectorLabel>
         <rules>
             <name>Close</name>
@@ -59,9 +59,56 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>GetParentOpp</targetReference>
+                <targetReference>Get_Child_Opp_Records</targetReference>
             </connector>
             <label>Close</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsParentClosed</name>
+        <label>IsParentClosed</label>
+        <locationX>688</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Close_Parent_Opportuinty</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Closed</defaultConnectorLabel>
+        <rules>
+            <name>YesClosed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetParentOpps.Close_Parent_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Reopen_Parent_Opportuinty</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Reopen_parent_opportunity</name>
+        <label>Do you want to re-open?</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <defaultConnectorLabel>Don&apos;t re-open</defaultConnectorLabel>
+        <rules>
+            <name>YesReOpen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Reopen_Confirmation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Records_2</targetReference>
+            </connector>
+            <label>Yes</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -70,13 +117,18 @@
         <dataType>String</dataType>
         <expression>{!$Flow.CurrentRecord}</expression>
     </formulas>
+    <formulas>
+        <name>ReopenOppsName</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE({!GetParentOpps.Name}, &apos;[PARENT CLOSED]&apos;, &apos;&apos;)</expression>
+    </formulas>
     <interviewLabel>Close parent opportunity {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Close parent opportunity</label>
+    <label>Close/Reopen parent opportunity</label>
     <loops>
         <name>Check_child_opp_status</name>
         <label>Check child opp status</label>
-        <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationX>930</locationX>
+        <locationY>674</locationY>
         <collectionReference>Get_Child_Opp_Records</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -108,8 +160,8 @@
     <recordLookups>
         <name>Get_Child_Opp_Records</name>
         <label>Get Child Opp Records</label>
-        <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationX>930</locationX>
+        <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_child_opp_status</targetReference>
@@ -127,13 +179,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>GetParentOpp</name>
+        <name>GetParentOpps</name>
         <label>GetParentOpp</label>
-        <locationX>50</locationX>
-        <locationY>350</locationY>
+        <locationX>688</locationX>
+        <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Child_Opp_Records</targetReference>
+            <targetReference>IsParentClosed</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -148,10 +200,44 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Update_Records_2</name>
+        <label>Update Records 2</label>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>[PARENT CLOSED]</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Close_Parent_Opportunity__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>ReopenOppsName</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
         <name>UpdateParentOpp</name>
         <label>UpdateParentOpp</label>
-        <locationX>50</locationX>
-        <locationY>1166</locationY>
+        <locationX>930</locationX>
+        <locationY>1274</locationY>
         <faultConnector>
             <targetReference>OppUpdateError</targetReference>
         </faultConnector>
@@ -179,7 +265,7 @@
         <inputAssignments>
             <field>Name</field>
             <value>
-                <stringValue>[PARENT CLOSED] {!GetParentOpp.Name}</stringValue>
+                <stringValue>[PARENT CLOSED] {!GetParentOpps.Name}</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>
@@ -188,8 +274,8 @@
         <description>Close Parent Opportunity</description>
         <name>Close_Parent_Opportuinty</name>
         <label>Close Parent Opportuinty</label>
-        <locationX>314</locationX>
-        <locationY>134</locationY>
+        <locationX>1194</locationX>
+        <locationY>350</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -218,13 +304,13 @@
     <screens>
         <name>Error_Message</name>
         <label>Error Message</label>
-        <locationX>138</locationX>
-        <locationY>782</locationY>
+        <locationX>1018</locationX>
+        <locationY>890</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>stop_update_error</name>
+            <name>Copy_1_of_stop_update_error</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; color: rgb(244, 38, 38);&quot;&gt;The Opportunity can not be closed as there are open child opportunities. Please close all associated child opportunities to close this Parent Opportunity&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -235,13 +321,13 @@
     <screens>
         <name>OppUpdateError</name>
         <label>OppUpdateError</label>
-        <locationX>314</locationX>
-        <locationY>1274</locationY>
+        <locationX>1194</locationX>
+        <locationY>1382</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>OppUpdateErrorMsg</name>
+            <name>Copy_1_of_OppUpdateErrorMsg</name>
             <fieldText>&lt;p&gt;&lt;strong&gt;An error occurred when updating parent opportunity!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(183, 16, 16);&quot;&gt; {!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
@@ -249,11 +335,42 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <description>Reopen Parent Opportunity</description>
+        <name>Reopen_Parent_Opportuinty</name>
+        <label>Reopen Parent Opportuinty</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Reopen_parent_opportunity</targetReference>
+        </connector>
+        <fields>
+            <name>Copy_1_of_Confirmation_screen</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;﻿Are you sure you want to re-open the parent Opportunity?&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Reopen_Confirmation</name>
+            <choiceReferences>Yes</choiceReferences>
+            <choiceReferences>No</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>No</defaultSelectedChoiceReference>
+            <fieldText>Please select Yes or No</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Submit</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <start>
-        <locationX>188</locationX>
+        <locationX>562</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Close_Parent_Opportuinty</targetReference>
+            <targetReference>GetParentOpps</targetReference>
         </connector>
     </start>
     <status>Active</status>

@@ -155,7 +155,7 @@ private class PostRefreshWorker_Test {
 		];
 
 		System.assert(!triggerSwitches.isEmpty(), 'Trigger switch');
-		System.assertEquals(System.URL.getSalesforceBaseUrl().toExternalForm(), orgSettings.ORG_URL__c,
+		System.assertEquals(System.URL.getOrgDomainUrl().toExternalForm(), orgSettings.ORG_URL__c,
 			'Org settings should be updated with base url');
 		System.assert(!String.isBlank(orgSettings.Entitlement_ID__c), 
 			'Org settings should be udated with entitlement Id');
@@ -288,7 +288,7 @@ private class PostRefreshWorker_Test {
 		];
 
 		System.assert(!triggerSwitches.isEmpty(), 'Trigger switch');
-		System.assertEquals(System.URL.getSalesforceBaseUrl().toExternalForm(), orgSettings.ORG_URL__c,
+		System.assertEquals(System.URL.getOrgDomainUrl().toExternalForm(), orgSettings.ORG_URL__c,
 			'Org settings should be updated with base url');
 		System.assert(!String.isBlank(orgSettings.Entitlement_ID__c), 
 			'Org settings should be udated with entitlement Id');

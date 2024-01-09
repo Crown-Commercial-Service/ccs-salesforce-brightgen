@@ -1079,7 +1079,7 @@
         <object>CCS_Contract__c</object>
     </recordUpdates>
     <startElementReference>myPreWaitDecision_myWait_myRule_5</startElementReference>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>cancelWaits</name>
         <dataType>String</dataType>

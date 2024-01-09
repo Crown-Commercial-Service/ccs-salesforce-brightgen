@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Capabilities__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the user’s level of technical capability.</inlineHelpText>
+    <label>Tech Capabilities</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Never have, never will</fullName>
+                <default>false</default>
+                <label>Never have, never will</label>
+            </value>
+            <value>
+                <fullName>Was online, but no longer</fullName>
+                <default>false</default>
+                <label>Was online, but no longer</label>
+            </value>
+            <value>
+                <fullName>Willing and unable</fullName>
+                <default>false</default>
+                <label>Willing and unable</label>
+            </value>
+            <value>
+                <fullName>Reluctantly online</fullName>
+                <default>false</default>
+                <label>Reluctantly online</label>
+            </value>
+            <value>
+                <fullName>Learning the ropes</fullName>
+                <default>false</default>
+                <label>Learning the ropes</label>
+            </value>
+            <value>
+                <fullName>Task specific</fullName>
+                <default>false</default>
+                <label>Task specific</label>
+            </value>
+            <value>
+                <fullName>Basic digital skills</fullName>
+                <default>false</default>
+                <label>Basic digital skills</label>
+            </value>
+            <value>
+                <fullName>Confident</fullName>
+                <default>false</default>
+                <label>Confident</label>
+            </value>
+            <value>
+                <fullName>Expert</fullName>
+                <default>false</default>
+                <label>Expert</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

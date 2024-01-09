@@ -40,16 +40,6 @@
                 <identifier>desktopDashboards_embeddedDashboard</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>flavor</name>
-                    <value>carousel</value>
-                </componentInstanceProperties>
-                <componentName>home:newsPanel</componentName>
-                <identifier>home_newsPanel</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>top</name>
         <type>Region</type>
     </flexiPageRegions>

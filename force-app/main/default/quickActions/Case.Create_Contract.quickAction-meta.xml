@@ -99,7 +99,7 @@
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>Contract_Next_Steps__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <uiBehavior>Required</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>

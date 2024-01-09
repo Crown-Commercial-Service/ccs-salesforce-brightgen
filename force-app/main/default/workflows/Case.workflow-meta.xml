@@ -1004,17 +1004,6 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update_Owner</fullName>
-        <field>OwnerId</field>
-        <lookupValue>Duty_Officer_Apps_and_Infrastructure</lookupValue>
-        <lookupValueType>Queue</lookupValueType>
-        <name>Update Owner</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>LookupValue</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Update_SLA1_Violated</fullName>
         <field>SLA_1_Violated__c</field>
         <literalValue>1</literalValue>
@@ -1369,31 +1358,5 @@ NOT(OR(No_Close_Email__c = TRUE, ISPICKVAL(Resolution_1__c, &quot;SPAM&quot;), I
             <value>False</value>
         </criteriaItems>
         <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>Question2Chatter</fullName>
-        <actions>
-            <name>Change_to_Tech_Support</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Tech_Team_Update</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Update_Category</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Update_Owner</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Case.Origin</field>
-            <operation>equals</operation>
-            <value>Chatter</value>
-        </criteriaItems>
-        <triggerType>onCreateOnly</triggerType>
     </rules>
 </Workflow>

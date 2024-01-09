@@ -37,11 +37,8 @@
         <description>Send email to CCS Contract Expire</description>
         <protected>false</protected>
         <recipients>
-            <type>owner</type>
-        </recipients>
-        <recipients>
-            <field>Additional_Contract_Management_Support__c</field>
-            <type>userLookup</type>
+            <field>Customer_Contact__c</field>
+            <type>contactLookup</type>
         </recipients>
         <senderAddress>noreply@crowncommercial.gov.uk</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>

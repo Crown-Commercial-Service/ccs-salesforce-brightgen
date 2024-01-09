@@ -90,6 +90,7 @@ public without sharing class CaseTriggerHelper {
     {
         createProcurementStages(triggerNew,oldMap);
         stopSLAs(triggerNew,oldMap);
+        stopPolicySLA(triggerNew,oldMap);
         unlockApprovalCases(triggerNew,oldMap);
         completeAllMilestonesOnClose(triggerNew, oldMap);
     }
@@ -387,11 +388,27 @@ public without sharing class CaseTriggerHelper {
 
         return stages;
     }
+    
+    public static void stopPolicySLA(List<Case> cases, Map<Id,Case> oldMap){
+        List<Id> caseIds = new List<Id>();
+        String mileStoneName = '';
+        for(Case c : cases)
+        {
+            if(c.EntitlementID != null &&  c.RecordTypeId == RecordTypeFetcher.fetchCaseRtId('Policy_Legal_Case') 
+               && !c.Owner_is_a_Queue__c && oldMap.get(c.Id).Owner_is_a_Queue__c)
+            {
+                caseIds.add(c.Id);
+                
+            } 
+        }
+        if(caseIds.isEmpty()) return;  // if no cases abort process
+        MilestoneUtils.completeMilestone(caseIds, '2 Day SLA For Policy Queue', system.now());
+    }    
 
     // use for finding slas
     public static final String SLA1 = 'SLA 1';
     public static final String SLA2 = 'SLA 2';
-
+    
     // stop all open milestones if case reaches a stop stage for that SLA
     // milestones must have "SLA 1" or "SLA 2" in the name so they the code will know which ones to stop
     public static void stopSLAs(List<Case> cases, Map<Id,Case> oldMap)

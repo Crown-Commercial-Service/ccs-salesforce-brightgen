@@ -48,10 +48,16 @@
                         <valueListItems>
                             <value>Opportunity.Close_Parent_Opportunity</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.Parent_Opportunity__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>true</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Close_Parent_Opportunity__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -68,6 +74,22 @@
                                     <leftValue>{!Record.Organisation_Tier__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>SAM Lite-Tier 1</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.Re_open_Parent_Opportunity</value>
+                            <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!Record.Name}</leftValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>[PARENT CLOSED]</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Close_Parent_Opportunity__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -1809,6 +1831,54 @@
                 </componentInstanceProperties>
                 <componentName>PopUp_Window</componentName>
                 <identifier>c_PopUp_Window1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>strDuration</name>
+                    <value>5000</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>strMessage</name>
+                    <value>Please add a supplier to the &apos;Supplier Award field.</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>strMode</name>
+                    <value>sticky</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>strTitle</name>
+                    <value>Reminder</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>strType</name>
+                    <value>warning</value>
+                </componentInstanceProperties>
+                <componentName>showToastLight</componentName>
+                <identifier>c_showToastLight</identifier>
+                <visibilityRule>
+                    <booleanFilter>(1 OR 2) AND (3 AND 4)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.StageName}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Stage 4 = Supplier Confirmed for Award</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.StageName}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Closed Won</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Supplier_Awarded__r.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Is_Opportunity_Owner__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

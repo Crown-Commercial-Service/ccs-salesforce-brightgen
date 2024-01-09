@@ -136,6 +136,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.SAM_Parent_Organisation__c</fieldItem>
+                <identifier>RecordSAM_Parent_Organisation_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.NUTS_Region__c</fieldItem>
                 <identifier>RecordNUTS_Region_cField</identifier>
             </fieldInstance>
@@ -242,6 +252,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.DUNS_Number__c</fieldItem>
                 <identifier>RecordDUNS_Number_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_URN__c</fieldItem>
+                <identifier>RecordExternal_URN_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.External_URN_Source__c</fieldItem>
+                <identifier>RecordExternal_URN_Source_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

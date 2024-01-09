@@ -32,7 +32,7 @@
                     <value>&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size:12px;&quot;&gt;&lt;a href=&quot;{{{View_Online}}}&quot;&gt;&lt;span style=&quot;color:#9b1a47;&quot;&gt;View in browser&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#9b1a47;&quot;&gt; &amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText913</identifier>
+                <identifier>contentbuilder_richText45</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-dd03c68b-cf6c-4fce-a788-edc6d2db75fa</name>
@@ -60,7 +60,7 @@
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1091</identifier>
+                <identifier>contentbuilder_column47</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-a2f2a4c2-9b51-4031-be11-6ebee1aad8d2</name>
@@ -101,11 +101,15 @@
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image611</identifier>
+                <identifier>contentbuilder_image33</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-32f0f9f3-a374-4d3c-9dd0-4b717bf77add</name>
@@ -146,7 +150,7 @@
 &lt;div id=&quot;&quot; style=&quot;left: 20px; top: 141.594px;&quot;&gt;&amp;nbsp;&lt;/div&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText914</identifier>
+                <identifier>contentbuilder_richText46</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-8c3cdceb-604f-4010-bdb9-c55ac3e21888</name>
@@ -175,7 +179,7 @@
                     <value>66.66%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1092</identifier>
+                <identifier>contentbuilder_column48</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -199,7 +203,7 @@
                     <value>33.33%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1093</identifier>
+                <identifier>contentbuilder_column49</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-7c705e5e-8aff-4346-bc7f-f313f353e236</name>
@@ -239,7 +243,7 @@
 &lt;span style=&quot;color:#ffffff;&quot;&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;Example text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus scelerisque eleifend donec pretium vulputate. Sit amet consectetur adipiscing elit pellentesque habitant. Mauris cursus mattis molestie a iaculis at erat pellentesque. Placerat orci nulla pellentesque dignissim. Consequat interdum varius sit amet mattis vulputate enim.&lt;/span&gt;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText915</identifier>
+                <identifier>contentbuilder_richText47</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -325,7 +329,7 @@
                     <value>#37474f</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button695</identifier>
+                <identifier>contentbuilder_button35</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-18e4f7c7-32f6-45a6-b0b4-cdae1a167ebf</name>
@@ -353,7 +357,7 @@
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1094</identifier>
+                <identifier>contentbuilder_column50</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-436cdac5-949b-413a-a991-5550ec840fc8</name>
@@ -391,7 +395,7 @@
                     <value>&lt;h1 style=&quot;color:#111111;font-family:Arial;font-size:32px;font-weight:bold;margin:0;&quot;&gt;&lt;span style=&quot;color:#5bb4e5;&quot;&gt;Events, webinars and aggregations&lt;/span&gt;&lt;/h1&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText916</identifier>
+                <identifier>contentbuilder_richText48</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -426,7 +430,7 @@
 &lt;span style=&quot;color:#37474f;&quot;&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;Digital Government 2022 looks at the progress made on the journey to a digitally enabled state, as well as the challenges which still need to be overcome.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText917</identifier>
+                <identifier>contentbuilder_richText49</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -512,7 +516,7 @@
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button696</identifier>
+                <identifier>contentbuilder_button36</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -549,11 +553,15 @@
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image612</identifier>
+                <identifier>contentbuilder_image34</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -588,7 +596,7 @@
 Tuesday 17 to Thursday 19 May:&amp;nbsp;don&amp;rsquo;t miss the opportunity to discuss your transport technology needs with our category experts and join our speaker session on smart transport solutions.&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText918</identifier>
+                <identifier>contentbuilder_richText50</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -674,7 +682,7 @@ Tuesday 17 to Thursday 19 May:&amp;nbsp;don&amp;rsquo;t miss the opportunity to 
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button697</identifier>
+                <identifier>contentbuilder_button37</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -711,11 +719,15 @@ Tuesday 17 to Thursday 19 May:&amp;nbsp;don&amp;rsquo;t miss the opportunity to 
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image613</identifier>
+                <identifier>contentbuilder_image35</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -750,7 +762,7 @@ Tuesday 17 to Thursday 19 May:&amp;nbsp;don&amp;rsquo;t miss the opportunity to 
 We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buyer CPD certified training sessions and leading keynote presentations.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText919</identifier>
+                <identifier>contentbuilder_richText51</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -836,7 +848,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button698</identifier>
+                <identifier>contentbuilder_button38</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -873,11 +885,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image614</identifier>
+                <identifier>contentbuilder_image36</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -911,7 +927,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>&lt;b&gt;&lt;span style=&quot;font-size:18px;&quot;&gt;&lt;span style=&quot;color:#9b1a47;&quot;&gt;Webinar: Demand Management and Renewables, Tuesday 17 May&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText920</identifier>
+                <identifier>contentbuilder_richText52</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -997,7 +1013,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button699</identifier>
+                <identifier>contentbuilder_button39</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1034,11 +1050,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image615</identifier>
+                <identifier>contentbuilder_image37</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1072,7 +1092,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>&lt;span style=&quot;color:#9b1a47;&quot;&gt;&lt;span style=&quot;font-size:18px;&quot;&gt;&lt;b&gt;Webinar: Office supplies customer engagement session, Thursday 19 May&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText921</identifier>
+                <identifier>contentbuilder_richText53</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1158,7 +1178,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button700</identifier>
+                <identifier>contentbuilder_button40</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1195,11 +1215,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image616</identifier>
+                <identifier>contentbuilder_image38</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1233,7 +1257,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>&lt;span style=&quot;color:#9b1a47;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size:18px;&quot;&gt;Webinar: Exploring workplace design for neurodiverse employees, Tuesday 28 June&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText922</identifier>
+                <identifier>contentbuilder_richText54</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1319,7 +1343,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button701</identifier>
+                <identifier>contentbuilder_button41</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1356,11 +1380,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image617</identifier>
+                <identifier>contentbuilder_image39</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1398,7 +1426,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;/ul&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText923</identifier>
+                <identifier>contentbuilder_richText55</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-6739faf0-d542-4513-8a2e-594fa8083407</name>
@@ -1426,7 +1454,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1095</identifier>
+                <identifier>contentbuilder_column51</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-04496e44-6c3f-4f6f-8d1f-2dc0e19fa61d</name>
@@ -1467,11 +1495,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image618</identifier>
+                <identifier>contentbuilder_image40</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1557,7 +1589,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button702</identifier>
+                <identifier>contentbuilder_button42</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-fc10dad2-15f3-4761-b4af-a269801138e1</name>
@@ -1585,7 +1617,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1096</identifier>
+                <identifier>contentbuilder_column52</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-8cfdd798-729b-42ae-84bb-71db0001d855</name>
@@ -1625,7 +1657,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;span style=&quot;color:#ffffff;&quot;&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;Find out which agreements were extended, expired or awarded in [insert month] in our regular monthly update.&lt;/span&gt;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText924</identifier>
+                <identifier>contentbuilder_richText56</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1711,7 +1743,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#37474f</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button703</identifier>
+                <identifier>contentbuilder_button43</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-8f8396ac-3845-40b3-9376-3cd9f43315b6</name>
@@ -1739,7 +1771,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1097</identifier>
+                <identifier>contentbuilder_column53</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-51888f9b-f88a-4a4e-9129-1630d89b3992</name>
@@ -1779,7 +1811,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;span style=&quot;font-size:16px;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis eleifend ligula in sodales. Sed sit amet nisi eleifend.&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText925</identifier>
+                <identifier>contentbuilder_richText57</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1865,7 +1897,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button704</identifier>
+                <identifier>contentbuilder_button44</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-d2dfe0a6-317c-4035-b460-567af5847d0d</name>
@@ -1906,11 +1938,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>10</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image619</identifier>
+                <identifier>contentbuilder_image41</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-2c6bb807-b58c-4cdf-8aa6-ff4ea31e0013</name>
@@ -1939,7 +1975,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>50%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1098</identifier>
+                <identifier>contentbuilder_column54</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1963,7 +1999,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>50%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1099</identifier>
+                <identifier>contentbuilder_column55</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-f960737e-23ba-41ba-9382-845ad1c29384</name>
@@ -2004,11 +2040,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image620</identifier>
+                <identifier>contentbuilder_image42</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-02a9692c-733d-49f4-a766-55124ef95ac3</name>
@@ -2036,7 +2076,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1100</identifier>
+                <identifier>contentbuilder_column56</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-d50dd169-b9d5-4f3e-b22b-0ec2d0c72876</name>
@@ -2077,11 +2117,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image621</identifier>
+                <identifier>contentbuilder_image43</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-c50cd764-0478-4075-9c06-40bf4549c22b</name>
@@ -2121,7 +2165,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;span style=&quot;font-size:16px;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis eleifend ligula in sodales. Sed sit amet nisi eleifend.&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText926</identifier>
+                <identifier>contentbuilder_richText58</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2207,7 +2251,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button705</identifier>
+                <identifier>contentbuilder_button45</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-a623b233-666f-43b4-a380-8dab5e6182b6</name>
@@ -2236,7 +2280,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>50%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1101</identifier>
+                <identifier>contentbuilder_column57</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2260,7 +2304,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>50%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1102</identifier>
+                <identifier>contentbuilder_column58</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-d66f1152-5e0f-4006-b67a-ec88933b012f</name>
@@ -2301,11 +2345,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image622</identifier>
+                <identifier>contentbuilder_image44</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-6af5cfcb-161d-4a30-a72f-b8ff1d9813cb</name>
@@ -2333,7 +2381,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1103</identifier>
+                <identifier>contentbuilder_column59</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-e2230b04-d26b-4abb-b950-0c9312e918e8</name>
@@ -2373,7 +2421,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;span style=&quot;font-size:16px;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis eleifend ligula in sodales. Sed sit amet nisi eleifend.&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText927</identifier>
+                <identifier>contentbuilder_richText59</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2459,7 +2507,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button706</identifier>
+                <identifier>contentbuilder_button46</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-f2d2465f-91b6-4d72-aae3-fbba9212b6e3</name>
@@ -2500,11 +2548,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image623</identifier>
+                <identifier>contentbuilder_image45</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-f0711441-e9c0-4f9f-908b-e3d293ced1dc</name>
@@ -2533,7 +2585,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>50%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1104</identifier>
+                <identifier>contentbuilder_column60</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2557,7 +2609,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>50%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1105</identifier>
+                <identifier>contentbuilder_column61</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-af803b0b-ec01-4442-b696-56de77103e4b</name>
@@ -2598,11 +2650,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image624</identifier>
+                <identifier>contentbuilder_image46</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-9fa9644e-7304-42cd-920b-13eaa5bac3cd</name>
@@ -2630,7 +2686,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1106</identifier>
+                <identifier>contentbuilder_column62</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-c85e0a12-89c6-4028-8676-be3c15e708db</name>
@@ -2671,11 +2727,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image625</identifier>
+                <identifier>contentbuilder_image47</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-f2c8a824-39cc-422a-8ff1-41a16d660eb7</name>
@@ -2715,7 +2775,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;span style=&quot;font-size:16px;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis eleifend ligula in sodales. Sed sit amet nisi eleifend.&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText928</identifier>
+                <identifier>contentbuilder_richText60</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2801,7 +2861,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button707</identifier>
+                <identifier>contentbuilder_button47</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-1bb1be5d-007b-4738-9906-680ce134402f</name>
@@ -2830,7 +2890,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>50%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1107</identifier>
+                <identifier>contentbuilder_column63</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2854,7 +2914,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>50%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1108</identifier>
+                <identifier>contentbuilder_column64</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-b277c3a3-19f9-480b-bc30-803e73d7f2bb</name>
@@ -2894,7 +2954,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;span style=&quot;color:#ffffff;&quot;&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;Add details of a specific case study if you have one or more to call out including changing the call to action button text, and if not just have the heading and CTA button&lt;/span&gt;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText929</identifier>
+                <identifier>contentbuilder_richText61</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -2980,7 +3040,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#9b1a47</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button708</identifier>
+                <identifier>contentbuilder_button48</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-7e84fd77-2f36-48b4-afe1-e3431564b17b</name>
@@ -3008,7 +3068,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1109</identifier>
+                <identifier>contentbuilder_column65</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-0ef3e1e2-1ac6-4283-a883-de986b2f4392</name>
@@ -3049,11 +3109,15 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>0</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>objectFit</name>
+                    <value>fill</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>width</name>
                     <value>100</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:image</componentName>
-                <identifier>contentbuilder_image626</identifier>
+                <identifier>contentbuilder_image48</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-42215d13-e81e-42f9-a05b-3cd8e10d6a09</name>
@@ -3081,7 +3145,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1110</identifier>
+                <identifier>contentbuilder_column66</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-1f89fb1a-010f-4590-8893-2b127b6cf5ce</name>
@@ -3119,7 +3183,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>&lt;h1 style=&quot;color:#111111;font-family:Arial;font-size:32px;font-weight:bold;margin:0;&quot;&gt;&lt;span style=&quot;color:#9b1a47;&quot;&gt;More news&lt;/span&gt;&lt;/h1&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText930</identifier>
+                <identifier>contentbuilder_richText62</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3155,7 +3219,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;span style=&quot;color:#37474f;&quot;&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;Example text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. stie a iaculis at erat pellentesque. Placerat orci nulla pellentesque dignissim.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText931</identifier>
+                <identifier>contentbuilder_richText63</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3241,7 +3305,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button709</identifier>
+                <identifier>contentbuilder_button49</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3277,7 +3341,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;span style=&quot;font-size:16px;&quot;&gt;Example text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus scelerisque eleifend donec pretium vulputate. Sit amet consectetur adipiscing elit pellentesque habitant.&amp;nbsp;&lt;/span&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText932</identifier>
+                <identifier>contentbuilder_richText64</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3363,7 +3427,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button710</identifier>
+                <identifier>contentbuilder_button50</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-dd2b28f6-72d9-4225-91ba-f59df92c8402</name>
@@ -3391,7 +3455,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1111</identifier>
+                <identifier>contentbuilder_column67</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-d05ef151-e240-461d-b7a8-08dd738b28e6</name>
@@ -3481,7 +3545,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>#ffffff</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:button</componentName>
-                <identifier>contentbuilder_button711</identifier>
+                <identifier>contentbuilder_button51</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-4d5ecc98-50d7-4c69-9aba-01147be9c194</name>
@@ -3509,7 +3573,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1112</identifier>
+                <identifier>contentbuilder_column68</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-36e619db-89d8-477b-a9bf-5ac9c8063769</name>
@@ -3563,7 +3627,7 @@ We&amp;rsquo;re partnering with Procurex National 2022 and will be offering buye
 &lt;p dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;span style=&quot;color:#37474f;&quot;&gt;You can also call our customer service team on 0345 410 2222 or email&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;mailto:info@crowncommercial.gov.uk&quot;&gt;info@crowncommercial.gov.uk&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText933</identifier>
+                <identifier>contentbuilder_richText65</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3624,7 +3688,7 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
 &lt;/table&gt;</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:richText</componentName>
-                <identifier>contentbuilder_richText934</identifier>
+                <identifier>contentbuilder_richText66</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-32c3376a-3e79-4bce-8f11-42931ba2babf</name>
@@ -3652,7 +3716,7 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>100%</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:column</componentName>
-                <identifier>contentbuilder_column1113</identifier>
+                <identifier>contentbuilder_column69</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-e5926249-4572-4465-9f45-7e7d69b3c612</name>
@@ -3665,6 +3729,9 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <name>backgroundColor</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-a2f2a4c2-9b51-4031-be11-6ebee1aad8d2</value>
                 </componentInstanceProperties>
@@ -3673,13 +3740,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row849</identifier>
+                <identifier>contentbuilder_row37</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3690,7 +3760,7 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row850</identifier>
+                <identifier>contentbuilder_row38</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3698,6 +3768,9 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
                     <value>#5bb4e5</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3708,7 +3781,7 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row851</identifier>
+                <identifier>contentbuilder_row39</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3716,6 +3789,9 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
                     <value>#ffffff</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3726,13 +3802,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row852</identifier>
+                <identifier>contentbuilder_row40</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3743,7 +3822,7 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row853</identifier>
+                <identifier>contentbuilder_row41</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3751,6 +3830,9 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
                     <value>#5bb4e5</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3761,13 +3843,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row854</identifier>
+                <identifier>contentbuilder_row42</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3778,13 +3863,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row855</identifier>
+                <identifier>contentbuilder_row43</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3795,13 +3883,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row856</identifier>
+                <identifier>contentbuilder_row44</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3812,13 +3903,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row857</identifier>
+                <identifier>contentbuilder_row45</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3829,13 +3923,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row858</identifier>
+                <identifier>contentbuilder_row46</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3846,13 +3943,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row859</identifier>
+                <identifier>contentbuilder_row47</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3863,13 +3963,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row860</identifier>
+                <identifier>contentbuilder_row48</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3880,7 +3983,7 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row861</identifier>
+                <identifier>contentbuilder_row49</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3888,6 +3991,9 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
                     <value>#9b1a47</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3898,13 +4004,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row862</identifier>
+                <identifier>contentbuilder_row50</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3915,7 +4024,7 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row863</identifier>
+                <identifier>contentbuilder_row51</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -3923,6 +4032,9 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
                     <value>#ffffff</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3933,13 +4045,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row864</identifier>
+                <identifier>contentbuilder_row52</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3950,13 +4065,16 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row865</identifier>
+                <identifier>contentbuilder_row53</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>backgroundColor</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>backgroundImageUrl</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>columns</name>
@@ -3967,13 +4085,13 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
                     <value>top</value>
                 </componentInstanceProperties>
                 <componentName>contentbuilder:row</componentName>
-                <identifier>contentbuilder_row866</identifier>
+                <identifier>contentbuilder_row54</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>CCS_newsletter_template_v1_0</masterLabel>
+    <masterLabel>Monika_s_copy_CCS_newsletter_template_v1_0</masterLabel>
     <template>
         <name>contentpage:defaultEmailTemplatePageTemplate</name>
         <properties>
@@ -4005,7 +4123,7 @@ Liverpool,&amp;nbsp;L3 9PP&lt;/span&gt;&lt;br /&gt;
         </properties>
         <properties>
             <name>preheader</name>
-            <value>Latest CCS news for [insert sector]</value>
+            <value>Preheader text Monika&apos;s TEST 19 Dec 2023</value>
         </properties>
     </template>
     <type>EmailTemplatePage</type>

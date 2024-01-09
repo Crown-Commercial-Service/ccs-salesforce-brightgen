@@ -20,6 +20,7 @@
    1.8  Cezary Zeleznicki   2016-12-14      Sla status change
    1.9  Tristam Hardman     2018-11-12      Duration and 'Plus/Minus' calculations
    2.0  Zahir Basith		2023-09-11		Test coverage for policy recordtype
+   2.1  Zahir Basith		2023-09-11		Policy Milestone closure
  *********************************************************************/
 
 @isTest
@@ -29,6 +30,8 @@ private class CaseTriggerHelperTest {
     static final Id PROC_CALLOFF_RT = UnitTestHelper.mRecordTypes.get('Case').get('Procurement_Call_Off_Competition');
     static final Id POLICY_RT = UnitTestHelper.mRecordTypes.get('Case').get('Policy_Legal_Case');
     static final Id ENQUIRY_RT = UnitTestHelper.mRecordTypes.get('Case').get('Enquiry');
+    static String POLICY_ROLE        = 'Policy & Legal Users';
+    static String POLICY_PROFILE     = 'CCS Policy User';
     @testSetup
     static void setupTest()
     {
@@ -37,17 +40,19 @@ private class CaseTriggerHelperTest {
         insert UnitTestHelper.createOpsWorkflowTemplates();
 
         Account org = UnitTestHelper.createOrganisationAccount(ORG_NAME);
-        insert org;
-
+        insert org;     
+        
         SlaProcess sla6 = [SELECT Id, Name FROM SlaProcess WHERE Name LIKE 'sla6%' AND isActive = true LIMIT 1];
         SlaProcess slaEnq = [SELECT Id, Name FROM SlaProcess WHERE Name LIKE 'Enquiry%' AND isActive = true LIMIT 1];
+        SlaProcess slapolicy = [SELECT Id, Name FROM SlaProcess WHERE Name LIKE 'Policy%' AND isActive = true LIMIT 1];
+
         Entitlement entProc = new Entitlement(Name = 'Test', AccountId = org.Id, SlaProcessId = sla6.Id);
         Entitlement entEnq = new Entitlement(Name = 'Test', AccountId = org.Id, SlaProcessId = slaEnq.Id);
-
-        insert new List<Entitlement>{entProc, entEnq};
+		Entitlement entPolicy = new Entitlement(Name = 'Test', AccountId = org.Id, SlaProcessId = slapolicy.Id);
+        insert new List<Entitlement>{entProc, entEnq,entPolicy };
 
         insert new Org_Settings__c(SetupOwnerId = UserInfo.getOrganizationId(), 
-        Entitlement_ID__c = entProc.Id, Enquiry_Entitlement_ID__c = entEnq.Id);
+        Entitlement_ID__c = entProc.Id, Enquiry_Entitlement_ID__c = entEnq.Id, Policy_Entitlement_ID__c =entPolicy.Id );
 
         Tier_Level__c tl = new Tier_Level__c(Tier_Sla__c = '1.0', Is_Default__c = true);
         Tier_Level__c tl2 = new Tier_Level__c(Tier_Sla__c = '3.0');
@@ -60,10 +65,16 @@ private class CaseTriggerHelperTest {
             Case cProc = UnitTestHelper.createProcurementCase(org.Id);
             Case cPolicy = UnitTestHelper.createPolicyCase(org.Id);
             cPolicy.Tier_Level__c = tl.Id;
+            cPolicy.Origin = 'Policy & Legal';
+            cPolicy.Query_Type__c = 'Business Opportunity';
+            Database.DMLOptions dmo = new Database.DMLOptions();
+            dmo.assignmentRuleHeader.useDefaultRule= true;
+            cPolicy.setOptions(dmo);
             cases.add(c);
             cases.add(cProc);
             cases.add(cPolicy);
         }
+   
         insert cases;
     }
 
@@ -450,6 +461,26 @@ private class CaseTriggerHelperTest {
             System.assert(cm.IsCompleted, 'CaseMilestone should be completed');
         }
     }
+    
+    static testMethod void test_closePolicySLA() {
+        
+        List<Case> cases = [SELECT Id, RecordTypeId, RecordType.DeveloperName,OwnerId,EntitlementId  FROM Case WHERE RecordTypeId =: POLICY_RT];
+        Tier_Level__c tl = [SELECT Id FROM Tier_Level__c WHERE Is_Default__c = false];
+        
+        for(Case cs : cases) {
+            cs.OwnerId = UserInfo.getUserId(); 
+        }
+        
+        Test.startTest();
+        update cases;
+        Test.stopTest();
+
+        List<CaseMilestone> milestones = [SELECT Id, IsCompleted FROM CaseMilestone WHERE CaseId IN : cases];
+        System.assert(!milestones.isEmpty(), 'Milestones should be created');
+        for(CaseMilestone cm : milestones) {
+            System.assert(cm.IsCompleted, 'CaseMilestone should be completed');
+        }
+    }    
 
     static testMethod void test_SlaStatusChange() {
         Tier_Level__c tl = [SELECT Id FROM Tier_Level__c WHERE Is_Default__c = false];

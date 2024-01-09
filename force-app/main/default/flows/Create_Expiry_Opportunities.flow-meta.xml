@@ -4,27 +4,15 @@
         <description>Send email alert to owner of new expiry opportunity</description>
         <name>Send_Email</name>
         <label>Send Email</label>
-        <locationX>1065</locationX>
-        <locationY>714</locationY>
+        <locationX>446</locationX>
+        <locationY>1092</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>emailBody</name>
-            <value>
-                <elementReference>ExpiryOppEmailTemplate</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
             <name>emailAddresses</name>
             <value>
                 <elementReference>$Record.Customer__r.Owner.Email</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>sendRichBody</name>
-            <value>
-                <booleanValue>true</booleanValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -33,12 +21,39 @@
                 <stringValue>New Opportunity created: Contract Expiry Opportunity - {!$Record.Name}</stringValue>
             </value>
         </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>ExpiryOppEmailTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_to_CCS_Contract_Expiry</name>
+        <label>Send Email to CCS Contract Expiry</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <actionName>CCS_Contract__c.Send_email_to_CCS_Contract_Expire</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
     </actionCalls>
     <actionCalls>
         <name>Send_Notification</name>
         <label>Send Notification</label>
-        <locationX>904</locationX>
-        <locationY>715</locationY>
+        <locationX>446</locationX>
+        <locationY>984</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -52,9 +67,9 @@
             </value>
         </inputParameters>
         <inputParameters>
-            <name>body</name>
+            <name>recipientIds</name>
             <value>
-                <stringValue>A new Opportunity: Contract Expiry Opportunity - {!$Record.Name} has been created in your name from a contract which is due to expire in 365 days time.  This has been created to help you manage retention Opportunities and to feed your future pipeline.</stringValue>
+                <elementReference>OwnerID</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -64,9 +79,9 @@
             </value>
         </inputParameters>
         <inputParameters>
-            <name>recipientIds</name>
+            <name>body</name>
             <value>
-                <elementReference>OwnerID</elementReference>
+                <stringValue>A new Opportunity: Contract Expiry Opportunity - {!$Record.Name} has been created in your name from a contract which is due to expire in 365 days time.  This has been created to help you manage retention Opportunities and to feed your future pipeline.</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -80,8 +95,8 @@
     <assignments>
         <name>Get_Contract_Owner_ID</name>
         <label>Get Contract Owner ID</label>
-        <locationX>751</locationX>
-        <locationY>715</locationY>
+        <locationX>446</locationX>
+        <locationY>876</locationY>
         <assignmentItems>
             <assignToReference>OwnerID</assignToReference>
             <operator>Add</operator>
@@ -96,8 +111,8 @@
     <decisions>
         <name>Check_if_Contract_has_Framework</name>
         <label>Check if Contract has Framework</label>
-        <locationX>529</locationX>
-        <locationY>309</locationY>
+        <locationX>446</locationX>
+        <locationY>468</locationY>
         <defaultConnector>
             <targetReference>Create_Opp_With_Framework</targetReference>
         </defaultConnector>
@@ -118,7 +133,113 @@
             <label>No Framework</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>is_CCS_or_Procurement</name>
+        <label>is CCS or Procurement</label>
+        <locationX>578</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>is_CCS</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012b00000001BgvAAE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Customer__r.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Crown Commercial Service</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Effective_End_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>daystoExpiryDateof90</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Customer_Contact__r.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_to_CCS_Contract_Expiry</targetReference>
+            </connector>
+            <label>is CCS</label>
+        </rules>
+        <rules>
+            <name>is_Procurement</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012b00000001BgwAAE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Customer__r.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Crown Commercial Service</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Procurement_Contract_Checks</targetReference>
+            </connector>
+            <label>is Procurement</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Procurement_Contract_Checks</name>
+        <label>Procurement Contract Checks</label>
+        <locationX>644</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Procurement_Contract_next_steps</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contract_Next_Steps__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>﻿Option to extend</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contract_Next_Steps__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Potential to replace</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Expiry_Alert_Due__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_if_Contract_has_Framework</targetReference>
+            </connector>
+            <label>Procurement Contract next steps</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>daystoExpiryDateof90</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()+90</expression>
+    </formulas>
     <interviewLabel>Create Expiry Opportunities {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Create Expiry Opportunities</label>
     <processMetadataValues>
@@ -130,7 +251,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -143,8 +264,9 @@
     <recordCreates>
         <name>Create_Opp_No_Framework</name>
         <label>Create Opp (No Framework)</label>
-        <locationX>656</locationX>
-        <locationY>531</locationY>
+        <locationX>314</locationX>
+        <locationY>576</locationY>
+        <assignRecordIdToReference>OppID</assignRecordIdToReference>
         <connector>
             <targetReference>Expiry_Opp_Notification</targetReference>
         </connector>
@@ -203,13 +325,13 @@
             </value>
         </inputAssignments>
         <object>Opportunity</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
         <name>Create_Opp_With_Framework</name>
         <label>Create Opp (With Framework)</label>
-        <locationX>415</locationX>
-        <locationY>530</locationY>
+        <locationX>578</locationX>
+        <locationY>576</locationY>
+        <assignRecordIdToReference>OppID</assignRecordIdToReference>
         <connector>
             <targetReference>Expiry_Opp_Notification</targetReference>
         </connector>
@@ -274,13 +396,12 @@
             </value>
         </inputAssignments>
         <object>Opportunity</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <name>Expiry_Opp_Notification</name>
         <label>Expiry Opp Notification</label>
-        <locationX>538</locationX>
-        <locationY>715</locationY>
+        <locationX>446</locationX>
+        <locationY>768</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Contract_Owner_ID</targetReference>
@@ -298,24 +419,17 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>411</locationX>
-        <locationY>48</locationY>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Check_if_Contract_has_Framework</targetReference>
+            <targetReference>is_CCS_or_Procurement</targetReference>
         </connector>
-        <filterLogic>(1 OR 2) AND 3 AND 4</filterLogic>
+        <filterLogic>or</filterLogic>
         <filters>
-            <field>Contract_Next_Steps__c</field>
+            <field>RecordTypeId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>﻿Option to extend</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Contract_Next_Steps__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Potential to replace</stringValue>
+                <stringValue>012b00000001BgvAAE</stringValue>
             </value>
         </filters>
         <filters>
@@ -325,18 +439,11 @@
                 <stringValue>012b00000001BgwAAE</stringValue>
             </value>
         </filters>
-        <filters>
-            <field>Expiry_Alert_Due__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
         <object>CCS_Contract__c</object>
         <schedule>
             <frequency>Daily</frequency>
-            <startDate>2022-09-21</startDate>
-            <startTime>00:15:00.000Z</startTime>
+            <startDate>2023-10-18</startDate>
+            <startTime>23:55:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
@@ -344,8 +451,15 @@
     <textTemplates>
         <name>ExpiryOppEmailTemplate</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Hi {!$Record.Customer__r.Owner.Full_Name__c},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;A new Opportunity: Contract Expiry Opportunity - {!$Record.Name} has been created in your name from a contract which is due to expire in 365 days time.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;This has been created to help you manage retention Opportunities and to feed your future pipeline. Please work with the relevant Category team to retain this business.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Please now treat this Opportunity as you would any other and progress it according to the Opportunity process.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;This opportunity has been created from a contract that previously had an Assisted Service. Please engage Proc Ops for the Assisted Service as early as possible if the customer requires it, in order to enable the resource capacity to be considered.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Thank you&lt;/span&gt;&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Hi {!$Record.Customer__r.Owner.Full_Name__c},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;A new Opportunity: Contract Expiry Opportunity - {!$Record.Name} has been created in your name from a contract which is due to expire in 365 days time.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;This has been created to help you manage retention Opportunities and to feed your future pipeline. Please work with the relevant Category team to retain this business.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Please now treat this Opportunity as you would any other and progress it according to the Opportunity process.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;This opportunity has been created from a contract that previously had an Assisted Service. Please engage Proc Ops for the Assisted Service as early as possible if the customer requires it, in order to enable the resource capacity to be considered.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;https://crowncommercial.lightning.force.com/{!OppID}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Thank you&lt;/span&gt;&lt;/p&gt;</text>
     </textTemplates>
+    <variables>
+        <name>OppID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>OwnerID</name>
         <dataType>String</dataType>
