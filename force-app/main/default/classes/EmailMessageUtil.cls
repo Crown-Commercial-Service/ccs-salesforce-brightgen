@@ -121,7 +121,7 @@ public class EmailMessageUtil {
         try {
             EmailMessageTriggerHelper.CHECK_EDIT_RIGHTS_ON_CASE = false;
             insert oldEmailId2newEmail.values();
-            copyOverAttachmentsToNewEmail(oldEmailId2newEmail);
+            copyOverAttachmentsToNewEmail(oldEmailId2newEmail, targetCaseId, originCaseId);
             EmailMessageTriggerHelper.ALLOW_DELETION = true;
            // delete originCase.EmailMessages;
             
@@ -176,21 +176,121 @@ public class EmailMessageUtil {
         //return Label.Success_msg;
     }
 
-    private static void copyOverAttachmentsToNewEmail(Map<Id, EmailMessage> oldEmailId2newEmail) {
-        List<Attachment> newAttachments = new List<Attachment>();
+    private static void copyOverAttachmentsToNewEmail(Map<Id, EmailMessage> oldEmailId2newEmail, Id targetCaseId, Id originCaseId) {
+        // Need to initialise any collections we need
+        List<ContentVersion> cvToInsert = new List<ContentVersion>();
+        List<ContentDocumentLink> cdlToInsert = new List<ContentDocumentLink>();
+        List<ContentDocumentLink> cdlsToDelete = new List<ContentDocumentLink>();
+        Set<Id> insertedCvIds = new Set<Id>();
+        Set<Id> documentIds = new Set<Id>();
+        Map<String, Id> emailIdByDocumentTitle = new Map<String, Id>();
+
+        // Query for possible attachments related to the email
         List<Attachment> attachments = [
-            SELECT Id, Name, Body, ParentId
+            SELECT Id, Name, Body, ParentId, ContentType
             FROM Attachment
             WHERE ParentId IN :oldEmailId2newEmail.keySet()
         ];
 
-        for(Attachment att : attachments) {
-            Attachment newAttachment = att.clone();
-            newAttachment.ParentId = oldEmailId2newEmail.get(att.ParentId).Id;
-            newAttachments.add(newAttachment);
+        // Query for possible CDLs related to the emails
+        List<ContentDocumentLink> cdls = [SELECT Id, LinkedEntityId, ContentDocumentId FROM ContentDocumentLink WHERE LinkedEntityId IN :oldEmailId2newEmail.keySet() OR LinkedEntityId = :originCaseId];
+
+        // If we have found some cdls then we will need to handle transferring those
+        if(cdls.size() > 0)
+        {
+            for(ContentDocumentLink cdl : cdls) 
+            {
+                ContentDocumentLink newCDLEmail = null;
+                ContentDocumentLink newCDLCase = null;
+
+                // Checking if we are dealing with an email or not
+                // if it is a case we will get a null reference error
+                if (oldEmailId2newEmail.get(cdl.LinkedEntityId) != null && null != oldEmailId2newEmail.get(cdl.LinkedEntityId).Id)
+                {
+                    newCDLEmail = cdl.clone(false, true, false, false);
+                    newCDLEmail.LinkedEntityId = oldEmailId2newEmail.get(cdl.LinkedEntityId).Id;
+
+                    newCDLCase = cdl.clone(false, true, false, false);
+                    newCDLCase.LinkedEntityId = targetCaseId;
+                }
+
+                if(newCDLEmail != null)
+                {
+                    cdlToInsert.add(newCDLEmail);
+                }
+                if(newCDLCase != null)
+                {
+                    cdlToInsert.add(newCDLCase);
+                }
+                
+                cdlsToDelete.add(cdl);
+            }
+        }
+        else if(cdls.size() < 1)
+        {
+            // If we don't have any cdls then we have attachments and will need to handle those
+
+            if(attachments.size() > 0)
+            {
+                for(Attachment att : attachments) 
+                {
+                    ContentVersion cv = new ContentVersion();
+                    cv.Title = att.Name;
+                    cv.VersionData = att.Body;
+                    cv.PathOnClient = att.Name + att.ContentType;
+
+                    cvToInsert.add(cv);
+
+                    emailIdByDocumentTitle.put(att.Name, oldEmailId2newEmail.get(att.ParentId).Id);
+                }
+            }
+
+            // Insert the new content versions
+            if(!cvToInsert.isEmpty())
+            {
+                insert cvToInsert;
+            }
+            
+            // Add the newly inserted content versions IDs to a set
+            for(ContentVersion cv : cvToInsert)
+            {
+                insertedCvIds.add(cv.Id);
+            }
+
+            // Query for the inserted content versions so that we can get the contentdocumentid
+            List<ContentVersion> insertedContentVersions = [SELECT Id, ContentDocumentId, Title FROM ContentVersion WHERE Id IN :insertedCvIds];
+
+            if(!insertedContentVersions.isEmpty())
+            {
+                // Loop through all insert content versions and create a contentdocumentlink so we can share the record
+                for(ContentVersion cv : insertedContentVersions)
+                {
+                    ContentDocumentLink cdlEmail = new ContentDocumentLink();
+                    cdlEmail.ContentDocumentId = cv.ContentDocumentId;
+                    cdlEmail.LinkedEntityId = emailIdByDocumentTitle.get(cv.Title);
+                    cdlEmail.Visibility = 'AllUsers';
+
+                    ContentDocumentLink cdlCase = new ContentDocumentLink();
+                    cdlCase.ContentDocumentId = cv.ContentDocumentId;
+                    cdlCase.LinkedEntityId = targetCaseId;
+                    cdlCase.Visibility = 'AllUsers';
+
+                    cdlToInsert.add(cdlEmail);
+                    cdlToInsert.add(cdlCase);
+                }
+            }
         }
 
-        insert newAttachments;
+        // Create the links so users are able to find the files
+        if(!cdlToInsert.isEmpty())
+        {
+            insert cdlToInsert;
+        }
+        // Delete the old links
+        if(!cdlsToDelete.isEmpty())
+        {
+            delete cdlsToDelete;
+        }
     }
 
     public class EmailMessageWrapper{
